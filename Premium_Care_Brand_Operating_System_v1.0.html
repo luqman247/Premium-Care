@@ -1,0 +1,1790 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Premium Care — Brand Operating System · v1.0</title>
+<style>
+/* ============================================================
+   PREMIUM CARE — BRAND OPERATING SYSTEM
+   The single source of visual and verbal truth.
+   ============================================================ */
+
+/* ---- 1. DESIGN TOKENS ------------------------------------- */
+:root{
+  /* Primary palette */
+  --pc-navy:#041E42;
+  --pc-navy-90:#1B3352;
+  --pc-navy-70:#4A5D77;
+  --pc-navy-40:#9BA7B7;
+  --pc-navy-15:#DBE0E7;
+  --pc-navy-06:#EFF2F5;
+  --pc-gold:#B9A26A;
+  --pc-gold-soft:#CBB784;
+  --pc-gold-deep:#9C8850;
+  --pc-red:#C8102E;
+  --pc-porcelain:#FAFAF7;
+  --pc-paper:#FFFFFF;
+  /* Secondary / support */
+  --pc-sage:#7E8E7C;
+  --pc-sky:#AFC3D1;
+  --pc-warmgrey:#8C877D;
+  /* Functional */
+  --pc-success:#3E6B54;
+  --pc-warning:#B98A3C;
+  --pc-error:#C8102E;
+  /* Type roles */
+  --serif:"Cormorant Garamond","Berlingske Serif",Georgia,"Times New Roman",serif;
+  --sans:"Jost","Berlingske Sans",-apple-system,"Segoe UI",Verdana,Arial,sans-serif;
+  --mono:"IBM Plex Mono","Berlingske Mono","Courier New",Consolas,monospace;
+  /* Rhythm */
+  --measure:74ch;
+  --gutter:clamp(20px,5vw,64px);
+  --radius:2px;
+}
+
+/* ---- 2. FONT IMPORTS (screen; production uses Berlingske) -- */
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Jost:wght@300;400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap');
+
+/* ---- 3. RESET & BASE -------------------------------------- */
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{
+  font-family:var(--sans);
+  font-weight:400;
+  color:var(--pc-navy);
+  background:var(--pc-porcelain);
+  line-height:1.65;
+  font-size:16px;
+  letter-spacing:.005em;
+  text-rendering:optimizeLegibility;
+  -webkit-font-smoothing:antialiased;
+}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+strong{font-weight:600;color:var(--pc-navy)}
+
+/* ---- 4. LAYOUT PRIMITIVES --------------------------------- */
+.page{
+  max-width:1180px;
+  margin:0 auto;
+  padding:0 var(--gutter);
+}
+.section{
+  padding:clamp(64px,9vw,120px) 0;
+  border-top:1px solid var(--pc-navy-15);
+}
+.section:first-of-type{border-top:none}
+.section-inner{max-width:1180px;margin:0 auto;padding:0 var(--gutter)}
+
+/* ---- 5. TYPOGRAPHY SYSTEM --------------------------------- */
+.eyebrow{
+  font-family:var(--sans);
+  font-weight:500;
+  font-size:.72rem;
+  letter-spacing:.32em;
+  text-transform:uppercase;
+  color:var(--pc-gold-deep);
+  margin-bottom:1.4rem;
+  display:flex;align-items:center;gap:.9em;
+}
+.eyebrow::before{content:"";width:26px;height:1px;background:var(--pc-gold)}
+h1,h2,h3,h4{font-family:var(--serif);font-weight:500;color:var(--pc-navy);line-height:1.08;letter-spacing:-.005em}
+h1{font-size:clamp(2.6rem,6vw,4.6rem);font-weight:500}
+h2{font-size:clamp(2rem,4.2vw,3.2rem);margin-bottom:.6em}
+h3{font-size:clamp(1.35rem,2.4vw,1.9rem);margin:2.4em 0 .7em}
+h4{font-size:1.18rem;margin:1.8em 0 .5em;font-weight:600}
+.lede{font-family:var(--serif);font-size:clamp(1.25rem,2.4vw,1.75rem);line-height:1.42;font-weight:400;color:var(--pc-navy-90);max-width:34ch}
+p{max-width:var(--measure);margin-bottom:1.1em}
+.section p, .section li{color:#233448}
+ul,ol{margin:0 0 1.2em 1.2em;max-width:var(--measure)}
+li{margin-bottom:.5em;color:#233448}
+blockquote{
+  font-family:var(--serif);font-style:italic;font-size:1.5rem;line-height:1.4;
+  color:var(--pc-navy);border-left:2px solid var(--pc-gold);
+  padding-left:1.4em;margin:2em 0;max-width:40ch;font-weight:400;
+}
+.mono{font-family:var(--mono);font-size:.85em;letter-spacing:0}
+code{font-family:var(--mono);font-size:.82em;background:var(--pc-navy-06);
+  padding:.12em .45em;border-radius:2px;color:var(--pc-navy);border:1px solid var(--pc-navy-15)}
+pre{font-family:var(--mono);font-size:.8rem;line-height:1.7;background:var(--pc-navy);
+  color:#DCE4EE;padding:1.5em 1.7em;border-radius:var(--radius);overflow-x:auto;margin:1.4em 0;
+  border-left:3px solid var(--pc-gold)}
+pre code{background:none;border:none;color:inherit;padding:0}
+.gold-rule{width:100%;height:1px;background:linear-gradient(90deg,var(--pc-gold),transparent);margin:2.4em 0;border:none}
+.interpunct{color:var(--pc-gold);font-weight:600}
+
+/* ---- 6. UTILITY GRIDS & CARDS ----------------------------- */
+.grid{display:grid;gap:clamp(16px,2.4vw,28px)}
+.g2{grid-template-columns:repeat(2,1fr)}
+.g3{grid-template-columns:repeat(3,1fr)}
+.g4{grid-template-columns:repeat(4,1fr)}
+@media(max-width:820px){.g2,.g3,.g4{grid-template-columns:1fr}}
+.card{
+  background:var(--pc-paper);border:1px solid var(--pc-navy-15);
+  border-radius:var(--radius);padding:1.7em 1.7em;position:relative;
+}
+.card::before{content:"";position:absolute;top:0;left:0;width:100%;height:2px;
+  background:var(--pc-gold);opacity:0;transition:opacity .3s}
+.card.mark::before{opacity:1}
+.card h4{margin-top:0}
+.card .num{font-family:var(--mono);font-size:.72rem;letter-spacing:.15em;
+  color:var(--pc-gold-deep);display:block;margin-bottom:.6em}
+
+.callout{border-left:3px solid var(--pc-gold);background:var(--pc-navy-06);
+  padding:1.2em 1.5em;margin:1.6em 0;border-radius:0 var(--radius) var(--radius) 0}
+.callout .tag{font-family:var(--sans);font-weight:600;font-size:.68rem;letter-spacing:.22em;
+  text-transform:uppercase;color:var(--pc-gold-deep);display:block;margin-bottom:.5em}
+.callout p:last-child{margin-bottom:0}
+.callout.doctrine{border-color:var(--pc-navy);background:#F1EEE6}
+.callout.doctrine .tag{color:var(--pc-navy)}
+.callout.prohibit{border-color:var(--pc-red);background:#FBEDEE}
+.callout.prohibit .tag{color:var(--pc-red)}
+
+/* ---- 7. TABLES -------------------------------------------- */
+.tbl{width:100%;border-collapse:collapse;margin:1.6em 0;font-size:.9rem}
+.tbl th{font-family:var(--sans);font-weight:600;text-align:left;
+  background:var(--pc-navy);color:var(--pc-porcelain);
+  padding:.85em 1em;font-size:.72rem;letter-spacing:.12em;text-transform:uppercase}
+.tbl td{padding:.75em 1em;border-bottom:1px solid var(--pc-navy-15);vertical-align:top;color:#233448}
+.tbl tr:nth-child(even) td{background:var(--pc-navy-06)}
+.tbl td.mono,.tbl td .mono{font-family:var(--mono);font-size:.82rem}
+
+/* ---- 8. COLOUR & TYPE SPECIMENS --------------------------- */
+.swatch{border-radius:var(--radius);overflow:hidden;border:1px solid var(--pc-navy-15)}
+.swatch .chip{height:130px;display:flex;align-items:flex-end;padding:14px;position:relative}
+.swatch .body{padding:14px 16px;background:var(--pc-paper);font-size:.78rem}
+.swatch .name{font-family:var(--serif);font-size:1.15rem;color:var(--pc-navy);display:block;margin-bottom:.3em}
+.swatch .meta{font-family:var(--mono);font-size:.72rem;color:var(--pc-navy-70);line-height:1.9}
+.swatch .meta b{color:var(--pc-navy);font-weight:500}
+
+/* ---- 9. NAV / TOC ----------------------------------------- */
+.tocnav{position:fixed;top:0;left:0;height:100vh;width:288px;background:var(--pc-navy);
+  color:var(--pc-porcelain);overflow-y:auto;padding:2rem 0 3rem;z-index:100;
+  transform:translateX(-100%);transition:transform .32s cubic-bezier(.4,0,.2,1);
+  border-right:1px solid rgba(185,162,106,.25)}
+.tocnav.open{transform:translateX(0)}
+.tocnav .brandline{padding:0 1.6rem 1.4rem;border-bottom:1px solid rgba(185,162,106,.2);margin-bottom:1rem}
+.tocnav .brandline .wm{font-family:var(--serif);font-size:1.15rem;letter-spacing:.06em;color:var(--pc-gold)}
+.tocnav .brandline .sub{font-family:var(--sans);font-size:.62rem;letter-spacing:.24em;
+  text-transform:uppercase;color:var(--pc-navy-40);margin-top:.35em}
+.tocnav a{display:block;padding:.5em 1.6rem .5em 1.6rem;font-size:.82rem;color:#C7D0DC;
+  border-left:2px solid transparent;transition:all .18s}
+.tocnav a .n{font-family:var(--mono);font-size:.68rem;color:var(--pc-gold-deep);margin-right:.8em}
+.tocnav a:hover{background:rgba(255,255,255,.04);color:#fff;border-left-color:var(--pc-gold)}
+.toc-toggle{position:fixed;top:20px;left:20px;z-index:101;background:var(--pc-navy);
+  color:var(--pc-gold);border:1px solid rgba(185,162,106,.4);width:46px;height:46px;
+  border-radius:var(--radius);cursor:pointer;display:flex;align-items:center;justify-content:center;
+  box-shadow:0 4px 18px rgba(4,30,66,.18)}
+.toc-toggle svg{width:20px;height:20px}
+.scrim{position:fixed;inset:0;background:rgba(4,30,66,.4);z-index:99;opacity:0;
+  pointer-events:none;transition:opacity .3s}
+.scrim.show{opacity:1;pointer-events:auto}
+@media(min-width:1400px){
+  .toc-toggle{display:none}
+  .tocnav{transform:translateX(0)}
+  body{padding-left:288px}
+  .scrim{display:none}
+}
+
+/* ---- 10. COVER -------------------------------------------- */
+.cover{background:var(--pc-navy);color:var(--pc-porcelain);min-height:100vh;
+  display:flex;flex-direction:column;justify-content:center;align-items:center;
+  text-align:center;padding:5vh var(--gutter);position:relative;overflow:hidden}
+.cover .frame{position:absolute;inset:22px;border:1px solid rgba(185,162,106,.35);pointer-events:none}
+.cover .frame::before,.cover .frame::after{content:"◆";position:absolute;color:var(--pc-gold);
+  font-size:10px;top:-6px}
+.cover .frame::before{left:50%;transform:translateX(-50%)}
+.cover .diamonds{color:var(--pc-gold);letter-spacing:1.2em;font-size:.7rem;margin:2.4rem 0 1.6rem;padding-left:1.2em}
+.cover h1{color:var(--pc-porcelain);letter-spacing:.14em;font-weight:500;
+  font-size:clamp(1.8rem,5vw,3.2rem);text-transform:uppercase}
+.cover .sub{font-family:var(--serif);font-style:italic;color:var(--pc-gold-soft);
+  font-size:clamp(1.05rem,2.4vw,1.4rem);margin-top:1rem}
+.cover .foot{position:absolute;bottom:52px;left:0;right:0;font-family:var(--sans);
+  font-size:.62rem;letter-spacing:.34em;text-transform:uppercase;color:var(--pc-navy-40)}
+.cover-logo{width:min(240px,40vw);margin-bottom:1rem}
+
+/* SVG mark colours */
+.mk-gold{fill:var(--pc-gold)}
+.mk-red{fill:var(--pc-red)}
+.mk-white{fill:var(--pc-porcelain)}
+
+/* ---- 11. SECTION HEADER BAND ------------------------------ */
+.sect-head{margin-bottom:2.6rem}
+.sect-head .idx{font-family:var(--mono);font-size:.8rem;letter-spacing:.2em;color:var(--pc-gold-deep)}
+.two-col{display:grid;grid-template-columns:1fr 1fr;gap:clamp(28px,5vw,64px);align-items:start}
+@media(max-width:860px){.two-col{grid-template-columns:1fr}}
+
+/* misc */
+.pill{display:inline-block;font-family:var(--mono);font-size:.7rem;letter-spacing:.08em;
+  background:var(--pc-navy);color:var(--pc-gold);padding:.3em .8em;border-radius:20px;margin:.2em .3em .2em 0}
+.pill.ghost{background:transparent;border:1px solid var(--pc-navy-15);color:var(--pc-navy-70)}
+.kv{display:grid;grid-template-columns:auto 1fr;gap:.4em 1.4em;font-size:.9rem;margin:1.2em 0}
+.kv dt{font-family:var(--sans);font-weight:600;color:var(--pc-navy)}
+.kv dd{color:#233448}
+.do-dont{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin:1.6em 0}
+@media(max-width:720px){.do-dont{grid-template-columns:1fr}}
+.do-dont .box{border-radius:var(--radius);padding:1.3em 1.4em;border:1px solid}
+.do-dont .do{background:#F0F4F1;border-color:#C5D6C9}
+.do-dont .dont{background:#FBEDEE;border-color:#EBC7CC}
+.do-dont h5{font-family:var(--sans);font-size:.7rem;letter-spacing:.2em;text-transform:uppercase;margin-bottom:.7em}
+.do-dont .do h5{color:var(--pc-success)}
+.do-dont .dont h5{color:var(--pc-red)}
+.do-dont ul{margin:0 0 0 1.1em;font-size:.9rem}
+.footer-band{background:var(--pc-navy);color:var(--pc-navy-40);text-align:center;
+  padding:4rem var(--gutter);font-size:.72rem;letter-spacing:.2em;text-transform:uppercase}
+.footer-band .wm{font-family:var(--serif);color:var(--pc-gold);font-size:1.3rem;
+  letter-spacing:.1em;text-transform:none;margin-bottom:1rem;display:block}
+@media print{.tocnav,.toc-toggle,.scrim{display:none}body{padding-left:0}}
+</style>
+</head>
+<body>
+
+<nav class="tocnav">
+  <div class="brandline">
+    <div class="wm">Premium Care</div>
+    <div class="sub">Brand Operating System · v1.0</div>
+  </div>
+  <a href="#s0"><span class="n">00</span>Foundation & Governance</a><a href="#s1"><span class="n">01</span>Brand Philosophy</a><a href="#s2"><span class="n">02</span>Logo System</a><a href="#s3"><span class="n">03</span>Colour System</a><a href="#s4"><span class="n">04</span>Typography</a><a href="#s5"><span class="n">05</span>Layout System</a><a href="#s6"><span class="n">06</span>Photography Direction</a><a href="#s7"><span class="n">07</span>Illustration System</a><a href="#s8"><span class="n">08</span>Iconography</a><a href="#s9"><span class="n">09</span>Graphic Elements</a><a href="#s10"><span class="n">10</span>Presentation Design</a><a href="#s11"><span class="n">11</span>Website Design Language</a><a href="#s12"><span class="n">12</span>Printed Materials</a><a href="#s13"><span class="n">13</span>Uniform Design</a><a href="#s14"><span class="n">14</span>Environmental Branding</a><a href="#s15"><span class="n">15</span>Motion Design</a><a href="#s16"><span class="n">16</span>Digital Asset Library</a><a href="#s17"><span class="n">17</span>AI Prompt Library</a><a href="#s18"><span class="n">18</span>Quality Assurance</a>
+</nav>
+
+<button class="toc-toggle" onclick="document.querySelector('.tocnav').classList.toggle('open');document.querySelector('.scrim').classList.toggle('show')" aria-label="Contents">
+<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><line x1="3" y1="7" x2="21" y2="7"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="17" x2="21" y2="17"/></svg>
+</button>
+<div class="scrim" onclick="document.querySelector('.tocnav').classList.remove('open');this.classList.remove('show')"></div>
+
+<section class="cover" id="cover">
+  <div class="frame"></div>
+  <div class="cover-logo"><svg viewBox="0 0 200 240" width="200" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Premium Care crowned shield">
+  <!-- Crown -->
+  <g fill="var(--pc-gold)">
+    <circle cx="100" cy="10" r="3.4"/>
+    <path d="M100 15 L108 30 L92 30 Z" opacity="0"/>
+    <path d="M68 52 L72 30 L84 44 L100 26 L116 44 L128 30 L132 52 Z"/>
+    <rect x="66" y="52" width="68" height="7" rx="2"/>
+    <circle cx="72" cy="30" r="3"/><circle cx="128" cy="30" r="3"/><circle cx="100" cy="24" r="3"/>
+  </g>
+  <!-- Shield outline -->
+  <path d="M50 66 H150 V150 Q150 196 100 214 Q50 196 50 150 Z" fill="var(--pc-gold)" stroke="none" stroke-width="5"/>
+  <!-- Shield field (red, full colour only) -->
+  <path d="M55 71 H145 V149 Q145 191 100 208 Q55 191 55 149 Z" fill="var(--pc-red)"/>
+  <!-- Dannebrog cross (white) -->
+  <g fill="var(--pc-porcelain)">
+    <rect x="90" y="71" width="14" height="137" />
+    <rect x="55" y="120" width="90" height="14" />
+  </g>
+  <!-- Two figures (gold silhouettes, equal height, facing) -->
+  <g fill="var(--pc-gold)">
+    <!-- left figure (gentleman + cane) -->
+    <circle cx="75" cy="104" r="8"/>
+    <path d="M67 116 q8 -5 16 0 l3 42 q-11 4 -22 0 Z"/>
+    <rect x="84" y="128" width="2.4" height="52" rx="1"/>
+    <!-- right figure (lady) -->
+    <circle cx="123" cy="104" r="8"/>
+    <path d="M114 116 q9 -5 18 0 l4 46 q-13 4 -26 0 Z"/>
+    <rect x="112" y="128" width="2.4" height="52" rx="1"/>
+  </g>
+</svg></div>
+  <div class="diamonds">◆ ◆ ◆</div>
+  <h1>Brand Operating System</h1>
+  <div class="sub">The Single Source of Truth · Version 1.0</div>
+  <div style="font-family:var(--serif);font-style:italic;color:var(--pc-gold-soft);margin-top:2.2rem;font-size:1.05rem;letter-spacing:.05em">Omsorg <span class="interpunct">·</span> Tryghed <span class="interpunct">·</span> Hver Dag</div>
+  <div class="foot">Premium Care ApS <span class="interpunct">·</span> København <span class="interpunct">·</span> MMXXVI <span class="interpunct">·</span> Confidential</div>
+</section>
+
+<section class="section" id="s0">
+  <div class="section-inner">
+    <div class="sect-head">
+      <div class="eyebrow">Section 00 <span class="interpunct" style="margin-left:.6em">·</span> Foundation</div>
+      <h2>The Document & Its Authority</h2>
+      <p class="lede">This is the single source of visual and verbal truth for Premium Care. Every future designer, developer, marketer, photographer, filmmaker, AI model and employee derives their work from this system.</p>
+    </div>
+
+    <div class="two-col">
+      <div>
+        <h3>What this system governs</h3>
+        <p>The Brand Operating System is not a style guide to be consulted occasionally. It is the operating layer beneath every artefact the institution produces — from a business card to a vehicle livery, from an investor deck to an AI-generated photograph. Where a question of appearance, tone or reproduction arises, the answer is here. Where it is not, the answer is escalated to the Brand Custodian, never improvised.</p>
+        <p>The system refines, expands and unifies the existing Premium Care identity. It does not replace the approved mark, the palette, the typography or the doctrine already ratified in the Brand Bible. It professionalises them into one coherent, production-ready standard.</p>
+      </div>
+      <div>
+        <h3>The document hierarchy</h3>
+        <table class="tbl">
+          <tr><th>Document</th><th>Governs</th></tr>
+          <tr><td><strong>Brand Bible</strong></td><td>Strategy, meaning, doctrine — <em>why</em></td></tr>
+          <tr><td><strong>This Operating System</strong></td><td>The complete identity, taught and applied — <em>what &amp; how</em></td></tr>
+          <tr><td><strong>Master Implementation Spec</strong></td><td>Production tolerance — <em>exactly how it is reproduced</em></td></tr>
+        </table>
+        <div class="callout doctrine">
+          <span class="tag">Rule of precedence</span>
+          <p>In any conflict, the Brand Bible prevails on doctrine; the Implementation Specification prevails on production tolerance; this Operating System prevails on everything between.</p>
+        </div>
+      </div>
+    </div>
+
+    <hr class="gold-rule">
+    <h3>The Five Design Tests</h3>
+    <p>Every artefact — before it leaves the building, goes live, or is generated — must pass all five. A single failure sends the work back.</p>
+    <div class="grid g3" style="margin-top:1.4em">
+      <div class="card mark"><span class="num">TEST 01</span><h4>Dignity</h4><p>Does it honour the person in our care as a person first? Nothing frail, pitiable, or patronising survives.</p></div>
+      <div class="card mark"><span class="num">TEST 02</span><h4>Restraint</h4><p>Is every element necessary? If one could be removed without loss, it is removed. Quiet, never flashy.</p></div>
+      <div class="card mark"><span class="num">TEST 03</span><h4>Faglighed</h4><p>Is it technically flawless — kerning, contrast, alignment, reproduction? Amateur execution breaks trust.</p></div>
+      <div class="card mark"><span class="num">TEST 04</span><h4>Consistency</h4><p>Would it be recognised as Premium Care with the logo removed? The system, not the mark alone, is the brand.</p></div>
+      <div class="card mark"><span class="num">TEST 05</span><h4>Tryghed</h4><p>Does it produce the feeling of security — predictable, calm, unsurprising in the reassuring sense?</p></div>
+    </div>
+
+    <h3>Governance &amp; approval tiers</h3>
+    <table class="tbl">
+      <tr><th>Tier</th><th>Scope</th><th>Authority</th><th>Timeline</th></tr>
+      <tr><td><strong>Tier 1</strong></td><td>Correct use of released assets &amp; templates</td><td>Self-service</td><td>Immediate</td></tr>
+      <tr><td><strong>Tier 2</strong></td><td>New applications of existing assets</td><td>Brand Custodian</td><td>3–5 business days</td></tr>
+      <tr><td><strong>Tier 3</strong></td><td>Changes to the mark, palette or type</td><td>Executive + Bible amendment</td><td>Governed change process</td></tr>
+    </table>
+    <div class="callout">
+      <span class="tag">Review cycle</span>
+      <p>This system is reviewed every 24 months. Releases are immutable: corrections generate a new versioned release; files are never edited in place. Superseded releases are archived and retained for twenty years — signage, fleet and embroidered garments outlive campaigns.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="s1">
+  <div class="section-inner">
+    <div class="sect-head">
+      <div class="eyebrow">Section 01 <span class="interpunct" style="margin-left:.6em">·</span> The Brand</div>
+      <h2>Brand Philosophy</h2>
+      <p class="lede">We do not sell care. We preserve dignity. Everything that follows — every colour, letterform and photograph — exists to make that preservation visible.</p>
+    </div>
+
+    <div class="grid g2">
+      <div class="card"><span class="num">PURPOSE</span><h4>Why we exist</h4><p>To raise the standard of home care in Denmark so that the person receiving care in their own living room is met with the same excellence, discretion and attention to detail found in the nation's finest institutions.</p></div>
+      <div class="card"><span class="num">MISSION</span><h4>What we do</h4><p>To compose care — planned with clinical rigour, performed with human warmth, and carried out with the quiet confidence of true professionals — in the home, every day.</p></div>
+      <div class="card"><span class="num">VISION</span><h4>Where we are going</h4><p>To become the standard against which home care in Denmark is measured: the provider families request by name, municipalities trust by record, and caregivers aspire to join.</p></div>
+      <div class="card"><span class="num">PROMISE</span><h4>What clients can count on</h4><p><strong>Omsorg · Tryghed · Hver Dag.</strong> Care, security, every day. The same faces. The agreed times. The promised standard. This is a contract, not a slogan.</p></div>
+    </div>
+
+    <h3>Core beliefs</h3>
+    <div class="grid g2">
+      <div class="card mark"><h4>Care in the home is not a compromise</h4><p>It is the highest expression of dignity — life continued on one's own terms, in one's own rooms, uninterrupted.</p></div>
+      <div class="card mark"><h4>Warmth and competence are inseparable</h4><p>Warmth without competence is sentiment; competence without warmth is service. We insist on both, always.</p></div>
+      <div class="card mark"><h4>Trust is built through predictability</h4><p>Not through claims. The same carers, the agreed times, the transparent invoice — reliability is our luxury.</p></div>
+      <div class="card mark"><h4>We position above, never against</h4><p>Denmark's public care system is a partner and a client, not a foil. We never disparage. We simply hold a higher standard.</p></div>
+    </div>
+
+    <h3>The four values</h3>
+    <p>Our values are expressed first in Danish, because they are lived in Danish — in homes, in conversations, in care plans. The English definitions exist so every partner, agency and supplier understands precisely what each value demands of their work.</p>
+    <table class="tbl">
+      <tr><th>Value</th><th>English</th><th>What it demands of design</th></tr>
+      <tr><td><strong>Værdighed</strong></td><td>Dignity</td><td>Every process, product and photograph honours the person. We speak <em>with</em>, never <em>about</em>.</td></tr>
+      <tr><td><strong>Tryghed</strong></td><td>Security</td><td>Predictability in every touchpoint — from the reassurance of a uniform to the clarity of an invoice.</td></tr>
+      <tr><td><strong>Nærvær</strong></td><td>Presence</td><td>We never shout, never clutter. Every element is given room. Care cannot be rushed and remain care.</td></tr>
+      <tr><td><strong>Faglighed</strong></td><td>Professional excellence</td><td>Rigorous, current, flawless execution. Sloppiness in a document is sloppiness in the clinic.</td></tr>
+    </table>
+
+    <h3>Brand personality</h3>
+    <p>If Premium Care were a person, they would be a senior Danish clinician of impeccable standing: precise but never cold, warm but never familiar, confident enough to be quiet. They wear one good watch, not three. They arrive on time. They remember your mother's name.</p>
+    <div style="margin:1.4em 0">
+      <span class="pill">Trusted</span><span class="pill">Warm</span><span class="pill">Quietly confident</span><span class="pill">Clinically excellent</span><span class="pill">Transparent</span><span class="pill">Scandinavian</span><span class="pill">Timeless</span><span class="pill">Institutional</span>
+    </div>
+
+    <h3>Brand manifesto</h3>
+    <blockquote>How a society treats its elderly and its vulnerable is the truest measure of its character. We exist to raise that measure — one home, one morning, one kept promise at a time.</blockquote>
+
+    <hr class="gold-rule">
+    <h3>Tone of voice</h3>
+    <div class="grid g3">
+      <div class="card"><h4>To families</h4><p style="font-family:var(--serif);font-style:italic;font-size:1.05rem">"We will be there at eight, as always. And we will stay as long as your mother needs us."</p></div>
+      <div class="card"><h4>To municipalities</h4><p style="font-family:var(--serif);font-style:italic;font-size:1.05rem">"Our documentation is complete, our compliance record is public, and our pricing contains no surprises."</p></div>
+      <div class="card"><h4>To colleagues</h4><p style="font-family:var(--serif);font-style:italic;font-size:1.05rem">"You represent the highest standard in Danish care. Dress, speak and document accordingly."</p></div>
+    </div>
+
+    <h3>Writing style — the five rules</h3>
+    <ol>
+      <li><strong>Write to one person.</strong> Not "clients receive", but "you receive". Not "relatives can", but "your family can".</li>
+      <li><strong>Short sentences carry trust.</strong> If a sentence needs a second breath, it needs an edit.</li>
+      <li><strong>Plain words for hard subjects.</strong> We say dementia, palliative care, end of life — clearly, gently, without euphemism. Euphemism signals discomfort; clarity signals experience.</li>
+      <li><strong>Never sell fear.</strong> We speak to the solution, never dramatise the problem.</li>
+      <li><strong>Danish dignity in every language.</strong> British English for corporate and international; Danish for clients, care documentation and municipal work. The strapline stays Danish everywhere, without exception.</li>
+    </ol>
+
+    <div class="do-dont">
+      <div class="box do">
+        <h5>Approved master messages</h5>
+        <ul>
+          <li>Denmark's highest standard of care, at home.</li>
+          <li>The same faces. The agreed times. The promised standard.</li>
+          <li>Care planned like medicine. Delivered like family. <em>(private audiences)</em></li>
+          <li>Premium standards. Procurement-grade transparency. <em>(municipal)</em></li>
+          <li>Your home. Your routine. Your life. We fit around you.</li>
+          <li>Work where the standard matches your pride. <em>(recruitment)</em></li>
+        </ul>
+      </div>
+      <div class="box dont">
+        <h5>Words never to use</h5>
+        <ul>
+          <li>world-class · solutions · passion / passionate</li>
+          <li>journey <em>(metaphorical)</em> · loved ones · holistic</li>
+          <li>wellness journey · empowerment · synergy</li>
+          <li>Superlatives without evidence ("best in Denmark")</li>
+          <li>Fear-based messaging ("Don't let your parents suffer alone")</li>
+          <li>Price-led messaging ("Affordable care" — we do not compete on price)</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="callout doctrine">
+      <span class="tag">The Integrity Ledger</span>
+      <p>Clinical and human integrity hold structural veto power over commercial decisions. Where a message would sell more but honour the person less, the person wins. This is not a preference; it is the brand's constitution.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="s2">
+  <div class="section-inner">
+    <div class="sect-head">
+      <div class="eyebrow">Section 02 <span class="interpunct" style="margin-left:.6em">·</span> The Mark</div>
+      <h2>Logo System</h2>
+      <p class="lede">The mark is a heraldic achievement, treated with heraldic discipline. It is never redrawn, re-proportioned, re-coloured or ornamented beyond the renditions approved here.</p>
+    </div>
+
+    <div class="two-col">
+      <div style="background:var(--pc-navy);border-radius:2px;padding:3rem;display:flex;justify-content:center;align-items:center">
+        <svg viewBox="0 0 200 240" width="210" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Premium Care crowned shield">
+  <!-- Crown -->
+  <g fill="var(--pc-gold)">
+    <circle cx="100" cy="10" r="3.4"/>
+    <path d="M100 15 L108 30 L92 30 Z" opacity="0"/>
+    <path d="M68 52 L72 30 L84 44 L100 26 L116 44 L128 30 L132 52 Z"/>
+    <rect x="66" y="52" width="68" height="7" rx="2"/>
+    <circle cx="72" cy="30" r="3"/><circle cx="128" cy="30" r="3"/><circle cx="100" cy="24" r="3"/>
+  </g>
+  <!-- Shield outline -->
+  <path d="M50 66 H150 V150 Q150 196 100 214 Q50 196 50 150 Z" fill="var(--pc-gold)" stroke="none" stroke-width="5"/>
+  <!-- Shield field (red, full colour only) -->
+  <path d="M55 71 H145 V149 Q145 191 100 208 Q55 191 55 149 Z" fill="var(--pc-red)"/>
+  <!-- Dannebrog cross (white) -->
+  <g fill="var(--pc-porcelain)">
+    <rect x="90" y="71" width="14" height="137" />
+    <rect x="55" y="120" width="90" height="14" />
+  </g>
+  <!-- Two figures (gold silhouettes, equal height, facing) -->
+  <g fill="var(--pc-gold)">
+    <!-- left figure (gentleman + cane) -->
+    <circle cx="75" cy="104" r="8"/>
+    <path d="M67 116 q8 -5 16 0 l3 42 q-11 4 -22 0 Z"/>
+    <rect x="84" y="128" width="2.4" height="52" rx="1"/>
+    <!-- right figure (lady) -->
+    <circle cx="123" cy="104" r="8"/>
+    <path d="M114 116 q9 -5 18 0 l4 46 q-13 4 -26 0 Z"/>
+    <rect x="112" y="128" width="2.4" height="52" rx="1"/>
+  </g>
+</svg>
+      </div>
+      <div>
+        <h3>Anatomy &amp; symbolism</h3>
+        <table class="tbl">
+          <tr><th>Element</th><th>Meaning</th></tr>
+          <tr><td><strong>The Crown</strong></td><td>Royal Danish heritage and the standard of service the institution holds itself to. The single star signifies one uncompromising standard.</td></tr>
+          <tr><td><strong>The Shield</strong></td><td>Protection and guardianship. The shield frames every promise: the client is defended — their dignity, their routines, their home.</td></tr>
+          <tr><td><strong>The Dannebrog</strong></td><td>The world's oldest national flag, in heritage red and ivory. Unmistakably Danish: local carers, Danish regulatory discipline, Danish values.</td></tr>
+          <tr><td><strong>The Two Figures</strong></td><td>An elderly gentleman and lady, upright and facing one another — companionship, not dependency. Cast in gold: the people served are the treasure.</td></tr>
+          <tr><td><strong>The Wordmark</strong></td><td>Inscriptional Roman capitals in gold serif, with the Danish strapline <em>Omsorg · Tryghed · Hver Dag</em>.</td></tr>
+        </table>
+      </div>
+    </div>
+
+    <h3>The variation system</h3>
+    <p>All lockups derive from a single approved master vector. Origination is reproduction, not redesign. The deployment hierarchy is strict: <span class="mono">VT → HZ → SH → CR / MG → WM</span>. Each step down assumes the step above is present elsewhere in the same context.</p>
+    <table class="tbl">
+      <tr><th>Code</th><th>Asset</th><th>Composition</th><th>When to use</th></tr>
+      <tr><td class="mono">VT</td><td><strong>Primary — Vertical</strong></td><td>Crowned shield above wordmark above strapline</td><td>The reference mark. Default for stationery, tender covers, presentations, signage.</td></tr>
+      <tr><td class="mono">HZ</td><td><strong>Secondary — Horizontal</strong></td><td>Shield left; wordmark + strapline right</td><td>Co-primary. Wide formats: web header, vehicle sides, email signature, banners.</td></tr>
+      <tr><td class="mono">SH</td><td><strong>Shield Only</strong></td><td>Crowned shield, no type</td><td>Supporting mark where the full logo is established: avatar, app icon, wayfinding.</td></tr>
+      <tr><td class="mono">WM</td><td><strong>Wordmark Only</strong></td><td>PREMIUM CARE + strapline</td><td>Restricted. Extremely narrow formats. Custodian approval each use.</td></tr>
+      <tr><td class="mono">MG</td><td><strong>Monogram</strong></td><td>Interlocked P C beneath crown</td><td>Premium accent: certificates, watermarks, small luxury items ≥ 12 mm.</td></tr>
+      <tr><td class="mono">CR</td><td><strong>Crown Icon</strong></td><td>Crown alone</td><td>Micro-format: favicon, embroidery accents, foil details ≥ 5 mm.</td></tr>
+    </table>
+
+    <h3>Colourways</h3>
+    <div class="grid g4" style="margin:1.4em 0">
+      <div class="swatch"><div class="chip" style="background:var(--pc-navy);justify-content:center;align-items:center"><svg viewBox="0 0 200 240" width="90" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Premium Care crowned shield">
+  <!-- Crown -->
+  <g fill="var(--pc-gold)">
+    <circle cx="100" cy="10" r="3.4"/>
+    <path d="M100 15 L108 30 L92 30 Z" opacity="0"/>
+    <path d="M68 52 L72 30 L84 44 L100 26 L116 44 L128 30 L132 52 Z"/>
+    <rect x="66" y="52" width="68" height="7" rx="2"/>
+    <circle cx="72" cy="30" r="3"/><circle cx="128" cy="30" r="3"/><circle cx="100" cy="24" r="3"/>
+  </g>
+  <!-- Shield outline -->
+  <path d="M50 66 H150 V150 Q150 196 100 214 Q50 196 50 150 Z" fill="var(--pc-gold)" stroke="none" stroke-width="5"/>
+  <!-- Shield field (red, full colour only) -->
+  <path d="M55 71 H145 V149 Q145 191 100 208 Q55 191 55 149 Z" fill="var(--pc-red)"/>
+  <!-- Dannebrog cross (white) -->
+  <g fill="var(--pc-porcelain)">
+    <rect x="90" y="71" width="14" height="137" />
+    <rect x="55" y="120" width="90" height="14" />
+  </g>
+  <!-- Two figures (gold silhouettes, equal height, facing) -->
+  <g fill="var(--pc-gold)">
+    <!-- left figure (gentleman + cane) -->
+    <circle cx="75" cy="104" r="8"/>
+    <path d="M67 116 q8 -5 16 0 l3 42 q-11 4 -22 0 Z"/>
+    <rect x="84" y="128" width="2.4" height="52" rx="1"/>
+    <!-- right figure (lady) -->
+    <circle cx="123" cy="104" r="8"/>
+    <path d="M114 116 q9 -5 18 0 l4 46 q-13 4 -26 0 Z"/>
+    <rect x="112" y="128" width="2.4" height="52" rx="1"/>
+  </g>
+</svg></div><div class="body"><span class="name" style="font-size:.95rem">FC · Full Colour</span><span class="meta">Default. On navy or porcelain grounds.</span></div></div>
+      <div class="swatch"><div class="chip" style="background:var(--pc-navy);justify-content:center;align-items:center"><svg viewBox="0 0 200 240" width="90" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Premium Care crowned shield">
+  <!-- Crown -->
+  <g fill="var(--pc-gold)">
+    <circle cx="100" cy="10" r="3.4"/>
+    <path d="M100 15 L108 30 L92 30 Z" opacity="0"/>
+    <path d="M68 52 L72 30 L84 44 L100 26 L116 44 L128 30 L132 52 Z"/>
+    <rect x="66" y="52" width="68" height="7" rx="2"/>
+    <circle cx="72" cy="30" r="3"/><circle cx="128" cy="30" r="3"/><circle cx="100" cy="24" r="3"/>
+  </g>
+  <!-- Shield outline -->
+  <path d="M50 66 H150 V150 Q150 196 100 214 Q50 196 50 150 Z" fill="none" stroke="var(--pc-gold)" stroke-width="5"/>
+  <!-- Shield field (red, full colour only) -->
+  <path d="M55 71 H145 V149 Q145 191 100 208 Q55 191 55 149 Z" fill="none"/>
+  <!-- Dannebrog cross (white) -->
+  <g fill="var(--pc-gold)">
+    <rect x="90" y="71" width="14" height="137" />
+    <rect x="55" y="120" width="90" height="14" />
+  </g>
+  <!-- Two figures (gold silhouettes, equal height, facing) -->
+  <g fill="var(--pc-gold)">
+    <!-- left figure (gentleman + cane) -->
+    <circle cx="75" cy="104" r="8"/>
+    <path d="M67 116 q8 -5 16 0 l3 42 q-11 4 -22 0 Z"/>
+    <rect x="84" y="128" width="2.4" height="52" rx="1"/>
+    <!-- right figure (lady) -->
+    <circle cx="123" cy="104" r="8"/>
+    <path d="M114 116 q9 -5 18 0 l4 46 q-13 4 -26 0 Z"/>
+    <rect x="112" y="128" width="2.4" height="52" rx="1"/>
+  </g>
+</svg></div><div class="body"><span class="name" style="font-size:.95rem">GD · Gold</span><span class="meta">Navy grounds only. Never on white.</span></div></div>
+      <div class="swatch"><div class="chip" style="background:var(--pc-navy);justify-content:center;align-items:center"><svg viewBox="0 0 200 240" width="90" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Premium Care crowned shield">
+  <!-- Crown -->
+  <g fill="var(--pc-porcelain)">
+    <circle cx="100" cy="10" r="3.4"/>
+    <path d="M100 15 L108 30 L92 30 Z" opacity="0"/>
+    <path d="M68 52 L72 30 L84 44 L100 26 L116 44 L128 30 L132 52 Z"/>
+    <rect x="66" y="52" width="68" height="7" rx="2"/>
+    <circle cx="72" cy="30" r="3"/><circle cx="128" cy="30" r="3"/><circle cx="100" cy="24" r="3"/>
+  </g>
+  <!-- Shield outline -->
+  <path d="M50 66 H150 V150 Q150 196 100 214 Q50 196 50 150 Z" fill="none" stroke="var(--pc-porcelain)" stroke-width="5"/>
+  <!-- Shield field (red, full colour only) -->
+  <path d="M55 71 H145 V149 Q145 191 100 208 Q55 191 55 149 Z" fill="none"/>
+  <!-- Dannebrog cross (white) -->
+  <g fill="var(--pc-porcelain)">
+    <rect x="90" y="71" width="14" height="137" />
+    <rect x="55" y="120" width="90" height="14" />
+  </g>
+  <!-- Two figures (gold silhouettes, equal height, facing) -->
+  <g fill="var(--pc-porcelain)">
+    <!-- left figure (gentleman + cane) -->
+    <circle cx="75" cy="104" r="8"/>
+    <path d="M67 116 q8 -5 16 0 l3 42 q-11 4 -22 0 Z"/>
+    <rect x="84" y="128" width="2.4" height="52" rx="1"/>
+    <!-- right figure (lady) -->
+    <circle cx="123" cy="104" r="8"/>
+    <path d="M114 116 q9 -5 18 0 l4 46 q-13 4 -26 0 Z"/>
+    <rect x="112" y="128" width="2.4" height="52" rx="1"/>
+  </g>
+</svg></div><div class="body"><span class="name" style="font-size:.95rem">WH · White</span><span class="meta">Photography &amp; dark grounds.</span></div></div>
+      <div class="swatch"><div class="chip" style="background:var(--pc-porcelain);justify-content:center;align-items:center"><svg viewBox="0 0 200 240" width="90" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Premium Care crowned shield">
+  <!-- Crown -->
+  <g fill="var(--pc-navy)">
+    <circle cx="100" cy="10" r="3.4"/>
+    <path d="M100 15 L108 30 L92 30 Z" opacity="0"/>
+    <path d="M68 52 L72 30 L84 44 L100 26 L116 44 L128 30 L132 52 Z"/>
+    <rect x="66" y="52" width="68" height="7" rx="2"/>
+    <circle cx="72" cy="30" r="3"/><circle cx="128" cy="30" r="3"/><circle cx="100" cy="24" r="3"/>
+  </g>
+  <!-- Shield outline -->
+  <path d="M50 66 H150 V150 Q150 196 100 214 Q50 196 50 150 Z" fill="none" stroke="var(--pc-navy)" stroke-width="5"/>
+  <!-- Shield field (red, full colour only) -->
+  <path d="M55 71 H145 V149 Q145 191 100 208 Q55 191 55 149 Z" fill="none"/>
+  <!-- Dannebrog cross (white) -->
+  <g fill="var(--pc-navy)">
+    <rect x="90" y="71" width="14" height="137" />
+    <rect x="55" y="120" width="90" height="14" />
+  </g>
+  <!-- Two figures (gold silhouettes, equal height, facing) -->
+  <g fill="var(--pc-navy)">
+    <!-- left figure (gentleman + cane) -->
+    <circle cx="75" cy="104" r="8"/>
+    <path d="M67 116 q8 -5 16 0 l3 42 q-11 4 -22 0 Z"/>
+    <rect x="84" y="128" width="2.4" height="52" rx="1"/>
+    <!-- right figure (lady) -->
+    <circle cx="123" cy="104" r="8"/>
+    <path d="M114 116 q9 -5 18 0 l4 46 q-13 4 -26 0 Z"/>
+    <rect x="112" y="128" width="2.4" height="52" rx="1"/>
+  </g>
+</svg></div><div class="body"><span class="name" style="font-size:.95rem">NV · Navy / BK</span><span class="meta">Light grounds &amp; mono reproduction.</span></div></div>
+    </div>
+    <div class="callout doctrine"><span class="tag">Colourway doctrine</span><p>FC never on navy where the shield loses contrast · GD never on white (2.9:1 — fails) · BK reserved for mono / legal reproduction only · 1C by approval for co-branded municipal contexts.</p></div>
+
+    <h3>Construction &amp; clear space</h3>
+    <p>The construction unit is <strong>X = the height of the crown</strong>. All proportions, clear space and placement are expressed in X, keeping every rule scale-independent and verifiable with a ruler.</p>
+    <div class="two-col">
+      <div>
+        <h4>Clear space</h4>
+        <p><strong>X on all four sides, all lockups, no exceptions.</strong> Doubled to 2X on transparent substrates (glass, vehicle windows) and cluttered photographic grounds. Nothing enters clear space: no type, rules, icons, folds, seams, stitching or trim edges.</p>
+        <h4>Optical corrections — never "fix" them</h4>
+        <ul>
+          <li>Shield side walls carry a 1.5° entasis (barely perceptible swell) — flattening makes the shield look pinched.</li>
+          <li>The cross bar sits 2% above geometric centre — centring reads as drooping.</li>
+          <li>Wordmark letterspacing is optically kerned in the master; type may never be re-set from fonts.</li>
+        </ul>
+      </div>
+      <div>
+        <h4>Minimum sizes</h4>
+        <table class="tbl">
+          <tr><th>Mark</th><th>Print</th><th>Digital</th><th>Embroidery</th></tr>
+          <tr><td class="mono">VT (strapline)</td><td>30 mm</td><td>110 px</td><td>80 mm</td></tr>
+          <tr><td class="mono">VT (no strapline)</td><td>25 mm</td><td>90 px</td><td>60 mm</td></tr>
+          <tr><td class="mono">HZ</td><td>40 mm</td><td>120 px</td><td>100 mm</td></tr>
+          <tr><td class="mono">SH</td><td>8 mm</td><td>24 px</td><td>25 mm</td></tr>
+          <tr><td class="mono">CR</td><td>5 mm</td><td>16 px</td><td>15 mm</td></tr>
+        </table>
+        <p style="font-size:.85rem;color:var(--pc-navy-70)">Below VT minimum, the strapline drops automatically. Below absolute minimum, the mark is not used.</p>
+      </div>
+    </div>
+
+    <h3>Scaling &amp; placement rules</h3>
+    <ol>
+      <li>Proportional scaling only. Non-uniform scaling, rotation, skew or perspective is prohibited.</li>
+      <li>Vector masters scale infinitely upward; downward, the minimums above are hard floors.</li>
+      <li>At 16–48 px, only pixel-fitted micro-masters (FV, small SH) may be used. Scaling print vectors to favicon sizes produces mush; mush violates Faglighed.</li>
+      <li>Large-format (&gt; 2 m): scale from vector, then review the entasis and stroke weights on proof plot before fabrication.</li>
+      <li>On photography, place in a verified 4.5:1 local-contrast zone — bottom-left or bottom-right, over consistent tone (sky, wall, floor, uniform). Never over faces, hands, or complex patterns.</li>
+    </ol>
+
+    <h3>Incorrect usage — twelve prohibitions</h3>
+    <div class="do-dont">
+      <div class="box dont">
+        <h5>Never do this</h5>
+        <ul>
+          <li>Stretch, condense or distort</li>
+          <li>Recolour outside approved colourways</li>
+          <li>Rotate or tilt</li>
+          <li>Add shadows, glows or effects</li>
+          <li>Place full colour on red or busy grounds</li>
+          <li>Crowd the clear space or add typography</li>
+        </ul>
+      </div>
+      <div class="box dont">
+        <h5>Never do this either</h5>
+        <ul>
+          <li>Redraw or re-proportion any element</li>
+          <li>Outline the mark or apply gradients</li>
+          <li>Place the emblem inside other shapes</li>
+          <li>Animate individual elements separately</li>
+          <li>Reconstruct lockups at non-approved spacing</li>
+          <li>Use below the minimum size</li>
+        </ul>
+      </div>
+    </div>
+
+    <h3>Print &amp; digital specifications</h3>
+    <table class="tbl">
+      <tr><th>Context</th><th>Format</th><th>Notes</th></tr>
+      <tr><td>All print artwork</td><td class="mono">PDF/X-4</td><td>CMYK + spot; vector; one colourway per file; 3 mm bleed</td></tr>
+      <tr><td>Web / apps</td><td class="mono">SVG</td><td>sRGB; header HZ 40 px desktop / 32 px mobile; never in email</td></tr>
+      <tr><td>Email, Office, social</td><td class="mono">PNG @1×/@2×</td><td>Transparent; never used for print</td></tr>
+      <tr><td>Favicon</td><td class="mono">ICO 16/32/48</td><td>CR pixel-fitted micro-master; never a scaled print vector</td></tr>
+      <tr><td>Master artwork</td><td class="mono">AI</td><td>Custodian repository only; never sent to end clients</td></tr>
+    </table>
+    <div class="callout"><span class="tag">Source-of-truth doctrine</span><p>Vector is the source of truth. Every raster file is an export, regenerated from the master — never opened and edited. A file without a version number is unreleased by definition.</p></div>
+  </div>
+</section>
+
+<section class="section" id="s3">
+  <div class="section-inner">
+    <div class="sect-head">
+      <div class="eyebrow">Section 03 <span class="interpunct" style="margin-left:.6em">·</span> Colour</div>
+      <h2>Colour System</h2>
+      <p class="lede">Four colours carry the entire institution. Navy is our authority, gold our craft, red our heritage, porcelain our air. Discipline in proportion is what makes the palette read as premium.</p>
+    </div>
+
+    <h3>Primary palette</h3>
+    <div class="grid g4" style="margin:1.4em 0">
+      <div class="swatch">
+      <div class="chip" style="background:#041E42;color:#FAFAF7"><span style="font-family:var(--mono);font-size:.72rem;letter-spacing:.05em">#041E42</span></div>
+      <div class="body">
+        <span class="name">Premium Navy</span>
+        <span class="meta"><b>Role</b> Ground, authority<br><b>CMYK</b> 100·85·35·60<br><b>RGB</b> 4·30·66<br><b>Pantone</b> 282 C<br><b>RAL</b> 5011 Steel Blue</span>
+      </div>
+    </div>
+      <div class="swatch">
+      <div class="chip" style="background:#B9A26A;color:#041E42"><span style="font-family:var(--mono);font-size:.72rem;letter-spacing:.05em">#B9A26A</span></div>
+      <div class="body">
+        <span class="name">Champagne Gold</span>
+        <span class="meta"><b>Role</b> Accent, craft (≤ 8%)<br><b>CMYK</b> 25·30·65·10<br><b>RGB</b> 185·162·106<br><b>Pantone</b> 871 / 4515 C<br><b>RAL</b> 1036 Pearl Gold</span>
+      </div>
+    </div>
+      <div class="swatch">
+      <div class="chip" style="background:#C8102E;color:#FAFAF7"><span style="font-family:var(--mono);font-size:.72rem;letter-spacing:.05em">#C8102E</span></div>
+      <div class="body">
+        <span class="name">Dannebrog Red</span>
+        <span class="meta"><b>Role</b> Shield only<br><b>CMYK</b> 0·100·80·5<br><b>RGB</b> 200·16·46<br><b>Pantone</b> 186 C<br><b>RAL</b> 3027 Raspberry</span>
+      </div>
+    </div>
+      <div class="swatch">
+      <div class="chip" style="background:#FAFAF7;color:#041E42"><span style="font-family:var(--mono);font-size:.72rem;letter-spacing:.05em">#FAFAF7</span></div>
+      <div class="body">
+        <span class="name">Porcelain White</span>
+        <span class="meta"><b>Role</b> Air, clarity<br><b>CMYK</b> 0·0·2·0<br><b>RGB</b> 250·250·247<br><b>Pantone</b> —<br><b>RAL</b> 9016 Traffic White</span>
+      </div>
+    </div>
+    </div>
+    <div class="callout doctrine"><span class="tag">Two production truths</span><p><strong>Navy is our black</strong> — it never builds as rich black; in mono contexts, 100 K artwork replaces it. <strong>Gold is the volatile colour</strong> — litho, metallic, foil, thread and vinyl are five different materials approved against one printed master swatch card. No supplier ever matches gold from a screen.</p></div>
+
+    <h3>The proportion doctrine — 60 / 30 / 8 / 2</h3>
+    <p>The palette is governed by proportion, not permission. Every layout obeys the same distribution:</p>
+    <div style="display:flex;border-radius:2px;overflow:hidden;margin:1.4em 0;border:1px solid var(--pc-navy-15);font-family:var(--mono);font-size:.72rem;letter-spacing:.05em">
+      <div style="flex:60;background:var(--pc-porcelain);color:var(--pc-navy);padding:1.4em .8em;text-align:center">60%<br>Porcelain</div>
+      <div style="flex:30;background:var(--pc-navy);color:var(--pc-porcelain);padding:1.4em .8em;text-align:center">30%<br>Navy</div>
+      <div style="flex:8;background:var(--pc-gold);color:var(--pc-navy);padding:1.4em .4em;text-align:center;font-size:.62rem">8%<br>Gold</div>
+      <div style="flex:2;background:var(--pc-red);color:#fff;padding:1.4em .3em;text-align:center;font-size:.58rem">2%<br>Red</div>
+    </div>
+    <p style="font-size:.9rem"><strong>Gold is seasoning, not sauce.</strong> One gold accent per page maximum in most contexts. Red appears only within the shield — never as a page colour, background, or accent.</p>
+
+    <h3>Secondary &amp; support palette</h3>
+    <div class="grid g3" style="margin:1.4em 0">
+      <div class="swatch">
+      <div class="chip" style="background:#7E8E7C;color:#FAFAF7"><span style="font-family:var(--mono);font-size:.72rem;letter-spacing:.05em">#7E8E7C</span></div>
+      <div class="body">
+        <span class="name">Sage</span>
+        <span class="meta"><b>Role</b> Illustration, calm data<br><b>CMYK</b> —<br><b>RGB</b> 126·142·124<br><b>Pantone</b> —</span>
+      </div>
+    </div>
+      <div class="swatch">
+      <div class="chip" style="background:#AFC3D1;color:#041E42"><span style="font-family:var(--mono);font-size:.72rem;letter-spacing:.05em">#AFC3D1</span></div>
+      <div class="body">
+        <span class="name">Sky</span>
+        <span class="meta"><b>Role</b> Illustration, backgrounds<br><b>CMYK</b> —<br><b>RGB</b> 175·195·209<br><b>Pantone</b> —</span>
+      </div>
+    </div>
+      <div class="swatch">
+      <div class="chip" style="background:#8C877D;color:#FAFAF7"><span style="font-family:var(--mono);font-size:.72rem;letter-spacing:.05em">#8C877D</span></div>
+      <div class="body">
+        <span class="name">Warm Grey</span>
+        <span class="meta"><b>Role</b> Captions, dividers<br><b>CMYK</b> —<br><b>RGB</b> 140·135·125<br><b>Pantone</b> —</span>
+      </div>
+    </div>
+    </div>
+
+    <h3>Neutral navy tonal scale</h3>
+    <div style="display:flex;border-radius:2px;overflow:hidden;margin:1.2em 0;border:1px solid var(--pc-navy-15)">
+      <div style="flex:1;background:#041E42;height:64px"></div>
+      <div style="flex:1;background:#1B3352;height:64px"></div>
+      <div style="flex:1;background:#4A5D77;height:64px"></div>
+      <div style="flex:1;background:#9BA7B7;height:64px"></div>
+      <div style="flex:1;background:#DBE0E7;height:64px"></div>
+      <div style="flex:1;background:#EFF2F5;height:64px"></div>
+    </div>
+    <p style="font-size:.85rem;color:var(--pc-navy-70);font-family:var(--mono)">#041E42 · #1B3352 · #4A5D77 · #9BA7B7 · #DBE0E7 · #EFF2F5 — one hue, tinted with Porcelain. Charts and UI states draw from this scale plus a single gold accent.</p>
+
+    <h3>Functional colours</h3>
+    <div class="grid g3">
+      <div class="card"><span class="num" style="color:#3E6B54">SUCCESS</span><h4 style="color:#3E6B54">Sage-green #3E6B54</h4><p>Confirmation, completed states. Never celebratory — quiet and clinical.</p></div>
+      <div class="card"><span class="num" style="color:#B98A3C">WARNING</span><h4 style="color:#B98A3C">Amber #B98A3C</h4><p>Attention required. A muted amber, never a bright alarm.</p></div>
+      <div class="card"><span class="num" style="color:#C8102E">ERROR</span><h4 style="color:#C8102E">Dannebrog Red #C8102E</h4><p>Errors only — the one context outside the shield where red is permitted, and always paired with a text label.</p></div>
+    </div>
+
+    <h3>Accessibility &amp; contrast matrix (WCAG 2.2)</h3>
+    <table class="tbl">
+      <tr><th>Foreground</th><th>Background</th><th>Ratio</th><th>Verdict</th></tr>
+      <tr><td>Navy #041E42</td><td>Porcelain #FAFAF7</td><td class="mono">14.9:1</td><td>✓ AAA — body text</td></tr>
+      <tr><td>Porcelain #FAFAF7</td><td>Navy #041E42</td><td class="mono">14.9:1</td><td>✓ AAA — reversed text</td></tr>
+      <tr><td>Gold #B9A26A</td><td>Navy #041E42</td><td class="mono">5.4:1</td><td>✓ Large text &amp; rules only</td></tr>
+      <tr><td>Gold #B9A26A</td><td>White / Porcelain</td><td class="mono">2.9:1</td><td>✗ Prohibited for text — keylines ≥ 0.5 pt only</td></tr>
+    </table>
+    <div class="callout"><span class="tag">Colour is never the only signal</span><p>No information is conveyed by colour alone. Every gold-coded data point carries a label. Body text ≥ 7:1 target; large text/furniture ≥ 4.5:1; UI components ≥ 3:1.</p></div>
+
+    <h3>Colour psychology — why these four</h3>
+    <div class="grid g2">
+      <div class="card"><h4>Navy</h4><p>The colour of institutions that endure — law, medicine, the state. It signals authority without aggression, seriousness without coldness. It is our black precisely because black would read as fashion, not trust.</p></div>
+      <div class="card"><h4>Gold</h4><p>Craft and worth, used with restraint. Gold in quantity is ostentation; gold as a hairline is a jeweller's confidence. It marks the people we serve as the treasure of the institution.</p></div>
+      <div class="card"><h4>Red</h4><p>Denmark itself — the Dannebrog, the oldest flag in continuous use. Contained within the shield, it is heritage, not alarm.</p></div>
+      <div class="card"><h4>Porcelain</h4><p>Not white — porcelain. A warm, near-white with the faintest cream, the colour of good paper and clean linen. It gives every element room to breathe: Nærvær, made visible.</p></div>
+    </div>
+
+    <h3>Web tokens</h3>
+    <pre><code>:root{
+  --pc-navy: #041E42;
+  --pc-gold: #B9A26A;
+  --pc-red: #C8102E;
+  --pc-porcelain: #FAFAF7;
+}
+/* Never use raw hex in CSS — always reference the variable.
+   Navy is the dark background; Porcelain is the light text.
+   The brand IS the dark mode — no separate dark palette. */</code></pre>
+  </div>
+</section>
+
+<section class="section" id="s4">
+  <div class="section-inner">
+    <div class="sect-head">
+      <div class="eyebrow">Section 04 <span class="interpunct" style="margin-left:.6em">·</span> Typography</div>
+      <h2>Type System</h2>
+      <p class="lede">Three voices, one system. The serif speaks with heritage, the sans works without fuss, the mono renders data with clinical precision. Together they are the brand's speaking voice on the page.</p>
+    </div>
+
+    <h3>The three typefaces</h3>
+    <div class="grid g3">
+      <div class="card mark">
+        <span class="num">VOICE</span>
+        <div style="font-family:var(--serif);font-size:2.6rem;line-height:1;margin:.3em 0">Aa</div>
+        <h4>Serif — Berlingske Serif</h4>
+        <p>Headlines, pull-quotes, the wordmark's spirit. Danish heritage in letterform. Used with restraint; never for long body text.</p>
+        <p style="font-size:.8rem;color:var(--pc-navy-70)"><strong>Screen / web substitute:</strong> Cormorant Garamond. <strong>Office fallback:</strong> Georgia → Times New Roman.</p>
+      </div>
+      <div class="card mark">
+        <span class="num">WORK</span>
+        <div style="font-family:var(--sans);font-size:2.6rem;line-height:1;margin:.3em 0;font-weight:400">Aa</div>
+        <h4>Sans — Berlingske Sans</h4>
+        <p>Body text, UI, labels, navigation — the largest text volume. Humanist warmth at small sizes; the brand's working voice.</p>
+        <p style="font-size:.8rem;color:var(--pc-navy-70)"><strong>Screen / web substitute:</strong> Jost. <strong>Office fallback:</strong> Verdana → Arial.</p>
+      </div>
+      <div class="card mark">
+        <span class="num">DATA</span>
+        <div style="font-family:var(--mono);font-size:2.4rem;line-height:1;margin:.3em 0">Aa</div>
+        <h4>Mono — Berlingske Mono</h4>
+        <p>Numerals, tables, code, specifications, file names. Clinical precision; every figure aligns.</p>
+        <p style="font-size:.8rem;color:var(--pc-navy-70)"><strong>Screen / web substitute:</strong> IBM Plex Mono. <strong>Office fallback:</strong> Courier New → Consolas.</p>
+      </div>
+    </div>
+
+    <div class="callout doctrine"><span class="tag">Why the fallback matters</span><p>A municipal caseworker opening a Word document without brand fonts must still receive a dignified, legible page. Georgia and Verdana were designed for screen legibility at small sizes — the best available substitutes for Berlingske's humanist warmth. The fallback stack is non-negotiable for tenders and Office templates.</p></div>
+
+    <h3>The hierarchy</h3>
+    <div style="border:1px solid var(--pc-navy-15);border-radius:2px;padding:2rem 2.2rem;background:var(--pc-paper);margin:1.4em 0">
+      <div style="font-family:var(--serif);font-size:3.4rem;line-height:1.05;color:var(--pc-navy)">Display / H1</div>
+      <p style="font-size:.75rem;color:var(--pc-navy-70);font-family:var(--mono);margin-bottom:1.4em">Serif · 48–74 px · weight 500 · tracking −0.5%</p>
+      <div style="font-family:var(--serif);font-size:2.1rem;color:var(--pc-navy)">Headline / H2</div>
+      <p style="font-size:.75rem;color:var(--pc-navy-70);font-family:var(--mono);margin-bottom:1.4em">Serif · 32–52 px · weight 500</p>
+      <div style="font-family:var(--serif);font-size:1.5rem;color:var(--pc-navy)">Sub-headline / H3</div>
+      <p style="font-size:.75rem;color:var(--pc-navy-70);font-family:var(--mono);margin-bottom:1.4em">Serif · 22–30 px · weight 500</p>
+      <div style="font-family:var(--sans);font-size:1rem;color:#233448;max-width:60ch">Body — Berlingske Sans, 16 px, weight 400, line-height 1.65. Left-aligned, ragged-right throughout. This is where the brand does most of its speaking, and it must remain effortless to read across every age of eye.</div>
+      <p style="font-size:.75rem;color:var(--pc-navy-70);font-family:var(--mono);margin:.8em 0 1.4em">Sans · 16 px · weight 400 · line-height 1.65</p>
+      <div style="font-family:var(--sans);font-size:.72rem;letter-spacing:.2em;text-transform:uppercase;color:var(--pc-gold-deep)">Eyebrow / Label · Sans 500 · tracked 0.2em · caps</div>
+      <p style="font-size:.75rem;color:var(--pc-navy-70);font-family:var(--mono);margin:.8em 0 1.4em">Sans · 11–13 px · weight 500 · tracking 0.2em</p>
+      <div style="font-family:var(--serif);font-style:italic;font-size:1.5rem;color:var(--pc-navy);border-left:2px solid var(--pc-gold);padding-left:1em">Pull quote — Serif Light Italic, generous, gold keyline.</div>
+      <p style="font-size:.75rem;color:var(--pc-navy-70);font-family:var(--mono);margin-top:.8em">Serif italic · 24–32 px · gold left rule</p>
+    </div>
+
+    <h3>Type scale &amp; spacing</h3>
+    <table class="tbl">
+      <tr><th>Role</th><th>Face</th><th>Size (px)</th><th>Weight</th><th>Line-height</th><th>Tracking</th></tr>
+      <tr><td>Display</td><td>Serif</td><td class="mono">48–74</td><td class="mono">500</td><td class="mono">1.05</td><td class="mono">−0.5%</td></tr>
+      <tr><td>H2</td><td>Serif</td><td class="mono">32–52</td><td class="mono">500</td><td class="mono">1.08</td><td class="mono">−0.5%</td></tr>
+      <tr><td>H3</td><td>Serif</td><td class="mono">22–30</td><td class="mono">500</td><td class="mono">1.15</td><td class="mono">0</td></tr>
+      <tr><td>Body</td><td>Sans</td><td class="mono">16</td><td class="mono">400</td><td class="mono">1.65</td><td class="mono">+0.5%</td></tr>
+      <tr><td>Caption</td><td>Sans</td><td class="mono">13</td><td class="mono">400</td><td class="mono">1.5</td><td class="mono">+1%</td></tr>
+      <tr><td>Eyebrow</td><td>Sans</td><td class="mono">11–13</td><td class="mono">500</td><td class="mono">1.4</td><td class="mono">+20% caps</td></tr>
+      <tr><td>Statistic</td><td>Serif / Mono</td><td class="mono">40–96</td><td class="mono">500</td><td class="mono">1</td><td class="mono">0</td></tr>
+      <tr><td>Button</td><td>Sans</td><td class="mono">14</td><td class="mono">500</td><td class="mono">1</td><td class="mono">+2% caps</td></tr>
+      <tr><td>Table / data</td><td>Mono</td><td class="mono">13–14</td><td class="mono">400</td><td class="mono">1.5</td><td class="mono">0</td></tr>
+    </table>
+
+    <h3>Danish characters, numerals &amp; micro-rules</h3>
+    <div class="grid g2">
+      <div class="card">
+        <h4>Danish characters</h4>
+        <p style="font-family:var(--serif);font-size:2rem">æ ø å &nbsp; Æ Ø Å</p>
+        <p>Every typeface in the system must render æ, ø and å with full fidelity. A substitute font that mangles Danish diacritics is disqualified, however handsome its Latin set.</p>
+      </div>
+      <div class="card">
+        <h4>Numerals</h4>
+        <p>Old-style figures in running prose (they sit like lowercase and read as text); tabular lining figures in tables, invoices and financial data (they align in columns). Never mix the two in one context.</p>
+      </div>
+    </div>
+    <h4>Micro-typographic rules</h4>
+    <ul>
+      <li>The interpunct <span class="interpunct">·</span> is gold and set with a thin space either side — it is the brand's signature separator (as in the strapline).</li>
+      <li>Left-aligned, ragged-right throughout. Justified text is never used — it creates rivers and reads as bureaucratic.</li>
+      <li>One space after a full stop. Curly quotes and proper apostrophes always; straight quotes never.</li>
+      <li>En-dash for ranges, em-dash for parenthetical breaks, hyphen only for compounds.</li>
+      <li>Body 9.5 pt minimum in print; client-facing clinical materials 11 pt+.</li>
+    </ul>
+
+    <h3>Pairing in practice</h3>
+    <div style="background:var(--pc-navy);color:var(--pc-porcelain);border-radius:2px;padding:2.6rem;margin:1.4em 0">
+      <div style="font-family:var(--sans);font-size:.72rem;letter-spacing:.24em;text-transform:uppercase;color:var(--pc-gold)">Omsorg · Tryghed · Hver Dag</div>
+      <div style="font-family:var(--serif);font-size:2.4rem;line-height:1.15;margin:.6em 0;color:var(--pc-porcelain)">The same faces. The agreed times. The promised standard.</div>
+      <div style="font-family:var(--sans);color:#C7D0DC;max-width:52ch">Serif display over sans body over a gold-tracked eyebrow — the complete voice in three lines. This pairing, on navy, is the brand's most recognisable typographic signature.</div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="s5">
+  <div class="section-inner">
+    <div class="sect-head">
+      <div class="eyebrow">Section 05 <span class="interpunct" style="margin-left:.6em">·</span> Composition</div>
+      <h2>Layout System</h2>
+      <p class="lede">The page is composed the way a care visit is planned: with a clear structure, generous room, and nothing left to chance. Whitespace is not empty — it is Nærvær.</p>
+    </div>
+
+    <h3>The grid</h3>
+    <p>All Premium Care layouts sit on a <strong>12-column grid</strong> with a consistent baseline rhythm. Twelve divides cleanly into halves, thirds, quarters and sixths — every composition the institution needs, without improvised columns.</p>
+    <div style="display:grid;grid-template-columns:repeat(12,1fr);gap:8px;margin:1.4em 0;height:120px">
+    <div style="background:var(--pc-navy-06);border:1px solid var(--pc-navy-15);border-radius:2px"></div><div style="background:var(--pc-navy-06);border:1px solid var(--pc-navy-15);border-radius:2px"></div><div style="background:var(--pc-navy-06);border:1px solid var(--pc-navy-15);border-radius:2px"></div><div style="background:var(--pc-navy-06);border:1px solid var(--pc-navy-15);border-radius:2px"></div><div style="background:var(--pc-navy-06);border:1px solid var(--pc-navy-15);border-radius:2px"></div><div style="background:var(--pc-navy-06);border:1px solid var(--pc-navy-15);border-radius:2px"></div><div style="background:var(--pc-navy-06);border:1px solid var(--pc-navy-15);border-radius:2px"></div><div style="background:var(--pc-navy-06);border:1px solid var(--pc-navy-15);border-radius:2px"></div><div style="background:var(--pc-navy-06);border:1px solid var(--pc-navy-15);border-radius:2px"></div><div style="background:var(--pc-navy-06);border:1px solid var(--pc-navy-15);border-radius:2px"></div><div style="background:var(--pc-navy-06);border:1px solid var(--pc-navy-15);border-radius:2px"></div><div style="background:var(--pc-navy-06);border:1px solid var(--pc-navy-15);border-radius:2px"></div>
+    </div>
+    <table class="tbl">
+      <tr><th>Format</th><th>Columns</th><th>Margin</th><th>Gutter</th><th>Baseline</th></tr>
+      <tr><td>Print A4 portrait</td><td class="mono">12</td><td class="mono">20 mm</td><td class="mono">5 mm</td><td class="mono">12 pt</td></tr>
+      <tr><td>Editorial landscape A4</td><td class="mono">12</td><td class="mono">18 mm</td><td class="mono">6 mm</td><td class="mono">12 pt</td></tr>
+      <tr><td>Slide 16:9</td><td class="mono">12</td><td class="mono">64 px</td><td class="mono">24 px</td><td class="mono">8 px</td></tr>
+      <tr><td>Web (desktop)</td><td class="mono">12</td><td class="mono">clamp 24–64 px</td><td class="mono">24 px</td><td class="mono">8 px</td></tr>
+      <tr><td>Web (mobile)</td><td class="mono">4</td><td class="mono">20 px</td><td class="mono">16 px</td><td class="mono">8 px</td></tr>
+    </table>
+
+    <h3>Whitespace &amp; visual rhythm</h3>
+    <div class="grid g2">
+      <div class="card"><h4>The 8-point spacing scale</h4><p>All spacing is a multiple of 8 (4 for fine adjustments): <span class="mono">4 · 8 · 16 · 24 · 32 · 48 · 64 · 96 · 128</span>. Nothing sits at an arbitrary distance. Consistent spacing is what the eye reads as "considered".</p></div>
+      <div class="card"><h4>Generosity is the default</h4><p>When in doubt, add space, not elements. A Premium Care page is never crowded. Margins are wide, line-length is comfortable, and every block is given room to be understood before the next begins.</p></div>
+    </div>
+
+    <h3>Composition principles</h3>
+    <ol>
+      <li><strong>One idea per view.</strong> A slide, a page, a screen carries a single argument. Supporting detail is subordinate and visibly so.</li>
+      <li><strong>Left-anchored.</strong> Text aligns left; the eye starts where reading starts. Centred text is reserved for the cover, the strapline, and closing statements.</li>
+      <li><strong>The gold keyline as punctuation.</strong> A single hairline gold rule marks a section boundary or the top edge of a signature panel — never decoration, always structure.</li>
+      <li><strong>Asymmetry with balance.</strong> Compositions are asymmetric (a wide text column, a narrow image column) but optically balanced. Symmetry is used sparingly, for gravity.</li>
+      <li><strong>Photography earns its place.</strong> An image is full-bleed or precisely inset to the grid — never floated awkwardly. It illustrates, it does not fill.</li>
+    </ol>
+
+    <div class="callout doctrine"><span class="tag">The signature panel</span><p>The recurring Premium Care layout device: a navy panel with a single gold keyline along its top edge, holding a serif headline and a short sans paragraph. It appears on covers, section dividers, slides and web heroes — the visual equivalent of the strapline.</p></div>
+  </div>
+</section>
+
+<section class="section" id="s6">
+  <div class="section-inner">
+    <div class="sect-head">
+      <div class="eyebrow">Section 06 <span class="interpunct" style="margin-left:.6em">·</span> Image</div>
+      <h2>Photography Direction</h2>
+      <p class="lede">Our photography shows people as people — upright, present, at eye level. We never photograph frailty as the point. The Danish home is a place worth staying in, and we light it that way.</p>
+    </div>
+
+    <h3>The three approved categories</h3>
+    <div class="grid g3">
+      <div class="card mark"><span class="num">01 · RELATIONAL</span><h4>People, between equals</h4><p>Carer and client at eye level, in genuine exchange. The relationship is companionship, never supervision. Warmth in the eyes, ease in the posture.</p></div>
+      <div class="card mark"><span class="num">02 · ENVIRONMENTAL</span><h4>The Danish home</h4><p>Lived-in rooms with character — worn wooden floors, coffee cups, books, gardens. Morning light through windows. A place worth staying in, not a showcase.</p></div>
+      <div class="card mark"><span class="num">03 · PROFESSIONAL</span><h4>Competence, visible</h4><p>Documentation, clinical rigour, the uniform, the considered hand. Faglighed made photographic — precise, never sterile.</p></div>
+    </div>
+
+    <h3>Lighting &amp; colour grade</h3>
+    <div class="two-col">
+      <div>
+        <h4>Lighting</h4>
+        <ul>
+          <li>Natural light only. Early morning or late afternoon — the Nordic golden hour.</li>
+          <li>Overcast days preferred: soft, even, flattering to every age of skin.</li>
+          <li>No artificial lighting unless it is the home's own existing light.</li>
+          <li>No hard shadows, no flash, no studio strobe on faces.</li>
+        </ul>
+      </div>
+      <div>
+        <h4>Colour grade</h4>
+        <ul>
+          <li>Warm-neutral, slightly desaturated. Skin tones true and healthy.</li>
+          <li>Highlights soft, never blown; shadows open, never crushed.</li>
+          <li>A faint warmth in the whites — porcelain, not clinical blue-white.</li>
+          <li>Consistent grade across an entire set: the LUT is part of the brand.</li>
+        </ul>
+      </div>
+    </div>
+
+    <h3>Composition, lenses &amp; depth of field</h3>
+    <table class="tbl">
+      <tr><th>Parameter</th><th>Standard</th></tr>
+      <tr><td>Lenses</td><td class="mono">35 mm &amp; 50 mm primes (relational) · 24–35 mm (environmental) · 85 mm (portrait)</td></tr>
+      <tr><td>Depth of field</td><td>Shallow-to-moderate; subject sharp, context softly present. Never so shallow the room disappears.</td></tr>
+      <tr><td>Aspect ratios</td><td class="mono">3:2 · 4:5 · 16:9 · 1:1 — approved set only</td></tr>
+      <tr><td>Composition</td><td>Eye-level camera height; room shown, not just furniture; subject given air; rule-of-thirds, never dead-centre.</td></tr>
+    </table>
+
+    <h3>Rejected photography</h3>
+    <div class="do-dont">
+      <div class="box dont">
+        <h5>Never use</h5>
+        <ul>
+          <li>Anyone appearing frail <em>as the point</em> of the image</li>
+          <li>The carer positioned above or over the client</li>
+          <li>Hands clasped in "comfort" clichés</li>
+          <li>Personal care moments (also an ethics breach)</li>
+        </ul>
+      </div>
+      <div class="box dont">
+        <h5>Never use</h5>
+        <ul>
+          <li>Stock-photo interiors — catalogue-perfect, no life</li>
+          <li>Clinical or hospital-like settings (unless a genuine "before")</li>
+          <li>Cool, blue-white grades that read as institutional</li>
+          <li>Staged smiles at the camera; forced cheer</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="callout prohibit"><span class="tag">Ethics &amp; consent</span><p>Every person photographed gives written, informed consent, retained on file. We never photograph a client in a vulnerable moment for marketing. Dignity is not a mood we stage — it is a condition of the shoot.</p></div>
+
+    <h3>Image selection workflow</h3>
+    <ol>
+      <li>Does it pass the Dignity test? If any doubt, reject.</li>
+      <li>Is the light natural and the grade on-brand?</li>
+      <li>Is the relationship between equals?</li>
+      <li>Is consent on file?</li>
+      <li>Does the logo, if placed, sit in a verified 4.5:1 contrast zone?</li>
+    </ol>
+
+    <h3>AI image-generation prompt templates</h3>
+    <p>Where photography is generated, it obeys every rule above. Prompts are engineered against the brand grade and never produce a person who could be mistaken for a real, identifiable individual. (The full library is in Section 17.)</p>
+    <pre><code>RELATIONAL — carer &amp; client
+"Documentary photograph, Danish home interior, soft overcast
+morning light through a window. An older woman and a female
+caregiver in navy uniform sit at eye level at a wooden table,
+in genuine warm conversation. Both upright, dignified, relaxed.
+35mm prime, shallow-moderate depth of field, warm-neutral grade,
+true healthy skin tones, porcelain whites. Editorial, calm,
+premium. No hospital, no clinical setting, no staged smiles."
+
+Negative: frailty, pity, clinical, blue-white, stock, flash,
+harsh shadow, carer looming, patient in bed, identifiable person.</code></pre>
+  </div>
+</section>
+
+<section class="section" id="s7">
+  <div class="section-inner">
+    <div class="sect-head">
+      <div class="eyebrow">Section 07 <span class="interpunct" style="margin-left:.6em">·</span> Illustration</div>
+      <h2>Illustration System</h2>
+      <p class="lede">Illustration is used sparingly, and only where a photograph cannot go — a process, a data relationship, a map. The style is calm, linear and unmistakably part of the heraldic family.</p>
+    </div>
+
+    <h3>Style</h3>
+    <div class="grid g2">
+      <div class="card"><h4>Line, not fill</h4><p>Premium Care illustration is built from confident single-weight line work with restrained flat fills. It echoes the shield's engraved quality — considered, precise, never cartoonish.</p></div>
+      <div class="card"><h4>Geometric, humane</h4><p>Forms are geometrically constructed but softened at terminals, matching the figures in the mark: upright, dignified, never exaggerated.</p></div>
+    </div>
+
+    <h3>Specifications</h3>
+    <table class="tbl">
+      <tr><th>Attribute</th><th>Standard</th></tr>
+      <tr><td>Stroke weight</td><td class="mono">2 units on a 48-unit grid (1.5 at 16 px)</td></tr>
+      <tr><td>Corner radius</td><td class="mono">2 units — matching iconography &amp; UI</td></tr>
+      <tr><td>Line caps / joins</td><td>Round caps, round joins</td></tr>
+      <tr><td>Colour</td><td>Navy line on Porcelain; Sage and Sky as secondary fills; gold for a single accent only</td></tr>
+      <tr><td>Shapes</td><td>Built from the shield, cross and figure geometry — the brand's own vocabulary</td></tr>
+    </table>
+
+    <h3>Infographics, diagrams, charts &amp; maps</h3>
+    <div class="grid g4">
+      <div class="card"><span class="num">CHARTS</span><p>Navy tonal scale + one gold accent. No rainbow palettes. Every series labelled directly, never by legend colour alone.</p></div>
+      <div class="card"><span class="num">DIAGRAMS</span><p>Boxes with 2 px radius, hairline navy strokes, gold connectors for the critical path only.</p></div>
+      <div class="card"><span class="num">INFOGRAPHICS</span><p>Line icons + a single large mono statistic. Restraint over density — one insight per unit.</p></div>
+      <div class="card"><span class="num">MAPS</span><p>Denmark rendered in navy line on porcelain; service areas in a 6% navy tint; locations marked with the shield-shaped pin.</p></div>
+    </div>
+    <div class="callout"><span class="tag">Data-visualisation doctrine</span><p>Charts inherit the colour proportion doctrine. The default is a monochrome navy scale; gold marks the one point that matters. If a chart needs more than navy-plus-gold to be understood, it needs to be two charts.</p></div>
+  </div>
+</section>
+
+<section class="section" id="s8">
+  <div class="section-inner">
+    <div class="sect-head">
+      <div class="eyebrow">Section 08 <span class="interpunct" style="margin-left:.6em">·</span> Icon</div>
+      <h2>Iconography</h2>
+      <p class="lede">One icon family, one grid, one stroke. Icons are the quiet signage of the digital and printed system — never illustrative, always functional.</p>
+    </div>
+
+    <h3>Construction</h3>
+    <div class="two-col">
+      <div>
+        <table class="tbl">
+          <tr><th>Attribute</th><th>Standard</th></tr>
+          <tr><td>Master grid</td><td class="mono">48 × 48 units</td></tr>
+          <tr><td>Live area</td><td class="mono">40 × 40 (4-unit margin)</td></tr>
+          <tr><td>Stroke width</td><td class="mono">2 units (1.5 at 16 px — dedicated micro-master)</td></tr>
+          <tr><td>Corner radius</td><td class="mono">2 units</td></tr>
+          <tr><td>Caps &amp; joins</td><td>Round</td></tr>
+          <tr><td>Colour</td><td>Navy on light · Porcelain on navy · gold reserved for the one active state</td></tr>
+        </table>
+      </div>
+      <div class="card" style="display:flex;flex-wrap:wrap;gap:20px;justify-content:center;align-items:center;padding:2rem">
+        <svg viewBox="0 0 48 48" width="44" fill="none" stroke="var(--pc-navy)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 8h14l6 6v26H14z"/><path d="M28 8v6h6"/></svg>
+        <svg viewBox="0 0 48 48" width="44" fill="none" stroke="var(--pc-navy)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="12" width="30" height="28" rx="2"/><path d="M9 20h30M17 8v8M31 8v8"/><circle cx="24" cy="30" r="2" fill="var(--pc-gold)" stroke="none"/></svg>
+        <svg viewBox="0 0 48 48" width="44" fill="none" stroke="var(--pc-navy)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M24 42s13-9 13-20a13 13 0 0 0-26 0c0 11 13 20 13 20z"/><circle cx="24" cy="22" r="4"/></svg>
+        <svg viewBox="0 0 48 48" width="44" fill="none" stroke="var(--pc-navy)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="8" y="14" width="32" height="22" rx="2"/><path d="M8 16l16 12 16-12"/></svg>
+        <svg viewBox="0 0 48 48" width="44" fill="none" stroke="var(--pc-navy)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M24 30V10M16 22l8 8 8-8"/><rect x="10" y="34" width="28" height="6" rx="2"/></svg>
+        <svg viewBox="0 0 48 48" width="44" fill="none" stroke="var(--pc-navy)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M24 42s13-9 13-20a13 13 0 0 0-26 0c0 11 13 20 13 20z"/><path d="M18 22l4 4 8-8"/></svg>
+      </div>
+    </div>
+    <p style="font-size:.85rem;color:var(--pc-navy-70);text-align:center">Corporate suite (sample): Document · Calendar · Location · Contact · Download · Certification</p>
+
+    <h3>The three suites</h3>
+    <table class="tbl">
+      <tr><th>Suite</th><th>Contents</th><th>Purpose</th></tr>
+      <tr><td><strong>Service (10 marks)</strong></td><td>One per service line — home care, nursing, dementia, physio, occupational therapy, rehabilitation, palliative, practical support, and two reserved</td><td>Wayfinding across services; slide and web section markers</td></tr>
+      <tr><td><strong>Corporate (5 marks)</strong></td><td>Document · Calendar · Location · Contact · Download · Certification</td><td>Documents, forms, contact points</td></tr>
+      <tr><td><strong>Navigation (4 marks)</strong></td><td>Arrow · Menu · Search · Close</td><td>UI navigation; 1.5-unit micro-master at 16 px</td></tr>
+    </table>
+
+    <h3>Usage rules</h3>
+    <ul>
+      <li>Icons are never mixed with icons from another library. If a needed mark does not exist, it is drawn to the system — or not used.</li>
+      <li>Sizing steps: <span class="mono">16 · 24 · 32 · 48 px</span>. Clear space around an icon equals its 4-unit margin, minimum.</li>
+      <li>Icons carry a text label in every context where meaning is not self-evident — no colour- or shape-only signals.</li>
+      <li>Gold is applied to at most one icon-state per view (the active or highlighted mark).</li>
+    </ul>
+  </div>
+</section>
+
+<section class="section" id="s9">
+  <div class="section-inner">
+    <div class="sect-head">
+      <div class="eyebrow">Section 09 <span class="interpunct" style="margin-left:.6em">·</span> Signature</div>
+      <h2>Graphic Elements</h2>
+      <p class="lede">Four signature elements make a page recognisable as Premium Care with the logo removed: the gold keyline, the Cross Grid, the interpunct, and the divider ornament.</p>
+    </div>
+
+    <div class="grid g2">
+      <div class="card mark">
+        <span class="num">01</span><h4>The Gold Keyline</h4>
+        <div style="height:1px;background:var(--pc-gold);margin:1.2em 0"></div>
+        <p>A single hairline gold rule (0.5 pt / 1 px), used to mark the top edge of a signature panel or a section boundary. Never doubled, never decorative, never below its contrast floor for informational use.</p>
+      </div>
+      <div class="card mark">
+        <span class="num">02</span><h4>The Cross Grid</h4>
+        <div style="height:64px;margin:1.2em 0;background-image:linear-gradient(var(--pc-navy-15) 1px,transparent 1px),linear-gradient(90deg,var(--pc-navy-15) 1px,transparent 1px);background-size:22px 22px;border-radius:2px;opacity:.9"></div>
+        <p>A faint background pattern derived from the Dannebrog cross, used at 4–6% opacity as a watermark on folder interiors, certificates and window manifestation. Structure made ambient.</p>
+      </div>
+      <div class="card mark">
+        <span class="num">03</span><h4>The Interpunct</h4>
+        <div style="text-align:center;font-size:2.4rem;color:var(--pc-gold);margin:.6em 0">·</div>
+        <p style="text-align:center;font-family:var(--serif);font-style:italic">Omsorg <span class="interpunct">·</span> Tryghed <span class="interpunct">·</span> Hver Dag</p>
+        <p>The gold interpunct is the brand's punctuation — a separator in the strapline, a directional bullet in wayfinding, a required-field marker in forms. Always gold, always spaced.</p>
+      </div>
+      <div class="card mark">
+        <span class="num">04</span><h4>The Divider Ornament</h4>
+        <div style="text-align:center;color:var(--pc-gold);margin:1.2em 0;letter-spacing:.4em">— ◆ —</div>
+        <p>A restrained diamond-and-rule ornament closing a section or centring a cover. Used at most once per document spread; its rarity is its authority.</p>
+      </div>
+    </div>
+
+    <h3>Patterns, textures &amp; background systems</h3>
+    <table class="tbl">
+      <tr><th>Device</th><th>Use</th><th>Specification</th></tr>
+      <tr><td>Cross Grid watermark</td><td>Folder interiors, certificates, glass</td><td class="mono">4–6% navy, 22 mm module</td></tr>
+      <tr><td>Navy signature panel</td><td>Covers, dividers, heroes, slides</td><td>Solid navy, gold keyline top edge</td></tr>
+      <tr><td>Porcelain field</td><td>Body pages, content slides</td><td>Solid porcelain, generous margin</td></tr>
+      <tr><td>Emboss / deboss</td><td>Certificates, premium print</td><td>Blind emboss of SH; one finish per item</td></tr>
+    </table>
+    <div class="callout doctrine"><span class="tag">Restraint is the brand motif</span><p>There is no fifth element. The system's confidence is expressed by how little it uses, not how much. Textures are never stacked; patterns never compete with content. Quiet is the point.</p></div>
+  </div>
+</section>
+
+<section class="section" id="s10">
+  <div class="section-inner">
+    <div class="sect-head">
+      <div class="eyebrow">Section 10 <span class="interpunct" style="margin-left:.6em">·</span> Presentation</div>
+      <h2>Presentation Design System</h2>
+      <p class="lede">Every Premium Care deck is 16:9, on the 12-column grid, and moves between two states only: the navy signature slide and the porcelain content slide. Consistency across investor, municipality, recruitment and training decks is absolute.</p>
+    </div>
+
+    <h3>Master slide states</h3>
+    <div class="grid g2">
+      <div class="card" style="padding:0;overflow:hidden">
+      <div style="aspect-ratio:16/9;background:var(--pc-navy);position:relative;padding:1.4rem 1.6rem;display:flex;flex-direction:column;justify-content:flex-end"><div style="position:absolute;top:0;left:0;right:0;height:2px;background:var(--pc-gold)"></div><svg viewBox="0 0 200 240" width="64" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Premium Care crowned shield">
+  <!-- Crown -->
+  <g fill="var(--pc-gold)">
+    <circle cx="100" cy="10" r="3.4"/>
+    <path d="M100 15 L108 30 L92 30 Z" opacity="0"/>
+    <path d="M68 52 L72 30 L84 44 L100 26 L116 44 L128 30 L132 52 Z"/>
+    <rect x="66" y="52" width="68" height="7" rx="2"/>
+    <circle cx="72" cy="30" r="3"/><circle cx="128" cy="30" r="3"/><circle cx="100" cy="24" r="3"/>
+  </g>
+  <!-- Shield outline -->
+  <path d="M50 66 H150 V150 Q150 196 100 214 Q50 196 50 150 Z" fill="none" stroke="var(--pc-gold)" stroke-width="5"/>
+  <!-- Shield field (red, full colour only) -->
+  <path d="M55 71 H145 V149 Q145 191 100 208 Q55 191 55 149 Z" fill="none"/>
+  <!-- Dannebrog cross (white) -->
+  <g fill="var(--pc-gold)">
+    <rect x="90" y="71" width="14" height="137" />
+    <rect x="55" y="120" width="90" height="14" />
+  </g>
+  <!-- Two figures (gold silhouettes, equal height, facing) -->
+  <g fill="var(--pc-gold)">
+    <!-- left figure (gentleman + cane) -->
+    <circle cx="75" cy="104" r="8"/>
+    <path d="M67 116 q8 -5 16 0 l3 42 q-11 4 -22 0 Z"/>
+    <rect x="84" y="128" width="2.4" height="52" rx="1"/>
+    <!-- right figure (lady) -->
+    <circle cx="123" cy="104" r="8"/>
+    <path d="M114 116 q9 -5 18 0 l4 46 q-13 4 -26 0 Z"/>
+    <rect x="112" y="128" width="2.4" height="52" rx="1"/>
+  </g>
+</svg><div style="font-family:var(--serif);color:var(--pc-porcelain);font-size:1.4rem;margin-top:.6em">Title &amp; section slide</div><div style="font-family:var(--sans);font-size:.62rem;letter-spacing:.2em;text-transform:uppercase;color:var(--pc-gold)">Omsorg · Tryghed · Hver Dag</div></div>
+      <div style="padding:.9em 1.2em;font-size:.8rem;color:var(--pc-navy-70)">Navy ground · gold keyline · serif title · gold VT or SH. Used for cover, section dividers, quote and closing slides.</div>
+    </div>
+      <div class="card" style="padding:0;overflow:hidden">
+      <div style="aspect-ratio:16/9;background:var(--pc-porcelain);position:relative;padding:1.4rem 1.6rem;display:flex;flex-direction:column;justify-content:flex-end"><div style="position:absolute;top:0;left:0;right:0;height:2px;background:var(--pc-gold)"></div><div style="font-family:var(--sans);font-size:.6rem;letter-spacing:.2em;text-transform:uppercase;color:var(--pc-gold-deep)">Section 03</div><div style="font-family:var(--serif);color:var(--pc-navy);font-size:1.4rem">Content headline</div><div style="font-family:var(--sans);font-size:.72rem;color:#233448;max-width:80%">Body sits left, on the grid, with a single supporting visual to the right.</div></div>
+      <div style="padding:.9em 1.2em;font-size:.8rem;color:var(--pc-navy-70)">Porcelain ground · navy type · gold keyline. Used for all content: text, charts, tables, case studies.</div>
+    </div>
+    </div>
+
+    <h3>The slide library</h3>
+    <table class="tbl">
+      <tr><th>Slide</th><th>Layout</th></tr>
+      <tr><td><strong>Title</strong></td><td>Navy, gold VT centred, serif title, strapline eyebrow</td></tr>
+      <tr><td><strong>Agenda</strong></td><td>Porcelain, numbered list in mono, section markers from the icon suite</td></tr>
+      <tr><td><strong>Timeline / Roadmap</strong></td><td>Horizontal navy baseline, gold nodes at milestones, mono dates</td></tr>
+      <tr><td><strong>Statistics</strong></td><td>One large serif/mono figure per column, small sans label beneath — never crowded</td></tr>
+      <tr><td><strong>Financial</strong></td><td>Navy tonal chart + one gold accent series; tabular lining figures; source line in mono</td></tr>
+      <tr><td><strong>Comparison table</strong></td><td>Navy header row, porcelain body, gold interpunct as the "included" marker</td></tr>
+      <tr><td><strong>Case study</strong></td><td>Full-bleed approved photograph left, navy signature panel right with outcome</td></tr>
+      <tr><td><strong>Quote</strong></td><td>Navy, gold quote mark, serif light italic, attribution over a gold keyline</td></tr>
+      <tr><td><strong>Closing</strong></td><td>Navy, gold SH, strapline, single contact line — no clutter, no "thank you" cliché</td></tr>
+    </table>
+
+    <h3>The four deck archetypes</h3>
+    <div class="grid g4">
+      <div class="card mark"><span class="num">INVESTOR</span><h4>Authority &amp; return</h4><p>Leads with market, model and unit economics. Gravity over warmth; the photography restrained, the numbers immaculate.</p></div>
+      <div class="card mark"><span class="num">MUNICIPALITY</span><h4>Compliance &amp; transparency</h4><p>Leads with documentation, standards and procurement clarity. No foil optics — quiet premium. "Premium standards. Procurement-grade transparency."</p></div>
+      <div class="card mark"><span class="num">RECRUITMENT</span><h4>Pride &amp; standard</h4><p>Leads with people and craft. Warmer photography, the caregiver as professional. "Work where the standard matches your pride."</p></div>
+      <div class="card mark"><span class="num">TRAINING</span><h4>Clarity &amp; rigour</h4><p>Leads with structure. Diagrams over decoration; the content instructional, the tone respectful of the learner's competence.</p></div>
+    </div>
+    <div class="callout"><span class="tag">Office reality</span><p>The PowerPoint master ships with the Georgia/Verdana fallback embedded — municipal machines will not have Berlingske. Chart templates are pre-built in the navy tonal scale plus gold. A caseworker opening the deck sees a dignified, on-brand page without a single font install.</p></div>
+  </div>
+</section>
+
+<section class="section" id="s11">
+  <div class="section-inner">
+    <div class="sect-head">
+      <div class="eyebrow">Section 11 <span class="interpunct" style="margin-left:.6em">·</span> Digital</div>
+      <h2>Website Design Language</h2>
+      <p class="lede">The website is the brand's calmest room. Navy is our dark mode; porcelain is our light. There is no separate dark theme — the brand is the theme.</p>
+    </div>
+
+    <h3>Foundations</h3>
+    <div class="grid g3">
+      <div class="card"><span class="num">GRID</span><p>12-column desktop, 4-column mobile. Max content width ~1180 px. Margins clamp 24–64 px.</p></div>
+      <div class="card"><span class="num">SPACING</span><p>8-point scale throughout. Section padding 96–128 px desktop; components on 8 px rhythm.</p></div>
+      <div class="card"><span class="num">RADIUS</span><p>2 px everywhere. The brand's near-square corner — composed, not soft; never fully round.</p></div>
+    </div>
+
+    <h3>Components</h3>
+    <table class="tbl">
+      <tr><th>Component</th><th>Specification</th></tr>
+      <tr><td><strong>Navigation</strong></td><td>HZ logo left (SVG, 40 px desktop / 32 px mobile); links in Sans Medium; navy on porcelain, inverting to porcelain-on-navy on the dark header state.</td></tr>
+      <tr><td><strong>Cards</strong></td><td>Porcelain, 1 px navy-15 border, 2 px radius; optional 2 px gold top rule for the active or featured card.</td></tr>
+      <tr><td><strong>Primary button</strong></td><td>Navy bg, porcelain text, Sans Medium 14 px tracked +2%, 48 px tall, 2 px radius.</td></tr>
+      <tr><td><strong>Gold button</strong></td><td>Gold bg, navy text — the premium CTA. <strong>One per page maximum.</strong> Gold is seasoning, not sauce.</td></tr>
+      <tr><td><strong>Secondary button</strong></td><td>Porcelain bg, 1 px navy border, navy text; hover navy-5% fill.</td></tr>
+      <tr><td><strong>Forms</strong></td><td>Labels in Sans Medium 12 px above the field; required marked by a gold interpunct, never a red asterisk — red is the shield.</td></tr>
+      <tr><td><strong>Tables</strong></td><td>Navy header row, porcelain body, zebra at navy-06; data in Mono; right-aligned figures.</td></tr>
+      <tr><td><strong>Icons</strong></td><td>Navigation suite at 24 px, 1.5-unit micro-master at 16 px.</td></tr>
+    </table>
+
+    <h3>Buttons — live specimens</h3>
+    <div style="display:flex;gap:14px;flex-wrap:wrap;align-items:center;margin:1.4em 0">
+      <span style="background:var(--pc-navy);color:var(--pc-porcelain);padding:.85em 1.6em;border-radius:2px;font-family:var(--sans);font-weight:500;font-size:.82rem;letter-spacing:.04em">Book a consultation</span>
+      <span style="background:var(--pc-gold);color:var(--pc-navy);padding:.85em 1.6em;border-radius:2px;font-family:var(--sans);font-weight:500;font-size:.82rem;letter-spacing:.04em">Request premium care</span>
+      <span style="background:var(--pc-porcelain);color:var(--pc-navy);border:1px solid var(--pc-navy);padding:.85em 1.6em;border-radius:2px;font-family:var(--sans);font-weight:500;font-size:.82rem">Learn more</span>
+      <span style="color:var(--pc-navy);padding:.85em .4em;font-family:var(--sans);font-size:.82rem;text-decoration:underline;text-decoration-color:var(--pc-gold);text-underline-offset:4px">Read the standard →</span>
+    </div>
+
+    <h3>Responsive behaviour &amp; accessibility</h3>
+    <div class="two-col">
+      <div>
+        <h4>Breakpoints</h4>
+        <table class="tbl">
+          <tr><th>Range</th><th>Columns</th></tr>
+          <tr><td class="mono">&lt; 640 px</td><td>4 (mobile)</td></tr>
+          <tr><td class="mono">640–1024 px</td><td>8 (tablet)</td></tr>
+          <tr><td class="mono">&gt; 1024 px</td><td>12 (desktop)</td></tr>
+        </table>
+      </div>
+      <div>
+        <h4>Accessibility floor</h4>
+        <ul>
+          <li>WCAG 2.2 AA minimum across web and PDF.</li>
+          <li>Focus states in gold-on-navy meet 3:1 non-text contrast.</li>
+          <li>Visible keyboard focus on every interactive element.</li>
+          <li>Reduced-motion honoured; no motion is essential to meaning.</li>
+          <li>No information by colour alone; every state carries a label.</li>
+        </ul>
+      </div>
+    </div>
+    <div class="callout doctrine"><span class="tag">No dark mode</span><p>Navy is the dark background; Porcelain is the light text. There is no separate dark-mode palette to maintain, and none is permitted — inventing one fractures the identity across surfaces.</p></div>
+  </div>
+</section>
+
+<section class="section" id="s12">
+  <div class="section-inner">
+    <div class="sect-head">
+      <div class="eyebrow">Section 12 <span class="interpunct" style="margin-left:.6em">·</span> Print</div>
+      <h2>Printed Materials</h2>
+      <p class="lede">Print is where the brand is touched. The luxury is in the hand of the stock, the depth of the foil, the restraint of a single finish — never in ornament.</p>
+    </div>
+
+    <h3>Universal print standards</h3>
+    <div class="kv">
+      <dt>Bleed</dt><dd>3 mm all sides</dd>
+      <dt>Safe area</dt><dd>12 mm</dd>
+      <dt>Export</dt><dd>PDF/X-4, CMYK + spot, total ink ≤ 300%</dd>
+      <dt>Proofing</dt><dd>Fogra contract proof for any first run with a new supplier</dd>
+      <dt>Grain</dt><dd>Long grain on all folded items</dd>
+      <dt>Finish rule</dt><dd>One speciality finish per item — foil <em>or</em> emboss <em>or</em> spot UV. Stacked finishes read as costume, not confidence.</dd>
+    </div>
+
+    <h3>The stationery &amp; document suite</h3>
+    <table class="tbl">
+      <tr><th>Item</th><th>Stock</th><th>Print &amp; finish</th></tr>
+      <tr><td><strong>Business card</strong></td><td>540 gsm triplex — porcelain plies, navy core</td><td>Front: gold foil VT + name in navy. Reverse: navy solid, white logo. No lamination — the uncoated hand <em>is</em> the luxury.</td></tr>
+      <tr><td><strong>Letterhead</strong></td><td>120 gsm premium uncoated</td><td>Litho navy + gold; laser-guaranteed (must survive office printers); follow-on sheet carries CR only.</td></tr>
+      <tr><td><strong>Envelopes</strong></td><td>120 gsm matching, DL / C5 / C4</td><td>Navy single colour; HZ on flap.</td></tr>
+      <tr><td><strong>Invoice</strong></td><td>Digital / 100 gsm</td><td>Tabular lining figures; navy header band; no surprises — clarity is Tryghed.</td></tr>
+      <tr><td><strong>Tender documents</strong></td><td>100 gsm body, 250 gsm cover</td><td>Cover navy, white logo, <strong>no foil</strong> (procurement optics — quiet premium); body mono-safe, greyscale-verified.</td></tr>
+      <tr><td><strong>Brochures</strong></td><td>170 gsm silk body, 300 gsm cover</td><td>CMYK + navy spot; matt laminate cover; spot UV on the shield only, one element per cover.</td></tr>
+      <tr><td><strong>Folders</strong></td><td>350 gsm, matt laminate</td><td>Navy outer, gold foil VT; interior porcelain with Cross Grid at 4%; glued pocket, business-card slits.</td></tr>
+      <tr><td><strong>Certificates</strong></td><td>300 gsm felt-marked</td><td>Gold foil MG corner + blind emboss SH — the one item where two finishes combine, by explicit rule. Presented in a navy folder.</td></tr>
+      <tr><td><strong>Corporate reports</strong></td><td>150 gsm body, 300 gsm cover</td><td>Matt laminate + gold foil cover; Otabind / thread-sewn lay-flat binding.</td></tr>
+    </table>
+
+    <h3>Document families</h3>
+    <div class="grid g3">
+      <div class="card"><h4>Proposal &amp; tender documents</h4><p>Cover on the navy signature panel; body on the 12-column editorial grid; every claim evidenced; greyscale-verified so a photocopied page holds.</p></div>
+      <div class="card"><h4>Employee Handbook &amp; onboarding</h4><p>Warm, direct, written to one person. Navy section dividers, porcelain body, the values rendered in Danish with English beneath.</p></div>
+      <div class="card"><h4>Municipality &amp; welcome packs</h4><p>Folder-held; a fixed running order; the same sequence every time so a caseworker or a new family always knows where to look.</p></div>
+    </div>
+    <div class="callout doctrine"><span class="tag">Procurement optics</span><p>To municipalities we never foil. The premium is expressed through completeness, clarity and flawless documentation — not through shine. Quiet confidence wins tenders that gloss loses.</p></div>
+  </div>
+</section>
+
+<section class="section" id="s13">
+  <div class="section-inner">
+    <div class="sect-head">
+      <div class="eyebrow">Section 13 <span class="interpunct" style="margin-left:.6em">·</span> Uniform</div>
+      <h2>Uniform Design Language</h2>
+      <p class="lede">The uniform is the brand at the doorstep — the first thing a family sees, and the most trusted. It is dignified, practical, and safe: branding never compromises certification, and safety is Tryghed.</p>
+    </div>
+
+    <h3>Embroidery standards</h3>
+    <div class="two-col">
+      <div>
+        <h4>Threads &amp; technique</h4>
+        <ul>
+          <li>Polyester thread (Madeira Polyneon or equal), lab-dipped to navy 282 C, <strong>non-metallic</strong> antique gold matched to 871, red 186 C, optical white.</li>
+          <li><strong>Metallic thread is prohibited on garments</strong> — it abrades skin and fails 85 °C infection-control laundering.</li>
+          <li>Satin-stitch lettering; fill-stitch shield; strapline only at ≥ 80 mm logo width.</li>
+          <li>Cut-away backing on knits, tear-away on wovens; test sew-out approved on the actual garment fabric before any run.</li>
+        </ul>
+      </div>
+      <div>
+        <h4>Minimums</h4>
+        <table class="tbl">
+          <tr><th>Mark</th><th>Minimum</th></tr>
+          <tr><td class="mono">VT</td><td>60 mm</td></tr>
+          <tr><td class="mono">SH</td><td>25 mm</td></tr>
+          <tr><td class="mono">CR</td><td>15 mm</td></tr>
+          <tr><td>Lettering x-height</td><td>never below 4 mm</td></tr>
+        </table>
+      </div>
+    </div>
+
+    <h3>Placement by garment</h3>
+    <table class="tbl">
+      <tr><th>Garment</th><th>Mark &amp; size</th><th>Position</th></tr>
+      <tr><td>Scrubs / tunics</td><td>VT (no strapline) 60 mm, gold on navy / navy on light grey</td><td>Left chest, 190–200 mm below shoulder seam</td></tr>
+      <tr><td>Polo shirts</td><td>VT 60 mm; optional sleeve CR 15 mm</td><td>Left chest</td></tr>
+      <tr><td>Jackets / softshell</td><td>VT 70 mm chest; HZ 240 mm across back yoke</td><td>Back centred, 90 mm below collar seam</td></tr>
+      <tr><td>Fleeces</td><td>VT 65 mm; appliqué badge if pile &gt; 3 mm</td><td>Left chest</td></tr>
+      <tr><td>Caps / beanies</td><td>SH 45 mm</td><td>Front centre panel</td></tr>
+      <tr><td>High-visibility (EN ISO 20471)</td><td><strong>Navy single-colour</strong> VT 60 mm</td><td>Chest pocket zone; branding must never reduce certified reflective area</td></tr>
+      <tr><td>Woven badge (alternative)</td><td>VT 70 × 45 mm, merrowed edge, navy ground</td><td>For laundering-critical garments</td></tr>
+    </table>
+
+    <h3>Badges, accessories &amp; equipment</h3>
+    <div class="grid g4">
+      <div class="card"><span class="num">NAME BADGE</span><p>Navy, gold keyline, name in Sans, role beneath. The same faces — so the name is legible at a doorway's distance.</p></div>
+      <div class="card"><span class="num">LANYARD</span><p>Navy webbing, gold HZ repeat at low frequency; safety breakaway clasp.</p></div>
+      <div class="card"><span class="num">OUTERWEAR</span><p>Navy softshell; HZ back yoke; reflective white detailing for night visibility where relevant.</p></div>
+      <div class="card"><span class="num">EQUIPMENT / BAGS</span><p>Navy, SH in gold ≥ 25 mm; no supergraphics; medical equipment marked discreetly, never branded across.</p></div>
+    </div>
+    <div class="callout prohibit"><span class="tag">Safety takes precedence</span><p>On certified garments, garment certification always outranks branding. Navy-on-yellow is verified ≥ 4.5:1; branding is placed only where certified zones permit. Safety is Tryghed — the uniform protects the wearer before it markets the brand.</p></div>
+  </div>
+</section>
+
+<section class="section" id="s14">
+  <div class="section-inner">
+    <div class="sect-head">
+      <div class="eyebrow">Section 14 <span class="interpunct" style="margin-left:.6em">·</span> Environment</div>
+      <h2>Environmental Branding</h2>
+      <p class="lede">Where the brand is built in three dimensions, the palette becomes material: brushed brass, navy aluminium, porcelain surfaces, light oak, and warm 3000 K light. Halo-lit, never box-lit — care, not retail.</p>
+    </div>
+
+    <h3>Materials palette</h3>
+    <div class="grid g4">
+      <div class="card"><h4>Brushed brass</h4><p>Built-up reception letters and the shield inset. Warm, enduring, quietly expensive.</p></div>
+      <div class="card"><h4>Navy aluminium / acrylic</h4><p>Panels, monolith, door signs. RAL 5011 powder-coat.</p></div>
+      <div class="card"><h4>Porcelain surfaces</h4><p>Feature walls, internal panels — the digital porcelain made physical.</p></div>
+      <div class="card"><h4>Light oak</h4><p>Warmth underfoot and at hand; the Danish home, referenced in the workplace.</p></div>
+    </div>
+
+    <h3>Signage &amp; wayfinding</h3>
+    <table class="tbl">
+      <tr><th>Sign</th><th>Specification</th></tr>
+      <tr><td><strong>Reception</strong></td><td>Built-up brushed-brass letters + full-colour shield inset, 10 mm stand-off from a navy or porcelain feature wall; letter height 120–180 mm; optional halo illumination 3000 K.</td></tr>
+      <tr><td><strong>Building fascia</strong></td><td>Built-up aluminium letters, navy PPC or brass; HZ lockup; halo-lit; cap height ≥ 25 mm per 10 m of viewing distance.</td></tr>
+      <tr><td><strong>Monolith</strong></td><td>2200 × 600 mm navy PPC, gold VT face, porcelain plinth reveal; strapline at base in white.</td></tr>
+      <tr><td><strong>Wayfinding</strong></td><td>Navy panels, porcelain sans lettering, gold interpunct as the directional bullet; icons from the navigation suite.</td></tr>
+      <tr><td><strong>Door signs</strong></td><td>150 × 150 mm navy acrylic, 2 mm radius; porcelain text; braille per DS/ISO 17049 on client-facing rooms.</td></tr>
+      <tr><td><strong>Window graphics</strong></td><td>Frost-etch Cross Grid manifestation band at 850–1000 mm and 1400–1600 mm (BR18 compliance); SH in frost at entrances; 2X clear space on glass.</td></tr>
+      <tr><td><strong>Internal signage</strong></td><td>Porcelain panels, navy text, gold keyline top edge — the editorial signature made physical.</td></tr>
+    </table>
+    <div class="callout prohibit"><span class="tag">Illumination doctrine</span><p><strong>Halo illumination only. Face-lit box signs are prohibited</strong> — they read as retail, not care. All light is 3000 K warm white. Mechanical fixings are concealed; materials are D-class fire-rated in care environments.</p></div>
+
+    <h3>Vehicles</h3>
+    <div class="two-col">
+      <div>
+        <ul>
+          <li>Navy body (RAL 5011 paint or full cast wrap).</li>
+          <li>HZ in gold cast vinyl ≥ 350 mm both sides, aligned to the body feature line.</li>
+          <li>SH on bonnet ≥ 200 mm, centred.</li>
+          <li>Rear: HZ + website in white; CVR and legal text in white 25 mm.</li>
+          <li>Reflective white detailing for night visibility — Tryghed extends to traffic.</li>
+        </ul>
+      </div>
+      <div class="card"><h4>The livery is calm</h4><p>No gradients. No supergraphics sweeping across panels. A placement drawing is approved per vehicle model before any fleet application. The van should look like it belongs to an institution, not a campaign.</p></div>
+    </div>
+
+    <h3>Interiors — reception, meeting rooms, training centre</h3>
+    <div class="grid g3">
+      <div class="card"><span class="num">RECEPTION</span><p>Navy or porcelain feature wall, brass reception mark, oak and porcelain surfaces, warm light. Calm on arrival.</p></div>
+      <div class="card"><span class="num">MEETING ROOMS</span><p>Named, not numbered — after Danish care traditions or values; porcelain panel with gold keyline; a single framed value.</p></div>
+      <div class="card"><span class="num">TRAINING CENTRE</span><p>Clear wayfinding, diagram-led wall graphics, the Five Design Tests and the values visible — the standard, taught in the room.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="s15">
+  <div class="section-inner">
+    <div class="sect-head">
+      <div class="eyebrow">Section 15 <span class="interpunct" style="margin-left:.6em">·</span> Motion</div>
+      <h2>Motion Design</h2>
+      <p class="lede">Motion in Premium Care is calm and purposeful. It reassures; it never performs. If an animation draws attention to itself, it has failed.</p>
+    </div>
+
+    <h3>Principles</h3>
+    <div class="grid g3">
+      <div class="card mark"><span class="num">01</span><h4>Calm</h4><p>Ease-out curves, gentle fades and slides. Nothing bounces, spins, or flashes. The pace of a considered visit.</p></div>
+      <div class="card mark"><span class="num">02</span><h4>Purposeful</h4><p>Motion communicates state and hierarchy — what changed, what follows. Decorative motion is removed.</p></div>
+      <div class="card mark"><span class="num">03</span><h4>Respectful</h4><p>Reduced-motion is always honoured. No motion carries essential meaning; every animation is an enhancement, never a dependency.</p></div>
+    </div>
+
+    <h3>Timing &amp; transitions</h3>
+    <table class="tbl">
+      <tr><th>Interaction</th><th>Duration</th><th>Easing</th></tr>
+      <tr><td>Micro-interaction (hover, focus)</td><td class="mono">120–180 ms</td><td class="mono">ease-out</td></tr>
+      <tr><td>Component transition (card, modal)</td><td class="mono">240–320 ms</td><td class="mono">cubic-bezier(.4,0,.2,1)</td></tr>
+      <tr><td>Page / section reveal</td><td class="mono">320–480 ms</td><td class="mono">ease-out, staggered</td></tr>
+      <tr><td>Logo animation (video title)</td><td class="mono">≤ 1.2 s</td><td class="mono">fade &amp; settle, never assemble</td></tr>
+    </table>
+
+    <h3>Logo animation rules</h3>
+    <ul>
+      <li>The mark fades and settles into place as one object. Its elements are <strong>never animated separately</strong> — the crown does not fly in, the figures do not walk.</li>
+      <li>A single gold keyline may draw in beneath a title card.</li>
+      <li>No 3D rotation, no shine sweep, no particle effects.</li>
+    </ul>
+
+    <h3>Video &amp; presentation motion</h3>
+    <div class="grid g2">
+      <div class="card"><h4>Video grading</h4><p>Matches the photography grade exactly — warm-neutral, soft highlights, true skin. Title cards on the navy signature panel; lower-thirds in Sans with a gold keyline.</p></div>
+      <div class="card"><h4>The silent brand</h4><p>Sound design is minimal to absent. Care is quiet. Where music is used it is restrained and never emotionally manipulative — we do not score sentiment we have not earned.</p></div>
+    </div>
+    <div class="callout doctrine"><span class="tag">Transitions</span><p>Cuts and gentle cross-dissolves only. No wipes, spins, zooms or flashy transitions. The edit, like the care, is composed.</p></div>
+  </div>
+</section>
+
+<section class="section" id="s16">
+  <div class="section-inner">
+    <div class="sect-head">
+      <div class="eyebrow">Section 16 <span class="interpunct" style="margin-left:.6em">·</span> Operations</div>
+      <h2>Digital Asset Library</h2>
+      <p class="lede">A brand is only as consistent as its library is disciplined. Every asset has one home, one name, and one version. Vector is the source of truth; every raster is an export.</p>
+    </div>
+
+    <h3>Folder structure</h3>
+    <pre><code>PremiumCare_BrandAssets/
+├── 00_README + Asset_Register.csv
+├── 01_Logos/          Primary_VT/ Secondary_HZ/ Shield_SH/
+│                      Wordmark_WM/ Monogram_MG/ Crown_CR/
+│                      (each: AI/ EPS/ SVG/ PDF/ PNG/ — by colourway)
+├── 02_Icons/          Service_Suite/ Corporate/ Navigation/ Favicons_AppIcons/
+├── 03_Stationery/     BusinessCards/ Letterhead/ Envelopes/ Folders/ Certificates/
+├── 04_Presentations/  PowerPoint/ Keynote/ TenderCovers/
+├── 05_Website/        Logos/ OG_ShareCards/ UI_Tokens/ Type_Web/
+├── 06_Social_Media/   Avatars/ Covers/ Post_Templates/
+├── 07_Signage/        Reception/ Exterior/ Monolith/ Wayfinding/ ShopDrawings/
+├── 08_Vehicles/       Liveries_by_Model/ Vinyl_Cutfiles/ PlacementDrawings/
+├── 09_Uniforms/       Embroidery_DST_EMB/ Placement/ Badge_Artwork/
+├── 10_Templates/      Word/ PowerPoint/ Excel/ Email/ Report/
+├── 11_Photography/    Masters_RAW/ Graded_TIFF/ Web_JPG/ Consents/
+├── 12_Brand_Guidelines/  Brand_Bible/ This_OS/ Identity_Manual/ Spec/
+├── 13_Legal/          Trademark/ Font_Licences/ Photo_Licences/ NDAs/
+└── 14_Archive/        Superseded_Releases_by_version/</code></pre>
+    <p style="font-size:.9rem">Suppliers receive only the folders relevant to their commission, as read-only releases. Identity source (01–02), applications (03–09), working materials (10–11), governance (12–13), memory (14).</p>
+
+    <h3>Naming convention</h3>
+    <pre><code>PC_[Category]-[Lockup]_[Colourway]_[ColourSpace]_[Size/Use]_v[major-minor].[ext]
+
+PC_Logo-VT_FC_CMYK_Print_v1-0.pdf
+PC_Logo-HZ_WH_RGB_WebHeader-2x_v1-0.png
+PC_Logo-SH_GD_Spot871_Foil-30mm_v1-0.ai
+PC_Emb-VT_GD_Thread282-871_60mm_v1-0.dst
+PC_Icon-Favicon_CR_NV_16-32-48_v1-0.ico</code></pre>
+    <ul>
+      <li>No spaces; no Danish characters in filenames (server safety); underscores between tokens, hyphens within.</li>
+      <li>Lowercase extensions. <strong>A file without a version number is unreleased by definition.</strong></li>
+    </ul>
+
+    <h3>Version control &amp; export formats</h3>
+    <div class="two-col">
+      <div>
+        <h4>Versioning</h4>
+        <table class="tbl">
+          <tr><th>Change</th><th>From → To</th><th>Approval</th></tr>
+          <tr><td>Correction (no visible change)</td><td class="mono">v1-0 → v1-1</td><td>Custodian</td></tr>
+          <tr><td>Governed change to mark/palette/type</td><td class="mono">v1-x → v2-0</td><td>Executive + Bible amendment</td></tr>
+        </table>
+        <p style="font-size:.85rem">Releases are immutable: corrections generate a complete new release folder; files are never edited in place. Superseded releases move to <span class="mono">14_Archive/</span> with a transmittal note and are retained twenty years.</p>
+      </div>
+      <div>
+        <h4>Export formats</h4>
+        <table class="tbl">
+          <tr><th>Format</th><th>Use</th></tr>
+          <tr><td class="mono">AI</td><td>Master — repository only</td></tr>
+          <tr><td class="mono">SVG</td><td>Web / apps</td></tr>
+          <tr><td class="mono">PDF/X-4</td><td>All print</td></tr>
+          <tr><td class="mono">PNG @1×/@2×</td><td>Email, Office, social</td></tr>
+          <tr><td class="mono">ICO</td><td>Favicon</td></tr>
+          <tr><td class="mono">DST / EMB</td><td>Embroidery</td></tr>
+          <tr><td class="mono">TIFF</td><td>Photography / large format</td></tr>
+        </table>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="s17">
+  <div class="section-inner">
+    <div class="sect-head">
+      <div class="eyebrow">Section 17 <span class="interpunct" style="margin-left:.6em">·</span> Generation</div>
+      <h2>AI Prompt Library</h2>
+      <p class="lede">Reusable, brand-locked prompts for every generative need. Each prompt encodes the palette, the grade, the composition rules and the dignity doctrine — so a machine produces Premium Care, not a plausible imitation.</p>
+    </div>
+
+    <div class="callout doctrine"><span class="tag">The generation contract</span><p>Every AI-generated artefact passes the Five Design Tests before use, exactly as human-made work does. Generated people must never resemble a real, identifiable individual. Generated imagery of care never depicts a personal-care moment or a client in a vulnerable state.</p></div>
+
+    <h3>Global style suffix — append to every image prompt</h3>
+    <pre><code>STYLE LOCK (append): Premium Care visual identity. Palette:
+premium navy #041E42, champagne gold #B9A26A used sparingly,
+porcelain white #FAFAF7. Warm-neutral colour grade, soft
+overcast natural light, true healthy skin tones, porcelain
+whites, gentle shadows. Editorial, calm, dignified, premium,
+Scandinavian minimalism. Composition on a clean grid, generous
+whitespace. No clutter, no flashy effects.</code></pre>
+
+    <h3>Photography prompts</h3>
+    <div class="grid g2">
+      <div class="card"><h4>Care visit — relational</h4><pre><code>Documentary photo, Danish home, soft morning window light.
+An older person and a caregiver in navy uniform at eye level
+in warm conversation at a wooden table. Both upright, dignified,
+relaxed. 35mm, moderate DoF. + STYLE LOCK.
+
+Negative: frailty, pity, clinical, blue-white, stock, flash, carer looming, patient in bed, identifiable face</code></pre></div>
+      <div class="card"><h4>Portrait — caregiver as professional</h4><pre><code>Editorial portrait of a Danish caregiver, navy uniform with
+subtle gold-embroidered shield, calm confident expression,
+looking slightly off-camera. 85mm, soft overcast light,
+porcelain background. + STYLE LOCK.
+
+Negative: glamour, retouched plastic skin, corporate stock smile, harsh studio strobe</code></pre></div>
+      <div class="card"><h4>Interior — the Danish home</h4><pre><code>Wide interior of a lived-in Danish home, worn oak floor,
+books, coffee cup, plants, soft grey morning light through
+linen curtains. Warm, characterful, empty of people. 24mm.
++ STYLE LOCK.
+
+Negative: catalogue-perfect, sterile, hospital, magazine-staged, cold light</code></pre></div>
+      <div class="card"><h4>Buildings & exterior</h4><pre><code>Exterior of a calm Scandinavian care-office building, navy
+signage halo-lit, brass detailing, soft overcast daylight,
+understated and institutional. + STYLE LOCK.
+
+Negative: retail signage, box-lit sign, neon, busy street clutter</code></pre></div>
+    </div>
+
+    <h3>Document &amp; deck prompts (text / layout models)</h3>
+    <pre><code>INVESTOR DECK SLIDE
+"Draft a Premium Care investor slide on [topic]. Voice: quiet
+authority, evidenced, no superlatives. Layout: porcelain content
+slide, gold keyline top edge, serif headline left, one supporting
+navy-tonal chart with a single gold accent series right. Forbidden
+words: world-class, solutions, passion, journey, loved ones.
+End every claim with evidence."
+
+MUNICIPALITY PROPOSAL SECTION
+"Write a Premium Care tender section on [topic]. Voice: complete,
+transparent, procurement-grade. 'Premium standards. Procurement-
+grade transparency.' No foil optics, no marketing gloss. Plain
+words for hard subjects. British English."</code></pre>
+
+    <h3>Illustration, icon, diagram &amp; infographic prompts</h3>
+    <pre><code>ICON  "Single-weight line icon, 48-unit grid, 2-unit stroke,
+2-unit corner radius, round caps, navy on porcelain, one concept,
+matches a heraldic engraved family. Subject: [x]."
+
+DIAGRAM  "Calm process diagram, boxes with 2px radius, hairline
+navy strokes, gold connector on the critical path only, mono
+labels, generous spacing. No rainbow colours."
+
+INFOGRAPHIC  "One large statistic in serif/mono navy, small sans
+label, a single line icon. Navy tonal scale + one gold accent.
+Restraint over density."</code></pre>
+
+    <h3>Social, recruitment, training &amp; web-hero prompts</h3>
+    <div class="grid g2">
+      <div class="card"><h4>Social post (values)</h4><pre><code>Porcelain square, one Danish value in tracked navy caps
+(e.g. NÆRVÆR), a 3-line serif definition beneath, gold
+keyline, SH bottom-right. Calm, uncluttered. + STYLE LOCK.</code></pre></div>
+      <div class="card"><h4>Recruitment hero</h4><pre><code>Warm photo of a caregiver mid-work, dignified and competent,
+navy uniform, real Danish home. Headline: "Work where the
+standard matches your pride." + STYLE LOCK.</code></pre></div>
+      <div class="card"><h4>Training material cover</h4><pre><code>Navy signature panel, gold SH, serif module title, mono
+module number, gold keyline. Instructional, respectful of
+the learner. + STYLE LOCK.</code></pre></div>
+      <div class="card"><h4>Website hero</h4><pre><code>Full-bleed relational care photo with a verified dark
+contrast zone bottom-left for a white logo + serif headline.
+Calm, premium, generous negative space. + STYLE LOCK.</code></pre></div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="s18">
+  <div class="section-inner">
+    <div class="sect-head">
+      <div class="eyebrow">Section 18 <span class="interpunct" style="margin-left:.6em">·</span> Assurance</div>
+      <h2>Quality Assurance</h2>
+      <p class="lede">Before anything leaves the building, goes live, or is generated, it clears these checklists. Consistency is not an accident of talent — it is the product of a discipline anyone can follow.</p>
+    </div>
+
+    <h3>The universal pre-flight checklist</h3>
+    <div class="card">
+      <ul>
+        <li style="list-style:none;margin-left:-1.2em"><span style="color:var(--pc-gold);font-weight:600;margin-right:.6em">✓</span>Passes all Five Design Tests — Dignity, Restraint, Faglighed, Consistency, Tryghed.</li>
+        <li style="list-style:none;margin-left:-1.2em"><span style="color:var(--pc-gold);font-weight:600;margin-right:.6em">✓</span>Correct logo lockup for the context, in an approved colourway, above minimum size, with full clear space.</li>
+        <li style="list-style:none;margin-left:-1.2em"><span style="color:var(--pc-gold);font-weight:600;margin-right:.6em">✓</span>Palette obeys the 60/30/8/2 proportion; gold used once; red only within the shield.</li>
+        <li style="list-style:none;margin-left:-1.2em"><span style="color:var(--pc-gold);font-weight:600;margin-right:.6em">✓</span>Typography from the approved system; fallback stack embedded where fonts are not guaranteed.</li>
+        <li style="list-style:none;margin-left:-1.2em"><span style="color:var(--pc-gold);font-weight:600;margin-right:.6em">✓</span>Layout on the 12-column grid; spacing on the 8-point scale; left-aligned, ragged-right.</li>
+        <li style="list-style:none;margin-left:-1.2em"><span style="color:var(--pc-gold);font-weight:600;margin-right:.6em">✓</span>Every claim evidenced; no forbidden vocabulary; written to one person.</li>
+        <li style="list-style:none;margin-left:-1.2em"><span style="color:var(--pc-gold);font-weight:600;margin-right:.6em">✓</span>Contrast verified, not judged by eye — body ≥ 7:1 target, 4.5:1 floor; no colour-only signals.</li>
+        <li style="list-style:none;margin-left:-1.2em"><span style="color:var(--pc-gold);font-weight:600;margin-right:.6em">✓</span>Danish characters (æ ø å) render correctly; strapline present and in Danish.</li>
+        <li style="list-style:none;margin-left:-1.2em"><span style="color:var(--pc-gold);font-weight:600;margin-right:.6em">✓</span>File named to convention with a version number; exported in the correct format.</li>
+      </ul>
+    </div>
+
+    <h3>Medium-specific checklists</h3>
+    <div class="grid g2">
+      <div class="card">
+        <h4>Print</h4>
+        <ul>
+          <li style="list-style:none;margin-left:-1.2em"><span style="color:var(--pc-gold);font-weight:600;margin-right:.6em">✓</span>PDF/X-4, CMYK + spot, 3 mm bleed, 12 mm safe area, ink ≤ 300%.</li>
+          <li style="list-style:none;margin-left:-1.2em"><span style="color:var(--pc-gold);font-weight:600;margin-right:.6em">✓</span>One speciality finish per item (certificates excepted).</li>
+          <li style="list-style:none;margin-left:-1.2em"><span style="color:var(--pc-gold);font-weight:600;margin-right:.6em">✓</span>Greyscale-verified if the piece may be photocopied.</li>
+          <li style="list-style:none;margin-left:-1.2em"><span style="color:var(--pc-gold);font-weight:600;margin-right:.6em">✓</span>Fogra contract proof for a new supplier's first run.</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h4>Digital / web</h4>
+        <ul>
+          <li style="list-style:none;margin-left:-1.2em"><span style="color:var(--pc-gold);font-weight:600;margin-right:.6em">✓</span>WCAG 2.2 AA; visible keyboard focus; reduced-motion honoured.</li>
+          <li style="list-style:none;margin-left:-1.2em"><span style="color:var(--pc-gold);font-weight:600;margin-right:.6em">✓</span>Logo is vector (SVG); one gold CTA maximum per page.</li>
+          <li style="list-style:none;margin-left:-1.2em"><span style="color:var(--pc-gold);font-weight:600;margin-right:.6em">✓</span>Responsive to mobile; tables and figures legible at 320 px.</li>
+          <li style="list-style:none;margin-left:-1.2em"><span style="color:var(--pc-gold);font-weight:600;margin-right:.6em">✓</span>No invented dark mode — navy is the dark surface.</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h4>Uniform / environment</h4>
+        <ul>
+          <li style="list-style:none;margin-left:-1.2em"><span style="color:var(--pc-gold);font-weight:600;margin-right:.6em">✓</span>Embroidery from DST/EMB master; non-metallic gold thread.</li>
+          <li style="list-style:none;margin-left:-1.2em"><span style="color:var(--pc-gold);font-weight:600;margin-right:.6em">✓</span>Certification outranks branding on safety garments.</li>
+          <li style="list-style:none;margin-left:-1.2em"><span style="color:var(--pc-gold);font-weight:600;margin-right:.6em">✓</span>Halo illumination only; 3000 K; concealed fixings.</li>
+          <li style="list-style:none;margin-left:-1.2em"><span style="color:var(--pc-gold);font-weight:600;margin-right:.6em">✓</span>Shop / placement drawing approved before fabrication.</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h4>AI-generated</h4>
+        <ul>
+          <li style="list-style:none;margin-left:-1.2em"><span style="color:var(--pc-gold);font-weight:600;margin-right:.6em">✓</span>Style-lock suffix applied; palette and grade correct.</li>
+          <li style="list-style:none;margin-left:-1.2em"><span style="color:var(--pc-gold);font-weight:600;margin-right:.6em">✓</span>No identifiable real person; no personal-care moment.</li>
+          <li style="list-style:none;margin-left:-1.2em"><span style="color:var(--pc-gold);font-weight:600;margin-right:.6em">✓</span>Passes the Dignity test as if it were a real photograph.</li>
+          <li style="list-style:none;margin-left:-1.2em"><span style="color:var(--pc-gold);font-weight:600;margin-right:.6em">✓</span>Reviewed and approved by a human before publication.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="callout doctrine"><span class="tag">The final word</span><p>This system exists so that a family at a doorway, an investor across a table, a caseworker opening a document and a caregiver pulling on a uniform all meet the same institution — calm, certain, and worthy of trust. Every artefact is a promise kept. <strong>Omsorg · Tryghed · Hver Dag.</strong></p></div>
+  </div>
+</section>
+
+<div class="footer-band">
+  <span class="wm">Premium Care</span>
+  Brand Operating System <span style="color:var(--pc-gold)">·</span> Version 1.0 <span style="color:var(--pc-gold)">·</span> Confidential<br>
+  <span style="display:block;margin-top:.8em">Premium Care ApS <span style="color:var(--pc-gold)">·</span> København <span style="color:var(--pc-gold)">·</span> MMXXVI</span>
+  <div style="margin-top:1.6em"><svg viewBox="0 0 200 240" width="56" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Premium Care crowned shield">
+  <!-- Crown -->
+  <g fill="var(--pc-gold)">
+    <circle cx="100" cy="10" r="3.4"/>
+    <path d="M100 15 L108 30 L92 30 Z" opacity="0"/>
+    <path d="M68 52 L72 30 L84 44 L100 26 L116 44 L128 30 L132 52 Z"/>
+    <rect x="66" y="52" width="68" height="7" rx="2"/>
+    <circle cx="72" cy="30" r="3"/><circle cx="128" cy="30" r="3"/><circle cx="100" cy="24" r="3"/>
+  </g>
+  <!-- Shield outline -->
+  <path d="M50 66 H150 V150 Q150 196 100 214 Q50 196 50 150 Z" fill="none" stroke="var(--pc-gold)" stroke-width="5"/>
+  <!-- Shield field (red, full colour only) -->
+  <path d="M55 71 H145 V149 Q145 191 100 208 Q55 191 55 149 Z" fill="none"/>
+  <!-- Dannebrog cross (white) -->
+  <g fill="var(--pc-gold)">
+    <rect x="90" y="71" width="14" height="137" />
+    <rect x="55" y="120" width="90" height="14" />
+  </g>
+  <!-- Two figures (gold silhouettes, equal height, facing) -->
+  <g fill="var(--pc-gold)">
+    <!-- left figure (gentleman + cane) -->
+    <circle cx="75" cy="104" r="8"/>
+    <path d="M67 116 q8 -5 16 0 l3 42 q-11 4 -22 0 Z"/>
+    <rect x="84" y="128" width="2.4" height="52" rx="1"/>
+    <!-- right figure (lady) -->
+    <circle cx="123" cy="104" r="8"/>
+    <path d="M114 116 q9 -5 18 0 l4 46 q-13 4 -26 0 Z"/>
+    <rect x="112" y="128" width="2.4" height="52" rx="1"/>
+  </g>
+</svg></div>
+</div>
+
+<script>
+document.querySelectorAll('.tocnav a').forEach(a=>{
+  a.addEventListener('click',()=>{
+    if(window.innerWidth<1400){
+      document.querySelector('.tocnav').classList.remove('open');
+      document.querySelector('.scrim').classList.remove('show');
+    }
+  });
+});
+</script>
+</body></html>

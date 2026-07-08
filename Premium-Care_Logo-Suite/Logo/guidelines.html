@@ -1,0 +1,691 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Premium Care — Brand Guidelines</title>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Jost:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --navy:#061D37; --navy-deep:#04152A; --red:#941715; --red-deep:#740A07;
+    --gold:#C4A05F; --gold-light:#E4C77D; --gold-dark:#8C6A2D;
+    --ivory:#F7F5F0; --ivory-deep:#EFEBE2; --ink:#111111; --muted:#5A6472;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;-webkit-print-color-adjust:exact;print-color-adjust:exact;}
+  body{font-family:'Jost',sans-serif;color:var(--ink);background:#fff;font-weight:300;}
+  .page{width:210mm;height:296.5mm;position:relative;overflow:hidden;page-break-after:always;background:var(--ivory);}
+  .page.dark{background:var(--navy);color:var(--ivory);}
+  .pad{padding:18mm 18mm 16mm;}
+
+  /* ---------- shared typographic system ---------- */
+  .eyebrow{font-family:'Jost';font-weight:500;font-size:8.2pt;letter-spacing:.42em;text-transform:uppercase;color:var(--gold-dark);}
+  .dark .eyebrow{color:var(--gold);}
+  h1.display{font-family:'Cinzel';font-weight:600;color:var(--navy);}
+  .dark h1.display{color:var(--ivory);}
+  h2.section{font-family:'Cinzel';font-weight:600;font-size:23pt;color:var(--navy);line-height:1.15;margin:4mm 0 2mm;}
+  .lede{font-family:'Cormorant Garamond';font-size:13.5pt;line-height:1.55;color:#2A3440;max-width:150mm;}
+  .dark .lede{color:#D9D2C2;}
+  p.body{font-size:9.6pt;line-height:1.68;color:#333B46;max-width:160mm;}
+  .dark p.body{color:#C9CFD8;}
+  .rule{height:1px;background:linear-gradient(90deg,var(--gold),rgba(196,160,95,0));margin:5mm 0 7mm;}
+  .diamond{color:var(--gold);font-size:8pt;letter-spacing:.5em;}
+
+  /* signature device: gold hairline frame */
+  .frame{position:absolute;inset:8mm;border:.4pt solid rgba(196,160,95,.55);pointer-events:none;}
+  .frame:after{content:"◆";position:absolute;top:-2.4mm;left:50%;transform:translateX(-50%);
+    color:var(--gold);font-size:6.5pt;background:inherit;padding:0 2mm;}
+  .page .frame:after{background:var(--ivory);}
+  .page.dark .frame:after{background:var(--navy);}
+
+  .folio{position:absolute;bottom:9.5mm;left:0;right:0;display:flex;justify-content:space-between;
+    padding:0 18mm;font-family:'Jost';font-weight:400;font-size:7pt;letter-spacing:.3em;
+    text-transform:uppercase;color:var(--muted);}
+  .dark .folio{color:#8593A6;}
+  .folio .no{color:var(--gold-dark);} .dark .folio .no{color:var(--gold);}
+
+  /* ---------- cover ---------- */
+  .cover{display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;}
+  .cover img.mark{width:74mm;margin-bottom:12mm;}
+  .cover .title{font-family:'Cinzel';font-weight:600;font-size:15pt;letter-spacing:.34em;color:var(--gold-light);}
+  .cover .sub{font-family:'Cormorant Garamond';font-style:italic;font-size:13pt;color:#B9C2CF;margin-top:4mm;}
+  .cover .meta{position:absolute;bottom:20mm;left:0;right:0;text-align:center;font-size:7.5pt;
+    letter-spacing:.35em;text-transform:uppercase;color:#7C8AA0;}
+
+  /* ---------- contents ---------- */
+  .toc{list-style:none;margin-top:8mm;column-count:1;max-width:150mm;}
+  .toc li{display:flex;align-items:baseline;font-size:10.5pt;padding:2.6mm 0;border-bottom:.4pt solid rgba(6,29,55,.12);}
+  .toc .n{font-family:'Cinzel';font-weight:600;color:var(--gold-dark);width:12mm;font-size:9.5pt;}
+  .toc .t{font-family:'Jost';font-weight:400;letter-spacing:.06em;color:var(--navy);}
+  .toc .dots{flex:1;border-bottom:.4pt dotted rgba(6,29,55,.3);margin:0 3mm;transform:translateY(-1mm);}
+  .toc .p{font-family:'Jost';font-weight:300;color:var(--muted);}
+
+  /* ---------- grids & cards ---------- */
+  .grid{display:grid;gap:5mm;}
+  .card{background:#fff;border:.4pt solid rgba(6,29,55,.14);display:flex;align-items:center;justify-content:center;position:relative;}
+  .card img{max-width:82%;max-height:78%;}
+  .card .tag{position:absolute;bottom:0;left:0;right:0;font-size:6.4pt;letter-spacing:.22em;text-transform:uppercase;
+    color:var(--muted);padding:1.8mm 2.5mm;border-top:.4pt solid rgba(6,29,55,.1);background:rgba(247,245,240,.85);}
+  .card.navy{background:var(--navy);} .card.navy .tag{background:rgba(4,21,42,.85);color:#8FA0B8;border-color:rgba(196,160,95,.25);}
+  .card.ivory{background:var(--ivory);} .card.white{background:#fff;}
+  .card.red{background:var(--red);}
+
+  /* swatches */
+  .swatch{border:.4pt solid rgba(6,29,55,.15);}
+  .swatch .chip{height:34mm;position:relative;}
+  .swatch .chip .pct{position:absolute;top:3mm;right:3mm;font-family:'Cinzel';font-weight:600;font-size:11pt;color:rgba(255,255,255,.85);}
+  .swatch .spec{background:#fff;padding:3mm 3.5mm;font-size:7pt;line-height:1.75;color:#39424E;}
+  .swatch .spec b{display:block;font-family:'Cinzel';font-weight:600;font-size:9pt;color:var(--navy);letter-spacing:.06em;margin-bottom:1mm;}
+  .spec .lbl{color:var(--gold-dark);letter-spacing:.14em;font-weight:500;}
+
+  /* do / don't */
+  .dont .card{height:44mm;overflow:hidden;}
+  .dont .tag{color:var(--red);font-weight:500;}
+  .x{position:absolute;top:2mm;right:2mm;width:5.5mm;height:5.5mm;border-radius:50%;
+     background:var(--red);color:#fff;font-size:8pt;line-height:5.5mm;text-align:center;font-family:'Jost';font-weight:500;z-index:3;}
+  .ok{position:absolute;top:2mm;right:2mm;width:5.5mm;height:5.5mm;border-radius:50%;
+     background:#1F6B45;color:#fff;font-size:8pt;line-height:5.5mm;text-align:center;font-family:'Jost';font-weight:500;z-index:3;}
+
+  /* clear space diagram */
+  .clearspace{position:relative;display:inline-block;background:#fff;border:.4pt solid rgba(6,29,55,.15);padding:16mm;}
+  .clearspace img{width:70mm;display:block;}
+  .clearspace .zone{position:absolute;inset:8mm;border:.5pt dashed var(--red);}
+  .csx{position:absolute;font-family:'Cormorant Garamond';font-style:italic;font-size:10pt;color:var(--red);}
+
+  table.spec-table{width:100%;border-collapse:collapse;font-size:8.4pt;}
+  table.spec-table th{font-family:'Jost';font-weight:500;font-size:7.2pt;letter-spacing:.2em;text-transform:uppercase;
+     color:var(--gold-dark);text-align:left;padding:2.4mm 2mm;border-bottom:.6pt solid var(--gold);}
+  table.spec-table td{padding:2.4mm 2mm;border-bottom:.4pt solid rgba(6,29,55,.1);color:#39424E;vertical-align:top;line-height:1.5;}
+  table.spec-table td:first-child{font-family:'Jost';font-weight:400;color:var(--navy);}
+
+  .two-col{display:grid;grid-template-columns:1fr 1fr;gap:8mm;}
+  .three-col{display:grid;grid-template-columns:1fr 1fr 1fr;gap:5mm;}
+
+  .quote{font-family:'Cormorant Garamond';font-style:italic;font-size:15pt;line-height:1.5;color:var(--navy);
+     border-left:1.2pt solid var(--gold);padding-left:6mm;max-width:140mm;}
+  .dark .quote{color:var(--ivory);}
+</style>
+</head>
+<body>
+
+<!-- ═══════════ 01 · COVER ═══════════ -->
+<div class="page dark cover">
+  <div class="frame"></div>
+  <img class="mark" src="logo-suite/01-primary/premium-care_primary_transparent.png" alt="">
+  <div class="diamond">◆&nbsp;&nbsp;◆&nbsp;&nbsp;◆</div>
+  <div class="title" style="margin-top:9mm;">BRAND&nbsp;GUIDELINES</div>
+  <div class="sub">Identitet &amp; Designmanual&nbsp;·&nbsp;Version 1.0</div>
+  <div class="meta">Premium Care ApS&nbsp;&nbsp;·&nbsp;&nbsp;København&nbsp;&nbsp;·&nbsp;&nbsp;MMXXVI</div>
+</div>
+
+<!-- ═══════════ 02 · CONTENTS ═══════════ -->
+<div class="page">
+  <div class="frame"></div>
+  <div class="pad">
+    <div class="eyebrow">Premium Care · Brand Guidelines</div>
+    <h2 class="section" style="font-size:30pt;margin-top:6mm;">Contents</h2>
+    <div class="rule"></div>
+    <ul class="toc">
+      <li><span class="n">01</span><span class="t">Brand Foundation — Essence, Promise &amp; Values</span><span class="dots"></span><span class="p">03</span></li>
+      <li><span class="n">02</span><span class="t">The Mark — Anatomy &amp; Symbolism</span><span class="dots"></span><span class="p">04</span></li>
+      <li><span class="n">03</span><span class="t">Logo Architecture — The Variation System</span><span class="dots"></span><span class="p">05</span></li>
+      <li><span class="n">04</span><span class="t">Primary Lockup — Clear Space &amp; Minimum Size</span><span class="dots"></span><span class="p">06</span></li>
+      <li><span class="n">05</span><span class="t">Secondary Lockups — Emblem, Wordmark, Horizontal</span><span class="dots"></span><span class="p">07</span></li>
+      <li><span class="n">06</span><span class="t">Colour Application — Backgrounds &amp; Pairings</span><span class="dots"></span><span class="p">08</span></li>
+      <li><span class="n">07</span><span class="t">Incorrect Usage</span><span class="dots"></span><span class="p">09</span></li>
+      <li><span class="n">08</span><span class="t">Colour Palette — Specifications &amp; Proportion</span><span class="dots"></span><span class="p">10</span></li>
+      <li><span class="n">09</span><span class="t">Typography</span><span class="dots"></span><span class="p">11</span></li>
+      <li><span class="n">10</span><span class="t">Graphic Devices &amp; Iconography</span><span class="dots"></span><span class="p">12</span></li>
+      <li><span class="n">11</span><span class="t">Photography &amp; Art Direction</span><span class="dots"></span><span class="p">13</span></li>
+      <li><span class="n">12</span><span class="t">Tone of Voice — Dansk &amp; English</span><span class="dots"></span><span class="p">14</span></li>
+      <li><span class="n">13</span><span class="t">Applications — Stationery &amp; Uniform</span><span class="dots"></span><span class="p">15</span></li>
+      <li><span class="n">14</span><span class="t">Applications — Digital</span><span class="dots"></span><span class="p">16</span></li>
+      <li><span class="n">15</span><span class="t">Accessibility &amp; Contrast Compliance</span><span class="dots"></span><span class="p">17</span></li>
+      <li><span class="n">16</span><span class="t">Asset Index &amp; Usage Matrix</span><span class="dots"></span><span class="p">18</span></li>
+    </ul>
+  </div>
+  <div class="folio"><span>Premium Care ApS</span><span class="no">02</span></div>
+</div>
+
+<!-- ═══════════ 03 · BRAND FOUNDATION ═══════════ -->
+<div class="page">
+  <div class="frame"></div>
+  <div class="pad">
+    <div class="eyebrow">Section 01</div>
+    <h2 class="section">Brand Foundation</h2>
+    <div class="rule"></div>
+    <p class="quote">Omsorg&nbsp;·&nbsp;Tryghed&nbsp;·&nbsp;Hver Dag —<br>Care, security and dignity, every single day.</p>
+    <div style="height:8mm;"></div>
+    <div class="two-col">
+      <div>
+        <div class="eyebrow" style="font-size:7pt;">Essence</div>
+        <p class="body" style="margin-top:2mm;">Premium Care is a private Danish home-care institution built on a simple conviction: that the final chapters of life deserve the same excellence, discretion and dignity as any other. The brand carries the visual language of Danish heritage — the Dannebrog cross, the crown, the deep maritime navy — and pairs it with the warmth of two figures meeting face to face, supported and seen.</p>
+        <div style="height:5mm;"></div>
+        <div class="eyebrow" style="font-size:7pt;">Positioning</div>
+        <p class="body" style="margin-top:2mm;">Where public provision offers standardisation, Premium Care offers continuity of carer, unhurried visits and hotel-grade service discipline. The identity must always signal <i>institution</i>, never <i>agency</i>: permanent, accountable and quietly proud.</p>
+      </div>
+      <div>
+        <div class="eyebrow" style="font-size:7pt;">The Three Values</div>
+        <table class="spec-table" style="margin-top:2mm;">
+          <tr><th style="width:26mm;">Value</th><th>Meaning in practice</th></tr>
+          <tr><td>Omsorg<br><span style="color:var(--muted);font-size:7pt;">Care</span></td><td>Every interaction is personal. Carers are matched, not dispatched. Attention to the small courtesies — shoes at the door, names remembered, tea made properly.</td></tr>
+          <tr><td>Tryghed<br><span style="color:var(--muted);font-size:7pt;">Security</span></td><td>Predictability is a service feature: the same faces, the same times, documented handovers, and a family who always knows who is in the home.</td></tr>
+          <tr><td>Hver Dag<br><span style="color:var(--muted);font-size:7pt;">Every Day</span></td><td>Excellence is not episodic. The standard on a quiet Tuesday equals the standard on inspection day. Consistency is the promise.</td></tr>
+        </table>
+      </div>
+    </div>
+    <div style="height:7mm;"></div>
+    <div class="eyebrow" style="font-size:7pt;">Brand Personality</div>
+    <p class="body" style="margin-top:2mm;"><b style="font-weight:500;color:var(--navy);">Dignified · Warm · Danish · Assured · Discreet.</b>&ensp;Never clinical, never sentimental. The register of a family office that happens to deliver care — closer to Amanruya than to a hospital corridor.</p>
+  </div>
+  <div class="folio"><span>Brand Foundation</span><span class="no">03</span></div>
+</div>
+
+<!-- ═══════════ 04 · THE MARK ═══════════ -->
+<div class="page dark">
+  <div class="frame"></div>
+  <div class="pad">
+    <div class="eyebrow">Section 02</div>
+    <h2 class="section" style="color:var(--ivory);">The Mark — Anatomy &amp; Symbolism</h2>
+    <div class="rule"></div>
+    <div style="display:grid;grid-template-columns:74mm 1fr;gap:12mm;align-items:center;">
+      <img src="logo-suite/03-emblem/emblem_fullcolour_transparent.png" style="width:74mm;">
+      <div>
+        <table class="spec-table">
+          <tr><th style="width:30mm;color:var(--gold);">Element</th><th style="color:var(--gold);">Meaning</th></tr>
+          <tr><td style="color:var(--gold-light);">The Crown</td><td style="color:#C9CFD8;border-color:rgba(196,160,95,.2);">Royal Danish heritage and the standard of service to which the institution holds itself — care worthy of a kingdom’s eldest citizens. The single star above signifies one uncompromising standard.</td></tr>
+          <tr><td style="color:var(--gold-light);">The Shield</td><td style="color:#C9CFD8;border-color:rgba(196,160,95,.2);">Protection and guardianship. The shield form frames every promise the brand makes: the client is defended — their dignity, their routines, their home.</td></tr>
+          <tr><td style="color:var(--gold-light);">The Dannebrog</td><td style="color:#C9CFD8;border-color:rgba(196,160,95,.2);">The world’s oldest national flag, rendered in heritage red and ivory. Premium Care is unmistakably Danish: local carers, Danish regulatory discipline, Danish values of tillid og tryghed.</td></tr>
+          <tr><td style="color:var(--gold-light);">The Two Figures</td><td style="color:#C9CFD8;border-color:rgba(196,160,95,.2);">An elderly gentleman and lady, upright and facing one another — companionship, not dependency. Cast in gold: the people served are the treasure of the institution.</td></tr>
+          <tr><td style="color:var(--gold-light);">The Wordmark</td><td style="color:#C9CFD8;border-color:rgba(196,160,95,.2);">Inscriptional Roman capitals in gilded serif, with the Danish device line <i>Omsorg · Tryghed · Hver Dag</i> set in letter-spaced capitals between gold hairlines and diamond points.</td></tr>
+        </table>
+      </div>
+    </div>
+    <div style="height:6mm;"></div>
+    <p class="body">The complete mark is a <b style="font-weight:500;color:var(--gold-light);">heraldic achievement</b>, and is treated with heraldic discipline: it is never redrawn, re-proportioned, re-coloured or ornamented beyond the approved renditions in this manual.</p>
+  </div>
+  <div class="folio"><span>The Mark</span><span class="no">04</span></div>
+</div>
+
+<!-- ═══════════ 05 · LOGO ARCHITECTURE ═══════════ -->
+<div class="page">
+  <div class="frame"></div>
+  <div class="pad">
+    <div class="eyebrow">Section 03</div>
+    <h2 class="section">Logo Architecture — The Variation System</h2>
+    <div class="rule"></div>
+    <p class="body">Four lockups, four colour renditions. Every approved combination is supplied as a production asset; nothing else may be constructed.</p>
+    <div style="height:4mm;"></div>
+    <div class="grid" style="grid-template-columns:repeat(4,1fr);">
+      <div class="card navy" style="height:52mm;"><img src="logo-suite/01-primary/premium-care_primary_navy.png" style="max-width:74%;"><div class="tag">Primary · Full Colour</div></div>
+      <div class="card ivory" style="height:52mm;"><img src="logo-suite/01-primary/premium-care_primary_ivory.png" style="max-width:74%;"><div class="tag">Primary · Navy on Ivory</div></div>
+      <div class="card navy" style="height:52mm;"><img src="logo-suite/02-monochrome/premium-care_white_on_navy.png" style="max-width:74%;"><div class="tag">Primary · Reversed White</div></div>
+      <div class="card navy" style="height:52mm;"><img src="logo-suite/02-monochrome/premium-care_gold_on_navy.png" style="max-width:74%;"><div class="tag">Primary · Gilded</div></div>
+
+      <div class="card navy" style="height:52mm;"><img src="logo-suite/03-emblem/emblem_fullcolour_navy.png" style="max-height:82%;"><div class="tag">Emblem · Full Colour</div></div>
+      <div class="card ivory" style="height:52mm;"><img src="logo-suite/03-emblem/emblem_navy_on_ivory.png" style="max-height:82%;"><div class="tag">Emblem · Navy on Ivory</div></div>
+      <div class="card navy" style="height:52mm;"><img src="logo-suite/04-wordmark/wordmark_gold_on_navy.png" style="max-width:84%;"><div class="tag">Wordmark · Gilded</div></div>
+      <div class="card ivory" style="height:52mm;"><img src="logo-suite/04-wordmark/wordmark_navy_on_ivory.png" style="max-width:84%;"><div class="tag">Wordmark · Navy on Ivory</div></div>
+    </div>
+    <div style="height:5mm;"></div>
+    <div class="grid" style="grid-template-columns:1fr 1fr;">
+      <div class="card navy" style="height:34mm;"><img src="logo-suite/05-horizontal/horizontal_fullcolour_navy.png" style="max-width:88%;"><div class="tag">Horizontal · Full Colour</div></div>
+      <div class="card ivory" style="height:34mm;"><img src="logo-suite/05-horizontal/horizontal_navy_on_ivory.png" style="max-width:88%;"><div class="tag">Horizontal · Navy on Ivory</div></div>
+    </div>
+  </div>
+  <div class="folio"><span>Logo Architecture</span><span class="no">05</span></div>
+</div>
+
+<!-- ═══════════ 06 · CLEAR SPACE & MIN SIZE ═══════════ -->
+<div class="page">
+  <div class="frame"></div>
+  <div class="pad">
+    <div class="eyebrow">Section 04</div>
+    <h2 class="section">Primary Lockup — Clear Space &amp; Minimum Size</h2>
+    <div class="rule"></div>
+    <div class="two-col" style="align-items:start;">
+      <div>
+        <div class="eyebrow" style="font-size:7pt;">Clear Space</div>
+        <p class="body" style="margin:2mm 0 5mm;">The exclusion zone equals the height of the crown, measured from its base to the star — the unit <span style="font-family:'Cormorant Garamond';font-style:italic;color:var(--red);">x</span>. No typography, imagery, page edge or competing mark may enter this zone on any side.</p>
+        <div class="clearspace">
+          <div class="zone"></div>
+          <span class="csx" style="top:2mm;left:50%;transform:translateX(-50%);">x</span>
+          <span class="csx" style="bottom:2mm;left:50%;transform:translateX(-50%);">x</span>
+          <span class="csx" style="left:3mm;top:50%;transform:translateY(-50%);">x</span>
+          <span class="csx" style="right:3mm;top:50%;transform:translateY(-50%);">x</span>
+          <img src="logo-suite/01-primary/premium-care_primary_ivory.png">
+        </div>
+      </div>
+      <div>
+        <div class="eyebrow" style="font-size:7pt;">Minimum Reproduction Size</div>
+        <table class="spec-table" style="margin-top:2mm;">
+          <tr><th>Lockup</th><th>Print</th><th>Screen</th></tr>
+          <tr><td>Primary (stacked)</td><td>22 mm wide</td><td>120 px wide</td></tr>
+          <tr><td>Horizontal</td><td>32 mm wide</td><td>180 px wide</td></tr>
+          <tr><td>Wordmark alone</td><td>26 mm wide</td><td>140 px wide</td></tr>
+          <tr><td>Emblem alone</td><td>9 mm wide</td><td>32 px wide</td></tr>
+        </table>
+        <div style="height:6mm;"></div>
+        <div class="eyebrow" style="font-size:7pt;">Below Minimum</div>
+        <p class="body" style="margin-top:2mm;">Below these thresholds the device line becomes illegible. At favicon and avatar scale, use the <b style="font-weight:500;">emblem alone</b> — never the full lockup. The tagline is omitted first; the wordmark is omitted second; the emblem survives to the smallest size.</p>
+        <div style="margin-top:6mm;display:flex;gap:4mm;align-items:flex-end;">
+          <img src="logo-suite/06-app-icons/appicon_64.png" style="width:16mm;border:.4pt solid rgba(6,29,55,.15);">
+          <img src="logo-suite/06-app-icons/appicon_32.png" style="width:8mm;border:.4pt solid rgba(6,29,55,.15);">
+          <span style="font-size:7.4pt;color:var(--muted);padding-bottom:1mm;">Emblem holds detail at 64 px and 32 px.</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="folio"><span>Clear Space &amp; Minimum Size</span><span class="no">06</span></div>
+</div>
+
+<!-- ═══════════ 07 · SECONDARY LOCKUPS ═══════════ -->
+<div class="page">
+  <div class="frame"></div>
+  <div class="pad">
+    <div class="eyebrow">Section 05</div>
+    <h2 class="section">Secondary Lockups</h2>
+    <div class="rule"></div>
+    <div class="three-col">
+      <div>
+        <div class="card navy" style="height:56mm;"><img src="logo-suite/03-emblem/emblem_gold_on_navy.png" style="max-height:84%;"></div>
+        <div class="eyebrow" style="font-size:7pt;margin-top:3mm;">The Emblem</div>
+        <p class="body" style="font-size:8.6pt;margin-top:1.5mm;">The crest alone. For avatars, favicons, wax seals, embroidery, lapel pins, vehicle marques and any context where the name is already established. The gilded rendition is reserved for ceremonial and premium touchpoints.</p>
+      </div>
+      <div>
+        <div class="card navy" style="height:56mm;"><img src="logo-suite/04-wordmark/wordmark_gold_on_navy.png" style="max-width:88%;"></div>
+        <div class="eyebrow" style="font-size:7pt;margin-top:3mm;">The Wordmark</div>
+        <p class="body" style="font-size:8.6pt;margin-top:1.5mm;">Name and device line without the crest. For narrow horizontal spaces — document footers, web navigation on scroll, spine printing — where the emblem would collapse below its minimum size.</p>
+      </div>
+      <div>
+        <div class="card navy" style="height:56mm;padding:4mm;"><img src="logo-suite/05-horizontal/horizontal_fullcolour_navy.png" style="max-width:92%;"></div>
+        <div class="eyebrow" style="font-size:7pt;margin-top:3mm;">The Horizontal Lockup</div>
+        <p class="body" style="font-size:8.6pt;margin-top:1.5mm;">Emblem and wordmark side by side. The workhorse for letterheads, email signatures, website headers and co-branded documents. The emblem height defines the lockup; spacing is fixed and supplied as an asset.</p>
+      </div>
+    </div>
+    <div style="height:6mm;"></div>
+    <div class="eyebrow" style="font-size:7pt;">Hierarchy of Deployment</div>
+    <table class="spec-table" style="margin-top:2mm;">
+      <tr><th style="width:42mm;">Context</th><th>First choice</th><th>Alternative</th></tr>
+      <tr><td>Cover pages, signage, ceremony</td><td>Primary stacked lockup</td><td>Emblem, gilded</td></tr>
+      <tr><td>Documents, correspondence</td><td>Horizontal lockup</td><td>Wordmark</td></tr>
+      <tr><td>Digital interface chrome</td><td>Horizontal lockup</td><td>Emblem (collapsed nav)</td></tr>
+      <tr><td>Small merchandise &amp; uniform</td><td>Emblem</td><td>Wordmark (breast pocket)</td></tr>
+    </table>
+  </div>
+  <div class="folio"><span>Secondary Lockups</span><span class="no">07</span></div>
+</div>
+
+<!-- ═══════════ 08 · COLOUR APPLICATION ═══════════ -->
+<div class="page">
+  <div class="frame"></div>
+  <div class="pad">
+    <div class="eyebrow">Section 06</div>
+    <h2 class="section">Colour Application — Backgrounds &amp; Pairings</h2>
+    <div class="rule"></div>
+    <p class="body">Midnight Navy is the brand’s home. The full-colour mark lives on navy and only on navy; every other surface takes a monochrome rendition.</p>
+    <div style="height:4mm;"></div>
+    <div class="grid" style="grid-template-columns:repeat(3,1fr);">
+      <div class="card navy" style="height:46mm;"><div class="ok">✓</div><img src="logo-suite/01-primary/premium-care_primary_navy.png" style="max-width:66%;"><div class="tag">Full colour on Midnight Navy</div></div>
+      <div class="card ivory" style="height:46mm;"><div class="ok">✓</div><img src="logo-suite/01-primary/premium-care_primary_ivory.png" style="max-width:66%;"><div class="tag">Navy rendition on Ivory</div></div>
+      <div class="card white" style="height:46mm;"><div class="ok">✓</div><img src="logo-suite/02-monochrome/premium-care_black_on_white.png" style="max-width:66%;"><div class="tag">Black rendition on White (mono print)</div></div>
+      <div class="card navy" style="height:46mm;"><div class="ok">✓</div><img src="logo-suite/02-monochrome/premium-care_gold_on_navy.png" style="max-width:66%;"><div class="tag">Gilded on Navy — ceremonial</div></div>
+      <div class="card navy" style="height:46mm;"><div class="ok">✓</div><img src="logo-suite/02-monochrome/premium-care_white_on_navy.png" style="max-width:66%;"><div class="tag">Reversed white on Navy</div></div>
+      <div class="card" style="height:46mm;background:linear-gradient(160deg,#0B2A4A,#04152A);"><div class="ok">✓</div><img src="logo-suite/02-monochrome/premium-care_white_transparent.png" style="max-width:66%;"><div class="tag" style="background:rgba(4,21,42,.85);color:#8FA0B8;">Reversed white on navy photography</div></div>
+    </div>
+    <div style="height:5mm;"></div>
+    <p class="body"><b style="font-weight:500;color:var(--navy);">Photography rule.</b> On photographic backgrounds, use the reversed white rendition over dark imagery scrimmed with Midnight Navy at ≥ 60% opacity. The full-colour mark is never placed over photography.</p>
+  </div>
+  <div class="folio"><span>Colour Application</span><span class="no">08</span></div>
+</div>
+
+<!-- ═══════════ 09 · INCORRECT USAGE ═══════════ -->
+<div class="page">
+  <div class="frame"></div>
+  <div class="pad">
+    <div class="eyebrow">Section 07</div>
+    <h2 class="section">Incorrect Usage</h2>
+    <div class="rule"></div>
+    <p class="body">The mark is an asset of record. The following treatments are prohibited without exception.</p>
+    <div style="height:4mm;"></div>
+    <div class="grid dont" style="grid-template-columns:repeat(3,1fr);">
+      <div class="card navy"><div class="x">✕</div><img src="logo-suite/01-primary/premium-care_primary_transparent.png" style="max-width:64%;transform:scaleX(1.45);"><div class="tag">Do not stretch or condense</div></div>
+      <div class="card navy"><div class="x">✕</div><img src="logo-suite/01-primary/premium-care_primary_transparent.png" style="max-width:64%;filter:hue-rotate(120deg) saturate(1.6);"><div class="tag">Do not recolour</div></div>
+      <div class="card navy"><div class="x">✕</div><img src="logo-suite/01-primary/premium-care_primary_transparent.png" style="max-width:64%;transform:rotate(-14deg);"><div class="tag">Do not rotate or tilt</div></div>
+      <div class="card red"><div class="x">✕</div><img src="logo-suite/01-primary/premium-care_primary_transparent.png" style="max-width:64%;"><div class="tag">Do not place full colour on red or busy grounds</div></div>
+      <div class="card navy"><div class="x">✕</div><img src="logo-suite/01-primary/premium-care_primary_transparent.png" style="max-width:64%;filter:drop-shadow(2mm 2mm 1.4mm rgba(0,0,0,.9));"><div class="tag">Do not add shadows, glows or effects</div></div>
+      <div class="card navy"><div class="x">✕</div><div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;"><img src="logo-suite/01-primary/premium-care_primary_transparent.png" style="max-width:64%;"></div><div style="position:absolute;top:6mm;left:0;right:0;text-align:center;font-family:'Cinzel';color:#fff;font-size:9pt;letter-spacing:.2em;">HJEMMEPLEJE A/S</div><div class="tag">Do not crowd the clear space or add typography</div></div>
+    </div>
+    <div style="height:5mm;"></div>
+    <p class="body">Additionally prohibited: redrawing any element, outlining the mark, applying gradients other than the supplied gilding, placing the emblem inside other shapes, animating individual elements separately, and reconstructing lockups at spacings other than those supplied.</p>
+  </div>
+  <div class="folio"><span>Incorrect Usage</span><span class="no">09</span></div>
+</div>
+
+<!-- ═══════════ 10 · COLOUR PALETTE ═══════════ -->
+<div class="page">
+  <div class="frame"></div>
+  <div class="pad">
+    <div class="eyebrow">Section 08</div>
+    <h2 class="section">Colour Palette</h2>
+    <div class="rule"></div>
+    <div class="grid" style="grid-template-columns:repeat(3,1fr);">
+      <div class="swatch"><div class="chip" style="background:#061D37;"><span class="pct">60%</span></div><div class="spec"><b>Midnight Navy</b><span class="lbl">HEX</span> #061D37<br><span class="lbl">RGB</span> 6 · 29 · 55<br><span class="lbl">CMYK</span> 89 · 47 · 0 · 78<br><span class="lbl">PMS</span> 282 C</div></div>
+      <div class="swatch"><div class="chip" style="background:#C4A05F;"><span class="pct">25%</span></div><div class="spec"><b>Regal Gold</b><span class="lbl">HEX</span> #C4A05F<br><span class="lbl">RGB</span> 196 · 160 · 95<br><span class="lbl">CMYK</span> 0 · 18 · 52 · 23<br><span class="lbl">PMS</span> 465 C · Foil: 872</div></div>
+      <div class="swatch"><div class="chip" style="background:#941715;"><span class="pct">10%</span></div><div class="spec"><b>Dannebrog Red</b><span class="lbl">HEX</span> #941715<br><span class="lbl">RGB</span> 148 · 23 · 21<br><span class="lbl">CMYK</span> 0 · 84 · 86 · 42<br><span class="lbl">PMS</span> 187 C</div></div>
+      <div class="swatch"><div class="chip" style="background:#F7F5F0;border-bottom:.4pt solid rgba(6,29,55,.1);"><span class="pct" style="color:var(--navy);">5%</span></div><div class="spec"><b>Ivory</b><span class="lbl">HEX</span> #F7F5F0<br><span class="lbl">RGB</span> 247 · 245 · 240<br><span class="lbl">CMYK</span> 0 · 1 · 3 · 3<br><span class="lbl">PMS</span> Warm Grey 1 (10%)</div></div>
+      <div class="swatch"><div class="chip" style="background:#E4C77D;"></div><div class="spec"><b>Gold Light</b><span class="lbl">HEX</span> #E4C77D<br><span class="lbl">Use</span> Gilding highlight, rules on navy, hover states</div></div>
+      <div class="swatch"><div class="chip" style="background:#04152A;"></div><div class="spec"><b>Navy Deep</b><span class="lbl">HEX</span> #04152A<br><span class="lbl">Use</span> Footers, scrims over photography, pressed states</div></div>
+    </div>
+    <div style="height:6mm;"></div>
+    <div class="eyebrow" style="font-size:7pt;">Proportion of Use</div>
+    <div style="display:flex;height:9mm;margin-top:2.5mm;border:.4pt solid rgba(6,29,55,.15);">
+      <div style="width:60%;background:#061D37;"></div><div style="width:25%;background:#C4A05F;"></div><div style="width:10%;background:#941715;"></div><div style="width:5%;background:#F7F5F0;"></div>
+    </div>
+    <p class="body" style="margin-top:3.5mm;">Navy is the ground; gold is the voice; red is the punctuation. Dannebrog Red is <b style="font-weight:500;color:var(--navy);">never used as a background for the mark</b> and never exceeds ten percent of any composition. Metallic gold foil (PMS 872) is approved for certificates, invitations and premium print.</p>
+  </div>
+  <div class="folio"><span>Colour Palette</span><span class="no">10</span></div>
+</div>
+
+<!-- ═══════════ 11 · TYPOGRAPHY ═══════════ -->
+<div class="page">
+  <div class="frame"></div>
+  <div class="pad">
+    <div class="eyebrow">Section 09</div>
+    <h2 class="section">Typography</h2>
+    <div class="rule"></div>
+    <div class="two-col" style="align-items:start;">
+      <div>
+        <div class="eyebrow" style="font-size:7pt;">Display — Cinzel</div>
+        <div style="font-family:'Cinzel';font-weight:600;font-size:26pt;color:var(--navy);margin:2mm 0 1mm;">Værdighed</div>
+        <div style="font-family:'Cinzel';font-weight:400;font-size:11pt;color:var(--navy);letter-spacing:.12em;">AaBbCc ÆæØøÅå 1234567890</div>
+        <p class="body" style="margin-top:3mm;">Inscriptional Roman capitals echoing the wordmark. Reserved for headlines, cover titles and section marks. Set in capitals or title case with generous tracking (+6 to +12); never below 14 pt; never for running text.</p>
+        <div style="height:6mm;"></div>
+        <div class="eyebrow" style="font-size:7pt;">Serif — Cormorant Garamond</div>
+        <div style="font-family:'Cormorant Garamond';font-size:16pt;font-style:italic;color:var(--navy);margin:2mm 0 1mm;">Omsorg der føles som familie.</div>
+        <p class="body" style="margin-top:2mm;">The editorial voice: pull quotes, testimonials, ledes and ceremonial documents. Italic is preferred for quotations; 400–600 weights only.</p>
+      </div>
+      <div>
+        <div class="eyebrow" style="font-size:7pt;">Text &amp; Interface — Jost</div>
+        <div style="font-family:'Jost';font-weight:400;font-size:12pt;color:var(--navy);margin:2mm 0 1mm;">Tryghed i eget hjem — hver dag, året rundt.</div>
+        <div style="font-family:'Jost';font-weight:300;font-size:9.5pt;color:#39424E;">AaBbCc ÆæØøÅå 1234567890 — Light 300</div>
+        <div style="font-family:'Jost';font-weight:400;font-size:9.5pt;color:#39424E;">AaBbCc ÆæØøÅå 1234567890 — Regular 400</div>
+        <div style="font-family:'Jost';font-weight:500;font-size:9.5pt;color:#39424E;">AaBbCc ÆæØøÅå 1234567890 — Medium 500</div>
+        <p class="body" style="margin-top:3mm;">The workhorse for body copy, interfaces, forms, rosters and care documentation. Geometric, quietly modern, fully Danish-character complete. Body 9–11 pt at 1.6–1.7 leading; labels in Medium, letter-spaced capitals.</p>
+        <div style="height:6mm;"></div>
+        <div class="eyebrow" style="font-size:7pt;">Hierarchy Example</div>
+        <div style="border:.4pt solid rgba(6,29,55,.15);background:#fff;padding:5mm;margin-top:2mm;">
+          <div class="eyebrow" style="font-size:6.5pt;">Hjemmepleje · København</div>
+          <div style="font-family:'Cinzel';font-weight:600;font-size:14pt;color:var(--navy);margin:1.5mm 0;">Personlig Pleje</div>
+          <div style="font-family:'Cormorant Garamond';font-style:italic;font-size:10.5pt;color:#4A5563;">Den samme hjælper, den samme tid, den samme ro.</div>
+          <p style="font-family:'Jost';font-weight:300;font-size:8.2pt;line-height:1.65;color:#39424E;margin-top:2mm;">Vores faste team lærer Deres hjem og vaner at kende, så hver dag begynder trygt og værdigt.</p>
+        </div>
+      </div>
+    </div>
+    <div style="height:5mm;"></div>
+    <p class="body"><b style="font-weight:500;color:var(--navy);">System fallbacks:</b> Georgia (serif contexts), Segoe UI / Helvetica Neue (Jost contexts). Fallbacks apply only where webfonts cannot load; templates embed the brand faces.</p>
+  </div>
+  <div class="folio"><span>Typography</span><span class="no">11</span></div>
+</div>
+
+<!-- ═══════════ 12 · GRAPHIC DEVICES ═══════════ -->
+<div class="page dark">
+  <div class="frame"></div>
+  <div class="pad">
+    <div class="eyebrow">Section 10</div>
+    <h2 class="section" style="color:var(--ivory);">Graphic Devices &amp; Iconography</h2>
+    <div class="rule"></div>
+    <div class="two-col" style="align-items:start;">
+      <div>
+        <div class="eyebrow" style="font-size:7pt;">The Device Line</div>
+        <div style="margin:4mm 0;text-align:center;border:.4pt solid rgba(196,160,95,.35);padding:6mm 4mm;">
+          <div style="display:flex;align-items:center;gap:3mm;justify-content:center;">
+            <div style="height:.4pt;background:linear-gradient(90deg,transparent,#C4A05F);flex:1;"></div>
+            <span style="font-family:'Jost';font-weight:400;font-size:8pt;letter-spacing:.34em;color:#E4C77D;">OMSORG&nbsp;·&nbsp;TRYGHED&nbsp;·&nbsp;HVER&nbsp;DAG</span>
+            <div style="height:.4pt;background:linear-gradient(90deg,#C4A05F,transparent);flex:1;"></div>
+          </div>
+          <div style="color:#C4A05F;font-size:6.5pt;margin-top:2.5mm;">◆</div>
+        </div>
+        <p class="body">The tagline construction — letter-spaced capitals between fading gold hairlines, closed by a single diamond — is a brand device in its own right. It may frame section openings, certificates and invitations. The diamond <span style="color:var(--gold);">◆</span> is the brand’s sole ornament: it separates, it closes, it never decorates in multiples of more than three.</p>
+      </div>
+      <div>
+        <div class="eyebrow" style="font-size:7pt;">Rules &amp; Frames</div>
+        <p class="body" style="margin-top:2mm;">Hairline rules at 0.4 pt in Regal Gold, always fading to transparent at one end. The gold hairline frame with centred diamond (as on every page of this manual) marks premium documents: certificates, welcome books, annual reports.</p>
+        <div style="height:5mm;"></div>
+        <div class="eyebrow" style="font-size:7pt;">Iconography</div>
+        <p class="body" style="margin-top:2mm;">Interface and print icons are drawn as <b style="font-weight:500;color:var(--gold-light);">1.5 px hairline strokes</b>, geometric, with rounded terminals — matching Jost’s construction. Icons are single-colour only: gold on navy, navy on ivory. Filled, duotone or illustrative icons are prohibited. The crown and shield are never simplified into icons; the emblem asset is used instead.</p>
+        <div style="display:flex;gap:5mm;margin-top:4mm;">
+          <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="#C4A05F" stroke-width="1.1" stroke-linecap="round"><path d="M3 11.5 12 4l9 7.5"/><path d="M5.5 10v9h13v-9"/></svg>
+          <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="#C4A05F" stroke-width="1.1" stroke-linecap="round"><circle cx="12" cy="12" r="8.5"/><path d="M12 7.5V12l3 2.5"/></svg>
+          <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="#C4A05F" stroke-width="1.1" stroke-linecap="round"><path d="M12 20s-7-4.6-7-9.6C5 7.5 7 6 9 6c1.3 0 2.4.7 3 1.7C12.6 6.7 13.7 6 15 6c2 0 4 1.5 4 4.4 0 5-7 9.6-7 9.6Z"/></svg>
+          <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="#C4A05F" stroke-width="1.1" stroke-linecap="round"><path d="M4 19h16M6 19V9.5M18 19V9.5M4 9.5h16M12 4l7 5.5H5L12 4Z"/></svg>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="folio"><span>Graphic Devices</span><span class="no">12</span></div>
+</div>
+
+<!-- ═══════════ 13 · PHOTOGRAPHY ═══════════ -->
+<div class="page">
+  <div class="frame"></div>
+  <div class="pad">
+    <div class="eyebrow">Section 11</div>
+    <h2 class="section">Photography &amp; Art Direction</h2>
+    <div class="rule"></div>
+    <div class="two-col" style="align-items:start;">
+      <div>
+        <div class="eyebrow" style="font-size:7pt;">Subject</div>
+        <p class="body" style="margin-top:2mm;">Real moments of companionship: a walk in Frederiksberg Have, coffee poured properly, hands held at a piano. Clients are photographed <b style="font-weight:500;color:var(--navy);">upright, engaged and dignified</b> — never from above, never in clinical settings, never as passive recipients. Carers appear in uniform, present but not dominant.</p>
+        <div style="height:4mm;"></div>
+        <div class="eyebrow" style="font-size:7pt;">Light &amp; Grade</div>
+        <p class="body" style="margin-top:2mm;">Natural Nordic light: soft, directional, honest. The grade is warm in the highlights and cool navy in the shadows — echoing gold on midnight. Muted saturation; skin tones true; blacks lifted toward navy, never crushed.</p>
+      </div>
+      <div>
+        <div class="eyebrow" style="font-size:7pt;">Composition</div>
+        <p class="body" style="margin-top:2mm;">Generous negative space for typography; eye-level or slightly low camera; interiors that read as homes — books, textiles, daylight — not facilities. Details are welcome: a wedding ring, a chessboard, the fold of a well-made bed.</p>
+        <div style="height:4mm;"></div>
+        <div class="eyebrow" style="font-size:7pt;">Prohibited</div>
+        <p class="body" style="margin-top:2mm;">Stock-photo cheerfulness, white-coat imagery, medical apparatus as hero subject, downward angles on seated elders, heavy HDR, filters, and any image in which a client appears distressed or anonymous without consent.</p>
+      </div>
+    </div>
+    <div style="height:6mm;"></div>
+    <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:4mm;">
+      <div style="height:40mm;background:linear-gradient(155deg,#3A4C63 0%,#1B2C44 55%,#0A1E38 100%);position:relative;"><span style="position:absolute;bottom:2.5mm;left:3mm;font-size:6.5pt;letter-spacing:.2em;color:#C7B486;text-transform:uppercase;">Tonal reference · shadow</span></div>
+      <div style="height:40mm;background:linear-gradient(155deg,#C9B183 0%,#9C7F4E 60%,#6E5630 100%);position:relative;"><span style="position:absolute;bottom:2.5mm;left:3mm;font-size:6.5pt;letter-spacing:.2em;color:#fff;text-transform:uppercase;">Tonal reference · highlight</span></div>
+      <div style="height:40mm;background:linear-gradient(155deg,#EFE9DC 0%,#D8CDB9 100%);position:relative;"><span style="position:absolute;bottom:2.5mm;left:3mm;font-size:6.5pt;letter-spacing:.2em;color:#6E5630;text-transform:uppercase;">Tonal reference · interior</span></div>
+    </div>
+  </div>
+  <div class="folio"><span>Photography</span><span class="no">13</span></div>
+</div>
+
+<!-- ═══════════ 14 · TONE OF VOICE ═══════════ -->
+<div class="page">
+  <div class="frame"></div>
+  <div class="pad">
+    <div class="eyebrow">Section 12</div>
+    <h2 class="section">Tone of Voice — Dansk &amp; English</h2>
+    <div class="rule"></div>
+    <p class="body">Premium Care speaks like a trusted family adviser: warm, precise and unhurried. Danish is the first language of the brand; English follows the same register for international families and partners.</p>
+    <div style="height:4mm;"></div>
+    <table class="spec-table">
+      <tr><th style="width:30mm;">Principle</th><th style="width:62mm;">We write</th><th>We never write</th></tr>
+      <tr><td>De-form respect</td><td>“Vi glæder os til at byde Dem velkommen.” Formal <i>De</i> to clients and families by default; <i>du</i> only when invited.</td><td>Forced informality, exclamation marks, emoji in client correspondence.</td></tr>
+      <tr><td>Precision as care</td><td>“Deres faste hjælper, Mette, kommer tirsdag kl. 9.00.” Names, times and commitments stated exactly.</td><td>“A member of our team will visit at some point in the morning.”</td></tr>
+      <tr><td>Dignity first</td><td>“Støtte til hverdagen” — support for daily life.</td><td>“The elderly”, “patients”, “beds”, or any language of burden or decline.</td></tr>
+      <tr><td>Quiet confidence</td><td>“Vi dokumenterer hvert besøg, samme dag.” Claims proven by process.</td><td>Superlatives without evidence: “best”, “revolutionary”, “#1 i Danmark”.</td></tr>
+    </table>
+    <div style="height:6mm;"></div>
+    <div class="two-col">
+      <div class="quote" style="font-size:12.5pt;">”Hos Premium Care møder De de samme ansigter, den samme omhu og den samme ro — hver dag.”</div>
+      <div class="quote" style="font-size:12.5pt;">“At Premium Care you are met by the same faces, the same attentiveness and the same calm — every day.”</div>
+    </div>
+  </div>
+  <div class="folio"><span>Tone of Voice</span><span class="no">14</span></div>
+</div>
+
+<!-- ═══════════ 15 · APPLICATIONS PRINT ═══════════ -->
+<div class="page">
+  <div class="frame"></div>
+  <div class="pad">
+    <div class="eyebrow">Section 13</div>
+    <h2 class="section">Applications — Stationery &amp; Uniform</h2>
+    <div class="rule"></div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:8mm;align-items:start;">
+      <div>
+        <div class="eyebrow" style="font-size:7pt;">Business Card · 85 × 55 mm</div>
+        <div style="width:76mm;height:49mm;background:var(--navy);margin-top:2.5mm;position:relative;display:flex;align-items:center;justify-content:center;box-shadow:0 1mm 3mm rgba(6,29,55,.25);">
+          <img src="logo-suite/01-primary/premium-care_primary_transparent.png" style="width:34mm;">
+        </div>
+        <div style="width:76mm;height:49mm;background:var(--ivory);margin-top:4mm;position:relative;padding:6mm 7mm;border:.4pt solid rgba(6,29,55,.15);box-shadow:0 1mm 3mm rgba(6,29,55,.15);">
+          <div style="font-family:'Cinzel';font-weight:600;font-size:10pt;color:var(--navy);letter-spacing:.08em;">Luqman Rahman</div>
+          <div style="font-family:'Jost';font-weight:400;font-size:6.8pt;letter-spacing:.24em;text-transform:uppercase;color:var(--gold-dark);margin-top:1mm;">Direktør · Founder</div>
+          <div style="height:.4pt;background:linear-gradient(90deg,var(--gold),transparent);margin:3.5mm 0;"></div>
+          <div style="font-family:'Jost';font-weight:300;font-size:7.4pt;line-height:1.8;color:#39424E;">+45 00 00 00 00<br>lr@premiumcare.dk&ensp;·&ensp;premiumcare.dk<br>Frederiksberg Allé 00 · 1820 Frederiksberg C</div>
+          <img src="logo-suite/03-emblem/emblem_navy_on_ivory.png" style="position:absolute;right:5mm;bottom:4mm;width:11mm;opacity:.9;">
+        </div>
+      </div>
+      <div>
+        <div class="eyebrow" style="font-size:7pt;">Letterhead · A4</div>
+        <div style="width:70mm;height:99mm;background:#fff;margin-top:2.5mm;border:.4pt solid rgba(6,29,55,.15);position:relative;padding:7mm 7mm;box-shadow:0 1mm 3mm rgba(6,29,55,.15);">
+          <img src="logo-suite/05-horizontal/horizontal_navy_on_ivory.png" style="width:34mm;">
+          <div style="margin-top:8mm;">
+            <div style="height:1.1mm;background:rgba(6,29,55,.14);width:52mm;margin-bottom:2.2mm;"></div>
+            <div style="height:1.1mm;background:rgba(6,29,55,.1);width:56mm;margin-bottom:2.2mm;"></div>
+            <div style="height:1.1mm;background:rgba(6,29,55,.1);width:48mm;margin-bottom:2.2mm;"></div>
+            <div style="height:1.1mm;background:rgba(6,29,55,.1);width:54mm;"></div>
+          </div>
+          <div style="position:absolute;bottom:6mm;left:7mm;right:7mm;">
+            <div style="height:.4pt;background:linear-gradient(90deg,var(--gold),transparent);margin-bottom:2mm;"></div>
+            <div style="font-size:5.6pt;letter-spacing:.16em;color:#6B7482;text-transform:uppercase;">Premium Care ApS · CVR 00 00 00 00 · premiumcare.dk</div>
+          </div>
+        </div>
+        <div style="height:5mm;"></div>
+        <div class="eyebrow" style="font-size:7pt;">Uniform</div>
+        <p class="body" style="font-size:8.4pt;margin-top:2mm;">Navy tunic or polo with the <b style="font-weight:500;">embroidered emblem</b> (gold thread, 45–55 mm) on the left breast; the wordmark in white across the upper back for outerwear. Name badges: ivory card, navy Cinzel name, gold hairline, emblem left.</p>
+      </div>
+    </div>
+  </div>
+  <div class="folio"><span>Applications · Print</span><span class="no">15</span></div>
+</div>
+
+<!-- ═══════════ 16 · APPLICATIONS DIGITAL ═══════════ -->
+<div class="page">
+  <div class="frame"></div>
+  <div class="pad">
+    <div class="eyebrow">Section 14</div>
+    <h2 class="section">Applications — Digital</h2>
+    <div class="rule"></div>
+    <div class="two-col" style="align-items:start;">
+      <div>
+        <div class="eyebrow" style="font-size:7pt;">Website Header</div>
+        <div style="border:.4pt solid rgba(6,29,55,.15);margin-top:2.5mm;box-shadow:0 1mm 3mm rgba(6,29,55,.12);">
+          <div style="background:var(--navy);padding:4mm 5mm;display:flex;align-items:center;justify-content:space-between;">
+            <img src="logo-suite/05-horizontal/horizontal_fullcolour_transparent.png" style="width:30mm;">
+            <div style="display:flex;gap:4mm;font-family:'Jost';font-weight:400;font-size:6.4pt;letter-spacing:.2em;color:#C9CFD8;text-transform:uppercase;">
+              <span>Ydelser</span><span>Om&nbsp;Os</span><span style="color:var(--gold-light);">Kontakt</span>
+            </div>
+          </div>
+          <div style="background:linear-gradient(160deg,#0B2A4A,#04152A);padding:10mm 5mm 9mm;">
+            <div style="font-family:'Cinzel';font-weight:600;font-size:13pt;color:var(--ivory);letter-spacing:.06em;">Tryghed i eget hjem</div>
+            <div style="font-family:'Cormorant Garamond';font-style:italic;font-size:8.5pt;color:#B9C2CF;margin-top:1.5mm;">Privat hjemmepleje med faste hjælpere — hver dag, året rundt.</div>
+            <div style="display:inline-block;margin-top:4mm;border:.5pt solid var(--gold);color:var(--gold-light);font-family:'Jost';font-weight:400;font-size:6.2pt;letter-spacing:.26em;text-transform:uppercase;padding:2mm 5mm;">Book en samtale</div>
+          </div>
+        </div>
+        <div style="height:5mm;"></div>
+        <div class="eyebrow" style="font-size:7pt;">Email Signature</div>
+        <div style="border:.4pt solid rgba(6,29,55,.15);background:#fff;margin-top:2.5mm;padding:4mm 5mm;display:flex;gap:5mm;align-items:center;">
+          <img src="logo-suite/03-emblem/emblem_fullcolour_navy.png" style="width:13mm;">
+          <div>
+            <div style="font-family:'Cinzel';font-weight:600;font-size:8.5pt;color:var(--navy);">Luqman Rahman</div>
+            <div style="font-family:'Jost';font-size:6.2pt;letter-spacing:.2em;text-transform:uppercase;color:var(--gold-dark);margin:.8mm 0 1.6mm;">Direktør · Premium Care ApS</div>
+            <div style="font-family:'Jost';font-weight:300;font-size:6.6pt;color:#39424E;">+45 00 00 00 00 · premiumcare.dk</div>
+          </div>
+        </div>
+      </div>
+      <div>
+        <div class="eyebrow" style="font-size:7pt;">App Icon &amp; Avatars</div>
+        <div style="display:flex;gap:5mm;align-items:flex-end;margin-top:3mm;">
+          <img src="logo-suite/06-app-icons/appicon_1024_rounded.png" style="width:24mm;">
+          <img src="logo-suite/06-app-icons/appicon_192.png" style="width:15mm;border-radius:50%;">
+          <img src="logo-suite/06-app-icons/appicon_64.png" style="width:9mm;">
+          <img src="logo-suite/06-app-icons/appicon_32.png" style="width:6mm;">
+        </div>
+        <p class="body" style="font-size:8.4pt;margin-top:3mm;">The emblem centred on Midnight Navy at 72% of frame height. Supplied at 1024/512/192/64/32 px, square and iOS-rounded. Circular crops (social avatars) use the same asset; the shield clears the circle safely.</p>
+        <div style="height:4mm;"></div>
+        <div class="eyebrow" style="font-size:7pt;">Digital Rules</div>
+        <table class="spec-table" style="margin-top:2mm;">
+          <tr><td>Dark UI surfaces</td><td>Navy #061D37 / Deep #04152A only — never pure black</td></tr>
+          <tr><td>Accent &amp; links</td><td>Gold Light #E4C77D on navy · Gold Dark #8C6A2D on ivory</td></tr>
+          <tr><td>Buttons</td><td>Hairline gold outline, letter-spaced Jost capitals; filled gold reserved for the single primary action</td></tr>
+          <tr><td>Motion</td><td>Fades and gentle rises only, 200–400 ms; the mark itself is never animated</td></tr>
+        </table>
+      </div>
+    </div>
+  </div>
+  <div class="folio"><span>Applications · Digital</span><span class="no">16</span></div>
+</div>
+
+<!-- ═══════════ 17 · ACCESSIBILITY ═══════════ -->
+<div class="page">
+  <div class="frame"></div>
+  <div class="pad">
+    <div class="eyebrow">Section 15</div>
+    <h2 class="section">Accessibility &amp; Contrast Compliance</h2>
+    <div class="rule"></div>
+    <p class="body">The brand serves elderly clients and their families; legibility is an ethical requirement, not a preference. All client-facing text meets WCAG 2.2 AA as a minimum; core reading paths target AAA.</p>
+    <div style="height:4mm;"></div>
+    <table class="spec-table">
+      <tr><th>Combination</th><th>Contrast</th><th>Verdict</th><th>Approved use</th></tr>
+      <tr><td>Ivory #F7F5F0 on Navy #061D37</td><td>15.9 : 1</td><td>AAA</td><td>All text on navy, any size</td></tr>
+      <tr><td>Navy #061D37 on Ivory #F7F5F0</td><td>15.9 : 1</td><td>AAA</td><td>All text on light surfaces</td></tr>
+      <tr><td>Gold Light #E4C77D on Navy</td><td>9.7 : 1</td><td>AAA</td><td>Headings, labels, links on navy</td></tr>
+      <tr><td>Regal Gold #C4A05F on Navy</td><td>7.0 : 1</td><td>AA (AAA large)</td><td>Rules, ornament, large display</td></tr>
+      <tr><td>Gold Dark #8C6A2D on Ivory</td><td>4.6 : 1</td><td>AA</td><td>Eyebrows &amp; labels ≥ 7 pt on light</td></tr>
+      <tr><td>Dannebrog Red #941715 on Ivory</td><td>7.6 : 1</td><td>AAA</td><td>Warnings, “do not” annotation</td></tr>
+      <tr><td>Regal Gold on Ivory</td><td>2.3 : 1</td><td>Fails</td><td>Ornament only — never text</td></tr>
+    </table>
+    <div style="height:6mm;"></div>
+    <div class="two-col">
+      <p class="body"><b style="font-weight:500;color:var(--navy);">Print for clients.</b> Client letters and care plans: Jost 11 pt minimum at 1.6 leading, navy on ivory or white; large-print editions at 14 pt available as standard, offered — never requested.</p>
+      <p class="body"><b style="font-weight:500;color:var(--navy);">Digital.</b> Body text ≥ 16 px; touch targets ≥ 44 px; visible focus rings in Gold Light; motion respects <i>prefers-reduced-motion</i>; every image of the mark carries the alt text “Premium Care”.</p>
+    </div>
+  </div>
+  <div class="folio"><span>Accessibility</span><span class="no">17</span></div>
+</div>
+
+<!-- ═══════════ 18 · ASSET INDEX ═══════════ -->
+<div class="page">
+  <div class="frame"></div>
+  <div class="pad">
+    <div class="eyebrow">Section 16</div>
+    <h2 class="section">Asset Index &amp; Usage Matrix</h2>
+    <div class="rule"></div>
+    <table class="spec-table" style="font-size:7.6pt;">
+      <tr><th style="width:58mm;">File</th><th>Rendition</th><th>Background</th><th>Primary use</th></tr>
+      <tr><td>00-master/…master_transparent.png</td><td>Full colour</td><td>Transparent</td><td>Master reference — navy grounds only</td></tr>
+      <tr><td>01-primary/…primary_navy.png</td><td>Full colour</td><td>Navy</td><td>Covers, hero, signage</td></tr>
+      <tr><td>01-primary/…primary_ivory.png</td><td>Navy engraving</td><td>Ivory</td><td>Documents, light surfaces</td></tr>
+      <tr><td>02-monochrome/…white_on_navy.png</td><td>Reversed white</td><td>Navy / photo scrim</td><td>Photography, video end-card</td></tr>
+      <tr><td>02-monochrome/…gold_on_navy.png</td><td>Gilded duotone</td><td>Navy</td><td>Ceremonial, certificates, foil proofs</td></tr>
+      <tr><td>02-monochrome/…black_on_white.png</td><td>Black engraving</td><td>White</td><td>Mono print, fax, legal</td></tr>
+      <tr><td>03-emblem/…(6 files)</td><td>Crest only</td><td>All grounds</td><td>Avatars, embroidery, seals, favicons</td></tr>
+      <tr><td>04-wordmark/…(4 files)</td><td>Name + device line</td><td>All grounds</td><td>Footers, spines, collapsed nav</td></tr>
+      <tr><td>05-horizontal/…(5 files)</td><td>Emblem + wordmark</td><td>All grounds</td><td>Letterhead, email, web header</td></tr>
+      <tr><td>06-app-icons/appicon_{1024…32}.png</td><td>Emblem on navy</td><td>Self-contained</td><td>App, favicon, social avatar</td></tr>
+    </table>
+    <div style="height:6mm;"></div>
+    <div class="two-col">
+      <p class="body"><b style="font-weight:500;color:var(--navy);">Custody.</b> Master assets are held by the Direktion. Vendors receive only the renditions required for the job in hand, together with the relevant pages of this manual. Modified or derived marks are never accepted back into the asset library.</p>
+      <p class="body"><b style="font-weight:500;color:var(--navy);">Governance.</b> This manual is a controlled document of Premium Care ApS. Deviations require written approval of the Direktion. Version 1.0 · Ratified 2026. Supersedes all prior identity material.</p>
+    </div>
+    <div style="height:10mm;"></div>
+    <div style="text-align:center;">
+      <img src="logo-suite/03-emblem/emblem_navy_on_ivory.png" style="width:20mm;opacity:.92;">
+      <div class="diamond" style="margin-top:3mm;">◆</div>
+      <div style="font-family:'Jost';font-size:6.8pt;letter-spacing:.34em;text-transform:uppercase;color:var(--muted);margin-top:2.5mm;">Omsorg · Tryghed · Hver Dag</div>
+    </div>
+  </div>
+  <div class="folio"><span>Asset Index</span><span class="no">18</span></div>
+</div>
+
+</body>
+</html>
