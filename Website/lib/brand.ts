@@ -89,7 +89,7 @@ export const CREST_SIZES = {
 
 /** Wordmark display heights in pixels */
 export const WORDMARK_HEIGHT = {
-  header: 18,
+  header: 22,
   footer: 16,
 } as const;
 

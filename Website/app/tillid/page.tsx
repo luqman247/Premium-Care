@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { CrestSeal } from "@/components/CrestSeal";
+import { FreeCareMessage } from "@/components/FreeCareMessage";
 import { COMPANY } from "@/lib/company";
 import { TRUST_POLICIES } from "@/lib/trust-policies";
 
@@ -123,13 +124,37 @@ export default function TrustPage() {
             >
               Læs vores offentlige løfte
             </Link>
+            {" · "}
+            <Link
+              href="/dokumentation"
+              className="underline underline-offset-4 hover:text-midnight transition-colors focus-ring"
+            >
+              Se dokumentation
+            </Link>
           </p>
+          <FreeCareMessage className="mt-10" showLink={false} />
           <p className="text-[13px] text-midnight/60 mt-6">
             CVR {COMPANY.cvr} · {COMPANY.address.postalCode} {COMPANY.address.locality}
           </p>
           <div className="mt-8">
             <CrestSeal size={80} decorative className="!p-4 !justify-start" />
           </div>
+        </div>
+      </section>
+
+      <section className="snap-section bg-ivory section-padding">
+        <div className="reading-column">
+          <h2 className="text-[30px] leading-normal text-midnight">Whistleblower-ordning</h2>
+          <p className="text-[17px] leading-body text-midnight/80 mt-6 max-w-[55ch]">
+            Alvorlige bekymringer skal kunne indberettes sikkert. Vores whistleblower-ordning
+            understøtter åbenhed, ansvarlighed og beskyttelse af indberettere.
+          </p>
+          <Link
+            href="/whistleblowing"
+            className="block py-5 mt-6 text-[17px] text-midnight hover:tracking-wide transition-all duration-300 focus-ring border-t border-midnight/10"
+          >
+            Whistleblower-ordning →
+          </Link>
         </div>
       </section>
 

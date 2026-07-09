@@ -29,11 +29,11 @@ const CORE_VALUES = [
 ];
 
 const LEADERSHIP_PRINCIPLES = [
-  "Gå foran som eksempel — vis de standarder, du forventer",
-  "Lyt, før du beslutter — søg input, og handl derefter",
-  "Beslut på et oplyst grundlag — databaseret og gennemsigtig",
-  "Styrk andre til at lykkes — udvikl dit team",
-  "Gå aldrig på kompromis med integriteten — principper frem for profit",
+  "Gå foran som eksempel - vis de standarder, du forventer",
+  "Lyt, før du beslutter - søg input, og handl derefter",
+  "Beslut på et oplyst grundlag - databaseret og gennemsigtig",
+  "Styrk andre til at lykkes - udvikl dit team",
+  "Gå aldrig på kompromis med integriteten - principper frem for profit",
 ];
 
 export default function AboutPage() {
@@ -52,7 +52,7 @@ export default function AboutPage() {
           <p className="text-[19px] leading-body text-midnight">
             Premium Care er ikke en virksomhed. Det er en institution. Vi blev ikke
             grundlagt for at tjene penge. Vi blev grundlagt, fordi vi troede, at
-            ældrepleje kunne gøres bedre — mere menneskelig, mere respektfuld, mere
+            ældrepleje kunne gøres bedre - mere menneskelig, mere respektfuld, mere
             dansk.
           </p>
           <p className="mt-12">
@@ -122,7 +122,7 @@ export default function AboutPage() {
               <h2 className="text-[30px] leading-normal text-ivory">Ledelse</h2>
               <p className="text-[17px] leading-body text-ivory/80 mt-8">
                 Premium Care ledes af grundlægger og administrerende direktør Bibi Naziyh
-                Dowezai — med synlig ledelse tæt på borgere, medarbejdere og drift.
+                Dowezai - med synlig ledelse tæt på borgere, medarbejdere og drift.
               </p>
               <p className="mt-10">
                 <Link
@@ -141,7 +141,7 @@ export default function AboutPage() {
         <div className="reading-column">
           <h2 className="text-[30px] leading-normal text-ivory">Mission</h2>
           <p className="text-[17px] leading-body text-ivory/80 mt-8">
-            At yde omsorgsfuld, værdig og professionel pleje til ældre — så de kan
+            At yde omsorgsfuld, værdig og professionel pleje til ældre - så de kan
             leve trygt og komfortabelt i deres eget hjem. At støtte familier med
             ærlighed og pålidelighed. At skabe en arbejdsplads, hvor medarbejdere
             værdsættes og udvikles.
@@ -153,10 +153,33 @@ export default function AboutPage() {
         <div className="reading-column">
           <h2 className="text-[30px] leading-normal text-midnight">Vision</h2>
           <p className="text-[17px] leading-body text-midnight/80 mt-8">
-            At blive Danmarks mest betroede udbyder af ældrepleje — anerkendt for
+            At blive Danmarks mest betroede udbyder af ældrepleje - anerkendt for
             enestående standarder inden for pleje, medfølelse, professionalisme og
             etisk ledelse. En organisation, der respekteres lige så meget for sin
             betydning for familier og lokalsamfund som for sin drift.
+          </p>
+        </div>
+      </section>
+
+      <section className="snap-section bg-ivory section-padding">
+        <div className="reading-column">
+          <CrestSeal size={64} decorative className="!p-0 mb-8" />
+          <h2 className="text-[30px] leading-normal text-midnight">
+            Hvorfor logoet betyder noget
+          </h2>
+          <p className="text-[19px] leading-body text-midnight/80 mt-8 max-w-[55ch]">
+            Premium Cares logo er ikke dekorativt. Det er en påmindelse om den
+            ansvarlighed, vi bærer - og om den taknemmelighed, der ligger i
+            grundlæggerens historie.
+          </p>
+          <p className="text-[17px] leading-body text-midnight/80 mt-6 max-w-[55ch]">
+            Våbenskjoldet symboliserer kontinuitet, tillid og omsorg. Den nordiske
+            identitet afspejler det land, der gav en familie en ny begyndelse - og den
+            danske velfærdstradition, der formede vores forståelse af værdighed i plejen.
+          </p>
+          <p className="text-[17px] leading-body text-midnight/80 mt-6 max-w-[55ch]">
+            Logoet er en erindring om, at bag hver beslutning står et menneske - og at
+            Premium Care aldrig må glemme, hvorfor vi begyndte.
           </p>
         </div>
       </section>
@@ -180,7 +203,7 @@ export default function AboutPage() {
       <section className="snap-section bg-ivory section-padding">
         <div className="reading-column">
           <p className="text-[19px] leading-body text-midnight">
-            Hver caregiver, der træder ind i dit hjem, er ansat af os — ikke hyret
+            Hver caregiver, der træder ind i dit hjem, er ansat af os - ikke hyret
             gennem et bureau. Vi træner dem. Vi kender dem. Vi står inde for dem.
             Hvis noget går galt, er det vores ansvar. Ikke deres alene.
           </p>
@@ -195,7 +218,7 @@ export default function AboutPage() {
             faldforebyggelse. De ved, hvordan man taler med en person, der ikke
             husker. De ved, hvordan man sikrer et hjem, så hun ikke falder igen. De
             ved, hvornår man skal ringe til dig, og hvornår man skal ringe til
-            lægen. Og de ved, at den samme caregiver hver dag er ikke en luksus — det
+            lægen. Og de ved, at den samme caregiver hver dag er ikke en luksus - det
             er en nødvendighed.
           </p>
         </div>
@@ -204,6 +227,31 @@ export default function AboutPage() {
       <div className="brand-divider" aria-hidden="true">
         <CrestSeal size={64} decorative className="!p-0" />
       </div>
+
+      <section className="snap-section bg-midnight section-padding">
+        <div className="reading-column">
+          <h2 className="text-[30px] leading-normal text-ivory">
+            Ledelse og governance
+          </h2>
+          <p className="text-[17px] leading-body text-ivory/80 mt-8 max-w-[55ch]">
+            Premium Care er bygget på synlig ledelse, dokumenteret ansvar og en
+            governance-struktur, der kan redegøres for over for borgere, familier og
+            kommuner
+          </p>
+          <Link
+            href="/ledelse-og-governance"
+            className="block py-5 text-[17px] text-gold hover:tracking-wide transition-all duration-300 focus-ring"
+          >
+            Ledelse og governance →
+          </Link>
+          <Link
+            href="/whistleblowing"
+            className="block py-5 text-[17px] text-ivory hover:tracking-wide transition-all duration-300 focus-ring"
+          >
+            Whistleblower-ordning →
+          </Link>
+        </div>
+      </section>
 
       <section className="snap-section bg-midnight section-padding">
         <div className="reading-column">
@@ -232,7 +280,7 @@ export default function AboutPage() {
             forklare denne beslutning åbent?
           </p>
           <p className="text-[17px] leading-body text-midnight/80 mt-6">
-            Kultur er ikke en plakat på væggen — det er summen af hver daglig
+            Kultur er ikke en plakat på væggen - det er summen af hver daglig
             kontakt
           </p>
         </div>
@@ -246,7 +294,7 @@ export default function AboutPage() {
           <p className="text-[17px] leading-body text-ivory/80 mt-8">
             Vi har ingen ejere i udlandet. Ingen investorer, der kræver afkast. Ingen
             planer om at sælge. Virksomheden bygger på stærke værdier og
-            langsigtede principper, der sikrer stabilitet og kontinuitet — uanset hvem
+            langsigtede principper, der sikrer stabilitet og kontinuitet - uanset hvem
             der leder den. Vi bygger en arv, ikke blot en forretning.
           </p>
         </div>

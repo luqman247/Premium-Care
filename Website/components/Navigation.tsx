@@ -6,11 +6,10 @@ import Link from "next/link";
 const NAV_LINKS = [
   { href: "/", label: "Hjem" },
   { href: "/services", label: "Services" },
-  { href: "/priser", label: "Priser" },
+  { href: "/priser", label: "Gratis hjemmepleje" },
   { href: "/om-os", label: "Om os" },
   { href: "/kontakt", label: "Kontakt" },
   { href: "/kommuner", label: "Til kommuner" },
-  { href: "/karriere", label: "Karriere" },
   { href: "/tillid", label: "Tillid" },
 ];
 

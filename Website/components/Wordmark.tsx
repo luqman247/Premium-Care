@@ -25,14 +25,15 @@ export function Wordmark() {
   return (
     <Link
       href="/"
-      className="fixed top-6 left-[8%] z-50 brand-wordmark transition-opacity duration-300 focus-ring"
+      className="fixed top-5 left-[8%] z-50 brand-wordmark-wrap transition-opacity duration-300 focus-ring"
       style={{ opacity: visible ? 1 : 0 }}
-      aria-label="Premium Care — forsiden"
+      aria-label="Premium Care - forsiden"
     >
       <BrandWordmark
         variant="navy"
         height={WORDMARK_HEIGHT.header}
         priority
+        className="brand-wordmark-img"
       />
     </Link>
   );

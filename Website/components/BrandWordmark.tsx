@@ -24,9 +24,10 @@ export function BrandWordmark({
       width={width}
       height={height}
       priority={priority}
-      className={`object-contain object-left ${className}`}
-      style={{ height, width: "auto" }}
-      sizes={`${width}px`}
+      quality={90}
+      className={`brand-wordmark-img object-contain object-left ${className}`}
+      style={{ height, width: "auto", maxWidth: width }}
+      sizes={`(max-width: 768px) ${Math.round(width * 0.9)}px, ${width}px`}
     />
   );
 }

@@ -111,6 +111,25 @@ export const TRUST_POLICIES: TrustPolicy[] = [
     documentLabel: "Ligebehandlingspolitik (PDF)",
   },
   {
+    slug: "cookiepolitik",
+    title: "Cookiepolitik",
+    description:
+      "Sådan bruger Premium Care cookies på hjemmesiden - og hvordan du styrer dit samtykke.",
+    purpose:
+      "At give gennemsigtighed om nødvendige og valgfrie cookies, og at respektere brugerens valg.",
+    whyItMatters:
+      "Besøgende skal kunne forstå, hvilke cookies der bruges, og hvordan de kan til- eller fravælge ikke-nødvendige cookies.",
+    commitments: [
+      "Nødvendige cookies bruges for at få hjemmesiden til at fungere",
+      "Valgfrie cookies aktiveres kun efter samtykke",
+      "Samtykke kan tilbagekaldes ved at slette cookies eller kontakte os",
+      "Ingen markedsførings- eller målecookies uden aktivt valg",
+      "Politikken opdateres ved væsentlige ændringer i cookie-brug",
+    ],
+    contactNote:
+      "Spørgsmål om cookies rettes til administrerende direktør via kontaktoplysningerne på siden.",
+  },
+  {
     slug: "whistleblowing",
     title: "Whistleblower-ordning",
     description:
@@ -126,6 +145,8 @@ export const TRUST_POLICIES: TrustPolicy[] = [
       "Eksterne myndighedskanaler er altid lovlige at bruge",
       "God tro beskytter — fejlvalg af kanal medfører aldrig sanktion",
     ],
+    contactNote:
+      "Alvorlige bekymringer kan indberettes til bibi@premiumcare.dk. En dedikeret whistleblower-kanal etableres, når den er på plads.",
     documentHref: "/documents/whistleblower_politik.pdf",
     documentLabel: "Whistleblower politik (PDF)",
   },

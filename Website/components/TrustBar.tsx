@@ -6,13 +6,14 @@ import { COMPANY } from "@/lib/company";
 
 const FOOTER_NAV = [
   { href: "/vores-loefte", label: "Vores løfte" },
+  { href: "/dokumentation", label: "Dokumentation" },
   { href: "/tillid", label: "Tillidscenter" },
+  { href: "/whistleblowing", label: "Whistleblower-ordning" },
   { href: "/privatliv", label: "Privatliv" },
   { href: "/klager", label: "Klager" },
   { href: "/kommuner", label: "Til kommuner" },
-  { href: "/karriere", label: "Karriere" },
+  { href: "/karriere", label: "Bliv en del af teamet" },
   { href: "/min-historie", label: "Min historie" },
-  { href: "/ledelse-og-governance", label: "Ledelse og governance" },
 ];
 
 export function TrustBar() {

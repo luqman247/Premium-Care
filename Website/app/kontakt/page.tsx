@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { FreeCareMessage } from "@/components/FreeCareMessage";
 import { COMPANY } from "@/lib/company";
 
 export const metadata: Metadata = {
@@ -31,6 +32,21 @@ export default async function ContactPage({ searchParams }: ContactPageProps) {
           <p className="text-[19px] leading-body text-midnight/80 mt-8">
             {COMPANY.legalName} · CVR {COMPANY.cvr}
           </p>
+        </div>
+      </section>
+
+      <section className="snap-section bg-ivory section-padding">
+        <div className="reading-column">
+          <h2 className="text-[30px] leading-normal text-midnight">
+            Gratis hjemmepleje gennem frit valg
+          </h2>
+          <FreeCareMessage className="mt-8" />
+          <Link
+            href="/priser"
+            className="inline-block mt-10 text-[17px] text-midnight hover:tracking-wide transition-all duration-300 focus-ring"
+          >
+            Læs om gratis hjemmepleje →
+          </Link>
         </div>
       </section>
 

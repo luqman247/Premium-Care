@@ -5,14 +5,16 @@ import { COMPANY } from "@/lib/company";
 import { LEADERSHIP_IMAGES } from "@/lib/leadership-images";
 
 export const metadata: Metadata = {
-  title: "Karriere",
-  description: "Vi leder ikke efter ansatte. Vi leder efter mennesker.",
+  title: "Bliv en del af Premium Care",
+  description:
+    "Vi leder efter mennesker, der bryder sig dybt om andre - og som vil arbejde med værdighed, struktur og faglighed.",
   alternates: {
     canonical: "/karriere",
   },
   openGraph: {
-    title: "Karriere · Premium Care",
-    description: "Vi leder ikke efter ansatte. Vi leder efter mennesker.",
+    title: "Bliv en del af Premium Care",
+    description:
+      "Vi leder efter mennesker, der bryder sig dybt om andre - og som vil arbejde med værdighed, struktur og faglighed.",
     url: "https://premiumcare.dk/karriere",
   },
 };
@@ -20,7 +22,7 @@ export const metadata: Metadata = {
 const RECRUITMENT_PHILOSOPHY = [
   {
     title: "Ægte medfølelse",
-    body: "Et kald, ikke blot et job — mennesker, der dybt bekymrer sig om andre",
+    body: "Et kald, ikke blot et job - mennesker, der dybt bekymrer sig om andre",
   },
   {
     title: "Faglig kompetence",
@@ -32,11 +34,11 @@ const RECRUITMENT_PHILOSOPHY = [
   },
   {
     title: "Engagement i ekspertise",
-    body: "En tankegang om løbende forbedring — altid lærende, altid i vækst",
+    body: "En tankegang om løbende forbedring - altid lærende, altid i vækst",
   },
   {
     title: "Pålidelighed og integritet",
-    body: "En troværdig karakter — punktlig, ærlig og ansvarlig",
+    body: "En troværdig karakter - punktlig, ærlig og ansvarlig",
   },
 ];
 
@@ -73,7 +75,7 @@ export default function CareersPage() {
       <section className="snap-section bg-ivory section-padding">
         <div className="reading-column">
           <h1 className="text-[38px] leading-snug tracking-tight text-midnight">
-            Karriere
+            Bliv en del af Premium Care
           </h1>
         </div>
       </section>

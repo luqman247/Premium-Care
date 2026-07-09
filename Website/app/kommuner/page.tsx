@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { CrestSeal } from "@/components/CrestSeal";
+import { FreeCareMessage } from "@/components/FreeCareMessage";
 import { HeroImage } from "@/components/HeroImage";
 import { COMPANY } from "@/lib/company";
 import { PHOTOGRAPHY, PHOTO_SIZES } from "@/lib/photography";
@@ -27,11 +28,11 @@ const GOVERNANCE_DOCS = [
 ];
 
 const PARTNER_COMMITMENTS = [
-  "Gennemsigtighed — ingen skjulte dagsordener, åbenhed i alle forhold",
-  "Levering — forpligtelse på aftalte standarder, vi leverer hvad vi lover",
-  "Kommunikation — regelmæssige opdateringer og ærlig dialog",
-  "Fælles succes — når vi vokser, vokser vores partnere",
-  "Etisk adfærd — principper styrer enhver forretningsbeslutning",
+  "Gennemsigtighed - ingen skjulte dagsordener, åbenhed i alle forhold",
+  "Levering - forpligtelse på aftalte standarder, vi leverer hvad vi lover",
+  "Kommunikation - regelmæssige opdateringer og ærlig dialog",
+  "Fælles succes - når vi vokser, vokser vores partnere",
+  "Etisk adfærd - principper styrer enhver forretningsbeslutning",
 ];
 
 export default function MunicipalPage() {
@@ -52,6 +53,15 @@ export default function MunicipalPage() {
           <div className="mt-8">
             <CrestSeal size={80} decorative className="!p-4 !justify-start" />
           </div>
+        </div>
+      </section>
+
+      <section className="snap-section bg-ivory section-padding">
+        <div className="reading-column">
+          <h2 className="text-[30px] leading-normal text-midnight">
+            Frit valg for borgere
+          </h2>
+          <FreeCareMessage className="mt-8" showLink={false} />
         </div>
       </section>
 
@@ -89,12 +99,12 @@ export default function MunicipalPage() {
           <p className="text-[17px] leading-body text-ivory/80 mt-8">
             Danmarks aldrende befolkning skaber vedvarende efterspørgsel i årtier.
             Offentligt finansieret hjemmepleje giver stabile, tilbagevendende
-            kontrakter — og familier søger aktivt alternativer til uensartet
+            kontrakter - og familier søger aktivt alternativer til uensartet
             kvalitet
           </p>
           <p className="text-[17px] leading-body text-ivory/80 mt-6">
             Premium Care er positioneret som en pålidelig partner, der overgår
-            compliance-standarderne — med gennemsigtig rapportering, uddannet
+            compliance-standarderne - med gennemsigtig rapportering, uddannet
             medarbejderstab og teknologidrevet effektivitet
           </p>
         </div>
@@ -161,7 +171,7 @@ export default function MunicipalPage() {
             Teknologi i plejens tjeneste
           </h2>
           <p className="text-[17px] leading-body text-midnight/80 mt-8">
-            Teknologi styrker den menneskelige forbindelse — den erstatter den
+            Teknologi styrker den menneskelige forbindelse - den erstatter den
             aldrig. Vores platform understøtter plejekoordinering i realtid,
             sikker kommunikation med familier og datadrevet kvalitetsovervågning
           </p>

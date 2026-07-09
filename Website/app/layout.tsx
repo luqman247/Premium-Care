@@ -5,6 +5,7 @@ import { TrustBar } from "@/components/TrustBar";
 import { PageTransition } from "@/components/PageTransition";
 import { Wordmark } from "@/components/Wordmark";
 import { Navigation } from "@/components/Navigation";
+import { CookieConsent } from "@/components/CookieConsent";
 import { COMPANY, localBusinessJsonLd, organizationJsonLd } from "@/lib/company";
 
 const cormorant = Cormorant_Garamond({
@@ -80,6 +81,7 @@ export default function RootLayout({
         <Navigation />
         <main>{children}</main>
         <TrustBar />
+        <CookieConsent />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{

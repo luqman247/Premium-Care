@@ -1,0 +1,77 @@
+import type { Metadata } from "next";
+import Link from "next/link";
+import { DOCUMENTATION_LINKS } from "@/lib/documentation";
+import { COMPANY } from "@/lib/company";
+
+export const metadata: Metadata = {
+  title: "Dokumentation",
+  description:
+    "Politikker, procedurer og offentlige dokumenter fra Premium Care ApS.",
+  alternates: { canonical: "/dokumentation" },
+  openGraph: {
+    title: "Dokumentation · Premium Care",
+    description:
+      "Politikker, procedurer og offentlige dokumenter fra Premium Care ApS.",
+    url: "https://premiumcare.dk/dokumentation",
+  },
+};
+
+export default function DocumentationPage() {
+  return (
+    <article className="bg-ivory pb-24">
+      <header className="section-padding page-margin">
+        <div className="reading-column">
+          <h1 className="text-[38px] leading-snug tracking-tight text-midnight">
+            Dokumentation
+          </h1>
+          <p className="text-[19px] leading-body text-midnight/80 mt-8 max-w-[55ch]">
+            Offentlige politikker, procedurer og erklæringer fra {COMPANY.legalName}.
+            Det fulde dokument gælder ved uoverensstemmelse med resuméer på
+            hjemmesiden.
+          </p>
+          <p className="text-[13px] text-midnight/60 mt-6">
+            CVR {COMPANY.cvr}
+          </p>
+        </div>
+      </header>
+
+      <div className="reading-column page-margin">
+        <section className="section-padding pt-0" aria-labelledby="doc-links">
+          <h2 id="doc-links" className="sr-only">
+            Dokumenter og politikker
+          </h2>
+          <ul className="space-y-0 list-none">
+            {DOCUMENTATION_LINKS.map((item) => (
+              <li key={item.href} className="border-b border-midnight/10">
+                <Link
+                  href={item.href}
+                  className="block py-5 text-[17px] text-midnight hover:tracking-wide transition-all duration-300 focus-ring"
+                >
+                  {item.label} →
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </section>
+
+        <section className="section-padding" aria-labelledby="doc-ledelse">
+          <h2 id="doc-ledelse" className="text-[30px] leading-normal text-midnight">
+            Ledelse og governance
+          </h2>
+          <p className="text-[17px] leading-body text-midnight/80 mt-6 max-w-[55ch]">
+            Læs om ledelse, governance, kvalitetsforpligtelse og virksomhedens
+            struktur.
+          </p>
+          <p className="mt-8">
+            <Link
+              href="/ledelse-og-governance"
+              className="text-[17px] leading-body text-midnight underline underline-offset-4 hover:text-midnight/80 transition-colors focus-ring"
+            >
+              Ledelse og governance →
+            </Link>
+          </p>
+        </section>
+      </div>
+    </article>
+  );
+}
