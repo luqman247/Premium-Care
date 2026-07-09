@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { CrisisHelp } from "@/components/CrisisHelp";
 import { FreeCareMessage } from "@/components/FreeCareMessage";
 import { COMPANY } from "@/lib/company";
 
@@ -26,27 +27,13 @@ export default async function ContactPage({ searchParams }: ContactPageProps) {
     <div className="page-flow">
       <section className="snap-section bg-ivory section-padding">
         <div className="reading-column">
-          <h1 className="text-[38px] leading-snug tracking-tight text-midnight">
+          <CrisisHelp />
+          <h1 className="text-[38px] leading-snug tracking-tight text-midnight mt-8">
             Kontakt
           </h1>
           <p className="text-[19px] leading-body text-midnight/80 mt-8">
             {COMPANY.legalName} · CVR {COMPANY.cvr}
           </p>
-        </div>
-      </section>
-
-      <section className="snap-section bg-ivory section-padding">
-        <div className="reading-column">
-          <h2 className="text-[30px] leading-normal text-midnight">
-            Gratis hjemmepleje gennem frit valg
-          </h2>
-          <FreeCareMessage className="mt-8" />
-          <Link
-            href="/priser"
-            className="inline-block mt-10 text-[17px] text-midnight hover:tracking-wide transition-all duration-300 focus-ring"
-          >
-            Læs om gratis hjemmepleje →
-          </Link>
         </div>
       </section>
 
@@ -69,6 +56,21 @@ export default async function ContactPage({ searchParams }: ContactPageProps) {
 
       <section className="snap-section bg-ivory section-padding">
         <div className="reading-column">
+          <h2 className="text-[30px] leading-normal text-midnight">
+            Gratis hjemmepleje gennem frit valg
+          </h2>
+          <FreeCareMessage className="mt-8" />
+          <Link
+            href="/priser"
+            className="inline-block mt-10 text-[17px] text-midnight hover:tracking-wide transition-all duration-300 focus-ring"
+          >
+            Læs om gratis hjemmepleje →
+          </Link>
+        </div>
+      </section>
+
+      <section className="snap-section bg-ivory section-padding">
+        <div className="reading-column">
           <h2 className="text-[30px] leading-normal text-midnight">E-mail</h2>
           <a
             href={`mailto:${COMPANY.email}`}
@@ -77,8 +79,8 @@ export default async function ContactPage({ searchParams }: ContactPageProps) {
             {COMPANY.email}
           </a>
           <p className="text-[17px] leading-body text-midnight/80 mt-8">
-            Vi besvarer henvendelser inden for to arbejdsdage i åbningstiden.
-            Uden for åbningstid vender vi tilbage næste hverdag.
+            Ved akut behov: ring. E-mail besvares inden for to arbejdsdage i
+            åbningstiden
           </p>
         </div>
       </section>

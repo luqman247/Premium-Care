@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { CrestSeal } from "@/components/CrestSeal";
+import { CrisisHelp } from "@/components/CrisisHelp";
 import { EditorialTicker } from "@/components/EditorialTicker";
-import { InstitutionalIdentity } from "@/components/InstitutionalIdentity";
 import { FreeCareMessage } from "@/components/FreeCareMessage";
 import { RecruitmentSection } from "@/components/RecruitmentSection";
 import { RotatingHero } from "@/components/RotatingHero";
@@ -16,12 +16,10 @@ export default function HomePage() {
         </div>
         <div className="bg-ivory hero-intro page-margin">
           <div className="reading-column">
+            <CrisisHelp />
             <div className="hero-trust-anchor">
               <CrestSeal size={44} decorative className="!p-0" />
-              <div>
-                <p className="hero-eyebrow">Omsorg · Tryghed · Faglighed</p>
-                <InstitutionalIdentity showMunicipalLink className="mt-2" />
-              </div>
+              <p className="hero-eyebrow">Omsorg · Tryghed · Faglighed</p>
             </div>
             <h1 className="hero-statement text-midnight max-w-[22ch]">
               Tryghed i hjemmet
@@ -33,21 +31,37 @@ export default function HomePage() {
               Din mor fortjener at blive hjemme
             </p>
             <p className="hero-support text-midnight/70 max-w-[42ch]">
-              Vi ser mennesket - aldrig blot opgaven. Professionel pleje med ro,
-              kontinuitet og værdighed
+              Hvis du er bekymret for hendes sikkerhed, ringer du bare. Vi finder
+              en løsning - også i dag
             </p>
             <div className="hero-actions">
-              <Link href="/kontakt" className="btn-primary">
-                Tal med os om hjemmepleje
-              </Link>
-              <Link href="/priser" className="hero-secondary-link focus-ring">
-                Læs om gratis hjemmepleje
+              <a href={COMPANY.phone.href} className="btn-primary">
+                Ring os nu
+              </a>
+              <Link href="/kontakt" className="btn-secondary">
+                Skriv til os
               </Link>
             </div>
           </div>
         </div>
-        <EditorialTicker />
       </header>
+
+      <section className="bg-ivory section-padding">
+        <div className="reading-column">
+          <h2 className="text-[30px] leading-normal text-midnight">
+            Hvis hun er faldet. Hvis du er bange nu
+          </h2>
+          <p className="text-[17px] leading-body text-midnight/80 mt-8">
+            Vi har erfaring med det. Hvis der er en nødsituation, ringer vi dig med
+            det samme. Før vi starter, laver vi en sikkerhedsvurdering af hjemmet.
+            Den samme medarbejder kommer hver gang
+          </p>
+          <p className="text-[17px] leading-body text-midnight/80 mt-6">
+            Du behøver ikke have styr på alt med det samme. Ring - så finder vi ud
+            af resten sammen
+          </p>
+        </div>
+      </section>
 
       <section className="bg-ivory section-padding">
         <div className="reading-column">
@@ -184,21 +198,6 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="bg-ivory section-padding">
-        <div className="reading-column">
-          <h2 className="text-[30px] leading-normal text-midnight">
-            Hvis hun er faldet. Hvis hun har demens. Hvis hun vandrer
-          </h2>
-          <p className="text-[17px] leading-body text-midnight/80 mt-8">
-            Vi har erfaring med det. Før vi starter, laver vi en
-            sikkerhedsvurdering af hjemmet. Den samme caregiver kommer hver
-            gang. Hvis der er en nødsituation, ringer vi dig med det samme. Og
-            hvis hun siger nej den første dag - så kommer vi alligevel den
-            næste
-          </p>
-        </div>
-      </section>
-
       <section className="testimonial-section bg-ivory section-padding">
         <div className="reading-column text-center">
           <p className="text-[64px] leading-tight text-gold font-body">94%</p>
@@ -232,25 +231,27 @@ export default function HomePage() {
       <section className="bg-ivory section-padding">
         <div className="reading-column text-center">
           <p className="text-[30px] leading-normal text-midnight">
-            Du behøver ikke at beslutte noget i dag
+            Har du brug for hjælp nu, ringer du
           </p>
           <p className="text-[17px] leading-body text-midnight/60 mt-6">
-            Men hvis du har brug for hjælp nu, ringer du bare. Vi kan starte i
-            morgen
+            Du behøver ikke at have alle svar klar. Vi tager alvorligt akut
+            henvendelse og finder en vej - også i dag
           </p>
           <div className="mt-12 flex flex-col sm:flex-row gap-4 justify-center items-center">
-            <Link href="/kontakt" className="btn-primary">
-              Kontakt Premium Care
-            </Link>
-            <Link href="/tillid" className="btn-secondary">
-              Se vores dokumentation
+            <a href={COMPANY.phone.href} className="btn-primary">
+              Ring os nu
+            </a>
+            <Link href="/kontakt" className="btn-secondary">
+              Skriv til os
             </Link>
           </div>
           <p className="text-[13px] text-midnight/50 mt-6">
-            {COMPANY.openingHours.display} · Svar inden for to arbejdsdage
+            {COMPANY.openingHours.display}
           </p>
         </div>
       </section>
+
+      <EditorialTicker />
 
       <section className="bg-ivory py-20" aria-label="Premium Care institutionelt våbenskjold">
         <CrestSeal size={120} decorative className="mx-auto" />
