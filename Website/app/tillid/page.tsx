@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { CrestSeal } from "@/components/CrestSeal";
-import { FreeCareMessage } from "@/components/FreeCareMessage";
+import { InstitutionalIdentity } from "@/components/InstitutionalIdentity";
 import { COMPANY } from "@/lib/company";
 import { TRUST_POLICIES } from "@/lib/trust-policies";
 
@@ -25,7 +25,7 @@ const QUALITY_FRAMEWORK = [
   },
   {
     title: "Plejestandarder",
-    body: "Vi overgår minimumsstandarderne i hver del af leveringen — Premium Care er en målbar forpligtelse, ikke et mærkat",
+    body: "Vi overgår minimumsstandarderne i hver del af leveringen - Premium Care Standard er en målbar forpligtelse, ikke et mærkat",
   },
   {
     title: "Løbende overvågning",
@@ -41,7 +41,7 @@ const QUALITY_FRAMEWORK = [
   },
   {
     title: "Ansvarlighed",
-    body: "Dokumenteret ejerskab af hver standard — kvaliteten har et navn knyttet til sig på alle niveauer",
+    body: "Dokumenteret ejerskab af hver standard - kvaliteten har et navn knyttet til sig på alle niveauer",
   },
 ];
 
@@ -119,23 +119,20 @@ export default function TrustPage() {
           </p>
           <p className="text-[17px] leading-body text-midnight/80 mt-6">
             <Link
-              href="/vores-loefte"
+              href="/kommuner"
               className="underline underline-offset-4 hover:text-midnight transition-colors focus-ring"
             >
-              Læs vores offentlige løfte
+              Kommunal indkøb og beslutningsgrundlag
             </Link>
             {" · "}
             <Link
               href="/dokumentation"
               className="underline underline-offset-4 hover:text-midnight transition-colors focus-ring"
             >
-              Se dokumentation
+              Dokumentation
             </Link>
           </p>
-          <FreeCareMessage className="mt-10" showLink={false} />
-          <p className="text-[13px] text-midnight/60 mt-6">
-            CVR {COMPANY.cvr} · {COMPANY.address.postalCode} {COMPANY.address.locality}
-          </p>
+          <InstitutionalIdentity className="mt-6" />
           <div className="mt-8">
             <CrestSeal size={80} decorative className="!p-4 !justify-start" />
           </div>
@@ -188,12 +185,12 @@ export default function TrustPage() {
       <section className="snap-section bg-midnight section-padding">
         <div className="reading-column">
           <h2 className="text-[30px] leading-normal text-ivory">
-            Hvis det ikke føles rigtigt
+            Klager og eskalering
           </h2>
-          <p className="text-[17px] leading-body text-ivory/80 mt-8">
-            Hvis din mor ikke føler sig tryg efter den første uge, finder vi en anden
-            caregiver. Hvis det stadig ikke føles rigtigt, hjælper vi dig med at finde
-            en anden løsning — også hvis det ikke er hos os.
+          <p className="text-[17px] leading-body text-ivory/80 mt-8 max-w-[55ch]">
+            Klager tages alvorligt og behandles efter dokumenteret procedure med
+            navngivet ansvarlig, tidsfrister og opfølgning til borger, pårørende og
+            kommune, når det er relevant
           </p>
           <p className="text-[17px] leading-body text-ivory/80 mt-6">
             <Link
@@ -201,6 +198,13 @@ export default function TrustPage() {
               className="underline underline-offset-4 text-gold hover:text-gold-light transition-colors focus-ring"
             >
               Klageprocedure
+            </Link>
+            {" · "}
+            <Link
+              href="/whistleblowing"
+              className="underline underline-offset-4 text-gold hover:text-gold-light transition-colors focus-ring"
+            >
+              Whistleblower-ordning
             </Link>
           </p>
         </div>

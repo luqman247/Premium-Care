@@ -82,6 +82,5 @@ export function localBusinessJsonLd() {
       opens: "07:00",
       closes: "15:00",
     },
-    priceRange: "$$",
   };
 }

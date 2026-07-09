@@ -5,6 +5,7 @@ import { useEffect, useState } from "react";
 import {
   HERO_ROTATION,
   HERO_ROTATION_FADE_MS,
+  HERO_ROTATION_INITIAL_DELAY_MS,
   HERO_ROTATION_INTERVAL_MS,
 } from "@/lib/hero-rotation";
 import { PHOTO_SIZES } from "@/lib/photography";
@@ -24,11 +25,18 @@ export function RotatingHero() {
   useEffect(() => {
     if (reduceMotion || HERO_ROTATION.length <= 1) return;
 
-    const interval = window.setInterval(() => {
-      setActiveIndex((current) => (current + 1) % HERO_ROTATION.length);
-    }, HERO_ROTATION_INTERVAL_MS);
+    let interval: number | undefined;
 
-    return () => window.clearInterval(interval);
+    const start = window.setTimeout(() => {
+      interval = window.setInterval(() => {
+        setActiveIndex((current) => (current + 1) % HERO_ROTATION.length);
+      }, HERO_ROTATION_INTERVAL_MS);
+    }, HERO_ROTATION_INITIAL_DELAY_MS);
+
+    return () => {
+      window.clearTimeout(start);
+      if (interval) window.clearInterval(interval);
+    };
   }, [reduceMotion]);
 
   return (

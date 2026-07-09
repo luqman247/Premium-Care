@@ -5,13 +5,13 @@ import { CREST_SIZES, WORDMARK_HEIGHT } from "@/lib/brand";
 import { COMPANY } from "@/lib/company";
 
 const FOOTER_NAV = [
-  { href: "/vores-loefte", label: "Vores løfte" },
-  { href: "/dokumentation", label: "Dokumentation" },
+  { href: "/kommuner", label: "Kommunal indkøb" },
   { href: "/tillid", label: "Tillidscenter" },
+  { href: "/dokumentation", label: "Dokumentation" },
+  { href: "/vores-loefte", label: "Vores løfte" },
   { href: "/whistleblowing", label: "Whistleblower-ordning" },
   { href: "/privatliv", label: "Privatliv" },
   { href: "/klager", label: "Klager" },
-  { href: "/kommuner", label: "Til kommuner" },
   { href: "/karriere", label: "Bliv en del af teamet" },
   { href: "/min-historie", label: "Min historie" },
 ];

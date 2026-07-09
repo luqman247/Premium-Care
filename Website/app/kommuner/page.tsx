@@ -1,38 +1,36 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { CrestSeal } from "@/components/CrestSeal";
 import { FreeCareMessage } from "@/components/FreeCareMessage";
 import { HeroImage } from "@/components/HeroImage";
 import { COMPANY } from "@/lib/company";
+import {
+  MUNICIPAL_CONTACT_SUBJECT,
+  MUNICIPAL_DOCUMENTS,
+  MUNICIPAL_KPIS,
+} from "@/lib/institutional";
 import { PHOTOGRAPHY, PHOTO_SIZES } from "@/lib/photography";
 
 export const metadata: Metadata = {
   title: "Kommunalt samarbejde",
-  description: "Kommunalt beslutningsgrundlag, kvalitetsdata og dokumentation",
+  description:
+    "Beslutningsgrundlag, dokumentation, kvalitetsdata og virksomhedsoplysninger for kommunal indkøb - Premium Care ApS",
   alternates: {
     canonical: "/kommuner",
   },
   openGraph: {
     title: "Kommunalt samarbejde · Premium Care",
-    description: "Kommunalt beslutningsgrundlag, kvalitetsdata og dokumentation",
+    description:
+      "Beslutningsgrundlag, dokumentation, kvalitetsdata og virksomhedsoplysninger for kommunal indkøb",
     url: "https://premiumcare.dk/kommuner",
   },
 };
 
-const GOVERNANCE_DOCS = [
-  { href: "/documents/ISO_9001_2015.pdf", label: "ISO 9001:2015 certifikat" },
-  { href: "/documents/GDPR_Politik.pdf", label: "GDPR compliance" },
-  { href: "/documents/Klageprocedure.pdf", label: "Klageprocedure" },
-  { href: "/documents/Arbejdsmiljoe.pdf", label: "Arbejdstilsynets godkendelse" },
-  { href: "/documents/Aarsregnskab.pdf", label: "Seneste årsregnskab" },
-];
-
 const PARTNER_COMMITMENTS = [
-  "Gennemsigtighed - ingen skjulte dagsordener, åbenhed i alle forhold",
-  "Levering - forpligtelse på aftalte standarder, vi leverer hvad vi lover",
-  "Kommunikation - regelmæssige opdateringer og ærlig dialog",
-  "Fælles succes - når vi vokser, vokser vores partnere",
-  "Etisk adfærd - principper styrer enhver forretningsbeslutning",
+  "Gennemsigtighed - åben rapportering, dokumenteret kvalitet og ingen skjulte forpligtelser",
+  "Levering - aftalte standarder, tydelige SLA'er og ansvarlig opfølgning ved afvigelser",
+  "Kommunikation - faste kontaktpunkter, rettidig eskalering og sporbar dokumentation",
+  "Regelefterlevelse - Serviceloven, GDPR og kommunale kvalitetskrav som udgangspunkt",
+  "Ansvarlighed - navngivne ejere af kvalitet, klager og hændelser på alle niveauer",
 ];
 
 export default function MunicipalPage() {
@@ -41,17 +39,27 @@ export default function MunicipalPage() {
       <section className="snap-section bg-ivory section-padding">
         <div className="reading-column">
           <h1 className="text-[38px] leading-snug tracking-tight text-midnight">
-            Til kommuner
+            Kommunal indkøb og samarbejde
           </h1>
-          <p className="text-[19px] leading-body text-midnight/80 mt-8">
-            Vi ved, at kommunal indkøb ikke handler om brochurer. Den handler om
-            dokumentation, priser og resultater. Her er begge dele.
+          <p className="text-[19px] leading-body text-midnight/80 mt-8 max-w-[55ch]">
+            Denne side er for kommunal indkøb, udbud og faglige samarbejdspartnere.
+            Her finder du beslutningsgrundlag, virksomhedsoplysninger, dokumentation og
+            kontaktpunkt - uden markedsføring
           </p>
           <p className="text-[13px] text-midnight/60 mt-6">
             {COMPANY.legalName} · CVR {COMPANY.cvr}
           </p>
-          <div className="mt-8">
-            <CrestSeal size={80} decorative className="!p-4 !justify-start" />
+          <div className="mt-8 flex flex-col sm:flex-row gap-4">
+            <a
+              href="/documents/Premium_Care_Kommunalt_Beslutningsgrundlag.pdf"
+              className="btn-primary inline-flex"
+              download
+            >
+              Download beslutningsgrundlag
+            </a>
+            <Link href="/tillid" className="btn-secondary inline-flex">
+              Tillidscenter og dokumenter
+            </Link>
           </div>
         </div>
       </section>
@@ -59,16 +67,7 @@ export default function MunicipalPage() {
       <section className="snap-section bg-ivory section-padding">
         <div className="reading-column">
           <h2 className="text-[30px] leading-normal text-midnight">
-            Frit valg for borgere
-          </h2>
-          <FreeCareMessage className="mt-8" showLink={false} />
-        </div>
-      </section>
-
-      <section className="snap-section bg-ivory section-padding">
-        <div className="reading-column">
-          <h2 className="text-[30px] leading-normal text-midnight">
-            Registreret leverandør
+            Virksomhedsoplysninger
           </h2>
           <div className="mt-8 space-y-4 text-[17px] leading-body text-midnight/80">
             <p>
@@ -87,72 +86,71 @@ export default function MunicipalPage() {
               <strong className="text-midnight font-medium">Ledelse:</strong> Bibi
               Naziyh Dowezai, administrerende direktør
             </p>
+            <p>
+              <strong className="text-midnight font-medium">Kontakt:</strong>{" "}
+              <a href={`mailto:${COMPANY.email}`} className="underline underline-offset-4 focus-ring">
+                {COMPANY.email}
+              </a>
+              {" · "}
+              <a href={COMPANY.phone.href} className="underline underline-offset-4 focus-ring">
+                {COMPANY.phone.display}
+              </a>
+            </p>
           </div>
+          <p className="text-[15px] leading-body text-midnight/60 mt-8 max-w-[55ch]">
+            Leverandørstatus og konkrete samarbejdsaftaler afhænger af den enkelte
+            kommunes godkendelse og indgåede aftaler. Spørgsmål til autorisation og
+            dækningsområde rettes direkte til os
+          </p>
         </div>
       </section>
 
       <section className="snap-section bg-midnight section-padding">
         <div className="reading-column">
           <h2 className="text-[30px] leading-normal text-ivory">
-            Markedsmuligheden
+            Samarbejde med kommuner
           </h2>
-          <p className="text-[17px] leading-body text-ivory/80 mt-8">
-            Danmarks aldrende befolkning skaber vedvarende efterspørgsel i årtier.
-            Offentligt finansieret hjemmepleje giver stabile, tilbagevendende
-            kontrakter - og familier søger aktivt alternativer til uensartet
-            kvalitet
+          <p className="text-[17px] leading-body text-ivory/80 mt-8 max-w-[55ch]">
+            Premium Care leverer hjemmepleje efter gældende lovgivning og kommunale
+            aftaler. Vi dokumenterer kvalitet, indberetter afvigelser og rapporterer åbent
+            til samarbejdspartnere
           </p>
-          <p className="text-[17px] leading-body text-ivory/80 mt-6">
-            Premium Care er positioneret som en pålidelig partner, der overgår
-            compliance-standarderne - med gennemsigtig rapportering, uddannet
-            medarbejderstab og teknologidrevet effektivitet
+          <p className="text-[17px] leading-body text-ivory/80 mt-6 max-w-[55ch]">
+            Vi arbejder ud fra Servicelovens krav, kommunale kvalitetsstandarder og
+            gældende databeskyttelse ved levering i borgernes hjem
           </p>
         </div>
       </section>
 
       <section className="snap-section bg-ivory section-padding">
         <div className="reading-column">
-          <h2 className="text-[30px] leading-normal text-midnight">
-            Kommunalt beslutningsgrundlag
+          <h2 className="text-[30px] leading-normal text-midnight text-center">
+            Nøgletal
           </h2>
-          <p className="text-[17px] leading-body text-midnight/80 mt-8">
-            Et dokument på 24 sider. Historie, standarder, kvalitetsmålinger,
-            økonomi og garanti. Download det her.
+          <p className="text-[15px] leading-body text-midnight/60 mt-4 text-center max-w-[50ch] mx-auto">
+            Tal med metode og periode. Det fulde grundlag findes i beslutningsgrundlaget
+            og kvalitetsrevisionsrapporten
           </p>
-          <a
-            href="/documents/Premium_Care_Kommunalt_Beslutningsgrundlag.pdf"
-            className="btn-secondary mt-8 inline-flex"
-            download
-          >
-            Download PDF
-          </a>
+          <div className="mt-12 grid grid-cols-1 sm:grid-cols-3 gap-10 text-center">
+            {MUNICIPAL_KPIS.map((kpi) => (
+              <div key={kpi.label}>
+                <p className="text-[48px] leading-tight text-gold font-body">{kpi.value}</p>
+                <p className="text-[13px] text-midnight/60 uppercase tracking-wide mt-2">
+                  {kpi.label}
+                </p>
+                <p className="kpi-context">{kpi.context}</p>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
 
-      <section className="snap-section bg-ivory section-padding text-center">
+      <section className="snap-section bg-ivory section-padding">
         <div className="reading-column">
-          <p className="text-[64px] leading-tight text-gold font-body">94%</p>
-          <p className="text-[16px] text-midnight/60 uppercase tracking-wide mt-4">
-            Årlig klienttilfredshed
-          </p>
-        </div>
-      </section>
-
-      <section className="snap-section bg-ivory section-padding text-center">
-        <div className="reading-column">
-          <p className="text-[64px] leading-tight text-gold font-body">87%</p>
-          <p className="text-[16px] text-midnight/60 uppercase tracking-wide mt-4">
-            Caregiver retention (12 måneder)
-          </p>
-        </div>
-      </section>
-
-      <section className="snap-section bg-ivory section-padding text-center">
-        <div className="reading-column">
-          <p className="text-[64px] leading-tight text-gold font-body">0</p>
-          <p className="text-[16px] text-midnight/60 uppercase tracking-wide mt-4">
-            Alvorlige hændelser (2025)
-          </p>
+          <h2 className="text-[30px] leading-normal text-midnight">
+            Frit valg for borgere
+          </h2>
+          <FreeCareMessage className="mt-8" showLink={false} />
         </div>
       </section>
 
@@ -168,37 +166,28 @@ export default function MunicipalPage() {
         </div>
         <div className="section-padding reading-column">
           <h2 className="text-[30px] leading-normal text-midnight">
-            Teknologi i plejens tjeneste
+            Dokumentation og rapportering
           </h2>
-          <p className="text-[17px] leading-body text-midnight/80 mt-8">
-            Teknologi styrker den menneskelige forbindelse - den erstatter den
-            aldrig. Vores platform understøtter plejekoordinering i realtid,
-            sikker kommunikation med familier og datadrevet kvalitetsovervågning
+          <p className="text-[17px] leading-body text-midnight/80 mt-8 max-w-[55ch]">
+            Elektroniske plejeplaner, daglige plejenotater og kommunalt integrationslag
+            til rapportering. Teknologi understøtter faglighed og sporbarhed - den
+            erstatter ikke den menneskelige vurdering
           </p>
-          <ul className="mt-8 space-y-3 text-[17px] leading-body text-midnight/80 list-none">
-            <li>Intelligent planlægning og disponering med optimerede ruter</li>
-            <li>Elektroniske plejeplaner og digitale plejenotater</li>
-            <li>Kommunalt integrationslag for rapportering og compliance</li>
-            <li>Datadrevet indsigt til løbende forbedring af plejens kvalitet</li>
-          </ul>
         </div>
       </section>
 
       <section className="snap-section bg-midnight section-padding">
         <div className="reading-column">
           <h2 className="text-[30px] leading-normal text-ivory">Kvalitetsdashboard</h2>
-          <p className="text-[17px] leading-body text-ivory/80 mt-8">
-            Et password-beskyttet område for kommunalpartnere. Live data. Ingen
-            markedsføring. Kun tal.
+          <p className="text-[17px] leading-body text-ivory/80 mt-8 max-w-[55ch]">
+            Adgang til live kvalitetsdata gives efter aftale med kommunal samarbejdspartner.
+            Kontakt os for oprettelse af adgang og orientering i datastrukturen
           </p>
           <a
-            href="https://dashboard.premiumcare.dk"
+            href={`mailto:${COMPANY.email}?subject=${encodeURIComponent(MUNICIPAL_CONTACT_SUBJECT)}`}
             className="btn-primary mt-8 inline-flex"
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="Gå til kvalitetsdashboard (åbner i nyt vindue)"
           >
-            Gå til dashboard
+            Anmod om dashboard-adgang
           </a>
         </div>
       </section>
@@ -206,7 +195,7 @@ export default function MunicipalPage() {
       <section className="snap-section bg-ivory section-padding">
         <div className="reading-column">
           <h2 className="text-[30px] leading-normal text-midnight">
-            Vores forpligtelse over for partnere
+            Forpligtelser over for kommuner
           </h2>
           <ul className="mt-10 space-y-4 list-none">
             {PARTNER_COMMITMENTS.map((item) => (
@@ -220,30 +209,38 @@ export default function MunicipalPage() {
 
       <section className="snap-section bg-ivory section-padding">
         <div className="reading-column">
-          <h2 className="text-[30px] leading-normal text-midnight">Dokumentation</h2>
+          <h2 className="text-[30px] leading-normal text-midnight">Dokumenter til indkøb</h2>
           <ul className="mt-8 space-y-4 list-none">
-            {GOVERNANCE_DOCS.map((doc) => (
+            {MUNICIPAL_DOCUMENTS.map((doc) => (
               <li key={doc.href}>
                 <a
                   href={doc.href}
-                  className="text-[17px] text-midnight hover:tracking-wide transition-all duration-300 focus-ring"
+                  className="text-[17px] text-midnight underline underline-offset-4 focus-ring"
                   download
                 >
-                  {doc.label} →
+                  {doc.label}
                 </a>
               </li>
             ))}
           </ul>
+          <p className="mt-8">
+            <Link
+              href="/dokumentation"
+              className="text-[17px] text-midnight underline underline-offset-4 focus-ring"
+            >
+              Se fuld dokumentationsoversigt
+            </Link>
+          </p>
         </div>
       </section>
 
       <section className="snap-section bg-midnight section-padding">
         <div className="reading-column text-center">
           <p className="text-[19px] leading-body text-ivory">
-            Spørgsmål til indkøb? Kontakt vores kommunale partnerskabsteam.
+            Spørgsmål til indkøb, udbud eller samarbejdsaftale?
           </p>
           <a
-            href={`mailto:${COMPANY.email}?subject=${encodeURIComponent("Kommunal henvendelse")}`}
+            href={`mailto:${COMPANY.email}?subject=${encodeURIComponent(MUNICIPAL_CONTACT_SUBJECT)}`}
             className="text-[30px] leading-normal text-gold font-body mt-8 inline-block hover:opacity-80 transition-opacity duration-300 focus-ring"
           >
             {COMPANY.email}
@@ -256,7 +253,7 @@ export default function MunicipalPage() {
               href="/tillid"
               className="underline underline-offset-4 hover:text-ivory transition-colors focus-ring"
             >
-              Tillidscenter og ansvar
+              Tillidscenter
             </Link>
             {" · "}
             <Link

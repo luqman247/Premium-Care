@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { DOCUMENTATION_LINKS } from "@/lib/documentation";
 import { COMPANY } from "@/lib/company";
+import { MUNICIPAL_DOCUMENTS } from "@/lib/institutional";
 
 export const metadata: Metadata = {
   title: "Dokumentation",
@@ -36,6 +37,33 @@ export default function DocumentationPage() {
       </header>
 
       <div className="reading-column page-margin">
+        <section className="section-padding pt-0" aria-labelledby="doc-municipal">
+          <h2 id="doc-municipal" className="text-[30px] leading-normal text-midnight">
+            Kommunal indkøb
+          </h2>
+          <p className="text-[17px] leading-body text-midnight/80 mt-6 max-w-[55ch]">
+            Beslutningsgrundlag og dokumenter til kommunal indkøb og samarbejdspartnere
+          </p>
+          <ul className="mt-8 space-y-4 list-none">
+            {MUNICIPAL_DOCUMENTS.slice(0, 3).map((doc) => (
+              <li key={doc.href}>
+                <a
+                  href={doc.href}
+                  className="text-[17px] text-midnight underline underline-offset-4 focus-ring"
+                  download
+                >
+                  {doc.label}
+                </a>
+              </li>
+            ))}
+          </ul>
+          <p className="mt-6">
+            <Link href="/kommuner" className="text-[17px] underline underline-offset-4 focus-ring">
+              Kommunal indkøb og samarbejde →
+            </Link>
+          </p>
+        </section>
+
         <section className="section-padding pt-0" aria-labelledby="doc-links">
           <h2 id="doc-links" className="sr-only">
             Dokumenter og politikker

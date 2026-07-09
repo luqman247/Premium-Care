@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { CrestSeal } from "@/components/CrestSeal";
 import { EditorialTicker } from "@/components/EditorialTicker";
+import { InstitutionalIdentity } from "@/components/InstitutionalIdentity";
 import { FreeCareMessage } from "@/components/FreeCareMessage";
 import { RecruitmentSection } from "@/components/RecruitmentSection";
 import { RotatingHero } from "@/components/RotatingHero";
@@ -13,27 +14,39 @@ export default function HomePage() {
         <div className="rotating-hero-wrap">
           <RotatingHero />
         </div>
-        <EditorialTicker />
         <div className="bg-ivory hero-intro page-margin">
           <div className="reading-column">
-            <h1 className="text-[48px] leading-tight tracking-tight text-midnight max-w-[20ch]">
-              Din mor fortjener at blive hjemme
+            <div className="hero-trust-anchor">
+              <CrestSeal size={44} decorative className="!p-0" />
+              <div>
+                <p className="hero-eyebrow">Omsorg · Tryghed · Faglighed</p>
+                <InstitutionalIdentity showMunicipalLink className="mt-2" />
+              </div>
+            </div>
+            <h1 className="hero-statement text-midnight max-w-[22ch]">
+              Tryghed i hjemmet
             </h1>
-            <p className="text-[19px] leading-body text-midnight/80 max-w-[42ch] mt-8">
-              At beslutte sig for hjemmehjælp er ikke nemt. Nogle situationer kan
-              ikke vente. Hvis du er bekymret for hendes sikkerhed, ringer du
-              bare. Vi finder en løsning i dag
+            <p className="hero-quality text-midnight max-w-[32ch]">
+              Struktur, nærvær og faglighed
             </p>
-            <div className="mt-10 flex flex-col sm:flex-row gap-4">
+            <p className="hero-human text-midnight/85 max-w-[38ch]">
+              Din mor fortjener at blive hjemme
+            </p>
+            <p className="hero-support text-midnight/70 max-w-[42ch]">
+              Vi ser mennesket - aldrig blot opgaven. Professionel pleje med ro,
+              kontinuitet og værdighed
+            </p>
+            <div className="hero-actions">
               <Link href="/kontakt" className="btn-primary">
                 Tal med os om hjemmepleje
               </Link>
-              <Link href="/priser" className="btn-secondary">
+              <Link href="/priser" className="hero-secondary-link focus-ring">
                 Læs om gratis hjemmepleje
               </Link>
             </div>
           </div>
         </div>
+        <EditorialTicker />
       </header>
 
       <section className="bg-ivory section-padding">

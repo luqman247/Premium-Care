@@ -15,3 +15,4 @@ export const HERO_ROTATION: HeroRotationPhoto[] = [
 
 export const HERO_ROTATION_INTERVAL_MS = 14_000;
 export const HERO_ROTATION_FADE_MS = 2_400;
+export const HERO_ROTATION_INITIAL_DELAY_MS = 5_000;
