@@ -1,0 +1,313 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ============================================================
+   PREMIUM CARE DESIGN SYSTEM v2.0 — RC1 PRODUCTION
+   Locked tokens. Do not fork. Do not override.
+   ============================================================ */
+
+@layer base {
+  :root {
+    --color-ivory: #f7f5f0;
+    --color-midnight: #061d37;
+    --color-midnight-deep: #04152a;
+    --color-gold: #c4a05f;
+    --color-gold-light: #e4c77d;
+    --color-gold-dark: #8c6a2d;
+    --color-red: #941715;
+    --font-display: "Cinzel", serif;
+    --font-body: "Cormorant Garamond", serif;
+    --text-display: 3rem;
+    --text-h1: 2.375rem;
+    --text-h2: 1.875rem;
+    --text-h3: 1.5rem;
+    --text-body-lg: 1.1875rem;
+    --text-body: 1.0625rem;
+    --text-caption: 0.8125rem;
+    --space-1: 0.5rem;
+    --space-2: 1rem;
+    --space-3: 1.5rem;
+    --space-4: 2rem;
+    --space-6: 3rem;
+    --space-8: 4rem;
+    --space-12: 6rem;
+    --space-16: 8rem;
+    --space-20: 10rem;
+    --leading-tight: 1.1;
+    --leading-snug: 1.2;
+    --leading-normal: 1.25;
+    --leading-relaxed: 1.3;
+    --leading-body: 1.6;
+    --leading-loose: 1.7;
+    --transition-hover: 0.3s ease;
+    --transition-fade: 0.4s ease;
+    --transition-page: 0.6s ease-out;
+    --transition-scroll: 1.2s ease-out;
+  }
+
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    scroll-snap-type: y mandatory;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    font-family: var(--font-body);
+    font-size: var(--text-body);
+    line-height: var(--leading-body);
+    color: var(--color-midnight);
+    background-color: var(--color-ivory);
+    overflow-x: hidden;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  p,
+  span,
+  a,
+  li,
+  label,
+  button {
+    font-family: var(--font-body);
+    font-weight: 400;
+  }
+
+  h1 {
+    font-size: var(--text-h1);
+    line-height: var(--leading-snug);
+    letter-spacing: -0.01em;
+  }
+
+  h2 {
+    font-size: var(--text-h2);
+    line-height: var(--leading-normal);
+    letter-spacing: -0.01em;
+  }
+
+  h3 {
+    font-size: var(--text-h3);
+    line-height: var(--leading-relaxed);
+  }
+
+  p {
+    max-width: 38em;
+    margin-bottom: var(--space-3);
+  }
+
+  a {
+    color: var(--color-midnight);
+    text-decoration: none;
+    transition: letter-spacing var(--transition-hover);
+  }
+
+  a:hover {
+    letter-spacing: 0.02em;
+  }
+
+  .btn-primary {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    height: 48px;
+    padding: 0 var(--space-6);
+    background-color: var(--color-midnight);
+    color: var(--color-ivory);
+    font-family: var(--font-body);
+    font-size: var(--text-body);
+    font-weight: 400;
+    border: none;
+    border-radius: 0;
+    cursor: pointer;
+    transition: background-color var(--transition-hover);
+  }
+
+  .btn-primary:hover {
+    background-color: rgba(6, 29, 55, 0.85);
+  }
+
+  .btn-secondary {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    height: 48px;
+    padding: 0 var(--space-6);
+    background-color: transparent;
+    color: var(--color-midnight);
+    font-family: var(--font-body);
+    font-size: var(--text-body);
+    font-weight: 400;
+    border: 1px solid var(--color-midnight);
+    border-radius: 0;
+    cursor: pointer;
+    transition: background-color var(--transition-hover);
+  }
+
+  .btn-secondary:hover {
+    background-color: rgba(6, 29, 55, 0.05);
+  }
+
+  * {
+    box-shadow: none !important;
+  }
+
+  img,
+  button,
+  .btn-primary,
+  .btn-secondary {
+    border-radius: 0 !important;
+  }
+
+  input,
+  textarea,
+  select {
+    font-family: var(--font-body);
+    font-size: var(--text-body);
+    border: none;
+    border-bottom: 1px solid var(--color-midnight);
+    background: transparent;
+    padding: var(--space-3) 0;
+    outline: none;
+    transition: border-color var(--transition-hover);
+  }
+
+  input:focus,
+  textarea:focus,
+  select:focus {
+    border-bottom-color: var(--color-gold);
+  }
+
+  .page-transition-overlay {
+    position: fixed;
+    inset: 0;
+    background-color: var(--color-ivory);
+    z-index: 9999;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity var(--transition-fade);
+  }
+
+  .page-transition-overlay.active {
+    opacity: 1;
+  }
+
+  .snap-section {
+    scroll-snap-align: center;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+  }
+
+  .trust-bar {
+    width: 100%;
+    height: 32px;
+    background-color: var(--color-midnight);
+    color: var(--color-gold);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--font-body);
+    font-size: var(--text-caption);
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+
+  .wordmark {
+    font-family: var(--font-display);
+    font-size: 16px;
+    font-weight: 400;
+    color: var(--color-midnight);
+    letter-spacing: normal;
+  }
+
+  .image-fade {
+    opacity: 0;
+    transition: opacity 0.6s ease;
+  }
+
+  .image-fade.loaded {
+    opacity: 1;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+      scroll-snap-type: none;
+    }
+
+    * {
+      transition: none !important;
+      animation: none !important;
+    }
+  }
+}
+
+@layer components {
+  .section-padding {
+    padding-top: var(--space-16);
+    padding-bottom: var(--space-16);
+  }
+
+  .page-margin {
+    padding-left: 8%;
+    padding-right: 8%;
+  }
+
+  .reading-column {
+    max-width: 680px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .empty-third {
+    max-width: 66.666%;
+  }
+
+  .focus-ring:focus-visible {
+    outline: 2px solid var(--color-midnight);
+    outline-offset: 2px;
+  }
+
+  .nav-overlay {
+    position: fixed;
+    inset: 0;
+    background-color: var(--color-ivory);
+    z-index: 100;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity var(--transition-fade);
+  }
+
+  .nav-overlay.open {
+    opacity: 1;
+    pointer-events: all;
+  }
+
+  .nav-overlay a {
+    font-size: var(--text-h3);
+    margin: var(--space-3) 0;
+    transition: font-weight var(--transition-hover);
+  }
+
+  .nav-overlay a:hover {
+    font-weight: 500;
+  }
+}
