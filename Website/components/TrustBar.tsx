@@ -8,7 +8,7 @@ const FOOTER_NAV = [
   { href: "/kommuner", label: "Til kommuner" },
   { href: "/karriere", label: "Karriere" },
   { href: "/min-historie", label: "Min historie" },
-  { href: "/ledelse", label: "Ledelse" },
+  { href: "/ledelse-og-governance", label: "Ledelse og governance" },
 ];
 
 export function TrustBar() {

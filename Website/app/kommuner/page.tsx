@@ -248,10 +248,10 @@ export default function MunicipalPage() {
             </Link>
             {" · "}
             <Link
-              href="/ledelse"
+              href="/ledelse-og-governance"
               className="underline underline-offset-4 hover:text-ivory transition-colors focus-ring"
             >
-              Ledelse
+              Ledelse og governance
             </Link>
           </p>
         </div>

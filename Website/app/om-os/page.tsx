@@ -104,10 +104,10 @@ export default function AboutPage() {
           </p>
           <p className="mt-10">
             <Link
-              href="/ledelse"
+              href="/ledelse-og-governance"
               className="text-[17px] leading-body text-gold underline underline-offset-4 hover:text-gold-light transition-colors focus-ring"
             >
-              Læs om ledelse og forpligtelser
+              Læs om ledelse og governance
             </Link>
           </p>
         </div>
