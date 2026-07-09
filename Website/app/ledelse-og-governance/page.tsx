@@ -4,6 +4,7 @@ import { CrestSeal } from "@/components/CrestSeal";
 import { HeroImage } from "@/components/HeroImage";
 import { COMPANY } from "@/lib/company";
 import { LEADERSHIP_IMAGES } from "@/lib/leadership-images";
+import { PHOTOGRAPHY, PHOTO_SIZES } from "@/lib/photography";
 
 export const metadata: Metadata = {
   title: {
@@ -434,10 +435,11 @@ export default function LeadershipGovernancePage() {
           <figure>
             <div className="relative w-full aspect-[16/9]">
               <HeroImage
-                src="/images/institutional-care.jpg"
-                alt="Omsorgsfuld pleje i et dansk hjem — Premium Cares arbejde udført med værdighed og struktur"
+                src={PHOTOGRAPHY.governance.src}
+                alt={PHOTOGRAPHY.governance.alt}
                 fill
-                sizes="(max-width: 680px) 100vw, 680px"
+                sizes={PHOTO_SIZES.section}
+                objectPosition={PHOTOGRAPHY.governance.objectPosition}
               />
             </div>
           </figure>

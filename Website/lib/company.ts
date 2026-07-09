@@ -1,3 +1,5 @@
+import { PHOTOGRAPHY } from "@/lib/photography";
+
 export const COMPANY = {
   legalName: "Premium Care ApS",
   brandName: "Premium Care",
@@ -69,7 +71,7 @@ export function localBusinessJsonLd() {
     "@type": "LocalBusiness",
     "@id": `${COMPANY.url}/#organization`,
     name: COMPANY.legalName,
-    image: `${COMPANY.url}/images/hero-stillness.jpg`,
+    image: `${COMPANY.url}${PHOTOGRAPHY.hero.src}`,
     url: COMPANY.url,
     telephone: COMPANY.phone.schema,
     email: COMPANY.email,

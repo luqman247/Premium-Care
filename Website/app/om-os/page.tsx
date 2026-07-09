@@ -4,6 +4,7 @@ import { CrestSeal } from "@/components/CrestSeal";
 import { HeroImage } from "@/components/HeroImage";
 import { COMPANY } from "@/lib/company";
 import { LEADERSHIP_IMAGES } from "@/lib/leadership-images";
+import { PHOTOGRAPHY, PHOTO_SIZES } from "@/lib/photography";
 
 export const metadata: Metadata = {
   title: "Om os",
@@ -247,10 +248,11 @@ export default function AboutPage() {
       <section className="snap-section bg-ivory">
         <div className="w-full h-[60vh] relative">
           <HeroImage
-            src="/images/about-caregiver.jpg"
-            alt="En Premium Care caregiver i omsorgsfuld kontakt med en ældre klient"
+            src={PHOTOGRAPHY.about.src}
+            alt={PHOTOGRAPHY.about.alt}
             fill
-            sizes="100vw"
+            sizes={PHOTO_SIZES.hero}
+            objectPosition={PHOTOGRAPHY.about.objectPosition}
           />
         </div>
         <div className="section-padding reading-column text-center">

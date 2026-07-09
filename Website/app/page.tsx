@@ -2,6 +2,7 @@ import Link from "next/link";
 import { CrestSeal } from "@/components/CrestSeal";
 import { HeroImage } from "@/components/HeroImage";
 import { COMPANY } from "@/lib/company";
+import { PHOTOGRAPHY, PHOTO_SIZES } from "@/lib/photography";
 
 export default function HomePage() {
   return (
@@ -10,11 +11,12 @@ export default function HomePage() {
       <section className="snap-section min-h-screen relative">
         <div className="absolute inset-0">
           <HeroImage
-            src="/images/hero-stillness.jpg"
-            alt="En caregiver og en ældre kvinde sidder sammen i et dansk hjem"
+            src={PHOTOGRAPHY.hero.src}
+            alt={PHOTOGRAPHY.hero.alt}
             fill
             priority
-            sizes="100vw"
+            sizes={PHOTO_SIZES.hero}
+            objectPosition={PHOTOGRAPHY.hero.objectPosition}
           />
         </div>
         <div className="relative z-10 mt-[60vh] page-margin pb-24">

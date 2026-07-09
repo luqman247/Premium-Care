@@ -3,6 +3,7 @@ import Link from "next/link";
 import { CrestSeal } from "@/components/CrestSeal";
 import { HeroImage } from "@/components/HeroImage";
 import { COMPANY } from "@/lib/company";
+import { PHOTOGRAPHY, PHOTO_SIZES } from "@/lib/photography";
 
 export const metadata: Metadata = {
   title: "Kommunalt samarbejde",
@@ -148,10 +149,11 @@ export default function MunicipalPage() {
       <section className="snap-section bg-ivory">
         <div className="w-full h-[40vh] relative">
           <HeroImage
-            src="/images/municipal-technology.jpg"
-            alt="Digital plejekoordinering og kvalitetsovervågning"
+            src={PHOTOGRAPHY.municipal.src}
+            alt={PHOTOGRAPHY.municipal.alt}
             fill
-            sizes="100vw"
+            sizes={PHOTO_SIZES.service}
+            objectPosition={PHOTOGRAPHY.municipal.objectPosition}
           />
         </div>
         <div className="section-padding reading-column">

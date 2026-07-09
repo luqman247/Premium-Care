@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { CrestSeal } from "@/components/CrestSeal";
 import { HeroImage } from "@/components/HeroImage";
+import { PHOTOGRAPHY } from "@/lib/photography";
 
 export const metadata: Metadata = {
   title: {
@@ -19,10 +20,10 @@ export const metadata: Metadata = {
     url: "https://premiumcare.dk/min-historie",
     images: [
       {
-        url: "/images/about-caregiver.jpg",
-        width: 2200,
-        height: 1467,
-        alt: "En Premium Care caregiver i omsorgsfuld kontakt med en ældre klient",
+        url: PHOTOGRAPHY.founder.src,
+        width: PHOTOGRAPHY.founder.width,
+        height: PHOTOGRAPHY.founder.height,
+        alt: PHOTOGRAPHY.founder.alt,
       },
     ],
   },
@@ -136,10 +137,11 @@ export default function FounderStoryPage() {
           <figure className="mt-12">
             <div className="relative w-full aspect-[3/2]">
               <HeroImage
-                src="/images/founder-tandsbjerg-aquarium.png"
-                alt="Akvariet og opholdsrum på plejehjemmet i Tandsbjerg i Sønderborg — stedet, hvor grundlæggeren som barn oplevede dansk omsorg"
+                src={PHOTOGRAPHY.founder.src}
+                alt={PHOTOGRAPHY.founder.alt}
                 fill
                 sizes="(max-width: 680px) 100vw, 680px"
+                objectPosition={PHOTOGRAPHY.founder.objectPosition}
               />
             </div>
             <figcaption className="text-[13px] text-midnight/60 mt-4 leading-body">

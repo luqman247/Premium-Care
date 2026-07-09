@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { HeroImage } from "@/components/HeroImage";
+import { PHOTOGRAPHY, PHOTO_SIZES } from "@/lib/photography";
 
 export const metadata: Metadata = {
   title: "Services",
@@ -18,53 +19,42 @@ const SERVICES = [
   {
     slug: "personal-care",
     title: "Personlig pleje",
-    image: "/images/service-personal-care.jpg",
-    alt: "Omsorgsfuld hjælp til daglige aktiviteter med respekt og værdighed",
+    photo: PHOTOGRAPHY.personalCare,
     text: "Vi hjælper din mor med det, hun ikke længere kan selv — bad, påklædning, mobilitet og medicinstøtte — i hendes tempo, aldrig urets. Også når hun protesterer. Også når hun ikke genkender os.",
   },
   {
     slug: "home-care",
     title: "Praktisk hjemmehjælp",
-    image: "/images/service-home-care.jpg",
-    alt: "Et sikkert og veldrevet hjem i velkendte omgivelser",
     text: "Vi holder hjemmet sikkert og velkendt — rengøring, mad, vask og indkøb, så hun kan blive, hvor minderne bor. Professionel støtte i de trygge rammer af hendes eget hjem.",
   },
   {
     slug: "companionship",
     title: "Selskab og social støtte",
-    image: "/images/service-companionship.jpg",
-    alt: "Meningsfuld samtale og menneskelig forbindelse mellem caregiver og ældre",
+    photo: PHOTOGRAPHY.companionship,
     text: "Nogle gange sidder vi bare sammen. Samtale, ledsagelse og fællesskab — for ensomhed er en sundhedsrisiko, og tilstedeværelse er det vigtigste for en person med demens.",
   },
   {
     slug: "dementia",
     title: "Demens- og Alzheimerpleje",
-    image: "/images/service-dementia.jpg",
-    alt: "Specialiseret demenspleje med rolige rutiner og genkendelige ansigter",
     text: "Demensvenlig kommunikation, beroligende rutiner og den samme caregiver hver gang — så hun genkender ansigtet, selv når hun ikke genkender navnet. Vi ved, hvad vi skal gøre, når hun vandrer.",
   },
   {
     slug: "palliative",
     title: "Palliativ pleje og pleje ved livets afslutning",
-    image: "/images/service-palliative.jpg",
-    alt: "Værdig og omsorgsfuld pleje i livets sidste stadier",
+    photo: PHOTOGRAPHY.palliative,
     text: "Velvære, værdighed og livskvalitet i de sidste stadier — i tæt samarbejde med familie og sundhedspersonale. Vi er til stede, rolige og uforhastede.",
   },
   {
     slug: "recovery",
     title: "Genoptræning efter indlæggelse",
-    image: "/images/service-recovery.jpg",
-    alt: "Overgangspleje efter udskrivning fra hospital",
     text: "Overgangspleje efter udskrivning — medicinhåndtering, sårpleje, mobilitetsstøtte og koordinering med sundhedspersonale, så hun kommer sikkert hjem igen.",
   },
   {
     slug: "respite",
     title: "Aflastning",
-    image: "/images/service-respite.jpg",
-    alt: "Midlertidig aflastning for pårørende med kontinuerlig pleje",
     text: "Midlertidig aflastning for dig som pårørende — fra få timer til flere dage — med gnidningsfri kontinuitet, så familien trygt kan hvile og hente nye kræfter.",
   },
-];
+] as const;
 
 export default function ServicesPage() {
   return (
@@ -83,14 +73,17 @@ export default function ServicesPage() {
 
       {SERVICES.map((service) => (
         <section key={service.slug} className="snap-section bg-ivory">
-          <div className="w-full h-[50vh] relative">
-            <HeroImage
-              src={service.image}
-              alt={service.alt}
-              fill
-              sizes="100vw"
-            />
-          </div>
+          {"photo" in service && service.photo ? (
+            <div className="w-full h-[45vh] relative">
+              <HeroImage
+                src={service.photo.src}
+                alt={service.photo.alt}
+                fill
+                sizes={PHOTO_SIZES.service}
+                objectPosition={service.photo.objectPosition}
+              />
+            </div>
+          ) : null}
           <div className="section-padding reading-column">
             <h2 className="text-[24px] leading-normal text-midnight mb-4">
               {service.title}
