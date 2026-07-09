@@ -299,12 +299,32 @@
     border-top: 1px solid rgba(247, 245, 240, 0.12);
   }
 
-  .wordmark {
-    font-family: var(--font-display);
-    font-size: 16px;
-    font-weight: 400;
-    color: var(--color-midnight);
-    letter-spacing: normal;
+  .site-footer-branding {
+    display: flex;
+    align-items: center;
+    gap: var(--space-4);
+    margin-bottom: var(--space-10);
+    padding-bottom: var(--space-8);
+    border-bottom: 1px solid rgba(247, 245, 240, 0.12);
+  }
+
+  .brand-crest {
+    padding: var(--space-8);
+  }
+
+  .brand-divider {
+    display: flex;
+    justify-content: center;
+    padding: var(--space-6) 0;
+  }
+
+  .brand-divider .brand-crest {
+    padding: 0;
+  }
+
+  .brand-wordmark {
+    display: block;
+    line-height: 0;
   }
 
   .image-fade {

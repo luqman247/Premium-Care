@@ -40,10 +40,10 @@ export const metadata: Metadata = {
     url: "https://premiumcare.dk",
     images: [
       {
-        url: "/images/hero-stillness.jpg",
-        width: 2200,
-        height: 2200,
-        alt: "En caregiver og en ældre kvinde sidder sammen i et dansk hjem",
+        url: "/assets/brand/og-brand.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Premium Care — Omsorg · Tryghed · Hver dag",
       },
     ],
   },
@@ -51,7 +51,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Premium Care",
     description: "Omsorg · Tryghed · Hver Dag",
-    images: ["/images/hero-stillness.jpg"],
+    images: ["/assets/brand/og-brand.jpg"],
   },
   icons: {
     icon: [

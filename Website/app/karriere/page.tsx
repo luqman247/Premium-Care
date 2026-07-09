@@ -130,6 +130,7 @@ export default function CareersPage() {
           />
         </div>
         <div className="section-padding reading-column text-center">
+          <CrestSeal size={48} decorative className="!p-0 mx-auto mb-4" />
           <p className="text-[13px] uppercase tracking-wide text-midnight/60">
             Oplæring, faglighed og fællesskab — fra første dag
           </p>
@@ -193,10 +194,6 @@ export default function CareersPage() {
             Vi svarer alle ansøgninger inden for tre dage
           </p>
         </div>
-      </section>
-
-      <section className="snap-section bg-ivory">
-        <CrestSeal size={180} className="mx-auto" />
       </section>
     </div>
   );

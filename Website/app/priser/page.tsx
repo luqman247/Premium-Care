@@ -1,5 +1,5 @@
-import Image from "next/image";
 import type { Metadata } from "next";
+import { CrestSeal } from "@/components/CrestSeal";
 
 export const metadata: Metadata = {
   title: "Priser",
@@ -56,15 +56,8 @@ export default function PricingPage() {
         </div>
       </section>
 
-      <section className="snap-section bg-ivory flex items-center justify-center">
-        <Image
-          src="/images/crest-monumental.png"
-          alt="Premium Care våbenskjold"
-          width={180}
-          height={180}
-          className="mx-auto"
-          priority
-        />
+      <section className="snap-section bg-ivory flex items-center justify-center" aria-hidden="true">
+        <CrestSeal size={96} decorative className="!p-4" />
       </section>
     </div>
   );

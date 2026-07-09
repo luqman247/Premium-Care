@@ -1,8 +1,8 @@
 {
   "name": "Premium Care",
   "short_name": "Premium Care",
-  "description": "Private Danish home care built on dignity, trust and consistency.",
-  "lang": "en",
+  "description": "Omsorg · Tryghed · Hver dag",
+  "lang": "da",
   "start_url": "/",
   "scope": "/",
   "display": "standalone",

@@ -53,7 +53,7 @@ export default function FounderStoryPage() {
 
       <div className="reading-column page-margin space-y-0">
         <section className="section-padding pt-0" aria-labelledby="section-opening">
-          <CrestSeal size={96} className="!p-0 mb-12 justify-start" />
+          <CrestSeal size={96} decorative className="!p-0 mb-12 justify-start" />
           <h2
             id="section-opening"
             className="text-[30px] leading-normal text-midnight"
@@ -429,8 +429,8 @@ export default function FounderStoryPage() {
         </div>
       </section>
 
-      <footer className="section-padding pt-0">
-        <CrestSeal size={120} className="mx-auto" />
+      <footer className="section-padding pt-0" aria-hidden="true">
+        <CrestSeal size={96} decorative className="mx-auto !p-4" />
       </footer>
     </article>
   );

@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { CrestSeal } from "@/components/CrestSeal";
 import { COMPANY } from "@/lib/company";
 
 export const metadata: Metadata = {
@@ -172,10 +171,6 @@ export default async function ContactPage({ searchParams }: ContactPageProps) {
             </Link>
           </p>
         </div>
-      </section>
-
-      <section className="snap-section bg-ivory">
-        <CrestSeal size={180} className="mx-auto" />
       </section>
 
       <script

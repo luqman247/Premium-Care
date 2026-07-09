@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import { CrestSeal } from "@/components/CrestSeal";
 import { HeroImage } from "@/components/HeroImage";
 
 export const metadata: Metadata = {
@@ -111,10 +110,6 @@ export default function ServicesPage() {
             når hun siger nej.
           </p>
         </div>
-      </section>
-
-      <section className="snap-section bg-ivory">
-        <CrestSeal size={180} className="mx-auto" />
       </section>
     </div>
   );

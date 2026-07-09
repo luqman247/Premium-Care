@@ -229,7 +229,7 @@ export default function LeadershipGovernancePage() {
     <article className="bg-ivory pb-24">
       <header className="section-padding page-margin">
         <div className="reading-column">
-          <CrestSeal size={96} className="!p-0 mb-10 justify-start" />
+          <CrestSeal size={96} decorative className="!p-0 mb-10 justify-start" />
           <h1 className="text-[38px] leading-snug tracking-tight text-midnight">
             Ledelse og governance
           </h1>
@@ -379,7 +379,7 @@ export default function LeadershipGovernancePage() {
 
         {/* Governance divider with crest */}
         <div className="section-padding py-12 flex justify-center" aria-hidden="true">
-          <CrestSeal size={120} />
+          <CrestSeal size={96} decorative className="!p-0" />
         </div>
 
         {/* 6. Leadership Principles */}
@@ -544,8 +544,8 @@ export default function LeadershipGovernancePage() {
         </div>
       </section>
 
-      <footer className="section-padding pt-0">
-        <CrestSeal size={140} className="mx-auto" />
+      <footer className="section-padding pt-0" aria-hidden="true">
+        <CrestSeal size={96} decorative className="mx-auto !p-4" />
       </footer>
 
       <script

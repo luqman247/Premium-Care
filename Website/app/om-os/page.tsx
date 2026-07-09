@@ -193,6 +193,10 @@ export default function AboutPage() {
         </div>
       </section>
 
+      <div className="brand-divider" aria-hidden="true">
+        <CrestSeal size={64} decorative className="!p-0" />
+      </div>
+
       <section className="snap-section bg-midnight section-padding">
         <div className="reading-column">
           <h2 className="text-[30px] leading-normal text-ivory">
@@ -254,10 +258,6 @@ export default function AboutPage() {
             De mennesker, der passer på din mor
           </p>
         </div>
-      </section>
-
-      <section className="snap-section bg-ivory">
-        <CrestSeal size={180} className="mx-auto" />
       </section>
     </div>
   );

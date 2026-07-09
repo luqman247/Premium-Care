@@ -2,6 +2,8 @@
 
 import { useEffect, useState } from "react";
 import Link from "next/link";
+import { BrandWordmark } from "@/components/BrandWordmark";
+import { WORDMARK_HEIGHT } from "@/lib/brand";
 
 export function Wordmark() {
   const [visible, setVisible] = useState(true);
@@ -23,10 +25,15 @@ export function Wordmark() {
   return (
     <Link
       href="/"
-      className="fixed top-6 left-[8%] z-50 wordmark transition-opacity duration-300 focus-ring"
+      className="fixed top-6 left-[8%] z-50 brand-wordmark transition-opacity duration-300 focus-ring"
       style={{ opacity: visible ? 1 : 0 }}
+      aria-label="Premium Care — forsiden"
     >
-      Premium Care
+      <BrandWordmark
+        variant="navy"
+        height={WORDMARK_HEIGHT.header}
+        priority
+      />
     </Link>
   );
 }

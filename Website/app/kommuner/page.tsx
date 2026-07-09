@@ -49,7 +49,7 @@ export default function MunicipalPage() {
             {COMPANY.legalName} · CVR {COMPANY.cvr}
           </p>
           <div className="mt-8">
-            <CrestSeal size={80} className="!p-4 !justify-start" />
+            <CrestSeal size={80} decorative className="!p-4 !justify-start" />
           </div>
         </div>
       </section>
@@ -255,10 +255,6 @@ export default function MunicipalPage() {
             </Link>
           </p>
         </div>
-      </section>
-
-      <section className="snap-section bg-ivory">
-        <CrestSeal size={180} className="mx-auto" />
       </section>
     </div>
   );

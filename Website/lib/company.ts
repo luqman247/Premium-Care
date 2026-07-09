@@ -44,7 +44,8 @@ export function organizationJsonLd() {
     telephone: COMPANY.phone.schema,
     taxID: `CVR ${COMPANY.cvr}`,
     address: companyPostalAddress(),
-    logo: `${COMPANY.url}/assets/brand/crest-emblem-fullcolour.png`,
+    logo: `${COMPANY.url}/assets/brand/horizontal-navy.png`,
+    image: `${COMPANY.url}/assets/brand/master-transparent.png`,
     contactPoint: {
       "@type": "ContactPoint",
       telephone: COMPANY.phone.schema,

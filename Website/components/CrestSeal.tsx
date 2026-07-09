@@ -1,30 +1,40 @@
 import Image from "next/image";
+import { BRAND, CREST_SIZES, type CrestVariant } from "@/lib/brand";
 
 type CrestSealProps = {
   size?: number;
-  variant?: "fullcolour" | "gold";
+  variant?: CrestVariant;
   className?: string;
+  decorative?: boolean;
 };
 
 export function CrestSeal({
-  size = 180,
+  size = CREST_SIZES.lg,
   variant = "fullcolour",
   className = "",
+  decorative = false,
 }: CrestSealProps) {
-  const src =
-    variant === "gold"
-      ? "/assets/brand/crest-emblem-gold.png"
-      : "/assets/brand/crest-emblem-fullcolour.png";
+  const asset = BRAND.crest[variant];
+  const aspect = asset.height / asset.width;
+  const height = Math.round(size * aspect);
 
   return (
-    <div className={`flex items-center justify-center p-8 ${className}`}>
+    <div
+      className={`brand-crest flex items-center justify-center ${className}`}
+      aria-hidden={decorative ? true : undefined}
+    >
       <Image
-        src={src}
-        alt="Premium Care våbenskjold"
+        src={asset.src}
+        alt={decorative ? "" : asset.alt}
         width={size}
-        height={Math.round(size * 1.28)}
+        height={height}
         className="object-contain"
-        style={{ width: size, height: "auto", maxHeight: Math.round(size * 1.28) }}
+        style={{
+          width: size,
+          height: "auto",
+          maxHeight: height,
+        }}
+        sizes={`${size}px`}
       />
     </div>
   );

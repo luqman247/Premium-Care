@@ -120,7 +120,7 @@ export default function TrustPage() {
             CVR {COMPANY.cvr} · {COMPANY.address.postalCode} {COMPANY.address.locality}
           </p>
           <div className="mt-8">
-            <CrestSeal size={80} className="!p-4 !justify-start" />
+            <CrestSeal size={80} decorative className="!p-4 !justify-start" />
           </div>
         </div>
       </section>
@@ -209,6 +209,10 @@ export default function TrustPage() {
         </div>
       </section>
 
+      <div className="brand-divider" aria-hidden="true">
+        <CrestSeal size={64} decorative className="!p-0" />
+      </div>
+
       <section className="snap-section bg-ivory section-padding">
         <div className="reading-column">
           <h2 className="text-[30px] leading-normal text-midnight">
@@ -281,10 +285,6 @@ export default function TrustPage() {
             {COMPANY.openingHours.display}
           </p>
         </div>
-      </section>
-
-      <section className="snap-section bg-ivory">
-        <CrestSeal size={180} className="mx-auto" />
       </section>
     </div>
   );

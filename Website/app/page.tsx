@@ -132,7 +132,7 @@ export default function HomePage() {
             </Link>
           </p>
           <div className="mt-12 flex justify-start">
-            <CrestSeal size={96} />
+            <CrestSeal size={96} decorative className="!p-0" />
           </div>
         </div>
       </section>
@@ -222,8 +222,8 @@ export default function HomePage() {
       </section>
 
       {/* SECTION 11: THE CREST — Institutional seal */}
-      <section className="snap-section bg-ivory">
-        <CrestSeal size={240} className="mx-auto" />
+      <section className="snap-section bg-ivory" aria-label="Premium Care institutionelt våbenskjold">
+        <CrestSeal size={160} decorative className="mx-auto" />
       </section>
     </div>
   );
