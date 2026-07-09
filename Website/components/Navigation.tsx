@@ -9,6 +9,9 @@ const NAV_LINKS = [
   { href: "/priser", label: "Priser" },
   { href: "/om-os", label: "Om os" },
   { href: "/kontakt", label: "Kontakt" },
+  { href: "/kommuner", label: "Til kommuner" },
+  { href: "/karriere", label: "Karriere" },
+  { href: "/tillid", label: "Tillid" },
 ];
 
 export function Navigation() {
