@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { CrestSeal } from "@/components/CrestSeal";
 import { HeroImage } from "@/components/HeroImage";
+import { COMPANY } from "@/lib/company";
 
 export const metadata: Metadata = {
   title: "Om os",
@@ -58,6 +59,55 @@ export default function AboutPage() {
               className="text-[17px] leading-body text-midnight underline underline-offset-4 hover:text-midnight/80 transition-colors focus-ring"
             >
               Læs grundlæggerens historie
+            </Link>
+          </p>
+        </div>
+      </section>
+
+      <section className="snap-section bg-ivory section-padding">
+        <div className="reading-column">
+          <h2 className="text-[30px] leading-normal text-midnight">
+            Registreret selskab
+          </h2>
+          <p className="text-[17px] leading-body text-midnight/80 mt-8">
+            {COMPANY.legalName}
+            <br />
+            CVR {COMPANY.cvr}
+            <br />
+            {COMPANY.address.street}, {COMPANY.address.postalCode}{" "}
+            {COMPANY.address.locality}
+          </p>
+          <p className="text-[17px] leading-body text-midnight/80 mt-6">
+            <a
+              href={COMPANY.phone.href}
+              className="underline underline-offset-4 hover:text-midnight transition-colors focus-ring"
+            >
+              {COMPANY.phone.display}
+            </a>
+            {" · "}
+            <a
+              href={`mailto:${COMPANY.email}`}
+              className="underline underline-offset-4 hover:text-midnight transition-colors focus-ring"
+            >
+              {COMPANY.email}
+            </a>
+          </p>
+        </div>
+      </section>
+
+      <section className="snap-section bg-midnight section-padding">
+        <div className="reading-column">
+          <h2 className="text-[30px] leading-normal text-ivory">Ledelse</h2>
+          <p className="text-[17px] leading-body text-ivory/80 mt-8">
+            Premium Care ledes af grundlægger og administrerende direktør Bibi Naziyh
+            Dowezai — med synlig ledelse tæt på borgere, medarbejdere og drift.
+          </p>
+          <p className="mt-10">
+            <Link
+              href="/ledelse"
+              className="text-[17px] leading-body text-gold underline underline-offset-4 hover:text-gold-light transition-colors focus-ring"
+            >
+              Læs om ledelse og forpligtelser
             </Link>
           </p>
         </div>

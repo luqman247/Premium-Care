@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { CrestSeal } from "@/components/CrestSeal";
 import { HeroImage } from "@/components/HeroImage";
+import { COMPANY } from "@/lib/company";
 
 export const metadata: Metadata = {
   title: "Karriere",
@@ -162,7 +163,7 @@ export default function CareersPage() {
             {POSITIONS.map((position) => (
               <a
                 key={position.title}
-                href={`mailto:karriere@premiumcare.dk?subject=${encodeURIComponent(position.subject)}`}
+                href={`mailto:${COMPANY.email}?subject=${encodeURIComponent(position.subject)}`}
                 className="block border-b border-midnight/10 pb-6 group focus-ring"
               >
                 <p className="text-[19px] text-midnight group-hover:tracking-wide transition-all duration-300">
@@ -183,10 +184,10 @@ export default function CareersPage() {
             Send din ansøgning til
           </p>
           <a
-            href="mailto:karriere@premiumcare.dk"
+            href={`mailto:${COMPANY.email}?subject=${encodeURIComponent("Ansøgning")}`}
             className="text-[30px] leading-normal text-gold font-body mt-4 inline-block hover:opacity-80 transition-opacity duration-300 focus-ring"
           >
-            karriere@premiumcare.dk
+            {COMPANY.email}
           </a>
           <p className="text-[13px] text-ivory/60 mt-6 uppercase tracking-wide">
             Vi svarer alle ansøgninger inden for tre dage

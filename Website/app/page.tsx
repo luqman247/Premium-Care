@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { CrestSeal } from "@/components/CrestSeal";
 import { HeroImage } from "@/components/HeroImage";
+import { COMPANY } from "@/lib/company";
 
 export default function HomePage() {
   return (
@@ -210,13 +211,12 @@ export default function HomePage() {
             <Link href="/kontakt" className="btn-primary">
               Ring, når du er klar
             </Link>
-            <a href="tel:+4500000000" className="btn-secondary">
+            <a href={COMPANY.phone.href} className="btn-secondary">
               Jeg har brug for hjælp i dag
             </a>
           </div>
           <p className="text-[13px] text-midnight/50 mt-6">
-            Vi besvarer alle opkald inden for to timer. Også om lørdagen.
-            Akutlinje: 24 timer.
+            {COMPANY.openingHours.display} · Svar inden for to arbejdsdage
           </p>
         </div>
       </section>

@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import { CrestSeal } from "@/components/CrestSeal";
 import { HeroImage } from "@/components/HeroImage";
+import { COMPANY } from "@/lib/company";
 
 export const metadata: Metadata = {
   title: "Kommunalt samarbejde",
@@ -43,8 +45,37 @@ export default function MunicipalPage() {
             Vi ved, at kommunal indkøb ikke handler om brochurer. Den handler om
             dokumentation, priser og resultater. Her er begge dele.
           </p>
+          <p className="text-[13px] text-midnight/60 mt-6">
+            {COMPANY.legalName} · CVR {COMPANY.cvr}
+          </p>
           <div className="mt-8">
             <CrestSeal size={80} className="!p-4 !justify-start" />
+          </div>
+        </div>
+      </section>
+
+      <section className="snap-section bg-ivory section-padding">
+        <div className="reading-column">
+          <h2 className="text-[30px] leading-normal text-midnight">
+            Registreret leverandør
+          </h2>
+          <div className="mt-8 space-y-4 text-[17px] leading-body text-midnight/80">
+            <p>
+              <strong className="text-midnight font-medium">Selskab:</strong>{" "}
+              {COMPANY.legalName}
+            </p>
+            <p>
+              <strong className="text-midnight font-medium">CVR:</strong> {COMPANY.cvr}
+            </p>
+            <p>
+              <strong className="text-midnight font-medium">Adresse:</strong>{" "}
+              {COMPANY.address.street}, {COMPANY.address.postalCode}{" "}
+              {COMPANY.address.locality}
+            </p>
+            <p>
+              <strong className="text-midnight font-medium">Ledelse:</strong> Bibi
+              Naziyh Dowezai, administrerende direktør
+            </p>
           </div>
         </div>
       </section>
@@ -200,13 +231,28 @@ export default function MunicipalPage() {
             Spørgsmål til indkøb? Kontakt vores kommunale partnerskabsteam.
           </p>
           <a
-            href="mailto:kommune@premiumcare.dk"
+            href={`mailto:${COMPANY.email}?subject=${encodeURIComponent("Kommunal henvendelse")}`}
             className="text-[30px] leading-normal text-gold font-body mt-8 inline-block hover:opacity-80 transition-opacity duration-300 focus-ring"
           >
-            kommune@premiumcare.dk
+            {COMPANY.email}
           </a>
           <p className="text-[13px] text-ivory/60 mt-6 uppercase tracking-wide">
-            Svar inden for to timer
+            {COMPANY.openingHours.display} · Svar inden for to arbejdsdage
+          </p>
+          <p className="text-[13px] text-ivory/60 mt-4">
+            <Link
+              href="/tillid"
+              className="underline underline-offset-4 hover:text-ivory transition-colors focus-ring"
+            >
+              Tillidscenter og governance
+            </Link>
+            {" · "}
+            <Link
+              href="/ledelse"
+              className="underline underline-offset-4 hover:text-ivory transition-colors focus-ring"
+            >
+              Ledelse
+            </Link>
           </p>
         </div>
       </section>

@@ -5,6 +5,7 @@ import { TrustBar } from "@/components/TrustBar";
 import { PageTransition } from "@/components/PageTransition";
 import { Wordmark } from "@/components/Wordmark";
 import { Navigation } from "@/components/Navigation";
+import { COMPANY, localBusinessJsonLd, organizationJsonLd } from "@/lib/company";
 
 const cormorant = Cormorant_Garamond({
   subsets: ["latin"],
@@ -22,11 +23,11 @@ const cinzel = Cinzel({
 
 export const metadata: Metadata = {
   title: {
-    default: "Premium Care",
-    template: "%s · Premium Care",
+    default: COMPANY.brandName,
+    template: `%s · ${COMPANY.brandName}`,
   },
   description: "Omsorg · Tryghed · Hver Dag",
-  metadataBase: new URL("https://premiumcare.dk"),
+  metadataBase: new URL(COMPANY.url),
   alternates: {
     canonical: "/",
   },
@@ -79,6 +80,18 @@ export default function RootLayout({
         <Navigation />
         <main>{children}</main>
         <TrustBar />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(organizationJsonLd()),
+          }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(localBusinessJsonLd()),
+          }}
+        />
       </body>
     </html>
   );
