@@ -102,7 +102,11 @@ export default function HomePage() {
       {/* SECTION 5: WHY WE EXIST */}
       <section className="snap-section bg-ivory section-padding">
         <div className="reading-column">
-          <h2 className="text-[30px] leading-normal text-midnight">
+          <p className="text-[19px] leading-body text-midnight/70">
+            Nogle virksomheder bliver skabt ud fra en forretningsidé. Andre bliver
+            skabt ud fra en livshistorie.
+          </p>
+          <h2 className="text-[30px] leading-normal text-midnight mt-12">
             Hvorfor Premium Care findes
           </h2>
           <p className="text-[19px] leading-body text-midnight/80 mt-8">
@@ -117,6 +121,14 @@ export default function HomePage() {
             Et dansk plejeinstitut, 100% familieejet, forankret i den danske
             velfærdstradition. Bygget på værdighed, tillid og konsistens — ikke på
             kortsigtet vækst
+          </p>
+          <p className="mt-10">
+            <Link
+              href="/min-historie"
+              className="text-[17px] leading-body text-midnight underline underline-offset-4 hover:text-midnight/80 transition-colors focus-ring"
+            >
+              Læs grundlæggerens historie
+            </Link>
           </p>
           <div className="mt-12 flex justify-start">
             <CrestSeal size={96} />

@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import { CrestSeal } from "@/components/CrestSeal";
 import { HeroImage } from "@/components/HeroImage";
 
@@ -50,6 +51,14 @@ export default function AboutPage() {
             grundlagt for at tjene penge. Vi blev grundlagt, fordi vi troede, at
             ældrepleje kunne gøres bedre — mere menneskelig, mere respektfuld, mere
             dansk.
+          </p>
+          <p className="mt-12">
+            <Link
+              href="/min-historie"
+              className="text-[17px] leading-body text-midnight underline underline-offset-4 hover:text-midnight/80 transition-colors focus-ring"
+            >
+              Læs grundlæggerens historie
+            </Link>
           </p>
         </div>
       </section>
