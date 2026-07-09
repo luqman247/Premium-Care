@@ -15,10 +15,10 @@ export function RecruitmentSection({ variant = "ivory" }: RecruitmentSectionProp
 
   return (
     <section
-      className={`section-padding ${isMidnight ? "bg-midnight" : "bg-ivory"}`}
+      className={`section-padding page-margin ${isMidnight ? "bg-midnight" : "bg-ivory"}`}
       aria-labelledby="recruitment-heading"
     >
-      <div className="reading-column page-margin">
+      <div className="reading-column">
         <div className="grid grid-cols-1 md:grid-cols-[1fr_minmax(0,280px)] gap-10 items-start">
           <div>
             <h2

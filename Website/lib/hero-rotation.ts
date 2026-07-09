@@ -13,5 +13,5 @@ export const HERO_ROTATION: HeroRotationPhoto[] = [
   PHOTOGRAPHY.professionalTraining,
 ];
 
-export const HERO_ROTATION_INTERVAL_MS = 10_000;
-export const HERO_ROTATION_FADE_MS = 1_800;
+export const HERO_ROTATION_INTERVAL_MS = 14_000;
+export const HERO_ROTATION_FADE_MS = 2_400;

@@ -23,7 +23,7 @@ export function TrustBar() {
     <footer role="contentinfo" aria-label="Virksomhedsoplysninger" className="site-footer">
       <div className="site-footer-inner page-margin">
         <div className="site-footer-branding">
-          <Link href="/" className="focus-ring" aria-label="Premium Care — forsiden">
+          <Link href="/" className="focus-ring" aria-label="Premium Care - forsiden">
             <BrandWordmark variant="white" height={WORDMARK_HEIGHT.footer} />
           </Link>
           <CrestSeal

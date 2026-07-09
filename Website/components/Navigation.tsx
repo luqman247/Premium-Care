@@ -22,7 +22,7 @@ export function Navigation() {
       <button
         type="button"
         onClick={() => setIsOpen(true)}
-        className="fixed bottom-6 left-[8%] z-50 text-[16px] font-body text-midnight hover:tracking-wide transition-all duration-300 focus-ring"
+        className="fixed bottom-6 left-[8%] z-50 text-[15px] font-body text-midnight/80 hover:text-midnight transition-all duration-500 focus-ring"
         aria-label="Åbn menu"
         aria-expanded={isOpen}
         aria-controls="site-nav-overlay"
@@ -37,7 +37,7 @@ export function Navigation() {
         <button
           type="button"
           onClick={() => setIsOpen(false)}
-          className="absolute top-6 right-[8%] text-[16px] font-body text-midnight hover:tracking-wide transition-all duration-300 focus-ring"
+          className="absolute top-6 right-[8%] text-[15px] font-body text-midnight/80 hover:text-midnight transition-all duration-500 focus-ring"
           aria-label="Luk menu"
         >
           Luk
@@ -48,7 +48,7 @@ export function Navigation() {
               key={link.href}
               href={link.href}
               onClick={handleLinkClick}
-              className="text-[24px] font-body text-midnight hover:font-medium transition-all duration-300 focus-ring"
+              className="text-[24px] font-body text-midnight hover:opacity-70 transition-opacity duration-500 focus-ring"
             >
               {link.label}
             </Link>

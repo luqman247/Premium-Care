@@ -7,7 +7,7 @@ export function EditorialTicker() {
 
   return (
     <div
-      className="editorial-ticker border-y border-midnight/10 bg-ivory overflow-hidden"
+      className="editorial-ticker border-y border-midnight/[0.06] bg-ivory overflow-hidden"
       aria-label="Premium Care værdier"
     >
       <div className="editorial-ticker-track">

@@ -8,13 +8,13 @@ import { COMPANY } from "@/lib/company";
 
 export default function HomePage() {
   return (
-    <div>
+    <div className="page-flow">
       <header className="homepage-hero">
         <div className="rotating-hero-wrap">
           <RotatingHero />
         </div>
         <EditorialTicker />
-        <div className="bg-ivory section-padding page-margin">
+        <div className="bg-ivory hero-intro page-margin">
           <div className="reading-column">
             <h1 className="text-[48px] leading-tight tracking-tight text-midnight max-w-[20ch]">
               Din mor fortjener at blive hjemme
@@ -239,8 +239,8 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="bg-ivory py-24" aria-label="Premium Care institutionelt våbenskjold">
-        <CrestSeal size={160} decorative className="mx-auto" />
+      <section className="bg-ivory py-20" aria-label="Premium Care institutionelt våbenskjold">
+        <CrestSeal size={120} decorative className="mx-auto" />
       </section>
     </div>
   );

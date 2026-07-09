@@ -38,7 +38,7 @@ const LEADERSHIP_PRINCIPLES = [
 
 export default function AboutPage() {
   return (
-    <div className="snap-y snap-mandatory h-screen overflow-y-scroll">
+    <div className="page-flow">
       <section className="snap-section bg-ivory section-padding">
         <div className="reading-column">
           <h1 className="text-[38px] leading-snug tracking-tight text-midnight">
