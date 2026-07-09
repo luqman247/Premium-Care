@@ -8,12 +8,12 @@ import { TRUST_POLICIES } from "@/lib/trust-policies";
 export const metadata: Metadata = {
   title: "Tillidscenter",
   description:
-    "Gennemsigtighed, dokumentation og ansvarlighed — politikker, kvalitetsramme og governance for Premium Care ApS.",
+    "Gennemsigtighed, dokumentation og ansvarlighed - politikker, kvalitetsramme og ledelsesansvar for Premium Care ApS.",
   alternates: { canonical: "/tillid" },
   openGraph: {
     title: "Tillidscenter · Premium Care",
     description:
-      "Gennemsigtighed, dokumentation og ansvarlighed — politikker, kvalitetsramme og governance for Premium Care ApS.",
+      "Gennemsigtighed, dokumentation og ansvarlighed - politikker, kvalitetsramme og ledelsesansvar for Premium Care ApS.",
     url: "https://premiumcare.dk/tillid",
   },
 };
@@ -114,7 +114,7 @@ export default function TrustPage() {
           </h1>
           <p className="text-[19px] leading-body text-midnight/80 mt-8">
             Tillid bygges ikke af ord. Den bygges af dokumenter, procedurer og
-            ansvarlighed. Her finder du politikker, kvalitetsramme og governance for{" "}
+            ansvarlighed. Her finder du politikker, kvalitetsramme og ledelsesansvar for{" "}
             {COMPANY.legalName}.
           </p>
           <p className="text-[17px] leading-body text-midnight/80 mt-6">

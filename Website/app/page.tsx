@@ -2,50 +2,41 @@ import Link from "next/link";
 import { CrestSeal } from "@/components/CrestSeal";
 import { EditorialTicker } from "@/components/EditorialTicker";
 import { FreeCareMessage } from "@/components/FreeCareMessage";
-import { HeroImage } from "@/components/HeroImage";
 import { RecruitmentSection } from "@/components/RecruitmentSection";
+import { RotatingHero } from "@/components/RotatingHero";
 import { COMPANY } from "@/lib/company";
-import { PHOTOGRAPHY, PHOTO_SIZES } from "@/lib/photography";
 
 export default function HomePage() {
   return (
-    <div className="snap-y snap-mandatory h-screen overflow-y-scroll">
-      <section className="snap-section min-h-screen relative">
-        <div className="absolute inset-0">
-          <HeroImage
-            src={PHOTOGRAPHY.hero.src}
-            alt={PHOTOGRAPHY.hero.alt}
-            fill
-            priority
-            sizes={PHOTO_SIZES.hero}
-            objectPosition={PHOTOGRAPHY.hero.objectPosition}
-          />
+    <div>
+      <header className="homepage-hero">
+        <div className="rotating-hero-wrap">
+          <RotatingHero />
         </div>
-        <div className="relative z-10 mt-[60vh] page-margin pb-24">
-          <h1 className="text-[48px] leading-tight tracking-tight text-midnight max-w-[20ch]">
-            Din mor fortjener at blive hjemme
-          </h1>
-          <p className="text-[19px] leading-body text-midnight/80 max-w-[42ch] mt-8">
-            At beslutte sig for hjemmehjælp er ikke nemt. Nogle situationer kan
-            ikke vente. Hvis du er bekymret for hendes sikkerhed, ringer du
-            bare. Vi finder en løsning i dag
-          </p>
-          <div className="mt-10 flex flex-col sm:flex-row gap-4">
-            <Link href="/kontakt" className="btn-primary">
-              Tal med os om hjemmepleje
-            </Link>
-            <Link href="/priser" className="btn-secondary">
-              Læs om gratis hjemmepleje
-            </Link>
+        <EditorialTicker />
+        <div className="bg-ivory section-padding page-margin">
+          <div className="reading-column">
+            <h1 className="text-[48px] leading-tight tracking-tight text-midnight max-w-[20ch]">
+              Din mor fortjener at blive hjemme
+            </h1>
+            <p className="text-[19px] leading-body text-midnight/80 max-w-[42ch] mt-8">
+              At beslutte sig for hjemmehjælp er ikke nemt. Nogle situationer kan
+              ikke vente. Hvis du er bekymret for hendes sikkerhed, ringer du
+              bare. Vi finder en løsning i dag
+            </p>
+            <div className="mt-10 flex flex-col sm:flex-row gap-4">
+              <Link href="/kontakt" className="btn-primary">
+                Tal med os om hjemmepleje
+              </Link>
+              <Link href="/priser" className="btn-secondary">
+                Læs om gratis hjemmepleje
+              </Link>
+            </div>
           </div>
         </div>
-      </section>
+      </header>
 
-      <section className="snap-section bg-ivory">
-        <EditorialTicker />
-      </section>
-
-      <section className="snap-section bg-ivory section-padding">
+      <section className="bg-ivory section-padding">
         <div className="reading-column">
           <h2 className="text-[30px] leading-normal text-midnight">
             Gratis hjemmepleje gennem frit valg
@@ -54,7 +45,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="snap-section bg-ivory section-padding">
+      <section className="bg-ivory section-padding">
         <div className="reading-column">
           <h2 className="text-[30px] leading-normal text-midnight">
             Danmark bliver ældre. Flere vil blive hjemme
@@ -82,7 +73,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="snap-section bg-ivory section-padding">
+      <section className="bg-ivory section-padding">
         <div className="reading-column">
           <p className="text-[30px] leading-normal text-midnight">
             Hun har boet i det samme hus i fyrre år. Tanken om at forlade det
@@ -91,7 +82,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="snap-section bg-midnight section-padding">
+      <section className="bg-midnight section-padding">
         <div className="reading-column">
           <p className="text-[13px] uppercase tracking-wide text-gold mb-8">
             Løftet i vores navn
@@ -130,7 +121,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="snap-section bg-ivory section-padding">
+      <section className="bg-ivory section-padding">
         <div className="reading-column">
           <p className="text-[19px] leading-body text-midnight/70">
             Nogle virksomheder bliver skabt ud fra en forretningsidé. Andre bliver
@@ -166,7 +157,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="snap-section bg-midnight section-padding">
+      <section className="bg-midnight section-padding">
         <div className="reading-column">
           <p className="text-[30px] leading-normal text-ivory">
             Vi kommer ikke for at ændre hendes liv. Vi kommer for at sikre, at
@@ -180,7 +171,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="snap-section bg-ivory section-padding">
+      <section className="bg-ivory section-padding">
         <div className="reading-column">
           <h2 className="text-[30px] leading-normal text-midnight">
             Hvis hun er faldet. Hvis hun har demens. Hvis hun vandrer
@@ -195,13 +186,13 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="snap-section bg-ivory section-padding text-center">
-        <div className="reading-column">
+      <section className="testimonial-section bg-ivory section-padding">
+        <div className="reading-column text-center">
           <p className="text-[64px] leading-tight text-gold font-body">94%</p>
           <p className="text-[16px] text-midnight/60 uppercase tracking-wide mt-4">
             Årlig klienttilfredshed, målt af uafhængig part
           </p>
-          <div className="mt-24 text-left">
+          <div className="mt-16 text-left">
             <p className="text-[19px] leading-body text-midnight max-w-[55ch]">
               De første to uger sagde min mor nej til alt. Den tredje uge
               spurgte hun, om Mette kunne komme tidligere
@@ -225,7 +216,7 @@ export default function HomePage() {
 
       <RecruitmentSection />
 
-      <section className="snap-section bg-ivory section-padding">
+      <section className="bg-ivory section-padding">
         <div className="reading-column text-center">
           <p className="text-[30px] leading-normal text-midnight">
             Du behøver ikke at beslutte noget i dag
@@ -248,7 +239,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="snap-section bg-ivory" aria-label="Premium Care institutionelt våbenskjold">
+      <section className="bg-ivory py-24" aria-label="Premium Care institutionelt våbenskjold">
         <CrestSeal size={160} decorative className="mx-auto" />
       </section>
     </div>

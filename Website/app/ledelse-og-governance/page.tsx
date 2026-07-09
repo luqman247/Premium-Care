@@ -8,15 +8,15 @@ import { PHOTOGRAPHY, PHOTO_SIZES } from "@/lib/photography";
 
 export const metadata: Metadata = {
   title: {
-    absolute: "Ledelse og governance | Premium Care",
+    absolute: "Ledelse og ansvar | Premium Care",
   },
   description:
-    "Premium Care ApS — ledelse, governance, mission, vision og kvalitetsforpligtelse. Grundlagt på synlig ledelse, dokumenteret ansvar og dansk plejetradition.",
+    "Premium Care ApS — ledelse og ansvar, mission, vision og kvalitetsforpligtelse. Grundlagt på synlig ledelse, dokumenteret ansvar og dansk plejetradition.",
   alternates: { canonical: "/ledelse-og-governance" },
   openGraph: {
-    title: "Ledelse og governance | Premium Care",
+    title: "Ledelse og ansvar | Premium Care",
     description:
-      "Premium Care ApS — ledelse, governance, mission, vision og kvalitetsforpligtelse. Grundlagt på synlig ledelse, dokumenteret ansvar og dansk plejetradition.",
+      "Premium Care ApS — ledelse og ansvar, mission, vision og kvalitetsforpligtelse. Grundlagt på synlig ledelse, dokumenteret ansvar og dansk plejetradition.",
     url: "https://premiumcare.dk/ledelse-og-governance",
     images: [
       {
@@ -91,10 +91,10 @@ const LEADERSHIP_PRINCIPLES = [
   },
 ];
 
-const GOVERNANCE_AREAS = [
+const LEDELSE_OMRAADER = [
   {
     title: "Bestyrelse",
-    body: "Bestyrelsen ejer governance-programmet, godkender strategiske beslutninger og modtager løbende rapportering om kvalitet, risiko og compliance. Årligt governance- og assurance-statement præsenteres for bestyrelsen.",
+    body: "Bestyrelsen ejer ledelsesprogrammet, godkender strategiske beslutninger og modtager løbende rapportering om kvalitet, risiko og compliance. Årligt ledelses- og sikkerhedserklæring præsenteres for bestyrelsen.",
   },
   {
     title: "Ledelse",
@@ -118,7 +118,7 @@ const GOVERNANCE_AREAS = [
   },
   {
     title: "Politikker",
-    body: "Et kontrolleret governance-bibliotek med én autoritativ kilde pr. emne — klinisk, kvalitet, HR, informationssikkerhed og arbejdsmiljø. Politikker revideres årligt og ved væsentlige lovændringer.",
+    body: "Et kontrolleret dokumentbibliotek med én autoritativ kilde pr. emne — klinisk, kvalitet, HR, informationssikkerhed og arbejdsmiljø. Politikker revideres årligt og ved væsentlige lovændringer.",
   },
   {
     title: "Etik",
@@ -128,7 +128,7 @@ const GOVERNANCE_AREAS = [
 
 const QUALITY_COMMITMENTS = [
   {
-    title: "Klinisk governance",
+    title: "Klinisk ledelse",
     body: "Delegerede sundhedsopgaver udføres kun efter uddannelse og formel godkendelse, præcis som den skriftlige instruks beskriver. Klinisk ledelse bærer det faglige ansvar.",
   },
   {
@@ -168,7 +168,7 @@ const TRUST_LIBRARY = [
   { href: "/kvalitet", label: "Kvalitetsforpligtelse" },
   { href: "/ligebehandling", label: "Ligebehandling og inklusion" },
   { href: "/whistleblowing", label: "Whistleblower-ordning" },
-  { href: "/governance", label: "Governance-erklæring" },
+  { href: "/ledelsesansvar", label: "Ledelseserklæring" },
   { href: "/tillid", label: "Tillidscenter" },
 ];
 
@@ -187,7 +187,7 @@ function pageJsonLd() {
         {
           "@type": "ListItem",
           position: 2,
-          name: "Ledelse og governance",
+          name: "Ledelse og ansvar",
           item: `${COMPANY.url}/ledelse-og-governance`,
         },
       ],
@@ -208,9 +208,9 @@ function pageJsonLd() {
     {
       "@context": "https://schema.org",
       "@type": "WebPage",
-      name: "Ledelse og governance",
+      name: "Ledelse og ansvar",
       description:
-        "Premium Care ApS — ledelse, governance, mission, vision og kvalitetsforpligtelse.",
+        "Premium Care ApS — ledelse og ansvar, mission, vision og kvalitetsforpligtelse.",
       url: `${COMPANY.url}/ledelse-og-governance`,
       isPartOf: {
         "@type": "WebSite",
@@ -232,7 +232,7 @@ export default function LeadershipGovernancePage() {
         <div className="reading-column">
           <CrestSeal size={96} decorative className="!p-0 mb-10 justify-start" />
           <h1 className="text-[38px] leading-snug tracking-tight text-midnight">
-            Ledelse og governance
+            Ledelse og ansvar
           </h1>
           <p className="text-[19px] leading-body text-midnight/80 mt-8">
             Bygget på tillid. Styret af principper. Skabt til at bestå.
@@ -378,7 +378,7 @@ export default function LeadershipGovernancePage() {
           </ul>
         </section>
 
-        {/* Governance divider with crest */}
+        {/* Ledelsesdivider with crest */}
         <div className="section-padding py-12 flex justify-center" aria-hidden="true">
           <CrestSeal size={96} decorative className="!p-0" />
         </div>
@@ -403,22 +403,22 @@ export default function LeadershipGovernancePage() {
           </ul>
         </section>
 
-        {/* 7. Governance */}
+        {/* 7. Ledelse og styring */}
         <section
           className="section-padding bg-midnight -mx-[8%] px-[8%]"
-          aria-labelledby="governance"
+          aria-labelledby="ledelse-styring"
         >
           <div className="reading-column mx-auto">
-            <h2 id="governance" className="text-[30px] leading-normal text-ivory">
-              Governance
+            <h2 id="ledelse-styring" className="text-[30px] leading-normal text-ivory">
+              Ledelse og styring
             </h2>
             <p className="text-[17px] leading-body text-ivory/80 mt-8">
-              Premium Care er bygget omkring et kontrolleret governance-bibliotek — fra
+              Premium Care er bygget omkring et kontrolleret dokumentbibliotek — fra
               dag ét designet til dokumenteret ansvar, målbar kvalitet og audit-klar drift.
               Nedenfor er den offentlige forklaring af, hvordan vi er styret.
             </p>
             <ul className="mt-10 space-y-8 list-none">
-              {GOVERNANCE_AREAS.map((area) => (
+              {LEDELSE_OMRAADER.map((area) => (
                 <li key={area.title}>
                   <h3 className="text-[19px] text-gold">{area.title}</h3>
                   <p className="text-[17px] leading-body text-ivory/80 mt-3">
@@ -435,11 +435,11 @@ export default function LeadershipGovernancePage() {
           <figure>
             <div className="relative w-full aspect-[16/9]">
               <HeroImage
-                src={PHOTOGRAPHY.governance.src}
-                alt={PHOTOGRAPHY.governance.alt}
+                src={PHOTOGRAPHY.ledelse.src}
+                alt={PHOTOGRAPHY.ledelse.alt}
                 fill
                 sizes={PHOTO_SIZES.section}
-                objectPosition={PHOTOGRAPHY.governance.objectPosition}
+                objectPosition={PHOTOGRAPHY.ledelse.objectPosition}
               />
             </div>
           </figure>
@@ -523,7 +523,7 @@ export default function LeadershipGovernancePage() {
         </section>
       </div>
 
-      {/* 10. Closing Statement — Kompasset */}
+      {/* 10. Closing Statement - Kompasset */}
       <section
         className="section-padding bg-midnight"
         aria-labelledby="compass"

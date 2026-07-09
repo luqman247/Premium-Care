@@ -256,14 +256,14 @@ export default function MunicipalPage() {
               href="/tillid"
               className="underline underline-offset-4 hover:text-ivory transition-colors focus-ring"
             >
-              Tillidscenter og governance
+              Tillidscenter og ansvar
             </Link>
             {" · "}
             <Link
               href="/ledelse-og-governance"
               className="underline underline-offset-4 hover:text-ivory transition-colors focus-ring"
             >
-              Ledelse og governance
+              Ledelse og ansvar
             </Link>
           </p>
         </div>

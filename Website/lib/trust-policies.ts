@@ -151,20 +151,20 @@ export const TRUST_POLICIES: TrustPolicy[] = [
     documentLabel: "Whistleblower politik (PDF)",
   },
   {
-    slug: "governance",
-    title: "Governance og ledelsesansvar",
+    slug: "ledelsesansvar",
+    title: "Ledelse og kvalitetsansvar",
     description:
       "Hvordan Premium Care er styret, dokumenteret og revideret som en ansvarlig plejeorganisation.",
     purpose:
-      "At sikre én samlet governance-arkitektur med tydeligt ejerskab, godkendelse og revision af alle væsentlige politikker og procedurer.",
+      "At sikre én samlet ledelsesarkitektur med tydeligt ejerskab, godkendelse og revision af alle væsentlige politikker og procedurer.",
     whyItMatters:
       "Kommuner, borgere og medarbejdere skal kunne se, hvem der er ansvarlig, hvordan beslutninger træffes, og hvordan kvalitet overvåges over tid.",
     commitments: [
-      "Fem-niveau governance-bibliotek med én autoritativ kilde pr. emne",
+      "Fem-niveau dokumentbibliotek med én autoritativ kilde pr. emne",
       "Navngivne ejere og godkendelsesmyndigheder for hvert dokument",
       "Årlig revision og opdatering ved lovændringer eller væsentlige ændringer",
       "Audit-klar struktur til kommunal indkøb, tilsyn og akkreditering",
-      "Etisk ledelse og synlig ledelse som designprincip — ikke eftertanke",
+      "Etisk ledelse og synlig ledelse som designprincip - ikke eftertanke",
     ],
     documentHref: "/documents/årlig_kvalitetsrevisionsrapport.pdf",
     documentLabel: "Årlig kvalitetsrevisionsrapport (PDF)",

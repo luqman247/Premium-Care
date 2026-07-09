@@ -129,7 +129,7 @@ export default function AboutPage() {
                   href="/ledelse-og-governance"
                   className="text-[17px] leading-body text-gold underline underline-offset-4 hover:text-gold-light transition-colors focus-ring"
                 >
-                  Læs om ledelse og governance
+                  Læs om ledelse og ansvar
                 </Link>
               </p>
             </div>
@@ -231,18 +231,18 @@ export default function AboutPage() {
       <section className="snap-section bg-midnight section-padding">
         <div className="reading-column">
           <h2 className="text-[30px] leading-normal text-ivory">
-            Ledelse og governance
+            Ledelse og ansvar
           </h2>
           <p className="text-[17px] leading-body text-ivory/80 mt-8 max-w-[55ch]">
             Premium Care er bygget på synlig ledelse, dokumenteret ansvar og en
-            governance-struktur, der kan redegøres for over for borgere, familier og
+            ledelsesstruktur, der kan redegøres for over for borgere, familier og
             kommuner
           </p>
           <Link
             href="/ledelse-og-governance"
             className="block py-5 text-[17px] text-gold hover:tracking-wide transition-all duration-300 focus-ring"
           >
-            Ledelse og governance →
+            Ledelse og ansvar →
           </Link>
           <Link
             href="/whistleblowing"

@@ -6,7 +6,7 @@ export const DOCUMENTATION_LINKS = [
   { href: "/kvalitet", label: "Kvalitetsforpligtelse" },
   { href: "/whistleblowing", label: "Whistleblower-ordning" },
   { href: "/ligebehandling", label: "Ligebehandling og inklusion" },
-  { href: "/governance", label: "Governance og ledelsesansvar" },
+  { href: "/ledelsesansvar", label: "Ledelse og kvalitetsansvar" },
   { href: "/tillid", label: "Tillidscenter" },
   { href: "/vores-loefte", label: "Vores løfte" },
 ] as const;

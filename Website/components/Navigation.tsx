@@ -9,7 +9,6 @@ const NAV_LINKS = [
   { href: "/priser", label: "Gratis hjemmepleje" },
   { href: "/om-os", label: "Om os" },
   { href: "/kontakt", label: "Kontakt" },
-  { href: "/kommuner", label: "Til kommuner" },
   { href: "/tillid", label: "Tillid" },
 ];
 

@@ -103,7 +103,7 @@ export default function VoresLoftePage() {
           </h2>
           <p className="text-[17px] leading-body text-midnight/80 mt-8 max-w-[55ch]">
             Et løfte uden ansvarlighed er kun ord. Vores løfte understøttes af
-            politikker, governance, kvalitetsarbejde og dokumentation — tilgængelig
+            politikker, ledelse og ansvar, kvalitetsarbejde og dokumentation - tilgængelig
             for familier og kommuner i vores tillidscenter.
           </p>
           <p className="mt-10">

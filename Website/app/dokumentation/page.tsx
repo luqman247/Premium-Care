@@ -56,18 +56,18 @@ export default function DocumentationPage() {
 
         <section className="section-padding" aria-labelledby="doc-ledelse">
           <h2 id="doc-ledelse" className="text-[30px] leading-normal text-midnight">
-            Ledelse og governance
+            Ledelse og ansvar
           </h2>
           <p className="text-[17px] leading-body text-midnight/80 mt-6 max-w-[55ch]">
-            Læs om ledelse, governance, kvalitetsforpligtelse og virksomhedens
-            struktur.
+            Læs om ledelse, ansvar, kvalitetsforpligtelse og virksomhedens
+            struktur
           </p>
           <p className="mt-8">
             <Link
               href="/ledelse-og-governance"
               className="text-[17px] leading-body text-midnight underline underline-offset-4 hover:text-midnight/80 transition-colors focus-ring"
             >
-              Ledelse og governance →
+              Ledelse og ansvar →
             </Link>
           </p>
         </section>
