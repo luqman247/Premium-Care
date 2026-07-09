@@ -16,6 +16,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${baseUrl}/kontakt`, priority: 0.9 },
     { url: `${baseUrl}/kommuner`, priority: 0.8 },
     { url: `${baseUrl}/karriere`, priority: 0.7 },
+    { url: `${baseUrl}/vores-loefte`, priority: 0.9 },
     { url: `${baseUrl}/tillid`, priority: 0.9 },
   ];
 

@@ -408,6 +408,10 @@ export default function FounderStoryPage() {
               <Link href="/kontakt" className="underline underline-offset-4 hover:text-midnight transition-colors focus-ring">
                 kontakte os
               </Link>
+              . Vores offentlige løfte er beskrevet på{" "}
+              <Link href="/vores-loefte" className="underline underline-offset-4 hover:text-midnight transition-colors focus-ring">
+                Vores løfte
+              </Link>
             </p>
           </div>
         </section>

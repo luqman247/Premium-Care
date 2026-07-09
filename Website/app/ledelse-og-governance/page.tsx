@@ -543,6 +543,14 @@ export default function LeadershipGovernancePage() {
             Det er virksomhedens kompas — ikke en plakat, men en påmindelse om, hvorfor vi
             begyndte, og hvad der aldrig må glemmes.
           </p>
+          <p className="mt-10">
+            <Link
+              href="/vores-loefte"
+              className="text-[17px] leading-body text-gold underline underline-offset-4 hover:text-gold-light transition-colors focus-ring"
+            >
+              Læs vores offentlige løfte
+            </Link>
+          </p>
         </div>
       </section>
 

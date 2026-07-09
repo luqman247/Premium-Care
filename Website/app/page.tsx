@@ -99,6 +99,14 @@ export default function HomePage() {
               </p>
             </div>
           </div>
+          <p className="mt-12">
+            <Link
+              href="/vores-loefte"
+              className="text-[17px] leading-body text-gold underline underline-offset-4 hover:text-gold-light transition-colors focus-ring"
+            >
+              Læs vores fulde løfte
+            </Link>
+          </p>
         </div>
       </section>
 

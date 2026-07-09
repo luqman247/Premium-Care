@@ -5,6 +5,7 @@ import { CREST_SIZES, WORDMARK_HEIGHT } from "@/lib/brand";
 import { COMPANY } from "@/lib/company";
 
 const FOOTER_NAV = [
+  { href: "/vores-loefte", label: "Vores løfte" },
   { href: "/tillid", label: "Tillidscenter" },
   { href: "/privatliv", label: "Privatliv" },
   { href: "/klager", label: "Klager" },

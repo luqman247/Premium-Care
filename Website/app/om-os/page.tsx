@@ -57,6 +57,13 @@ export default function AboutPage() {
           </p>
           <p className="mt-12">
             <Link
+              href="/vores-loefte"
+              className="text-[17px] leading-body text-midnight underline underline-offset-4 hover:text-midnight/80 transition-colors focus-ring"
+            >
+              Læs vores offentlige løfte
+            </Link>
+            {" · "}
+            <Link
               href="/min-historie"
               className="text-[17px] leading-body text-midnight underline underline-offset-4 hover:text-midnight/80 transition-colors focus-ring"
             >

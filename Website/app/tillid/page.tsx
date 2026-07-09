@@ -116,6 +116,14 @@ export default function TrustPage() {
             ansvarlighed. Her finder du politikker, kvalitetsramme og governance for{" "}
             {COMPANY.legalName}.
           </p>
+          <p className="text-[17px] leading-body text-midnight/80 mt-6">
+            <Link
+              href="/vores-loefte"
+              className="underline underline-offset-4 hover:text-midnight transition-colors focus-ring"
+            >
+              Læs vores offentlige løfte
+            </Link>
+          </p>
           <p className="text-[13px] text-midnight/60 mt-6">
             CVR {COMPANY.cvr} · {COMPANY.address.postalCode} {COMPANY.address.locality}
           </p>
