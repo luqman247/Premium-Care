@@ -3,6 +3,7 @@ import Link from "next/link";
 import { CrestSeal } from "@/components/CrestSeal";
 import { HeroImage } from "@/components/HeroImage";
 import { COMPANY } from "@/lib/company";
+import { LEADERSHIP_IMAGES } from "@/lib/leadership-images";
 
 export const metadata: Metadata = {
   title: {
@@ -18,10 +19,10 @@ export const metadata: Metadata = {
     url: "https://premiumcare.dk/ledelse-og-governance",
     images: [
       {
-        url: "/images/leadership-bibi-dowezai.png",
-        width: 800,
-        height: 1200,
-        alt: "Bibi Naziyh Dowezai, administrerende direktør for Premium Care ApS",
+        url: LEADERSHIP_IMAGES.pressPortrait.src,
+        width: LEADERSHIP_IMAGES.pressPortrait.width,
+        height: LEADERSHIP_IMAGES.pressPortrait.height,
+        alt: LEADERSHIP_IMAGES.pressPortrait.alt,
       },
     ],
   },
@@ -200,7 +201,7 @@ function pageJsonLd() {
         name: COMPANY.legalName,
         url: COMPANY.url,
       },
-      image: `${COMPANY.url}/images/leadership-bibi-dowezai.png`,
+      image: `${COMPANY.url}${LEADERSHIP_IMAGES.pressPortrait.src}`,
       url: `${COMPANY.url}/ledelse-og-governance`,
     },
     {
@@ -246,13 +247,14 @@ export default function LeadershipGovernancePage() {
         <section className="section-padding pt-0" aria-labelledby="ceo-profile">
           <div className="grid grid-cols-1 md:grid-cols-[minmax(0,240px)_1fr] gap-10 items-start">
             <figure>
-              <div className="relative w-full aspect-[3/4] max-w-[240px]">
+              <div className="relative w-full aspect-[16/10] max-w-[400px]">
                 <HeroImage
-                  src="/images/leadership-bibi-dowezai.png"
-                  alt="Bibi Naziyh Dowezai, administrerende direktør for Premium Care ApS"
+                  src={LEADERSHIP_IMAGES.ceoSmiling.src}
+                  alt={LEADERSHIP_IMAGES.ceoSmiling.alt}
                   fill
-                  sizes="240px"
+                  sizes="(max-width: 768px) 100vw, 400px"
                   priority
+                  className="object-cover object-[center_20%]"
                 />
               </div>
             </figure>

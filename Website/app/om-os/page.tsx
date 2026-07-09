@@ -3,6 +3,7 @@ import Link from "next/link";
 import { CrestSeal } from "@/components/CrestSeal";
 import { HeroImage } from "@/components/HeroImage";
 import { COMPANY } from "@/lib/company";
+import { LEADERSHIP_IMAGES } from "@/lib/leadership-images";
 
 export const metadata: Metadata = {
   title: "Om os",
@@ -97,19 +98,34 @@ export default function AboutPage() {
 
       <section className="snap-section bg-midnight section-padding">
         <div className="reading-column">
-          <h2 className="text-[30px] leading-normal text-ivory">Ledelse</h2>
-          <p className="text-[17px] leading-body text-ivory/80 mt-8">
-            Premium Care ledes af grundlægger og administrerende direktør Bibi Naziyh
-            Dowezai — med synlig ledelse tæt på borgere, medarbejdere og drift.
-          </p>
-          <p className="mt-10">
-            <Link
-              href="/ledelse-og-governance"
-              className="text-[17px] leading-body text-gold underline underline-offset-4 hover:text-gold-light transition-colors focus-ring"
-            >
-              Læs om ledelse og governance
-            </Link>
-          </p>
+          <div className="grid grid-cols-1 md:grid-cols-[minmax(0,200px)_1fr] gap-10 items-start">
+            <figure className="md:order-2">
+              <div className="relative w-full aspect-[3/4] max-w-[200px] mx-auto md:mx-0">
+                <HeroImage
+                  src={LEADERSHIP_IMAGES.ceoFormal.src}
+                  alt={LEADERSHIP_IMAGES.ceoFormal.alt}
+                  fill
+                  sizes="200px"
+                  className="object-cover object-top"
+                />
+              </div>
+            </figure>
+            <div className="md:order-1">
+              <h2 className="text-[30px] leading-normal text-ivory">Ledelse</h2>
+              <p className="text-[17px] leading-body text-ivory/80 mt-8">
+                Premium Care ledes af grundlægger og administrerende direktør Bibi Naziyh
+                Dowezai — med synlig ledelse tæt på borgere, medarbejdere og drift.
+              </p>
+              <p className="mt-10">
+                <Link
+                  href="/ledelse-og-governance"
+                  className="text-[17px] leading-body text-gold underline underline-offset-4 hover:text-gold-light transition-colors focus-ring"
+                >
+                  Læs om ledelse og governance
+                </Link>
+              </p>
+            </div>
+          </div>
         </div>
       </section>
 

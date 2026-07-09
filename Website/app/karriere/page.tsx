@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { CrestSeal } from "@/components/CrestSeal";
 import { HeroImage } from "@/components/HeroImage";
 import { COMPANY } from "@/lib/company";
+import { LEADERSHIP_IMAGES } from "@/lib/leadership-images";
 
 export const metadata: Metadata = {
   title: "Karriere",
@@ -120,18 +121,17 @@ export default function CareersPage() {
       </section>
 
       <section className="snap-section bg-ivory">
-        <div className="w-full h-[60vh] relative">
+        <div className="w-full h-[50vh] relative">
           <HeroImage
-            src="/images/uniform-sleeve.jpg"
-            alt="Premium Care uniformærme med broderet våbenskjold"
+            src={LEADERSHIP_IMAGES.careersTraining.src}
+            alt={LEADERSHIP_IMAGES.careersTraining.alt}
             fill
             sizes="100vw"
           />
         </div>
         <div className="section-padding reading-column text-center">
-          <CrestSeal size={64} className="mx-auto !p-4" />
-          <p className="text-[13px] uppercase tracking-wide text-midnight/60 mt-4">
-            Uniformen er et løfte. Båret på kroppen.
+          <p className="text-[13px] uppercase tracking-wide text-midnight/60">
+            Oplæring, faglighed og fællesskab — fra første dag
           </p>
         </div>
       </section>
