@@ -1,0 +1,11 @@
+{
+  "PC-01-001": {
+    "homepage": true,
+    "municipality-pack": true,
+    "investor-presentation": true,
+    "recruitment": true,
+    "brochure": true,
+    "linkedin-banner": true,
+    "email-signature": true
+  }
+}

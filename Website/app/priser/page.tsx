@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { ExtraCarePricing } from "@/components/ExtraCarePricing";
 import { FreeCareMessage } from "@/components/FreeCareMessage";
 import { FREE_CARE_SHORT } from "@/lib/free-care";
 
@@ -23,7 +24,7 @@ export default function FreeCarePage() {
     <div className="page-flow">
       <section className="snap-section bg-ivory section-padding">
         <div className="reading-column">
-          <h1 className="text-[38px] leading-snug tracking-tight text-midnight">
+          <h1 className="type-page-title text-midnight tracking-tight">
             Gratis hjemmepleje
           </h1>
           <p className="text-[13px] uppercase tracking-wide text-midnight/60 mt-6">
@@ -38,6 +39,8 @@ export default function FreeCarePage() {
           <FreeCareMessage showNote showLink={false} className="mt-10" />
         </div>
       </section>
+
+      <ExtraCarePricing />
 
       <section className="snap-section bg-midnight section-padding">
         <div className="reading-column">

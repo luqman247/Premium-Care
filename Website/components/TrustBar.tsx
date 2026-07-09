@@ -1,7 +1,6 @@
 import Link from "next/link";
-import { BrandWordmark } from "@/components/BrandWordmark";
 import { CrestSeal } from "@/components/CrestSeal";
-import { CREST_SIZES, WORDMARK_HEIGHT } from "@/lib/brand";
+import { CREST_SIZES } from "@/lib/brand";
 import { COMPANY } from "@/lib/company";
 
 const FOOTER_NAV = [
@@ -22,18 +21,6 @@ export function TrustBar() {
   return (
     <footer role="contentinfo" aria-label="Virksomhedsoplysninger" className="site-footer">
       <div className="site-footer-inner page-margin">
-        <div className="site-footer-branding">
-          <Link href="/" className="focus-ring" aria-label="Premium Care - forsiden">
-            <BrandWordmark variant="white" height={WORDMARK_HEIGHT.footer} />
-          </Link>
-          <CrestSeal
-            size={CREST_SIZES.xs}
-            variant="white"
-            decorative
-            className="!p-0"
-          />
-        </div>
-
         <div className="site-footer-grid">
           <div>
             <p className="site-footer-brand">{COMPANY.legalName}</p>
@@ -80,6 +67,18 @@ export function TrustBar() {
         </div>
 
         <div className="site-footer-bottom">
+          <Link
+            href="/"
+            className="site-footer-crest focus-ring"
+            aria-label="Premium Care - forsiden"
+          >
+            <CrestSeal
+              size={CREST_SIZES.sm}
+              variant="white"
+              decorative
+              className="!p-0"
+            />
+          </Link>
           <p className="site-footer-detail">
             © {year} {COMPANY.legalName}. Alle rettigheder forbeholdes.
           </p>

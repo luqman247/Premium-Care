@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { FreeCareMessage } from "@/components/FreeCareMessage";
-import { HeroImage } from "@/components/HeroImage";
+import { DamImage } from "@/components/DamImage";
 import { COMPANY } from "@/lib/company";
 import {
   MUNICIPAL_CONTACT_SUBJECT,
@@ -26,11 +26,11 @@ export const metadata: Metadata = {
 };
 
 const PARTNER_COMMITMENTS = [
-  "Gennemsigtighed - åben rapportering, dokumenteret kvalitet og ingen skjulte forpligtelser",
-  "Levering - aftalte standarder, tydelige SLA'er og ansvarlig opfølgning ved afvigelser",
-  "Kommunikation - faste kontaktpunkter, rettidig eskalering og sporbar dokumentation",
-  "Regelefterlevelse - Serviceloven, GDPR og kommunale kvalitetskrav som udgangspunkt",
-  "Ansvarlighed - navngivne ejere af kvalitet, klager og hændelser på alle niveauer",
+  "Åben rapportering og dokumenteret kvalitet",
+  "Aftalte standarder og opfølgning, når noget halter",
+  "Faste kontaktpunkter og tydelig eskalering",
+  "Efterlevelse af Serviceloven, GDPR og kommunale krav",
+  "Navngivne ejere af kvalitet, klager og hændelser",
 ];
 
 export default function MunicipalPage() {
@@ -38,7 +38,7 @@ export default function MunicipalPage() {
     <div className="page-flow">
       <section className="snap-section bg-ivory section-padding">
         <div className="reading-column">
-          <h1 className="text-[38px] leading-snug tracking-tight text-midnight">
+          <h1 className="type-page-title text-midnight tracking-tight">
             Kommunal indkøb og samarbejde
           </h1>
           <p className="text-[19px] leading-body text-midnight/80 mt-8 max-w-[55ch]">
@@ -156,9 +156,8 @@ export default function MunicipalPage() {
 
       <section className="snap-section bg-ivory">
         <div className="w-full h-[40vh] relative">
-          <HeroImage
-            src={PHOTOGRAPHY.municipal.src}
-            alt={PHOTOGRAPHY.municipal.alt}
+          <DamImage
+            assetId={PHOTOGRAPHY.municipal.assetId}
             fill
             sizes={PHOTO_SIZES.service}
             objectPosition={PHOTOGRAPHY.municipal.objectPosition}

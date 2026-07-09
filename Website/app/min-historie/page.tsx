@@ -1,7 +1,9 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { CrestSeal } from "@/components/CrestSeal";
-import { HeroImage } from "@/components/HeroImage";
+import { DamImage } from "@/components/DamImage";
+import { ASSET_IDS } from "@/lib/dam/asset-ids";
+import { damMetadataImage } from "@/lib/dam/site-images";
 import { PHOTOGRAPHY } from "@/lib/photography";
 
 export const metadata: Metadata = {
@@ -9,23 +11,16 @@ export const metadata: Metadata = {
     absolute: "Min historie | Premium Care",
   },
   description:
-    "Historien bag Premium Care — fra Sønderborg, dansk omsorg og en farmors sidste kapitel til ønsket om at skabe en hjemmepleje med værdighed, struktur og nærvær.",
+    "Historien bag Premium Care. Fra Sønderborg og en farmors sidste kapitel til hjemmepleje med værdighed i Aarhus og Østjylland.",
   alternates: {
     canonical: "/min-historie",
   },
   openGraph: {
     title: "Min historie | Premium Care",
     description:
-      "Historien bag Premium Care — fra Sønderborg, dansk omsorg og en farmors sidste kapitel til ønsket om at skabe en hjemmepleje med værdighed, struktur og nærvær.",
+      "Historien bag Premium Care. Fra Sønderborg og en farmors sidste kapitel til hjemmepleje med værdighed i Aarhus og Østjylland.",
     url: "https://premiumcare.dk/min-historie",
-    images: [
-      {
-        url: PHOTOGRAPHY.founder.src,
-        width: PHOTOGRAPHY.founder.width,
-        height: PHOTOGRAPHY.founder.height,
-        alt: PHOTOGRAPHY.founder.alt,
-      },
-    ],
+    images: [damMetadataImage(ASSET_IDS.founderStory)],
   },
 };
 
@@ -43,7 +38,7 @@ export default function FounderStoryPage() {
     <article className="bg-ivory pb-24">
       <header className="section-padding page-margin">
         <div className="reading-column">
-          <h1 className="text-[38px] leading-snug tracking-tight text-midnight">
+          <h1 className="type-page-title text-midnight tracking-tight">
             Min historie
           </h1>
           <p className="text-[13px] uppercase tracking-wide text-midnight/60 mt-8">
@@ -59,14 +54,13 @@ export default function FounderStoryPage() {
             id="section-opening"
             className="text-[30px] leading-normal text-midnight"
           >
-            En livshistorie, ikke kun en forretningsidé
+            En livshistorie
           </h2>
           <div className="mt-10 space-y-6 text-[19px] leading-body text-midnight/90">
             <p>
-              Nogle virksomheder bliver skabt ud fra en forretningsidé. Andre bliver
-              skabt ud fra en livshistorie.
+              Premium Care startede ikke som en forretningsplan på et whiteboard. Det
+              startede med en farmor, dansk pleje og et løfte om at give noget tilbage.
             </p>
-            <p>PremiumCare ApS er resultatet af min.</p>
           </div>
         </section>
 
@@ -85,8 +79,8 @@ export default function FounderStoryPage() {
             </p>
             <p>
               Nogle år senere mistede vi min ældste onkel i Afghanistan. Tilbage stod
-              min farmor alene. Hun blev inviteret til Danmark, hvor hun — ligesom os
-              — blev mødt med åbne arme. Mine forældre arbejdede begge hårdt for at
+              min farmor alene. Hun blev inviteret til Danmark, hvor hun, ligesom os,
+              blev mødt med åbne arme. Mine forældre arbejdede begge hårdt for at
               skabe en tilværelse, mens min mor samtidig passede min farmor og min
               lillebror, som på daværende tidspunkt led af svær kolik.
             </p>
@@ -108,7 +102,7 @@ export default function FounderStoryPage() {
             </p>
             <p>
               Vi besøgte hende hver eneste dag. Nogle gange overnattede vi hos hende.
-              Personalet blev langt mere end medarbejderne — de blev en del af vores
+              Personalet blev langt mere end medarbejdere. De blev en del af vores
               familie. Da min farmor gik bort efter to år i Danmark, deltog flere af
               plejepersonalet i hendes begravelse. Den omsorg og medmenneskelighed, de
               viste os, er noget, jeg aldrig vil glemme.
@@ -136,23 +130,22 @@ export default function FounderStoryPage() {
           </div>
           <figure className="mt-12">
             <div className="relative w-full aspect-[3/2]">
-              <HeroImage
-                src={PHOTOGRAPHY.founder.src}
-                alt={PHOTOGRAPHY.founder.alt}
+              <DamImage
+                assetId={PHOTOGRAPHY.founder.assetId}
                 fill
                 sizes="(max-width: 680px) 100vw, 680px"
                 objectPosition={PHOTOGRAPHY.founder.objectPosition}
               />
             </div>
             <figcaption className="text-[13px] text-midnight/60 mt-4 leading-body">
-              Tandsbjerg, Sønderborg — hvor min farmor boede, og hvor jeg som barn
+              Tandsbjerg, Sønderborg. Her boede min farmor, og her lærte jeg som barn,
               lærte, hvad omsorg kan betyde
             </figcaption>
           </figure>
           <div className="mt-10 space-y-6 text-[19px] leading-body text-midnight/90">
             <p>
               I 2017 fik jeg studiejob på det samme plejehjem. Mange af medarbejderne
-              kunne stadig huske mig — og de kunne stadig huske min farmor. Det gjorde
+              kunne stadig huske mig, og de kunne stadig huske min farmor. Det gjorde
               et stort indtryk på mig. Det var her, ønsket om at give noget tilbage for
               alvor voksede frem. Tilbage til det Danmark, der ikke alene tog imod min
               familie, men også gav min syge farmor værdighed, omsorg og et trygt sidste
@@ -174,7 +167,7 @@ export default function FounderStoryPage() {
           </h2>
           <div className="mt-10 space-y-6 text-[19px] leading-body text-midnight/90">
             <p>
-              Jeg arbejdede både deltid og fuldtid i hjemmeplejen i flere kommuner —
+              Jeg arbejdede både deltid og fuldtid i hjemmeplejen i flere kommuner,
               blandt andet i Aarhus, Vejle og Fredericia. Jeg oplevede både de gode
               dage og de svære. Jeg oplevede medarbejdere, der hver eneste dag gjorde
               deres ypperste for at skabe tryghed for borgerne, ofte under stort pres.
@@ -239,24 +232,14 @@ export default function FounderStoryPage() {
             Hvorfor Premium Care blev skabt
           </h2>
           <div className="mt-10 space-y-6 text-[19px] leading-body text-midnight/90">
-            <p>En kultur, hvor medarbejdere bliver mødt med tillid, udvikling og respekt.</p>
             <p>
-              En kultur, hvor borgeren aldrig bliver et CPR-nummer eller en opgave, men
-              et menneske.
+              Jeg ville bygge en arbejdsplads, hvor medarbejdere mødes med respekt, og
+              hvor borgeren aldrig bare bliver et nummer på en liste.
             </p>
+            <p>Derfor stiftede jeg Premium Care ApS.</p>
             <p>
-              En kultur, hvor ordentlighed, nærvær og faglighed går hånd i hånd.
-            </p>
-            <p>Derfor stiftede jeg PremiumCare ApS.</p>
-            <p>Ikke fordi jeg giver op. Tværtimod.</p>
-            <p>
-              Jeg gør det, fordi jeg nu har den erfaring, de kompetencer og den
-              ledelsesmæssige ballast, der skal til for at skabe præcis den virksomhed,
-              jeg altid har drømt om.
-            </p>
-            <p>
-              Premium Care bygger på alt det, jeg har lært gennem årene — både det, der
-              virkede, og det, der kunne gøres bedre.
+              Ikke fordi jeg gav op. Fordi jeg nu havde erfaringen til at gøre det,
+              jeg altid havde tænkt på.
             </p>
             <p className="text-[17px] text-midnight/70">
               Læs mere om{" "}
@@ -276,25 +259,13 @@ export default function FounderStoryPage() {
           </h2>
           <div className="mt-10 space-y-6 text-[19px] leading-body text-midnight/90">
             <p>
-              Jeg ønsker ikke en virksomhed præget af afstand mellem ledelse og
-              medarbejdere. Som direktør sidder jeg ikke kun bag et skrivebord. Jeg
-              deltager i opstartssamtaler med nye borgere, besøger hjemmene, udfører
-              kvalitetsopfølgning og stikprøvekontroller og træder selv til, når en
-              borger har brug for hjælp — også hvis det betyder, at jeg en sen aften
-              skal ud med en Raizer for at hjælpe en borger sikkert op efter et fald.
+              Jeg vil ikke lede på afstand. Derfor deltager jeg i opstart, besøger
+              hjem, følger kvaliteten og tager telefonen, når noget haster. Nogle gange
+              kører jeg selv ud midt om natten, hvis en borger er faldet.
             </p>
-            <p>Jeg tror på synlig ledelse.</p>
-            <p>Jeg tror på, at respekt skabes ved at gå forrest.</p>
-            <p>Jeg tror på, at de bedste beslutninger træffes tæt på virkeligheden.</p>
             <p>
-              Mange spørger mig, hvorfor jeg stadig selv tager telefonen, hvorfor jeg
-              tager med til opstartssamtaler, hvorfor jeg kører ud til borgere, eller
-              hvorfor jeg står klar midt om natten, hvis en borger er faldet og har
-              brug for hjælp.
-            </p>
-            <p>Svaret er enkelt.</p>
-            <p>
-              Fordi jeg aldrig ønsker at blive en direktør, der leder på afstand.
+              Mange spørger, hvorfor jeg stadig selv tager telefonen. Svaret er enkelt:
+              Fordi jeg ikke vil blive den direktør, der kun sidder bag et skrivebord.
             </p>
           </div>
         </section>
@@ -308,8 +279,8 @@ export default function FounderStoryPage() {
           </h2>
           <div className="mt-10 space-y-6 text-[19px] leading-body text-midnight/90">
             <p>
-              Premium Care skal være en arbejdsplads, hvor mennesker føler sig velkomne
-              — uanset alder, køn, hudfarve, tro, uddannelse eller baggrund. En
+              Premium Care skal være en arbejdsplads, hvor mennesker føler sig velkomne,
+              uanset alder, køn, hudfarve, tro, uddannelse eller baggrund. En
               arbejdsplads med klare rammer, høj faglighed, struktur og plads til
               forskellighed.
             </p>
@@ -360,15 +331,10 @@ export default function FounderStoryPage() {
               Danmark. Et land, der gav min familie en ny begyndelse og gav min farmor
               mulighed for at afslutte sit liv med værdighed, omsorg og respekt.
             </p>
-            <p>Premium Care er derfor mere end en virksomhed.</p>
-            <p>Det er min måde at give tilbage.</p>
             <p>
-              Mit mål er ikke blot at være endnu en privat hjemmeplejeleverandør.
-            </p>
-            <p>
-              Mit mål er at være den samarbejdspartner, kommunerne kan have tillid til,
-              den arbejdsplads medarbejderne er stolte af, og den tryghed, borgerne
-              fortjener at mødes med, hver eneste gang vi træder ind ad døren.
+              Mit mål er ikke at blive endnu en leverandør på listen. Det er at blive
+              den, kommuner kan stole på, medarbejdere gider arbejde for, og borgere
+              møder med respekt, hver gang vi kommer ind ad døren.
             </p>
             <p>
               Jeg kender følelsen af at være den familie, der står ved siden af en

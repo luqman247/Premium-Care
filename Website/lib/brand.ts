@@ -1,81 +1,77 @@
 /**
- * Premium Care brand asset registry — canonical web paths.
- * Source: logo-suite v1.0 (PNG; no SVG masters in release).
+ * Premium Care brand asset registry — resolved from DAM.
  */
+import { ASSET_IDS } from "@/lib/dam/asset-ids";
+import { getAssetById } from "@/lib/dam/registry";
+import { damImageApiPath } from "@/lib/dam/api-path";
+
+type BrandAsset = {
+  src: string;
+  width: number;
+  height: number;
+  alt: string;
+  damId: string;
+};
+
+function fromDam(damId: string): BrandAsset {
+  const asset = getAssetById(damId);
+  if (!asset) {
+    throw new Error(`Brand DAM asset missing: ${damId}`);
+  }
+  return {
+    src: damImageApiPath(damId),
+    width: asset.width,
+    height: asset.height,
+    alt: asset.altText,
+    damId,
+  };
+}
+
+export const BRAND_ASSET_IDS = {
+  wordmark: {
+    navy: ASSET_IDS.brandWordmarkNavy,
+    white: ASSET_IDS.brandWordmarkWhite,
+    gold: ASSET_IDS.brandWordmarkGold,
+  },
+  crest: {
+    fullcolour: ASSET_IDS.brandCrest,
+    gold: ASSET_IDS.brandCrestGold,
+    navy: ASSET_IDS.brandCrestNavy,
+    white: ASSET_IDS.brandCrestWhite,
+  },
+  horizontal: {
+    navy: ASSET_IDS.brandHorizontalNavy,
+    white: ASSET_IDS.brandHorizontalWhite,
+  },
+  master: ASSET_IDS.brandMaster,
+  og: ASSET_IDS.brandOpenGraph,
+  favicon: {
+    size16: ASSET_IDS.brandFavicon16,
+    size32: ASSET_IDS.brandFavicon32,
+    apple180: ASSET_IDS.brandAppIcon180,
+    pwa192: ASSET_IDS.brandAppIcon192,
+    pwa512: ASSET_IDS.brandAppIcon512,
+  },
+} as const;
 
 export const BRAND = {
   wordmark: {
-    navy: {
-      src: "/assets/brand/wordmark-navy.png",
-      width: 897,
-      height: 473,
-      alt: "Premium Care",
-    },
-    white: {
-      src: "/assets/brand/wordmark-white.png",
-      width: 897,
-      height: 473,
-      alt: "Premium Care",
-    },
-    gold: {
-      src: "/assets/brand/wordmark-gold.png",
-      width: 897,
-      height: 473,
-      alt: "Premium Care",
-    },
+    navy: fromDam(BRAND_ASSET_IDS.wordmark.navy),
+    white: fromDam(BRAND_ASSET_IDS.wordmark.white),
+    gold: fromDam(BRAND_ASSET_IDS.wordmark.gold),
   },
   crest: {
-    fullcolour: {
-      src: "/assets/brand/crest-fullcolour.png",
-      width: 365,
-      height: 465,
-      alt: "Premium Care våbenskjold",
-    },
-    gold: {
-      src: "/assets/brand/crest-gold.png",
-      width: 365,
-      height: 465,
-      alt: "Premium Care våbenskjold",
-    },
-    navy: {
-      src: "/assets/brand/crest-navy.png",
-      width: 365,
-      height: 465,
-      alt: "Premium Care våbenskjold",
-    },
-    white: {
-      src: "/assets/brand/crest-white.png",
-      width: 365,
-      height: 465,
-      alt: "Premium Care våbenskjold",
-    },
+    fullcolour: fromDam(BRAND_ASSET_IDS.crest.fullcolour),
+    gold: fromDam(BRAND_ASSET_IDS.crest.gold),
+    navy: fromDam(BRAND_ASSET_IDS.crest.navy),
+    white: fromDam(BRAND_ASSET_IDS.crest.white),
   },
   horizontal: {
-    navy: {
-      src: "/assets/brand/horizontal-navy.png",
-      width: 2299,
-      height: 982,
-      alt: "Premium Care",
-    },
-    white: {
-      src: "/assets/brand/horizontal-white.png",
-      width: 2299,
-      height: 982,
-      alt: "Premium Care",
-    },
+    navy: fromDam(BRAND_ASSET_IDS.horizontal.navy),
+    white: fromDam(BRAND_ASSET_IDS.horizontal.white),
   },
-  master: {
-    src: "/assets/brand/master-transparent.png",
-    width: 695,
-    height: 633,
-    alt: "Premium Care",
-  },
-  og: {
-    src: "/assets/brand/og-brand.jpg",
-    width: 1200,
-    height: 630,
-    alt: "Premium Care — Omsorg · Tryghed · Hver dag",
-  },
+  master: fromDam(BRAND_ASSET_IDS.master),
+  og: fromDam(BRAND_ASSET_IDS.og),
 } as const;
 
 /** Institutional seal sizes — generous clear space built into CrestSeal padding */
@@ -89,7 +85,7 @@ export const CREST_SIZES = {
 
 /** Wordmark display heights in pixels */
 export const WORDMARK_HEIGHT = {
-  header: 22,
+  header: 32,
   footer: 16,
 } as const;
 

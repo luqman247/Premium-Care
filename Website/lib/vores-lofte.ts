@@ -1,45 +1,44 @@
 export const VORES_LOFTE_PROMISES = [
   {
     id: "vaerdighed",
-    statement: "Vi lover at møde hver borger med værdighed.",
+    statement: "Vi tager os tid.",
     practice:
-      "Vi tager os tid. Vi respekterer rutiner, præferencer og et nej. Den samme medarbejder kommer tilbage. Ingen behandles som en opgave på en liste — hver borger mødes som det menneske, vedkommende er.",
+      "Rutiner og vaner respekteres. Et nej tæller. Den samme medarbejder kommer tilbage, når det er muligt. Ingen behandles som en post på en liste.",
   },
   {
     id: "kommunikation",
-    statement: "Vi lover at kommunikere ærligt med familier.",
+    statement: "Vi fortæller, hvad vi ser.",
     practice:
-      "Vi fortæller, hvad vi ser, hvad vi planlægger, og hvad der bekymrer os. Ingen overraskelser. Familien kontaktes, når noget ændrer sig — også når det er vanskeligt at sige.",
+      "Hvad vi planlægger. Hvad der bekymrer os. Familien hører fra os, når noget ændrer sig, også når beskeden er svær at give.",
   },
   {
     id: "medarbejdere",
-    statement: "Vi lover at investere i vores medarbejdere.",
+    statement: "Vi oplærer vores folk ordentligt.",
     practice:
-      "Fast løn, oplæring, mentorordning og videreuddannelse. En uniform, man bærer med stolthed. Vi investerer i dem, fordi de investerer i dem, vi passer på.",
+      "Fast løn, mentorordning, betalt oplæring og uniform. Medarbejderne er dem, der bærer arbejdet. Det afspejles i, hvad vi investerer i dem.",
   },
   {
     id: "laering",
-    statement: "Vi lover at lære, når vi begår fejl.",
+    statement: "Når noget går galt, siger vi det.",
     practice:
-      "Når noget går galt, dokumenterer vi, analyserer vi og informerer vi familien. Klager tages alvorligt. Hver fejl skal føre til en bedre praksis — ikke til tavshed.",
+      "Vi dokumenterer, gennemgår det og informerer familien. Klager tages alvorligt. Fejl skal føre til bedre praksis, ikke til tavshed.",
   },
   {
     id: "forbedring",
-    statement: "Vi lover at forbedre os løbende.",
+    statement: "Kvalitet er noget, vi gør hver dag.",
     practice:
-      "Daglige plejenotater, supervision, ekstern kontrol og målbar tilfredshed. Kvalitet er ikke et punkt på en tjekliste — det er en daglig forpligtelse, vi fornyer.",
+      "Plejenotater, supervision, ekstern kontrol og tilbagemeldinger fra borgere og pårørende. Vi følger op, når noget halter.",
   },
   {
     id: "mennesket",
-    statement:
-      "Vi lover aldrig at glemme, at der bag hver plejeplan står et menneske.",
+    statement: "Bag hver plejeplan står et menneske.",
     practice:
-      "Bag hver plan ligger en historie, frygt, vaner og ønsker. Vi læser planen — og ser mennesket. Det er grundlaget for al vores pleje.",
+      "Historie, frygt, vaner og ønsker. Planen er vigtig. Personen bag den er vigtigere.",
   },
 ] as const;
 
 export const VORES_LOFTE_HERO =
-  "Et løfte er kun værdifuldt, hvis det kan mærkes i hverdagen.";
+  "Det, vi lover her, skal kunne mærkes i hverdagen.";
 
 export const VORES_LOFTE_COMPASS =
   "Hvis det var min farmor, der sad i den stol, hvad ville jeg ønske, vi gjorde?";

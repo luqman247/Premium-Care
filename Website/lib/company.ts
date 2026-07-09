@@ -1,4 +1,6 @@
 import { PHOTOGRAPHY } from "@/lib/photography";
+import { ASSET_IDS } from "@/lib/dam/asset-ids";
+import { damAbsoluteUrl } from "@/lib/dam/site-images";
 
 export const COMPANY = {
   legalName: "Premium Care ApS",
@@ -46,8 +48,8 @@ export function organizationJsonLd() {
     telephone: COMPANY.phone.schema,
     taxID: `CVR ${COMPANY.cvr}`,
     address: companyPostalAddress(),
-    logo: `${COMPANY.url}/assets/brand/horizontal-navy.png`,
-    image: `${COMPANY.url}/assets/brand/master-transparent.png`,
+    logo: damAbsoluteUrl(ASSET_IDS.brandHorizontalNavy, COMPANY.url),
+    image: damAbsoluteUrl(ASSET_IDS.brandMaster, COMPANY.url),
     contactPoint: {
       "@type": "ContactPoint",
       telephone: COMPANY.phone.schema,
@@ -71,7 +73,7 @@ export function localBusinessJsonLd() {
     "@type": "LocalBusiness",
     "@id": `${COMPANY.url}/#organization`,
     name: COMPANY.legalName,
-    image: `${COMPANY.url}${PHOTOGRAPHY.hero.src}`,
+    image: damAbsoluteUrl(PHOTOGRAPHY.hero.assetId, COMPANY.url),
     url: COMPANY.url,
     telephone: COMPANY.phone.schema,
     email: COMPANY.email,

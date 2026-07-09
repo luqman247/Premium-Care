@@ -17,9 +17,9 @@ export const TRUST_POLICIES: TrustPolicy[] = [
     description:
       "Sådan beskytter Premium Care personoplysninger og helbredsdata i overensstemmelse med GDPR og dansk lovgivning.",
     purpose:
-      "At sikre, at alle oplysninger om borgere, pårørende og medarbejdere behandles lovligt, sikkert og med respekt for privatlivets fred.",
+      "At alle oplysninger om borgere, pårørende og medarbejdere behandles lovligt, sikkert og med respekt for privatlivets fred.",
     whyItMatters:
-      "Hjemmepleje handler om tillid i det mest private rum. Borgere og familier skal kunne dele følsomme oplysninger uden frygt for misbrug eller utroværdig håndtering.",
+      "Hjemmepleje foregår i det mest private rum. Borgere og familier skal kunne dele følsomme oplysninger uden at frygte misbrug.",
     commitments: [
       "Fuld efterlevelse af GDPR og databeskyttelsesloven for følsomme helbredsoplysninger",
       "Samtykke og tydelig information, før data behandles eller deles",
@@ -36,17 +36,17 @@ export const TRUST_POLICIES: TrustPolicy[] = [
     slug: "klager",
     title: "Klageprocedure",
     description:
-      "Sådan indgiver borgere, pårørende og samarbejdspartnere klager — og hvordan Premium Care håndterer dem.",
+      "Sådan indgiver borgere, pårørende og samarbejdspartnere klager, og hvordan Premium Care håndterer dem.",
     purpose:
-      "At give en klar, tilgængelig vej til at udtrykke utilfredshed, få svar og sikre, at fejl og bekymringer fører til handling.",
+      "At give en klar vej til at udtrykke utilfredshed, få svar og sikre, at fejl fører til handling.",
     whyItMatters:
-      "En klage er ikke et angreb. Den er et signal om, at noget skal rettes — og en mulighed for at genoprette tillid.",
+      "En klage fortæller os, at noget skal rettes. Vi tager den alvorligt.",
     commitments: [
       "Alle klager modtages og registreres uden forsinkelse",
-      "Borgere og pårørende guides til klagevejen — vi opfordrer aldrig til at lade være",
+      "Borgere og pårørende guides til klagevejen",
       "Svar inden for 48 timer på første kontakt; fuld behandling efter procedurens faser",
-      "Læring fra klager indgår i kvalitetsarbejdet og løbende forbedring",
-      "Uafhængig dokumentation af klagebehandling til kommuner og tilsyn",
+      "Læring fra klager indgår i kvalitetsarbejdet",
+      "Dokumentation af klagebehandling til kommuner og tilsyn",
     ],
     documentHref: "/documents/Klageprocedure.pdf",
     documentLabel: "Klageprocedure (PDF)",
@@ -59,14 +59,14 @@ export const TRUST_POLICIES: TrustPolicy[] = [
     description:
       "Premium Cares forpligtelse til at beskytte borgere mod mishandling, forsømmelse og utrygge forhold.",
     purpose:
-      "At sikre, at medarbejdere ser, hører og reagerer på tegn på risiko — og at bekymringer behandles hurtigt og fagligt.",
+      "At medarbejdere ser, hører og reagerer på tegn på risiko, og at bekymringer behandles hurtigt og fagligt.",
     whyItMatters:
-      "Medarbejdere i hjemmeplejen er ofte de eneste øjne, der besøger, når ingen andre gør. Beskyttelse er en kerneopgave, ikke en ekstra opgave.",
+      "Vi er ofte de eneste, der kommer forbi. At se og reagere hører til arbejdet.",
     commitments: [
-      "Bekymringer indberettes samme dag — sikkerhed kræver ikke sikkerhed",
+      "Bekymringer indberettes samme dag",
       "Samtykke og kapacitetsvurdering før enhver plejehandling",
-      "Særskilt håndtering af magtanvendelse efter dansk lov — aldrig en ensidig beslutning",
-      "Koordinering med klinisk ledelse og relevante myndigheder ved behov",
+      "Magtanvendelse håndteres efter dansk lov og aldrig som ensidig beslutning",
+      "Koordinering med klinisk ledelse og myndigheder ved behov",
       "Bekræftelse til indberetter, at bekymringen er modtaget",
     ],
     documentHref: "/documents/demens-_og_faldprotokol.pdf",
@@ -76,17 +76,17 @@ export const TRUST_POLICIES: TrustPolicy[] = [
     slug: "kvalitet",
     title: "Kvalitetsforpligtelse",
     description:
-      "Premium Cares løfte om målbar, dokumenteret og løbende forbedret plejekvalitet.",
+      "Premium Cares løfte om dokumenteret og løbende forbedret plejekvalitet.",
     purpose:
-      "At sikre, at hver borger modtager pleje, der overgår minimumskrav — og at kvalitet kan dokumenteres for familier og kommuner.",
+      "At hver borger modtager pleje, der holder, og at kvalitet kan dokumenteres for familier og kommuner.",
     whyItMatters:
-      "Borgere vælger os frit. Kvalitet er ikke et løfte på en hjemmeside — det er det, de oplever i deres eget hjem, hver dag.",
+      "Borgere vælger os frit. Det, der tæller, er det, de oplever i deres eget hjem.",
     commitments: [
-      "Premium Care Standard — skriftlig servicestandard ud over kommunale minimumskrav",
-      "Små, stabile teams og kontinuitet som sikkerhedsforanstaltning",
-      "Tre lag af verifikation: egenkontrol, supervision og ekstern kontrol",
-      "Løbende uddannelse, kompetencevurdering og kvalitetsaudits",
-      "Datadrevet forbedring og åben rapportering til partnere",
+      "Skriftlig servicestandard ud over kommunale minimumskrav",
+      "Små, stabile teams og kontinuitet, når det er muligt",
+      "Egenkontrol, supervision og ekstern kontrol",
+      "Løbende uddannelse, kompetencevurdering og kvalitetsgennemgange",
+      "Åben rapportering til kommunalpartnere",
     ],
     documentHref: "/documents/kvalitetshåndbog_2026.pdf",
     documentLabel: "Kvalitetshåndbog 2026 (PDF)",
@@ -95,17 +95,16 @@ export const TRUST_POLICIES: TrustPolicy[] = [
     slug: "ligebehandling",
     title: "Ligebehandling og inklusion",
     description:
-      "Premium Cares forpligtelse til respekt, ligebehandling og inklusion for borgere og medarbejdere.",
+      "Premium Cares forpligtelse til respekt og ligebehandling for borgere og medarbejdere.",
     purpose:
-      "At sikre, at alle mennesker — uanset alder, køn, etnicitet, tro, handicap eller baggrund — mødes med værdighed i vores arbejde.",
+      "At alle mennesker mødes med værdighed i vores arbejde, uanset baggrund.",
     whyItMatters:
-      "Vores borgere og medarbejdere afspejler Danmark. En arbejdsplads og en plejeorganisation uden inklusion kan ikke levere tryg omsorg.",
+      "Vores borgere og medarbejdere afspejler Danmark. Respekt er en forudsætning for tryg pleje.",
     commitments: [
       "Nultolerance over for diskrimination, chikane og mobning",
-      "Lige adgang til udvikling, ansvar og respekt i hverdagen",
-      "Medfølelse gælder kolleger såvel som borgere",
+      "Lige adgang til udvikling og ansvar i hverdagen",
       "Klare sanktioner ved overtrædelse af adfærdsstandarder",
-      "Løbende opmærksomhed på strukturelle barrierer og forbedring",
+      "Løbende opmærksomhed på barrierer og forbedring",
     ],
     documentHref: "/documents/ligebehandlingspolitik.pdf",
     documentLabel: "Ligebehandlingspolitik (PDF)",
@@ -114,11 +113,11 @@ export const TRUST_POLICIES: TrustPolicy[] = [
     slug: "cookiepolitik",
     title: "Cookiepolitik",
     description:
-      "Sådan bruger Premium Care cookies på hjemmesiden - og hvordan du styrer dit samtykke.",
+      "Sådan bruger Premium Care cookies på hjemmesiden, og hvordan du styrer dit samtykke.",
     purpose:
       "At give gennemsigtighed om nødvendige og valgfrie cookies, og at respektere brugerens valg.",
     whyItMatters:
-      "Besøgende skal kunne forstå, hvilke cookies der bruges, og hvordan de kan til- eller fravælge ikke-nødvendige cookies.",
+      "Besøgende skal kunne forstå, hvilke cookies der bruges, og hvordan de kan fravælge dem.",
     commitments: [
       "Nødvendige cookies bruges for at få hjemmesiden til at fungere",
       "Valgfrie cookies aktiveres kun efter samtykke",
@@ -133,17 +132,17 @@ export const TRUST_POLICIES: TrustPolicy[] = [
     slug: "whistleblowing",
     title: "Whistleblower-ordning",
     description:
-      "Fortrolig indberetning af alvorlige forhold — beskyttet efter dansk lovgivning.",
+      "Fortrolig indberetning af alvorlige forhold, beskyttet efter dansk lovgivning.",
     purpose:
-      "At give medarbejdere og samarbejdspartnere en sikker kanal til alvorlige bekymringer, der ikke kan løses gennem den daglige ledelse.",
+      "At give medarbejdere og samarbejdspartnere en sikker kanal til alvorlige bekymringer, der ikke kan løses i den daglige ledelse.",
     whyItMatters:
-      "Alvorlige brud på lov, sikkerhed eller etik skal kunne indberettes uden frygt for repressalier. Organisationer, der beskytter indberettere, beskytter borgere.",
+      "Alvorlige brud på lov, sikkerhed eller etik skal kunne indberettes uden frygt for repressalier.",
     commitments: [
       "Fortrolig kanal uafhængig af ordinær linjeledelse",
       "Anerkendelse inden for syv dage; svar inden for tre måneder",
       "Beskyttelse mod repressalier efter danske whistleblower-regler",
       "Eksterne myndighedskanaler er altid lovlige at bruge",
-      "God tro beskytter — fejlvalg af kanal medfører aldrig sanktion",
+      "God tro beskytter. Fejlvalg af kanal medfører aldrig sanktion",
     ],
     contactNote:
       "Alvorlige bekymringer kan indberettes til bibi@premiumcare.dk. En dedikeret whistleblower-kanal etableres, når den er på plads.",
@@ -154,17 +153,17 @@ export const TRUST_POLICIES: TrustPolicy[] = [
     slug: "ledelsesansvar",
     title: "Ledelse og kvalitetsansvar",
     description:
-      "Hvordan Premium Care er styret, dokumenteret og revideret som en ansvarlig plejeorganisation.",
+      "Hvordan Premium Care er styret, dokumenteret og revideret som plejeorganisation.",
     purpose:
-      "At sikre én samlet ledelsesarkitektur med tydeligt ejerskab, godkendelse og revision af alle væsentlige politikker og procedurer.",
+      "Én ledelsesstruktur med tydeligt ejerskab, godkendelse og revision af politikker og procedurer.",
     whyItMatters:
-      "Kommuner, borgere og medarbejdere skal kunne se, hvem der er ansvarlig, hvordan beslutninger træffes, og hvordan kvalitet overvåges over tid.",
+      "Kommuner, borgere og medarbejdere skal kunne se, hvem der er ansvarlig, og hvordan kvalitet følges op.",
     commitments: [
-      "Fem-niveau dokumentbibliotek med én autoritativ kilde pr. emne",
+      "Dokumentbibliotek med én gældende version pr. emne",
       "Navngivne ejere og godkendelsesmyndigheder for hvert dokument",
-      "Årlig revision og opdatering ved lovændringer eller væsentlige ændringer",
-      "Audit-klar struktur til kommunal indkøb, tilsyn og akkreditering",
-      "Etisk ledelse og synlig ledelse som designprincip - ikke eftertanke",
+      "Årlig revision og opdatering ved lovændringer",
+      "Struktur, der kan redegøres for over for kommune og tilsyn",
+      "Ledelse, der er synlig i driften, ikke kun i rapporter",
     ],
     documentHref: "/documents/årlig_kvalitetsrevisionsrapport.pdf",
     documentLabel: "Årlig kvalitetsrevisionsrapport (PDF)",

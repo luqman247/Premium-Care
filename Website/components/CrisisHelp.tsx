@@ -12,8 +12,8 @@ export function CrisisHelp({ className = "", compact = false }: CrisisHelpProps)
       role="note"
       aria-label="Akut hjælp"
     >
+      <p className="crisis-help-lead">Har du brug for hjælp nu?</p>
       <p className="crisis-help-primary">
-        Har du brug for hjælp nu?{" "}
         <a href={COMPANY.phone.href} className="crisis-help-phone focus-ring">
           Ring {COMPANY.phone.display}
         </a>

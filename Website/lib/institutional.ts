@@ -4,7 +4,7 @@ import { COMPANY } from "@/lib/company";
 export const MUNICIPAL_KPIS = [
   {
     value: "94%",
-    label: "Årlig klienttilfredshed",
+    label: "Årlig borger-/pårørendetilfredshed",
     context:
       "Uafhængig måling, seneste tilgængelige år. Metode og scope beskrives i kommunalt beslutningsgrundlag",
   },

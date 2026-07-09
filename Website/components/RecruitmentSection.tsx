@@ -1,8 +1,14 @@
 import Link from "next/link";
-import { HeroImage } from "@/components/HeroImage";
+import { DamImage } from "@/components/DamImage";
 import { COMPANY } from "@/lib/company";
-import { LEADERSHIP_IMAGES } from "@/lib/leadership-images";
+import { ASSET_IDS } from "@/lib/dam/asset-ids";
 import { PHOTO_SIZES } from "@/lib/photography";
+import {
+  RECRUITMENT_EMAIL,
+  RECRUITMENT_REGION,
+  WORKPLACE_BENEFITS,
+  WORKPLACE_PROMISES,
+} from "@/lib/recruitment";
 
 type RecruitmentSectionProps = {
   variant?: "ivory" | "midnight";
@@ -21,37 +27,45 @@ export function RecruitmentSection({ variant = "ivory" }: RecruitmentSectionProp
       <div className="reading-column">
         <div className="grid grid-cols-1 md:grid-cols-[1fr_minmax(0,280px)] gap-10 items-start">
           <div>
+            <p className={`type-eyebrow ${isMidnight ? "text-gold" : "text-midnight/60"}`}>
+              {RECRUITMENT_REGION}
+            </p>
             <h2
               id="recruitment-heading"
-              className={`text-[30px] leading-normal ${textClass}`}
+              className={`type-section-title ${textClass} mt-3`}
             >
               Bliv en del af Premium Care
             </h2>
-            <p className={`text-[19px] leading-body ${mutedClass} mt-8 max-w-[55ch]`}>
-              Vi leder efter mennesker, der bryder sig dybt om andre - og som vil arbejde
-              med værdighed, struktur og faglighed
+            <p className={`text-[19px] leading-body ${mutedClass} mt-6 max-w-[55ch]`}>
+              {WORKPLACE_PROMISES[0].body}
             </p>
-            <ul className={`mt-8 space-y-4 list-none text-[17px] leading-body ${mutedClass}`}>
-              <li>Professionel oplæring, mentorordning og løbende udvikling</li>
-              <li>En arbejdsplads, hvor alle mødes med respekt - uanset baggrund</li>
-              <li>Synlig ledelse og en kultur, hvor kvalitet og menneskelighed hænger sammen</li>
+            <ul className={`mt-8 space-y-3 list-none text-[17px] leading-body ${mutedClass}`}>
+              {WORKPLACE_BENEFITS.slice(0, 4).map((benefit) => (
+                <li key={benefit}>{benefit}</li>
+              ))}
             </ul>
             <div className="mt-10 flex flex-col sm:flex-row gap-4">
               <a
-                href={`mailto:${COMPANY.email}?subject=${encodeURIComponent("Ansøgning")}`}
-                className={isMidnight ? "btn-primary" : "btn-primary"}
+                href={`mailto:${RECRUITMENT_EMAIL}?subject=${encodeURIComponent("Ansøgning")}`}
+                className="btn-primary"
               >
                 Send en ansøgning
               </a>
-              <Link href="/karriere" className={isMidnight ? "btn-secondary" : "btn-secondary"}>
-                Læs mere om arbejde hos os
+              <Link href="/karriere" className="btn-secondary">
+                Læs om arbejde hos os
               </Link>
             </div>
+            <p className={`text-[13px] mt-6 ${isMidnight ? "text-ivory/60" : "text-midnight/60"}`}>
+              Spørgsmål? Ring{" "}
+              <a href={COMPANY.phone.href} className="underline underline-offset-4 focus-ring">
+                {COMPANY.phone.display}
+              </a>
+            </p>
           </div>
           <figure className="relative w-full aspect-[4/3]">
-            <HeroImage
-              src={LEADERSHIP_IMAGES.careersTraining.src}
-              alt={LEADERSHIP_IMAGES.careersTraining.alt}
+            <DamImage
+              assetId={ASSET_IDS.careersTraining}
+              category="careers"
               fill
               sizes={PHOTO_SIZES.section}
               className="object-cover"

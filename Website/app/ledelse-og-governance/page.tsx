@@ -1,7 +1,9 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { CrestSeal } from "@/components/CrestSeal";
-import { HeroImage } from "@/components/HeroImage";
+import { DamImage } from "@/components/DamImage";
+import { ASSET_IDS } from "@/lib/dam/asset-ids";
+import { damAbsoluteUrl, damMetadataImage } from "@/lib/dam/site-images";
 import { COMPANY } from "@/lib/company";
 import { LEADERSHIP_IMAGES } from "@/lib/leadership-images";
 import { PHOTOGRAPHY, PHOTO_SIZES } from "@/lib/photography";
@@ -11,153 +13,106 @@ export const metadata: Metadata = {
     absolute: "Ledelse og ansvar | Premium Care",
   },
   description:
-    "Premium Care ApS — ledelse og ansvar, mission, vision og kvalitetsforpligtelse. Grundlagt på synlig ledelse, dokumenteret ansvar og dansk plejetradition.",
+    "Ledelse, ansvar og kvalitetsarbejde i Premium Care ApS. Grundlagt af Bibi Naziyh Dowezai.",
   alternates: { canonical: "/ledelse-og-governance" },
   openGraph: {
     title: "Ledelse og ansvar | Premium Care",
     description:
-      "Premium Care ApS — ledelse og ansvar, mission, vision og kvalitetsforpligtelse. Grundlagt på synlig ledelse, dokumenteret ansvar og dansk plejetradition.",
+      "Ledelse, ansvar og kvalitetsarbejde i Premium Care ApS. Grundlagt af Bibi Naziyh Dowezai.",
     url: "https://premiumcare.dk/ledelse-og-governance",
-    images: [
-      {
-        url: LEADERSHIP_IMAGES.pressPortrait.src,
-        width: LEADERSHIP_IMAGES.pressPortrait.width,
-        height: LEADERSHIP_IMAGES.pressPortrait.height,
-        alt: LEADERSHIP_IMAGES.pressPortrait.alt,
-      },
-    ],
+    images: [damMetadataImage(ASSET_IDS.leadershipPress)],
   },
 };
 
 const CORE_VALUES = [
   {
-    title: "Faglig ekspertise",
-    body: "Vi er uddannede, kompetente og forberedte. Vi følger vores procedurer, fordi de beskytter borgere — og os.",
+    title: "Faglighed",
+    body: "Vi er uddannede og forberedte. Procedurerne er til for at beskytte borgere og os selv.",
   },
   {
-    title: "Medfølelse",
-    body: "Vi ser mennesket, ikke opgavelisten. Vi er aldrig for travle til venlighed.",
+    title: "Ærlighed",
+    body: "Vi siger fra, når noget halter, også når det er ubehageligt.",
   },
   {
-    title: "Integritet",
-    body: "Vi gør det rigtige, når ingen ser det — og vi taler sandt, når det er svært.",
+    title: "Sikkerhed",
+    body: "Ingen tidsplan vejer tungere end borgerens sikkerhed.",
   },
   {
-    title: "Ansvarlighed",
-    body: "Vi ejer vores arbejde, vores journaler og vores fejl. Problemer indberettet tidligt er halvt løst.",
-  },
-  {
-    title: "Patientsikkerhed",
-    body: "Intet — ingen tidsplan, ingen vane, ingen instruktion — overtrumfer borgerens sikkerhed.",
-  },
-  {
-    title: "Løbende forbedring",
-    body: "Vi siger fra, vi lærer, og vi gør næste måned bedre end denne.",
+    title: "Kontinuitet",
+    body: "Den samme medarbejder, når det er muligt. Det gør en forskel.",
   },
 ];
 
 const LEADERSHIP_PRINCIPLES = [
   {
-    title: "Synlig ledelse",
-    body: "Ledelse er en adfærd, ikke en titel. Som administrerende direktør deltager jeg i opstartssamtaler, besøger hjem, udfører kvalitetsopfølgning og træder selv til, når en borger har brug for hjælp — også sent om aftenen, hvis det kræves.",
+    title: "Ledelse i praksis",
+    body: "Jeg deltager i opstart, besøger hjem, følger kvaliteten og træder til, når en borger har brug for hjælp. Også en sen aften, hvis det kræves.",
   },
   {
-    title: "Respekt",
-    body: "Respekt skabes ved at gå forrest. Kolleger mødes med værdighed. Borgere og pårørende mødes med varme og respekt — uanset alder, baggrund eller situation.",
+    title: "Navngivet ansvar",
+    body: "Hver standard har en ejer. Beslutninger kan forklares. Fejl indberettes tidligt og følges op.",
   },
   {
-    title: "Kvalitet",
-    body: "Ekspertise er ikke en ambition — det er vores standard. Premium Care Standard går ud over kommunale minimumskrav: punktlighed, kontinuitet og målbar plejekvalitet.",
+    title: "Respekt i hverdagen",
+    body: "Kolleger, borgere og pårørende mødes med værdighed. Det gælder også de svære dage.",
   },
   {
-    title: "Ansvarlighed",
-    body: "Hver standard har et navn knyttet til sig. Beslutninger træffes på oplyst grundlag. Fejl indberettes tidligt under en just culture — læring før skyld.",
-  },
-  {
-    title: "Løbende forbedring",
-    body: "Forbedringsforslag læses og besvares. Hver hændelse, klage og auditfinding har en ejer, en handling og en verifikation. Intet logges uden opfølgning.",
-  },
-  {
-    title: "Medfølelse",
-    body: "Medfølelse gælder borgere og kolleger. En arbejdsplads, hvor mennesker trives, skaber trygge borgere.",
-  },
-  {
-    title: "Professionalisme",
-    body: "Premium i vores navn er et løfte om adfærd — rolig kompetence, forberedelse, punktlighed, dokumentation og respekt for borgerens hjem.",
-  },
-  {
-    title: "Integritet",
-    body: "Principper styrer enhver beslutning. Vi går aldrig på kompromis med det rigtige for det bekvemme — hverken over for borgere, medarbejdere eller kommuner.",
+    title: "Kvalitet man kan dokumentere",
+    body: "Vi arbejder ud over kommunale minimumskrav med punktlighed, kontinuitet og målbar pleje.",
   },
 ];
 
 const LEDELSE_OMRAADER = [
   {
     title: "Bestyrelse",
-    body: "Bestyrelsen ejer ledelsesprogrammet, godkender strategiske beslutninger og modtager løbende rapportering om kvalitet, risiko og compliance. Årligt ledelses- og sikkerhedserklæring præsenteres for bestyrelsen.",
+    body: "Bestyrelsen godkender strategiske beslutninger og modtager løbende rapportering om kvalitet og risiko.",
   },
   {
-    title: "Ledelse",
-    body: "Den administrerende direktør er program sponsor og ansvarlig for daglig drift, personaleledelse, borgerpleje, regelefterlevelse og virksomhedens udvikling — med endelig beslutningskompetence i alle driftsspørgsmål.",
+    title: "Daglig ledelse",
+    body: "Den administrerende direktør har ansvar for drift, personale, borgerpleje og regelefterlevelse.",
   },
   {
     title: "Beslutninger",
-    body: "Væsentlige beslutninger træffes på dokumenteret grundlag gennem definerede godkendelsesniveauer. Kliniske vurderinger, beskyttelsesbeslutninger og delegerede sundhedsopgaver hviler altid hos kvalificerede, ansvarlige personer — aldrig automatiseret væk.",
+    body: "Væsentlige beslutninger dokumenteres. Kliniske vurderinger og delegerede opgaver ligger hos kvalificerede personer.",
   },
   {
-    title: "Kvalitetssikring",
-    body: "Én samlet forbedringsmotor: klinisk audit, intern audit, borgerfeedback, klager, hændelser og KPI-afvigelser fører til handling, verifikation og læring — afsluttet med årlig ledelsesgennemgang.",
+    title: "Kvalitet",
+    body: "Audits, borgerfeedback, klager og hændelser fører til handling og opfølgning. Årlig ledelsesgennemgang.",
   },
   {
-    title: "Risikostyring",
-    body: "Risici identificeres, ejes og overvåges løbende. Arbejdsmiljø, patientsikkerhed, databeskyttelse og operationel risiko vurderes proportionalt med organisationens størrelse og vokser med den.",
-  },
-  {
-    title: "Løbende forbedring",
-    body: "Hver fundne afvigelse har ejer, rodårsag, handling, frist og effektivitetskontrol. Temaer ekstraheres kvartalsvis som læring og indgår i uddannelse og teammøder.",
+    title: "Risiko",
+    body: "Risici inden for arbejdsmiljø, patientsikkerhed og databeskyttelse vurderes løbende.",
   },
   {
     title: "Politikker",
-    body: "Et kontrolleret dokumentbibliotek med én autoritativ kilde pr. emne — klinisk, kvalitet, HR, informationssikkerhed og arbejdsmiljø. Politikker revideres årligt og ved væsentlige lovændringer.",
-  },
-  {
-    title: "Etik",
-    body: "Værdierne operationaliseres — ikke reciteres. Accountability som navngivne ejere, transparency som dashboards og rapportering, patientsikkerhed som hændelsesloop og just culture.",
+    body: "Én gældende version pr. emne. Årlig revision og opdatering ved lovændringer.",
   },
 ];
 
 const QUALITY_COMMITMENTS = [
   {
     title: "Klinisk ledelse",
-    body: "Delegerede sundhedsopgaver udføres kun efter uddannelse og formel godkendelse, præcis som den skriftlige instruks beskriver. Klinisk ledelse bærer det faglige ansvar.",
+    body: "Delegerede sundhedsopgaver udføres kun efter uddannelse og formel godkendelse.",
   },
   {
     title: "Audits",
-    body: "Årligt auditprogram dækker dokumentation, delegation, medicinhåndtering, GDPR, klager, hændelser og arbejdsmiljø — med fund sporret til lukning.",
+    body: "Årligt program dækker dokumentation, medicin, GDPR, klager og arbejdsmiljø. Fund følges til lukning.",
   },
   {
-    title: "Uddannelse",
-    body: "Ingen arbejder ud over sin uddannelse. Obligatorisk oplæring i betalt tid. Kompetencevurdering er porten til hver delegeret opgave.",
+    title: "Oplæring",
+    body: "Ingen arbejder ud over sin uddannelse. Obligatorisk oplæring i betalt tid.",
   },
   {
     title: "Dokumentation",
-    body: "Plejenotater udfyldes samme dag. Journalen er overleveringen — næste kollega var ikke i rummet. Faktuel, respektfuld og dignitetsskabende dokumentation.",
+    body: "Plejenotater udfyldes samme dag. Journalen er overleveringen til næste kollega.",
   },
   {
-    title: "Kommunikation med familier",
-    body: "Gennemsigtig rapportering og åbne kanaler for tilbagemelding. Pårørende guides til klagevejen — vi opfordrer aldrig til at lade være.",
+    title: "Familier",
+    body: "Vi fortæller, hvad vi ser og planlægger. Pårørende guides til klagevejen.",
   },
   {
-    title: "Kommunal rapportering",
-    body: "Åben rapportering til kommunalpartnere. Evidence fra live registre og dashboards — ikke parallelle regneark.",
-  },
-  {
-    title: "Hændelseslæring",
-    body: "Utilsigtede hændelser indberettes straks under just culture. Ærlige fejl mødes med støtte og læring — skjulelse behandles alvorligt.",
-  },
-  {
-    title: "Løbende forbedring",
-    body: "Borgertilfredshed, klager, audits og medarbejderforslag indgår i samme forbedringsmaskineri med kvartalsvis læring og årlig ledelsesgennemgang.",
+    title: "Kommuner",
+    body: "Åben rapportering til kommunalpartnere fra fælles registre, ikke parallelle regneark.",
   },
 ];
 
@@ -202,7 +157,7 @@ function pageJsonLd() {
         name: COMPANY.legalName,
         url: COMPANY.url,
       },
-      image: `${COMPANY.url}${LEADERSHIP_IMAGES.pressPortrait.src}`,
+      image: damAbsoluteUrl(ASSET_IDS.leadershipPress, COMPANY.url),
       url: `${COMPANY.url}/ledelse-og-governance`,
     },
     {
@@ -210,7 +165,7 @@ function pageJsonLd() {
       "@type": "WebPage",
       name: "Ledelse og ansvar",
       description:
-        "Premium Care ApS — ledelse og ansvar, mission, vision og kvalitetsforpligtelse.",
+        "Ledelse og ansvar i Premium Care ApS.",
       url: `${COMPANY.url}/ledelse-og-governance`,
       isPartOf: {
         "@type": "WebSite",
@@ -231,11 +186,11 @@ export default function LeadershipGovernancePage() {
       <header className="section-padding page-margin">
         <div className="reading-column">
           <CrestSeal size={96} decorative className="!p-0 mb-10 justify-start" />
-          <h1 className="text-[38px] leading-snug tracking-tight text-midnight">
+          <h1 className="type-page-title text-midnight tracking-tight">
             Ledelse og ansvar
           </h1>
           <p className="text-[19px] leading-body text-midnight/80 mt-8">
-            Bygget på tillid. Styret af principper. Skabt til at bestå.
+            Hvem der står bag, og hvordan vi arbejder
           </p>
           <p className="text-[13px] text-midnight/60 mt-6">
             {COMPANY.legalName} · CVR {COMPANY.cvr}
@@ -249,9 +204,8 @@ export default function LeadershipGovernancePage() {
           <div className="grid grid-cols-1 md:grid-cols-[minmax(0,240px)_1fr] gap-10 items-start">
             <figure>
               <div className="relative w-full aspect-[16/10] max-w-[400px]">
-                <HeroImage
-                  src={LEADERSHIP_IMAGES.ceoSmiling.src}
-                  alt={LEADERSHIP_IMAGES.ceoSmiling.alt}
+                <DamImage
+                  assetId={LEADERSHIP_IMAGES.ceoSmiling.assetId}
                   fill
                   sizes="(max-width: 768px) 100vw, 400px"
                   priority
@@ -268,7 +222,7 @@ export default function LeadershipGovernancePage() {
               </p>
               <div className="mt-8 space-y-6 text-[17px] leading-body text-midnight/90">
                 <p>
-                  Driftsmæssig ekspertise og lokalkendskab — med ledelse tæt på driften,
+                  Driftsmæssig ekspertise og lokalkendskab, med ledelse tæt på driften,
                   ikke på afstand. Ansvarlig for den daglige drift, personaleledelse,
                   borgerpleje, regelefterlevelse og virksomhedens udvikling.
                 </p>
@@ -281,22 +235,21 @@ export default function LeadershipGovernancePage() {
                   <strong className="font-medium text-midnight">
                     Over for borgere:
                   </strong>{" "}
-                  Den rigtige pleje, de rigtige mennesker, den rigtige adfærd — og en åben
-                  vej til at sige fra.
+                  Den rigtige pleje, de rigtige mennesker, og en åben vej til at
+                  klage.
                 </p>
                 <p>
                   <strong className="font-medium text-midnight">
                     Over for medarbejdere:
                   </strong>{" "}
-                  En arbejdsplads med klare rammer, høj faglighed, struktur og respekt for
-                  forskellighed.
+                  Klare rammer, oplæring og ledelse, der kan findes.
                 </p>
                 <p>
                   <strong className="font-medium text-midnight">
                     Over for kvalitet:
                   </strong>{" "}
-                  Målbar standard, løbende revision og synlig ledelse i praksis — ikke kun
-                  på papiret.
+                  Målbar standard, årlig revision og ledelse, der også er ude i
+                  hjemmene.
                 </p>
               </div>
               <p className="mt-10">
@@ -318,21 +271,15 @@ export default function LeadershipGovernancePage() {
           </h2>
           <div className="mt-10 space-y-6 text-[19px] leading-body text-midnight/90">
             <p>
-              Nogle virksomheder bliver skabt ud fra en forretningsidé. Andre bliver skabt
-              ud fra en livshistorie. Premium Care er resultatet af en livshistorie — fra
-              Sønderborg, en farmors sidste kapitel i Danmark, og erfaringen af, hvad god
-              omsorg kan betyde for en hel familie.
+              Premium Care kom ud af en livshistorie. Min farmor fik værdig pleje i
+              Danmark. Senere arbejdede jeg i hjemmeplejen i Aarhus, Vejle og
+              Fredericia og lærte, hvad der skal til, når mange borgere skal passes
+              på samme tid.
             </p>
             <p>
-              Jeg ønskede ikke blot at drive en hjemmepleje. Jeg ønskede at skabe en kultur
-              fra bunden — hvor medarbejdere mødes med tillid og respekt, hvor borgeren
-              aldrig bliver et CPR-nummer, og hvor ordentlighed, nærvær og faglighed går
-              hånd i hånd.
-            </p>
-            <p>
-              Da vi en fredag eftermiddag overtog ansvaret for omkring 250 borgere, lærte
-              jeg, hvor afgørende struktur, ledelse og stærke medarbejdere er. Ingen
-              borger må blive glemt. Det princip har fulgt mig siden.
+              Da vi en fredag overtog ansvaret for omkring 250 borgere, lærte jeg,
+              hvor afgørende struktur og stærke medarbejdere er. Ingen borger må
+              blive glemt. Det princip har fulgt mig siden.
             </p>
           </div>
         </section>
@@ -343,9 +290,9 @@ export default function LeadershipGovernancePage() {
             Mission
           </h2>
           <p className="text-[19px] leading-body text-midnight/90 mt-8">
-            At levere hjemmepleje af kompromisløs kvalitet — sikker, værdig og personlig —
-            til hver borger, der vælger os. At støtte familier med ærlighed og pålidelighed.
-            At skabe en arbejdsplads, hvor medarbejdere værdsættes og udvikles.
+            At levere hjemmepleje, borgere kan leve med i eget hjem. At støtte
+            familier med ærlig besked. At være en arbejdsplads, medarbejdere gider
+            blive i.
           </p>
         </section>
 
@@ -355,9 +302,8 @@ export default function LeadershipGovernancePage() {
             Vision
           </h2>
           <p className="text-[19px] leading-body text-midnight/90 mt-8">
-            At blive anerkendt som Danmarks referencestandard for privat hjemmepleje —
-            den udbyder kommunerne stoler mest på, borgere vælger først, og fagfolk er
-            stoltest af at arbejde for.
+            At blive en hjemmepleje, kommuner kan samarbejde med, borgere vælger, og
+            medarbejdere gerne arbejder for.
           </p>
         </section>
 
@@ -413,9 +359,8 @@ export default function LeadershipGovernancePage() {
               Ledelse og styring
             </h2>
             <p className="text-[17px] leading-body text-ivory/80 mt-8">
-              Premium Care er bygget omkring et kontrolleret dokumentbibliotek — fra
-              dag ét designet til dokumenteret ansvar, målbar kvalitet og audit-klar drift.
-              Nedenfor er den offentlige forklaring af, hvordan vi er styret.
+              Vi har et dokumentbibliotek med én gældende version pr. emne. Her er
+              den offentlige forklaring på, hvordan vi er styret.
             </p>
             <ul className="mt-10 space-y-8 list-none">
               {LEDELSE_OMRAADER.map((area) => (
@@ -434,9 +379,8 @@ export default function LeadershipGovernancePage() {
         <section className="section-padding" aria-hidden="true">
           <figure>
             <div className="relative w-full aspect-[16/9]">
-              <HeroImage
-                src={PHOTOGRAPHY.ledelse.src}
-                alt={PHOTOGRAPHY.ledelse.alt}
+              <DamImage
+                assetId={PHOTOGRAPHY.ledelse.assetId}
                 fill
                 sizes={PHOTO_SIZES.section}
                 objectPosition={PHOTOGRAPHY.ledelse.objectPosition}
@@ -451,8 +395,8 @@ export default function LeadershipGovernancePage() {
             Kvalitetsforpligtelse
           </h2>
           <p className="text-[17px] leading-body text-midnight/80 mt-6">
-            Kvalitet kører som én samlet forbedringsmotor — mange input, én maskineri,
-            lukkede loops.
+            Audits, klager, hændelser og tilbagemeldinger fører til handling og
+            opfølgning.
           </p>
           <ul className="mt-10 space-y-8 list-none">
             {QUALITY_COMMITMENTS.map((item) => (
@@ -480,8 +424,8 @@ export default function LeadershipGovernancePage() {
             Tillidsbibliotek
           </h2>
           <p className="text-[17px] leading-body text-midnight/80 mt-6">
-            Politikker, procedurer og erklæringer — offentligt tilgængelige resuméer med
-            link til autoritative dokumenter.
+            Politikker, procedurer og erklæringer. Offentlige resuméer med link til
+            de fulde dokumenter.
           </p>
           <ul className="mt-10 space-y-0 list-none">
             {TRUST_LIBRARY.map((item) => (
@@ -540,8 +484,8 @@ export default function LeadershipGovernancePage() {
             gjorde?&rdquo;
           </blockquote>
           <p className="text-[17px] leading-body text-ivory/70 mt-12 max-w-[42ch] mx-auto">
-            Det er virksomhedens kompas — ikke en plakat, men en påmindelse om, hvorfor vi
-            begyndte, og hvad der aldrig må glemmes.
+            Det spørgsmål stillede jeg mig selv, da min farmor sad i plejestolen. Det
+            bruger vi stadig, når vi er i tvivl.
           </p>
           <p className="mt-10">
             <Link

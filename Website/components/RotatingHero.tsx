@@ -1,9 +1,9 @@
 "use client";
 
-import Image from "next/image";
 import { useEffect, useState } from "react";
+import { DamImage } from "@/components/DamImage";
 import {
-  HERO_ROTATION,
+  HERO_ROTATION_ASSET_IDS,
   HERO_ROTATION_FADE_MS,
   HERO_ROTATION_INITIAL_DELAY_MS,
   HERO_ROTATION_INTERVAL_MS,
@@ -23,13 +23,13 @@ export function RotatingHero() {
   }, []);
 
   useEffect(() => {
-    if (reduceMotion || HERO_ROTATION.length <= 1) return;
+    if (reduceMotion || HERO_ROTATION_ASSET_IDS.length <= 1) return;
 
     let interval: number | undefined;
 
     const start = window.setTimeout(() => {
       interval = window.setInterval(() => {
-        setActiveIndex((current) => (current + 1) % HERO_ROTATION.length);
+        setActiveIndex((current) => (current + 1) % HERO_ROTATION_ASSET_IDS.length);
       }, HERO_ROTATION_INTERVAL_MS);
     }, HERO_ROTATION_INITIAL_DELAY_MS);
 
@@ -45,12 +45,13 @@ export function RotatingHero() {
       role="img"
       aria-label="Premium Care hjemmepleje i rolige, nordiske omgivelser"
     >
-      {HERO_ROTATION.map((photo, index) => {
+      {HERO_ROTATION_ASSET_IDS.map((assetId, index) => {
         const isActive = index === activeIndex;
         return (
-          <Image
-            key={photo.src}
-            src={photo.src}
+          <DamImage
+            key={assetId}
+            assetId={assetId}
+            category="hero"
             alt=""
             aria-hidden
             fill
@@ -58,7 +59,6 @@ export function RotatingHero() {
             sizes={PHOTO_SIZES.hero}
             className={`rotating-hero-image ${isActive ? "is-active" : ""}`}
             style={{
-              objectPosition: photo.objectPosition ?? "center center",
               transitionDuration: `${HERO_ROTATION_FADE_MS}ms`,
             }}
           />

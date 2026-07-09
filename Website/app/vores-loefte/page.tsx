@@ -30,7 +30,7 @@ export default function VoresLoftePage() {
     <article className="bg-ivory pb-24">
       <header className="section-padding page-margin">
         <div className="reading-column">
-          <h1 className="text-[38px] leading-snug tracking-tight text-midnight">
+          <h1 className="type-page-title text-midnight tracking-tight">
             Vores løfte
           </h1>
           <p className="text-[13px] uppercase tracking-wide text-midnight/60 mt-8">
@@ -51,9 +51,8 @@ export default function VoresLoftePage() {
             {VORES_LOFTE_HERO}
           </p>
           <p className="text-[19px] leading-body text-midnight/80 mt-10 max-w-[55ch]">
-            Dette er ikke en reklame. Det er ikke en politik. Det er et løfte, vi
-            giver offentligt — og som vi forventer at kunne stå inde for i
-            hverdagen.
+            Det her er det, vi mener. Det står også i vores politikker og
+            dokumentation.
           </p>
         </section>
 
@@ -62,12 +61,9 @@ export default function VoresLoftePage() {
             Vores seks løfter
           </h2>
           <ol className="space-y-16 list-none">
-            {VORES_LOFTE_PROMISES.map((promise, index) => (
+            {VORES_LOFTE_PROMISES.map((promise) => (
               <li key={promise.id}>
-                <p className="text-[13px] uppercase tracking-wide text-midnight/50">
-                  Løfte {index + 1}
-                </p>
-                <p className="text-[30px] leading-normal text-midnight mt-4 max-w-[36ch]">
+                <p className="type-section-title text-midnight max-w-[36ch]">
                   {promise.statement}
                 </p>
               </li>
@@ -102,9 +98,8 @@ export default function VoresLoftePage() {
             Løftet er forankret i dokumentation
           </h2>
           <p className="text-[17px] leading-body text-midnight/80 mt-8 max-w-[55ch]">
-            Et løfte uden ansvarlighed er kun ord. Vores løfte understøttes af
-            politikker, ledelse og ansvar, kvalitetsarbejde og dokumentation - tilgængelig
-            for familier og kommuner i vores tillidscenter.
+            Løftet står i politikker, ledelsesansvar og dokumentation i vores
+            tillidscenter.
           </p>
           <p className="mt-10">
             <Link
@@ -124,10 +119,7 @@ export default function VoresLoftePage() {
             Løftet har en historie
           </h2>
           <p className="text-[17px] leading-body text-midnight/80 mt-8 max-w-[55ch]">
-            Premium Care blev ikke grundlagt ud fra en forretningsplan alene. Det
-            blev grundlagt ud fra en livshistorie — og et ønske om at give
-            tilbage det, Danmark gav en familie. Vores løfte er forankret i den
-            historie.
+            Læs grundlæggerens historie, hvis du vil vide, hvor løftet kommer fra.
           </p>
           <p className="mt-10">
             <Link
@@ -155,8 +147,7 @@ export default function VoresLoftePage() {
             &ldquo;{VORES_LOFTE_COMPASS}&rdquo;
           </blockquote>
           <p className="text-[17px] leading-body text-ivory/70 mt-12 max-w-[42ch] mx-auto">
-            Det er det spørgsmål, vi stiller os selv — hver dag, i hvert hjem, bag
-            hver beslutning.
+            Det spørgsmål stiller vi, når vi er i tvivl.
           </p>
         </div>
       </section>

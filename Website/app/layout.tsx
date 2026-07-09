@@ -4,9 +4,16 @@ import "./globals.css";
 import { TrustBar } from "@/components/TrustBar";
 import { PageTransition } from "@/components/PageTransition";
 import { Wordmark } from "@/components/Wordmark";
-import { Navigation } from "@/components/Navigation";
+import { MenuTrigger, NavigationProvider } from "@/components/Navigation";
 import { CookieConsent } from "@/components/CookieConsent";
+import { SiteChrome } from "@/components/SiteChrome";
 import { COMPANY, localBusinessJsonLd, organizationJsonLd } from "@/lib/company";
+import { ASSET_IDS } from "@/lib/dam/asset-ids";
+import {
+  damLayoutIcons,
+  damMetadataImage,
+  damTwitterImages,
+} from "@/lib/dam/site-images";
 
 const cormorant = Cormorant_Garamond({
   subsets: ["latin"],
@@ -22,12 +29,14 @@ const cinzel = Cinzel({
   display: "swap",
 });
 
+const defaultOgImage = damMetadataImage(ASSET_IDS.brandOpenGraph);
+
 export const metadata: Metadata = {
   title: {
     default: COMPANY.brandName,
     template: `%s · ${COMPANY.brandName}`,
   },
-  description: "Omsorg · Tryghed · Hver Dag",
+  description: "Hjemmepleje i Aarhus og Østjylland",
   metadataBase: new URL(COMPANY.url),
   alternates: {
     canonical: "/",
@@ -37,31 +46,21 @@ export const metadata: Metadata = {
     siteName: "Premium Care",
     locale: "da_DK",
     title: "Premium Care",
-    description: "Omsorg · Tryghed · Hver Dag",
+    description: "Hjemmepleje i Aarhus og Østjylland",
     url: "https://premiumcare.dk",
-    images: [
-      {
-        url: "/assets/brand/og-brand.jpg",
-        width: 1200,
-        height: 630,
-        alt: "Premium Care — Omsorg · Tryghed · Hver dag",
-      },
-    ],
+    images: [defaultOgImage],
   },
   twitter: {
     card: "summary_large_image",
     title: "Premium Care",
-    description: "Omsorg · Tryghed · Hver Dag",
-    images: ["/assets/brand/og-brand.jpg"],
+    description: "Hjemmepleje i Aarhus og Østjylland",
+    images: damTwitterImages(ASSET_IDS.brandOpenGraph),
   },
-  icons: {
-    icon: [
-      { url: "/assets/brand/favicon-32.png", sizes: "32x32" },
-      { url: "/assets/brand/favicon-16.png", sizes: "16x16" },
-    ],
-    apple: "/assets/brand/app-icon-180.png",
-  },
-  manifest: "/site.webmanifest",
+  icons: damLayoutIcons({
+    favicon16: ASSET_IDS.brandFavicon16,
+    favicon32: ASSET_IDS.brandFavicon32,
+    apple: ASSET_IDS.brandAppIcon180,
+  }),
 };
 
 export const viewport: Viewport = {
@@ -76,12 +75,17 @@ export default function RootLayout({
   return (
     <html lang="da" className={`${cormorant.variable} ${cinzel.variable}`}>
       <body>
-        <PageTransition />
-        <Wordmark />
-        <Navigation />
-        <main>{children}</main>
-        <TrustBar />
-        <CookieConsent />
+        <NavigationProvider>
+          <PageTransition />
+          <SiteChrome>
+            <Wordmark />
+            <MenuTrigger variant="fixed" />
+          </SiteChrome>
+          <main>{children}</main>
+          <SiteChrome>
+            <TrustBar />
+          </SiteChrome>
+          <CookieConsent />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
@@ -94,6 +98,7 @@ export default function RootLayout({
             __html: JSON.stringify(localBusinessJsonLd()),
           }}
         />
+        </NavigationProvider>
       </body>
     </html>
   );

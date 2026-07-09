@@ -1,94 +1,52 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import { CrestSeal } from "@/components/CrestSeal";
-import { HeroImage } from "@/components/HeroImage";
+import { DamImage } from "@/components/DamImage";
+import { ASSET_IDS } from "@/lib/dam/asset-ids";
 import { COMPANY } from "@/lib/company";
-import { LEADERSHIP_IMAGES } from "@/lib/leadership-images";
+import {
+  OPEN_POSITIONS,
+  RECRUITMENT_EMAIL,
+  RECRUITMENT_PHILOSOPHY,
+  RECRUITMENT_REGION,
+  RECRUITMENT_RESPONSE_DAYS,
+  TRAINING_PROGRAMME,
+  WORKPLACE_BENEFITS,
+  WORKPLACE_PROMISES,
+} from "@/lib/recruitment";
 
 export const metadata: Metadata = {
   title: "Bliv en del af Premium Care",
   description:
-    "Vi leder efter mennesker, der bryder sig dybt om andre - og som vil arbejde med værdighed, struktur og faglighed.",
+    "Arbejd med værdighed, struktur og faglighed i Aarhus og Østjylland. Betalt oplæring, mentorordning og synlig ledelse.",
   alternates: {
     canonical: "/karriere",
   },
   openGraph: {
     title: "Bliv en del af Premium Care",
     description:
-      "Vi leder efter mennesker, der bryder sig dybt om andre - og som vil arbejde med værdighed, struktur og faglighed.",
+      "Arbejd med værdighed, struktur og faglighed i Aarhus og Østjylland. Betalt oplæring, mentorordning og synlig ledelse.",
     url: "https://premiumcare.dk/karriere",
   },
 };
-
-const RECRUITMENT_PHILOSOPHY = [
-  {
-    title: "Ægte medfølelse",
-    body: "Et kald, ikke blot et job - mennesker, der dybt bekymrer sig om andre",
-  },
-  {
-    title: "Faglig kompetence",
-    body: "Relevant uddannelse, certificering og dokumenteret erfaring med pleje",
-  },
-  {
-    title: "Værdimæssigt sammenfald",
-    body: "Fælles værdier om værdighed, respekt og ekspertise i hver kontakt",
-  },
-  {
-    title: "Engagement i ekspertise",
-    body: "En tankegang om løbende forbedring - altid lærende, altid i vækst",
-  },
-  {
-    title: "Pålidelighed og integritet",
-    body: "En troværdig karakter - punktlig, ærlig og ansvarlig",
-  },
-];
-
-const TRAINING_PROGRAMME = [
-  "Kerneplejefærdigheder og daglig plejeprocedurer",
-  "Demensbevidsthed og kommunikation med kognitive udfordringer",
-  "Kommunikationskompetencer og inddragelse af familier",
-  "Nødberedskab og krisehåndtering",
-  "Faglig etik, fortrolighed og værdighed i plejen",
-  "Løbende udvikling og struktureret efteruddannelse",
-];
-
-const POSITIONS = [
-  {
-    title: "Social- og sundhedsassistent",
-    location: "København · Fuldtid",
-    subject: "Ansøgning: Social- og sundhedsassistent",
-  },
-  {
-    title: "Social- og sundhedshjælper",
-    location: "København · Deltid",
-    subject: "Ansøgning: Social- og sundhedshjælper",
-  },
-  {
-    title: "Omsorgschef",
-    location: "København · Ledelse",
-    subject: "Ansøgning: Omsorgschef",
-  },
-];
 
 export default function CareersPage() {
   return (
     <div className="page-flow">
       <section className="snap-section bg-ivory section-padding">
         <div className="reading-column">
-          <h1 className="text-[38px] leading-snug tracking-tight text-midnight">
+          <p className="text-[13px] uppercase tracking-wide text-midnight/60">
+            {RECRUITMENT_REGION}
+          </p>
+          <h1 className="type-page-title text-midnight tracking-tight mt-4">
             Bliv en del af Premium Care
           </h1>
-        </div>
-      </section>
-
-      <section className="snap-section bg-ivory section-padding">
-        <div className="reading-column">
-          <p className="text-[19px] leading-body text-midnight">
-            Vi leder ikke efter ansatte. Vi leder efter mennesker, der ikke kan
-            lade være med at passe på andre. Hvis du genkender det i dig selv, er
-            du allerede en af os.
+          <p className="text-[19px] leading-body text-midnight/80 mt-8 max-w-[55ch]">
+            Vi søger faglige plejemedarbejdere, der vil gøre arbejdet ordentligt -
+            med tid til borgeren, respekt for kollegerne og stolthed over faget
           </p>
-          <p className="text-[13px] text-midnight/50 mt-12 uppercase tracking-wide">
-            — Omsorgschefen
+          <p className="text-[13px] text-midnight/60 mt-6">
+            {COMPANY.legalName} · CVR {COMPANY.cvr} · {COMPANY.address.locality}
           </p>
         </div>
       </section>
@@ -96,8 +54,77 @@ export default function CareersPage() {
       <section className="snap-section bg-ivory section-padding">
         <div className="reading-column">
           <h2 className="text-[30px] leading-normal text-midnight">
-            Hvem vi søger
+            Hvad du kan forvente
           </h2>
+          <ul className="mt-10 space-y-8 list-none">
+            {WORKPLACE_PROMISES.map((item) => (
+              <li key={item.title}>
+                <h3 className="text-[19px] text-midnight">{item.title}</h3>
+                <p className="text-[17px] leading-body text-midnight/70 mt-2 max-w-[55ch]">
+                  {item.body}
+                </p>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </section>
+
+      <section className="snap-section bg-midnight section-padding">
+        <div className="reading-column">
+          <h2 className="text-[30px] leading-normal text-ivory">Hvad du får</h2>
+          <ul className="mt-10 space-y-4 list-none">
+            {WORKPLACE_BENEFITS.map((benefit) => (
+              <li key={benefit} className="text-[17px] leading-body text-ivory/85">
+                {benefit}
+              </li>
+            ))}
+          </ul>
+          <p className="text-[15px] leading-body text-ivory/60 mt-8 max-w-[55ch]">
+            Løn og vilkår følger gældende overenskomst og aftales ved ansættelse
+          </p>
+        </div>
+      </section>
+
+      <section className="snap-section bg-ivory">
+        <div className="w-full h-[50vh] relative">
+          <DamImage
+            assetId={ASSET_IDS.careersTraining}
+            category="careers"
+            fill
+            sizes="100vw"
+          />
+        </div>
+        <div className="section-padding reading-column text-center">
+          <CrestSeal size={48} decorative className="!p-0 mx-auto mb-4" />
+          <p className="text-[13px] uppercase tracking-wide text-midnight/60">
+            Oplæring og mentor - fra første dag
+          </p>
+        </div>
+      </section>
+
+      <section className="snap-section bg-ivory section-padding">
+        <div className="reading-column">
+          <h2 className="text-[30px] leading-normal text-midnight">
+            Oplæring og mentorordning
+          </h2>
+          <p className="text-[17px] leading-body text-midnight/80 mt-8 max-w-[55ch]">
+            Ingen ny medarbejder starter alene. Du gennemgår fire ugers oplæring.
+            Derefter følger du en mentor i otte uger. Vi investerer i dig, fordi
+            kvaliteten i hjemmet afhænger af, at du er forberedt
+          </p>
+          <ul className="mt-10 space-y-3 list-none">
+            {TRAINING_PROGRAMME.map((item) => (
+              <li key={item} className="text-[17px] leading-body text-midnight/80">
+                {item}
+              </li>
+            ))}
+          </ul>
+        </div>
+      </section>
+
+      <section className="snap-section bg-ivory section-padding">
+        <div className="reading-column">
+          <h2 className="text-[30px] leading-normal text-midnight">Hvem vi søger</h2>
           <ul className="mt-10 space-y-6 list-none">
             {RECRUITMENT_PHILOSOPHY.map((item) => (
               <li key={item.title}>
@@ -113,63 +140,47 @@ export default function CareersPage() {
 
       <section className="snap-section bg-ivory section-padding">
         <div className="reading-column">
-          <h2 className="text-[30px] leading-normal text-midnight">Hvad du får</h2>
-          <p className="text-[17px] leading-body text-midnight/80 mt-8">
-            En fast månedsløn. Ikke timeløn. Pension efter overenskomst. Betalt
-            videreuddannelse. En uniform, du er stolt af at bære. Og kolleger,
-            der ved, hvad det vil sige at gøre en forskel.
+          <h2 className="text-[30px] leading-normal text-midnight">
+            Ledelse du kan møde
+          </h2>
+          <p className="text-[17px] leading-body text-midnight/80 mt-8 max-w-[55ch]">
+            Bibi Naziyh Dowezai, administrerende direktør, har baggrund i hjemmepleje
+            i Aarhus, Vejle og Fredericia. Ledelsen deltager i opstart, kvalitetsopfølgning
+            og sparring - ikke kun i rapporter
           </p>
-        </div>
-      </section>
-
-      <section className="snap-section bg-ivory">
-        <div className="w-full h-[50vh] relative">
-          <HeroImage
-            src={LEADERSHIP_IMAGES.careersTraining.src}
-            alt={LEADERSHIP_IMAGES.careersTraining.alt}
-            fill
-            sizes="100vw"
-          />
-        </div>
-        <div className="section-padding reading-column text-center">
-          <CrestSeal size={48} decorative className="!p-0 mx-auto mb-4" />
-          <p className="text-[13px] uppercase tracking-wide text-midnight/60">
-            Oplæring, faglighed og fællesskab — fra første dag
+          <p className="mt-8">
+            <Link
+              href="/ledelse-og-governance"
+              className="text-[17px] underline underline-offset-4 focus-ring"
+            >
+              Læs om ledelse og ansvar
+            </Link>
+            {" · "}
+            <Link
+              href="/vores-loefte"
+              className="text-[17px] underline underline-offset-4 focus-ring"
+            >
+              Læs vores løfte
+            </Link>
           </p>
-        </div>
-      </section>
-
-      <section className="snap-section bg-midnight section-padding">
-        <div className="reading-column">
-          <h2 className="text-[30px] leading-normal text-ivory">Uddannelse</h2>
-          <p className="text-[17px] leading-body text-ivory/80 mt-8">
-            Ingen caregiver starter alene. Du gennemgår fire ugers oplæring.
-            Derefter følger du en mentor i otte uger. Vi investerer i dig, fordi
-            du investerer i dem, vi passer på.
-          </p>
-          <ul className="mt-10 space-y-3 list-none">
-            {TRAINING_PROGRAMME.map((item) => (
-              <li key={item} className="text-[17px] leading-body text-ivory/80">
-                {item}
-              </li>
-            ))}
-          </ul>
         </div>
       </section>
 
       <section className="snap-section bg-ivory section-padding">
         <div className="reading-column">
-          <h2 className="text-[30px] leading-normal text-midnight">
-            Ledige stillinger
-          </h2>
+          <h2 className="text-[30px] leading-normal text-midnight">Ledige stillinger</h2>
+          <p className="text-[17px] leading-body text-midnight/70 mt-6">
+            Vi ansætter løbende i {RECRUITMENT_REGION}. Uopfordret ansøgning er
+            velkommen
+          </p>
           <div className="mt-12 space-y-6">
-            {POSITIONS.map((position) => (
+            {OPEN_POSITIONS.map((position) => (
               <a
                 key={position.title}
-                href={`mailto:${COMPANY.email}?subject=${encodeURIComponent(position.subject)}`}
+                href={`mailto:${RECRUITMENT_EMAIL}?subject=${encodeURIComponent(position.subject)}`}
                 className="block border-b border-midnight/10 pb-6 group focus-ring"
               >
-                <p className="text-[19px] text-midnight group-hover:tracking-wide transition-all duration-300">
+                <p className="text-[19px] text-midnight group-hover:opacity-75 transition-opacity duration-300">
                   {position.title}
                 </p>
                 <p className="text-[13px] text-midnight/60 mt-2 uppercase tracking-wide">
@@ -184,16 +195,37 @@ export default function CareersPage() {
       <section className="snap-section bg-midnight section-padding">
         <div className="reading-column text-center">
           <p className="text-[19px] leading-body text-ivory">
-            Send din ansøgning til
+            Send en ansøgning eller skriv til os om arbejde
           </p>
           <a
-            href={`mailto:${COMPANY.email}?subject=${encodeURIComponent("Ansøgning")}`}
+            href={`mailto:${RECRUITMENT_EMAIL}?subject=${encodeURIComponent("Ansøgning")}`}
             className="text-[30px] leading-normal text-gold font-body mt-4 inline-block hover:opacity-80 transition-opacity duration-300 focus-ring"
           >
-            {COMPANY.email}
+            {RECRUITMENT_EMAIL}
           </a>
+          <p className="text-[17px] leading-body text-ivory/80 mt-6">
+            Har du spørgsmål før du søger? Ring{" "}
+            <a href={COMPANY.phone.href} className="underline underline-offset-4 focus-ring">
+              {COMPANY.phone.display}
+            </a>
+          </p>
           <p className="text-[13px] text-ivory/60 mt-6 uppercase tracking-wide">
-            Vi svarer alle ansøgninger inden for tre dage
+            Vi svarer på ansøgninger inden for {RECRUITMENT_RESPONSE_DAYS} arbejdsdage
+          </p>
+          <p className="text-[13px] text-ivory/60 mt-6">
+            <Link
+              href="/tillid"
+              className="underline underline-offset-4 hover:text-ivory focus-ring"
+            >
+              Tillidscenter
+            </Link>
+            {" · "}
+            <Link
+              href="/whistleblowing"
+              className="underline underline-offset-4 hover:text-ivory focus-ring"
+            >
+              Whistleblower-ordning
+            </Link>
           </p>
         </div>
       </section>

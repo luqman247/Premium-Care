@@ -13,27 +13,27 @@ export const SERVICE_CATEGORIES: ServiceCategory[] = [
     id: "praktisk-hjaelp",
     title: "Praktisk hjælp",
     intro:
-      "Vi holder hjemmet sikkert og velkendt - rengøring, indkøb, mad og de daglige opgaver, der gør det muligt at blive i de trygge rammer af eget hjem",
+      "Rengøring, indkøb, mad og de små ting i hverdagen, der gør det muligt at blive hjemme i et kendt miljø",
     photo: PHOTOGRAPHY.personalCare,
   },
   {
     id: "personlig-pleje",
     title: "Personlig pleje",
     intro:
-      "Vi hjælper med bad, påklædning, mobilitet og den personlige pleje, der skal ske i borgerens tempo - med respekt for vaner, grænser og værdighed",
+      "Bad, påklædning og mobilitet i borgerens tempo. Vi respekterer vaner, grænser og det, der føles privat",
     photo: PHOTOGRAPHY.companionship,
   },
   {
     id: "sygeplejeydelser",
     title: "Sygeplejeydelser",
     intro:
-      "Faglig sygepleje i hjemmet, koordineret med læger og andre sundhedsudbydere",
+      "Sygepleje i hjemmet, koordineret med læge og andre, der er involveret i borgerens forløb",
     items: [
-      "Medicinering og administration af medicin",
+      "Medicinering",
       "Sårpleje og bandageskift",
-      "Overvågning af vitale tegn og helbredstilstand",
-      "Støtte ved kroniske sygdomme og rehabilitering",
-      "Koordination med læger og sundhedsudbydere",
+      "Observation af helbredstilstand",
+      "Støtte ved kronisk sygdom og genoptræning",
+      "Samarbejde med læge og andre sundhedsudbydere",
     ],
     photo: PHOTOGRAPHY.palliative,
   },
@@ -41,25 +41,27 @@ export const SERVICE_CATEGORIES: ServiceCategory[] = [
     id: "fysioterapi",
     title: "Fysioterapi",
     intro:
-      "Genoptræning, mobilitetsstøtte og faldforebyggelse efter indlæggelse eller ved nedsat funktionsevne - så borgeren kan bevare tryghed og bevægelse i eget hjem",
+      "Genoptræning og faldforebyggelse efter indlæggelse eller når kroppen ikke længere bærer som før",
+    photo: PHOTOGRAPHY.physiotherapy,
   },
   {
     id: "ergoterapi",
     title: "Ergoterapi",
     intro:
-      "Praktisk støtte til hverdagslivet - tilpasning af hjemmet, hjælpemidler og øvelser, der styrker selvstændighed og sikkerhed",
+      "Hjælpemidler, tilpasning af hjemmet og øvelser, så borgeren kan klare mere selv",
+    photo: PHOTOGRAPHY.occupational,
   },
   {
     id: "tilkoebsydelser",
     title: "Tilkøbsydelser",
     intro:
-      "Yderligere støtte efter individuelle ønsker og behov, når det er aftalt med borger, familie og kommune",
+      "Ekstra støtte, når det er aftalt med borger, familie og kommune",
     items: [
-      "Ekstra rengøring og hjemlige opgaver",
-      "Ledsagelse til aktiviteter og ærinder",
-      "Sociale aktiviteter og fællesskab",
-      "Motivering og praktisk støtte i hverdagen",
-      "Tilpasning efter individuelle ønsker",
+      "Ekstra rengøring",
+      "Ledsagelse til ærinder og aftaler",
+      "Sociale aktiviteter",
+      "Praktisk støtte i hverdagen",
     ],
+    photo: PHOTOGRAPHY.addonServices,
   },
 ];

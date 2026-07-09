@@ -1,17 +1,7 @@
-import type { EditorialPhoto } from "@/lib/photography";
-import { PHOTOGRAPHY } from "@/lib/photography";
+import { ASSET_IDS } from "@/lib/dam/asset-ids";
 
-export type HeroRotationPhoto = EditorialPhoto;
-
-/** Curated hero rotation — premium, warm, elderly-friendly editorial photography */
-export const HERO_ROTATION: HeroRotationPhoto[] = [
-  PHOTOGRAPHY.hero,
-  PHOTOGRAPHY.personalCare,
-  PHOTOGRAPHY.companionship,
-  PHOTOGRAPHY.palliative,
-  PHOTOGRAPHY.calmInterior,
-  PHOTOGRAPHY.professionalTraining,
-];
+/** Curated hero rotation asset IDs — resolved at render time via DamImage */
+export const HERO_ROTATION_ASSET_IDS = [...ASSET_IDS.homepageHeroRotation];
 
 export const HERO_ROTATION_INTERVAL_MS = 14_000;
 export const HERO_ROTATION_FADE_MS = 2_400;

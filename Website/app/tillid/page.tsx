@@ -1,8 +1,10 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { CrestSeal } from "@/components/CrestSeal";
+import { EditorialBanner } from "@/components/EditorialBanner";
 import { InstitutionalIdentity } from "@/components/InstitutionalIdentity";
 import { COMPANY } from "@/lib/company";
+import { PHOTOGRAPHY } from "@/lib/photography";
 import { TRUST_POLICIES } from "@/lib/trust-policies";
 
 export const metadata: Metadata = {
@@ -20,66 +22,66 @@ export const metadata: Metadata = {
 
 const QUALITY_FRAMEWORK = [
   {
-    title: "Regelefterlevelse",
-    body: "Fuld efterlevelse af dansk plejelovgivning og kommunale krav, med regelmæssige complianceaudits",
+    title: "Loven",
+    body: "Vi følger dansk plejelovgivning og kommunale krav. Revisionsprogram og tilsyn.",
   },
   {
-    title: "Plejestandarder",
-    body: "Vi overgår minimumsstandarderne i hver del af leveringen - Premium Care Standard er en målbar forpligtelse, ikke et mærkat",
+    title: "Vores standard",
+    body: "Skriftlig servicestandard ud over minimumskrav. Punktlighed, kontinuitet og dokumenteret pleje.",
   },
   {
-    title: "Løbende overvågning",
-    body: "Regelmæssige kvalitetsaudits, tilbagemeldinger fra klienter og resultatmål, der sikrer ensartet ekspertise",
+    title: "Opfølgning",
+    body: "Audits, tilbagemeldinger fra borgere og pårørende, og faste mål, vi måler os mod.",
   },
   {
-    title: "Medarbejdernes kompetence",
-    body: "Grundig uddannelse og løbende faglig udvikling for hver medarbejder",
+    title: "Medarbejdernes fag",
+    body: "Oplæring før første besøg alene. Løbende efteruddannelse og kompetencevurdering.",
   },
   {
-    title: "Kommunikation med familien",
-    body: "Gennemsigtig rapportering, regelmæssige opfølgninger og åbne kanaler for tilbagemelding",
+    title: "Familier",
+    body: "Vi fortæller, hvad vi ser. Pårørende kan altid kontakte os og indgive klage.",
   },
   {
-    title: "Ansvarlighed",
-    body: "Dokumenteret ejerskab af hver standard - kvaliteten har et navn knyttet til sig på alle niveauer",
+    title: "Ansvar",
+    body: "Hver standard har en navngivet ejer. Kvaliteten kan forklares og dokumenteres.",
   },
 ];
 
 const VERIFICATION_LAYERS = [
   {
-    layer: "Lag 1 · Egenkontrol",
-    body: "Medarbejderne udfylder daglige plejenotater ved hvert besøg. Bekymringer indberettes straks. Dokumentation i realtid skaber ansvarlighed.",
+    layer: "Daglig dokumentation",
+    body: "Medarbejderne udfylder plejenotater ved hvert besøg. Bekymringer indberettes med det samme.",
   },
   {
-    layer: "Lag 2 · Supervision",
-    body: "Regelmæssige stikprøver og uanmeldte besøg. Ugentlige gennemgange af plejeplaner og vurderinger af klienternes trivsel.",
+    layer: "Supervision",
+    body: "Stikprøver og uanmeldte besøg. Ugentlig gennemgang af plejeplaner.",
   },
   {
-    layer: "Lag 3 · Ekstern kontrol",
-    body: "Complianceaudits fra tilsynsmyndigheder, kommunale tilsyn og uafhængige tilfredshedsundersøgelser blandt klienter.",
+    layer: "Ekstern kontrol",
+    body: "Tilsyn, kommunale gennemgange og uafhængige tilfredshedsundersøgelser.",
   },
 ];
 
 const COMPLIANCE_AREAS = [
   {
     area: "Dansk plejelovgivning",
-    commitment: "Fuld efterlevelse af Serviceloven og kravene i hjemmeplejerammen",
+    commitment: "Efterlevelse af Serviceloven og kravene i hjemmeplejerammen",
   },
   {
-    area: "Kommunale partnerskaber",
-    commitment: "Samarbejdsaftaler med fokus på kvalitet, dokumentation og åben rapportering",
+    area: "Kommunal samarbejde",
+    commitment: "Aftaler med fokus på kvalitet, dokumentation og åben rapportering",
   },
   {
     area: "Arbejdsmiljø",
     commitment: "Efterlevelse af Arbejdsmiljøloven, risikovurderinger og sikkerhedsprocedurer",
   },
   {
-    area: "Databeskyttelse (GDPR)",
-    commitment: "Fuld efterlevelse for følsomme helbredsoplysninger, samtykkehåndtering og datasikkerhed",
+    area: "Databeskyttelse",
+    commitment: "GDPR for følsomme helbredsoplysninger, samtykke og datasikkerhed",
   },
   {
     area: "Dokumentation",
-    commitment: "Standarder for plejedokumentation og rapportering, der overgår lovmæssige minimumskrav",
+    commitment: "Plejedokumentation og rapportering ud over lovmæssige minimumskrav",
   },
 ];
 
@@ -109,13 +111,12 @@ export default function TrustPage() {
     <div className="page-flow">
       <section className="snap-section bg-ivory section-padding">
         <div className="reading-column">
-          <h1 className="text-[38px] leading-snug tracking-tight text-midnight">
+          <h1 className="type-page-title text-midnight tracking-tight">
             Tillidscenter
           </h1>
           <p className="text-[19px] leading-body text-midnight/80 mt-8">
-            Tillid bygges ikke af ord. Den bygges af dokumenter, procedurer og
-            ansvarlighed. Her finder du politikker, kvalitetsramme og ledelsesansvar for{" "}
-            {COMPANY.legalName}.
+            Politikker, procedurer og dokumenter for {COMPANY.legalName}. Det fulde
+            dokument gælder, hvis noget her og i PDF&apos;en ikke stemmer overens.
           </p>
           <p className="text-[17px] leading-body text-midnight/80 mt-6">
             <Link
@@ -139,12 +140,17 @@ export default function TrustPage() {
         </div>
       </section>
 
+      <EditorialBanner
+        assetId={PHOTOGRAPHY.trust.assetId}
+        category="trust"
+        alt="Dokumenteret pleje og faglig omsorg i hjemmet"
+      />
+
       <section className="snap-section bg-ivory section-padding">
         <div className="reading-column">
           <h2 className="text-[30px] leading-normal text-midnight">Whistleblower-ordning</h2>
           <p className="text-[17px] leading-body text-midnight/80 mt-6 max-w-[55ch]">
-            Alvorlige bekymringer skal kunne indberettes sikkert. Vores whistleblower-ordning
-            understøtter åbenhed, ansvarlighed og beskyttelse af indberettere.
+            Alvorlige forhold skal kunne indberettes uden frygt for repressalier.
           </p>
           <Link
             href="/whistleblowing"
@@ -231,7 +237,7 @@ export default function TrustPage() {
       <section className="snap-section bg-midnight section-padding">
         <div className="reading-column">
           <h2 className="text-[30px] leading-normal text-ivory">
-            Tre lag af verifikation
+            Sådan tjekker vi kvaliteten
           </h2>
           <div className="mt-10 space-y-8">
             {VERIFICATION_LAYERS.map((layer) => (
@@ -302,7 +308,7 @@ export default function TrustPage() {
         <div className="reading-column text-center">
           <p className="text-[19px] leading-body text-ivory">
             Spørgsmål til politikker, kvalitet eller dokumentation? Kontakt os i
-            åbningstiden — vi svarer inden for to arbejdsdage.
+            åbningstiden. Vi svarer inden for to arbejdsdage.
           </p>
           <a
             href={COMPANY.phone.href}

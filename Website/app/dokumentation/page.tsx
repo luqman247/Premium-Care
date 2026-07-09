@@ -1,8 +1,10 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { EditorialBanner } from "@/components/EditorialBanner";
 import { DOCUMENTATION_LINKS } from "@/lib/documentation";
 import { COMPANY } from "@/lib/company";
 import { MUNICIPAL_DOCUMENTS } from "@/lib/institutional";
+import { PHOTOGRAPHY } from "@/lib/photography";
 
 export const metadata: Metadata = {
   title: "Dokumentation",
@@ -22,7 +24,7 @@ export default function DocumentationPage() {
     <article className="bg-ivory pb-24">
       <header className="section-padding page-margin">
         <div className="reading-column">
-          <h1 className="text-[38px] leading-snug tracking-tight text-midnight">
+          <h1 className="type-page-title text-midnight tracking-tight">
             Dokumentation
           </h1>
           <p className="text-[19px] leading-body text-midnight/80 mt-8 max-w-[55ch]">
@@ -35,6 +37,12 @@ export default function DocumentationPage() {
           </p>
         </div>
       </header>
+
+      <EditorialBanner
+        assetId={PHOTOGRAPHY.documentation.assetId}
+        category="trust"
+        alt="Kvalitetsdokumentation og faglig pleje"
+      />
 
       <div className="reading-column page-margin">
         <section className="section-padding pt-0" aria-labelledby="doc-municipal">

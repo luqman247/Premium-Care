@@ -1,16 +1,18 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { CrisisHelp } from "@/components/CrisisHelp";
+import { EditorialBanner } from "@/components/EditorialBanner";
 import { FreeCareMessage } from "@/components/FreeCareMessage";
 import { COMPANY } from "@/lib/company";
+import { PHOTOGRAPHY } from "@/lib/photography";
 
 export const metadata: Metadata = {
   title: "Kontakt",
-  description: `Kontakt ${COMPANY.legalName} — telefon, e-mail og åbningstider.`,
+  description: `Kontakt ${COMPANY.legalName}. Telefon, e-mail og åbningstider.`,
   alternates: { canonical: "/kontakt" },
   openGraph: {
     title: `Kontakt · ${COMPANY.brandName}`,
-    description: `Kontakt ${COMPANY.legalName} — telefon, e-mail og åbningstider.`,
+    description: `Kontakt ${COMPANY.legalName}. Telefon, e-mail og åbningstider.`,
     url: "https://premiumcare.dk/kontakt",
   },
 };
@@ -28,7 +30,7 @@ export default async function ContactPage({ searchParams }: ContactPageProps) {
       <section className="snap-section bg-ivory section-padding">
         <div className="reading-column">
           <CrisisHelp />
-          <h1 className="text-[38px] leading-snug tracking-tight text-midnight mt-8">
+          <h1 className="type-page-title text-midnight tracking-tight mt-8">
             Kontakt
           </h1>
           <p className="text-[19px] leading-body text-midnight/80 mt-8">
@@ -36,6 +38,12 @@ export default async function ContactPage({ searchParams }: ContactPageProps) {
           </p>
         </div>
       </section>
+
+      <EditorialBanner
+        assetId={PHOTOGRAPHY.contact.assetId}
+        category="contact"
+        alt="Omsorgsfuld hjemmepleje i trygge omgivelser"
+      />
 
       <section className="snap-section bg-midnight section-padding">
         <div className="reading-column text-center">
@@ -98,13 +106,8 @@ export default async function ContactPage({ searchParams }: ContactPageProps) {
             {COMPANY.address.country}
           </address>
           <p className="text-[17px] leading-body text-midnight/70 mt-8">
-            Kontor efter aftale. Pleje leveres i borgernes hjem — ikke på kontoret.
+            Kontor efter aftale. Pleje leveres i borgernes hjem, ikke på kontoret.
           </p>
-          <div className="mt-10 w-full aspect-[16/9] bg-midnight/5 border border-midnight/10 flex items-center justify-center">
-            <p className="text-[13px] uppercase tracking-wide text-midnight/50 text-center px-6">
-              Kort vises, når kontoret er permanent åbent for besøg
-            </p>
-          </div>
         </div>
       </section>
 
@@ -117,7 +120,7 @@ export default async function ContactPage({ searchParams }: ContactPageProps) {
           )}
           <p className="text-[17px] leading-body text-midnight/80">
             Du behøver ikke at vide, hvad du vil spørge om. Du behøver ikke at have
-            besluttet dig. Skriv eller ring — vi finder ud af resten sammen.
+            besluttet dig. Skriv eller ring. Vi finder ud af resten sammen.
           </p>
         </div>
       </section>
@@ -167,7 +170,7 @@ export default async function ContactPage({ searchParams }: ContactPageProps) {
           <h2 className="text-[30px] leading-normal text-ivory">Akut hjælp</h2>
           <p className="text-[17px] leading-body text-ivory/80 mt-8">
             Ved livstruende akutte situationer: ring 112. Premium Care leverer planlagt
-            hjemmepleje — ikke akut hospitalsberedskab.
+            hjemmepleje, ikke akut hospitalsberedskab.
           </p>
           <p className="text-[17px] leading-body text-ivory/80 mt-6">
             Bekymringer om en borgers sikkerhed uden for åbningstid: kontakt den

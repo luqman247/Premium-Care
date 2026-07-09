@@ -1,5 +1,5 @@
-import Image from "next/image";
-import { BRAND, CREST_SIZES, type CrestVariant } from "@/lib/brand";
+import { DamImage } from "@/components/DamImage";
+import { BRAND, BRAND_ASSET_IDS, CREST_SIZES, type CrestVariant } from "@/lib/brand";
 
 type CrestSealProps = {
   size?: number;
@@ -15,6 +15,7 @@ export function CrestSeal({
   decorative = false,
 }: CrestSealProps) {
   const asset = BRAND.crest[variant];
+  const assetId = BRAND_ASSET_IDS.crest[variant];
   const aspect = asset.height / asset.width;
   const height = Math.round(size * aspect);
 
@@ -23,8 +24,8 @@ export function CrestSeal({
       className={`brand-crest flex items-center justify-center ${className}`}
       aria-hidden={decorative ? true : undefined}
     >
-      <Image
-        src={asset.src}
+      <DamImage
+        assetId={assetId}
         alt={decorative ? "" : asset.alt}
         width={size}
         height={height}

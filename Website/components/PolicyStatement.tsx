@@ -70,7 +70,7 @@ export function PolicyStatement({ policy }: PolicyStatementProps) {
             </h2>
             <p className="text-[17px] leading-body text-midnight/80 mt-8">
               Den autoritative version findes i vores kontrollerede dokumentbibliotek.
-              Resuméet på denne side er vejledende — det fulde dokument gælder ved
+              Resuméet på denne side er vejledende. Det fulde dokument gælder ved
               uoverensstemmelse.
             </p>
             <a

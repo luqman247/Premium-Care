@@ -2,12 +2,16 @@
 
 import { useEffect, useState } from "react";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { BrandWordmark } from "@/components/BrandWordmark";
 import { WORDMARK_HEIGHT } from "@/lib/brand";
 
+type HeaderTone = "dark" | "light";
+
 export function Wordmark() {
-  const [visible, setVisible] = useState(true);
-  const [scrolled, setScrolled] = useState(false);
+  const pathname = usePathname();
+  const [compact, setCompact] = useState(false);
+  const [tone, setTone] = useState<HeaderTone>("light");
 
   useEffect(() => {
     let ticking = false;
@@ -16,9 +20,7 @@ export function Wordmark() {
       if (ticking) return;
       ticking = true;
       requestAnimationFrame(() => {
-        const isScrolled = window.scrollY > 72;
-        setScrolled(isScrolled);
-        setVisible(!isScrolled);
+        setCompact(window.scrollY > 48);
         ticking = false;
       });
     };
@@ -28,21 +30,64 @@ export function Wordmark() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  if (!visible && scrolled) return null;
+  useEffect(() => {
+    const darkHeader = document.querySelector<HTMLElement>("[data-header-tone='dark']");
+
+    if (!darkHeader) {
+      setTone("light");
+      return;
+    }
+
+    const updateTone = () => {
+      setTone(darkHeader.getBoundingClientRect().bottom > 24 ? "dark" : "light");
+    };
+
+    updateTone();
+
+    const observer = new IntersectionObserver(
+      () => updateTone(),
+      { threshold: [0, 0.15, 0.5, 1] },
+    );
+
+    observer.observe(darkHeader);
+    window.addEventListener("scroll", updateTone, { passive: true });
+    window.addEventListener("resize", updateTone);
+
+    return () => {
+      observer.disconnect();
+      window.removeEventListener("scroll", updateTone);
+      window.removeEventListener("resize", updateTone);
+    };
+  }, [pathname]);
+
+  const height = compact ? WORDMARK_HEIGHT.footer : WORDMARK_HEIGHT.header;
 
   return (
     <Link
       href="/"
-      className="fixed top-5 left-[8%] z-50 brand-wordmark-wrap transition-opacity duration-500 ease-out focus-ring"
-      style={{ opacity: visible ? 1 : 0 }}
+      className={`site-header-wordmark site-header-wordmark--${tone}${
+        compact ? " site-header-wordmark--compact" : ""
+      } focus-ring`}
       aria-label="Premium Care - forsiden"
     >
-      <BrandWordmark
-        variant="navy"
-        height={WORDMARK_HEIGHT.header}
-        priority
-        className="brand-wordmark-img"
-      />
+      <span className="site-header-wordmark-stack" aria-hidden="true">
+        <BrandWordmark
+          variant="white"
+          height={height}
+          priority
+          className={`site-header-wordmark-img site-header-wordmark-img--white${
+            tone === "dark" ? " is-visible" : " is-hidden"
+          }`}
+        />
+        <BrandWordmark
+          variant="gold"
+          height={height}
+          priority
+          className={`site-header-wordmark-img site-header-wordmark-img--gold${
+            tone === "light" ? " is-visible" : " is-hidden"
+          }`}
+        />
+      </span>
     </Link>
   );
 }
