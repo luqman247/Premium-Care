@@ -1,5 +1,5 @@
-import Image from "next/image";
 import type { Metadata } from "next";
+import { CrestSeal } from "@/components/CrestSeal";
 import { HeroImage } from "@/components/HeroImage";
 
 export const metadata: Metadata = {
@@ -14,6 +14,38 @@ export const metadata: Metadata = {
     url: "https://premiumcare.dk/karriere",
   },
 };
+
+const RECRUITMENT_PHILOSOPHY = [
+  {
+    title: "Ægte medfølelse",
+    body: "Et kald, ikke blot et job — mennesker, der dybt bekymrer sig om andre",
+  },
+  {
+    title: "Faglig kompetence",
+    body: "Relevant uddannelse, certificering og dokumenteret erfaring med pleje",
+  },
+  {
+    title: "Værdimæssigt sammenfald",
+    body: "Fælles værdier om værdighed, respekt og ekspertise i hver kontakt",
+  },
+  {
+    title: "Engagement i ekspertise",
+    body: "En tankegang om løbende forbedring — altid lærende, altid i vækst",
+  },
+  {
+    title: "Pålidelighed og integritet",
+    body: "En troværdig karakter — punktlig, ærlig og ansvarlig",
+  },
+];
+
+const TRAINING_PROGRAMME = [
+  "Kerneplejefærdigheder og daglig plejeprocedurer",
+  "Demensbevidsthed og kommunikation med kognitive udfordringer",
+  "Kommunikationskompetencer og inddragelse af familier",
+  "Nødberedskab og krisehåndtering",
+  "Faglig etik, fortrolighed og værdighed i plejen",
+  "Løbende udvikling og struktureret efteruddannelse",
+];
 
 const POSITIONS = [
   {
@@ -59,6 +91,24 @@ export default function CareersPage() {
 
       <section className="snap-section bg-ivory section-padding">
         <div className="reading-column">
+          <h2 className="text-[30px] leading-normal text-midnight">
+            Hvem vi søger
+          </h2>
+          <ul className="mt-10 space-y-6 list-none">
+            {RECRUITMENT_PHILOSOPHY.map((item) => (
+              <li key={item.title}>
+                <h3 className="text-[19px] text-midnight">{item.title}</h3>
+                <p className="text-[17px] leading-body text-midnight/70 mt-2">
+                  {item.body}
+                </p>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </section>
+
+      <section className="snap-section bg-ivory section-padding">
+        <div className="reading-column">
           <h2 className="text-[30px] leading-normal text-midnight">Hvad du får</h2>
           <p className="text-[17px] leading-body text-midnight/80 mt-8">
             En fast månedsløn. Ikke timeløn. Pension efter overenskomst. Betalt
@@ -72,13 +122,14 @@ export default function CareersPage() {
         <div className="w-full h-[60vh] relative">
           <HeroImage
             src="/images/uniform-sleeve.jpg"
-            alt="Premium Care uniformærme med våbenskjold"
+            alt="Premium Care uniformærme med broderet våbenskjold"
             fill
             sizes="100vw"
           />
         </div>
         <div className="section-padding reading-column text-center">
-          <p className="text-[13px] uppercase tracking-wide text-midnight/60">
+          <CrestSeal size={64} className="mx-auto !p-4" />
+          <p className="text-[13px] uppercase tracking-wide text-midnight/60 mt-4">
             Uniformen er et løfte. Båret på kroppen.
           </p>
         </div>
@@ -92,6 +143,13 @@ export default function CareersPage() {
             Derefter følger du en mentor i otte uger. Vi investerer i dig, fordi
             du investerer i dem, vi passer på.
           </p>
+          <ul className="mt-10 space-y-3 list-none">
+            {TRAINING_PROGRAMME.map((item) => (
+              <li key={item} className="text-[17px] leading-body text-ivory/80">
+                {item}
+              </li>
+            ))}
+          </ul>
         </div>
       </section>
 
@@ -136,15 +194,8 @@ export default function CareersPage() {
         </div>
       </section>
 
-      <section className="snap-section bg-ivory flex items-center justify-center">
-        <Image
-          src="/images/crest-monumental.png"
-          alt="Premium Care våbenskjold"
-          width={180}
-          height={180}
-          className="mx-auto"
-          priority
-        />
+      <section className="snap-section bg-ivory">
+        <CrestSeal size={180} className="mx-auto" />
       </section>
     </div>
   );

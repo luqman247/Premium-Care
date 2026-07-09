@@ -1,5 +1,5 @@
-import Image from "next/image";
 import type { Metadata } from "next";
+import { CrestSeal } from "@/components/CrestSeal";
 import { HeroImage } from "@/components/HeroImage";
 
 export const metadata: Metadata = {
@@ -17,29 +17,53 @@ export const metadata: Metadata = {
 
 const SERVICES = [
   {
-    slug: "presence",
-    image: "/images/service-presence.jpg",
-    text: "Vi hjælper din mor med det, hun ikke længere kan selv — med den værdighed, hun altid har haft. Også når hun protesterer. Også når hun ikke genkender os.",
+    slug: "personal-care",
+    title: "Personlig pleje",
+    image: "/images/service-personal-care.jpg",
+    alt: "Omsorgsfuld hjælp til daglige aktiviteter med respekt og værdighed",
+    text: "Vi hjælper din mor med det, hun ikke længere kan selv — bad, påklædning, mobilitet og medicinstøtte — i hendes tempo, aldrig urets. Også når hun protesterer. Også når hun ikke genkender os.",
   },
   {
-    slug: "medicine",
-    image: "/images/service-medicine.jpg",
-    text: "Vi sørger for, at hun får den medicin, lægen har ordineret — hverken mere eller mindre. Også når hun gemmer den. Også når hun nægter.",
+    slug: "home-care",
+    title: "Praktisk hjemmehjælp",
+    image: "/images/service-home-care.jpg",
+    alt: "Et sikkert og veldrevet hjem i velkendte omgivelser",
+    text: "Vi holder hjemmet sikkert og velkendt — rengøring, mad, vask og indkøb, så hun kan blive, hvor minderne bor. Professionel støtte i de trygge rammer af hendes eget hjem.",
   },
   {
-    slug: "meal",
-    image: "/images/service-meal.jpg",
-    text: "Vi laver mad, hun kan lide — ikke mad, vi synes, hun burde spise. Også når smagen har ændret sig. Også når hun kun vil have det samme hver dag.",
+    slug: "companionship",
+    title: "Selskab og social støtte",
+    image: "/images/service-companionship.jpg",
+    alt: "Meningsfuld samtale og menneskelig forbindelse mellem caregiver og ældre",
+    text: "Nogle gange sidder vi bare sammen. Samtale, ledsagelse og fællesskab — for ensomhed er en sundhedsrisiko, og tilstedeværelse er det vigtigste for en person med demens.",
   },
   {
-    slug: "silence",
-    image: "/images/service-silence.jpg",
-    text: "Nogle gange sidder vi bare sammen. For en person med demens er tilstedeværelse det vigtigste. Den samme caregiver. Hver gang. Så hun genkender ansigtet, selv når hun ikke genkender navnet.",
+    slug: "dementia",
+    title: "Demens- og Alzheimerpleje",
+    image: "/images/service-dementia.jpg",
+    alt: "Specialiseret demenspleje med rolige rutiner og genkendelige ansigter",
+    text: "Demensvenlig kommunikation, beroligende rutiner og den samme caregiver hver gang — så hun genkender ansigtet, selv når hun ikke genkender navnet. Vi ved, hvad vi skal gøre, når hun vandrer.",
   },
   {
-    slug: "safety",
-    image: "/images/service-safety.jpg",
-    text: "Vi vurderer hjemmet for fald- og vandringsrisiko, før vi starter. Vi sikrer, at medicin og farlige genstande er utilgængelige for hende, men tilgængelige for os. Vi ved, hvad vi skal gøre, hvis noget går galt.",
+    slug: "palliative",
+    title: "Palliativ pleje og pleje ved livets afslutning",
+    image: "/images/service-palliative.jpg",
+    alt: "Værdig og omsorgsfuld pleje i livets sidste stadier",
+    text: "Velvære, værdighed og livskvalitet i de sidste stadier — i tæt samarbejde med familie og sundhedspersonale. Vi er til stede, rolige og uforhastede.",
+  },
+  {
+    slug: "recovery",
+    title: "Genoptræning efter indlæggelse",
+    image: "/images/service-recovery.jpg",
+    alt: "Overgangspleje efter udskrivning fra hospital",
+    text: "Overgangspleje efter udskrivning — medicinhåndtering, sårpleje, mobilitetsstøtte og koordinering med sundhedspersonale, så hun kommer sikkert hjem igen.",
+  },
+  {
+    slug: "respite",
+    title: "Aflastning",
+    image: "/images/service-respite.jpg",
+    alt: "Midlertidig aflastning for pårørende med kontinuerlig pleje",
+    text: "Midlertidig aflastning for dig som pårørende — fra få timer til flere dage — med gnidningsfri kontinuitet, så familien trygt kan hvile og hente nye kræfter.",
   },
 ];
 
@@ -52,7 +76,8 @@ export default function ServicesPage() {
             Hvad vi gør
           </h1>
           <p className="text-[19px] leading-body text-midnight/80 mt-8">
-            Og hvad vi ikke gør.
+            Helhedspleje, tilpasset hvert enkelt menneske — og hvad vi bevidst
+            lader være.
           </p>
         </div>
       </section>
@@ -62,12 +87,15 @@ export default function ServicesPage() {
           <div className="w-full h-[50vh] relative">
             <HeroImage
               src={service.image}
-              alt=""
+              alt={service.alt}
               fill
               sizes="100vw"
             />
           </div>
           <div className="section-padding reading-column">
+            <h2 className="text-[24px] leading-normal text-midnight mb-4">
+              {service.title}
+            </h2>
             <p className="text-[19px] leading-body text-midnight">{service.text}</p>
           </div>
         </section>
@@ -85,15 +113,8 @@ export default function ServicesPage() {
         </div>
       </section>
 
-      <section className="snap-section bg-ivory flex items-center justify-center">
-        <Image
-          src="/images/crest-monumental.png"
-          alt="Premium Care våbenskjold"
-          width={180}
-          height={180}
-          className="mx-auto"
-          priority
-        />
+      <section className="snap-section bg-ivory">
+        <CrestSeal size={180} className="mx-auto" />
       </section>
     </div>
   );

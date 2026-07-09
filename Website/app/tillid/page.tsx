@@ -1,5 +1,5 @@
-import Image from "next/image";
 import type { Metadata } from "next";
+import { CrestSeal } from "@/components/CrestSeal";
 
 export const metadata: Metadata = {
   title: "Tillid",
@@ -16,6 +16,56 @@ export const metadata: Metadata = {
 
 const PHONE_DISPLAY = "+45 00 00 00 00";
 const PHONE_HREF = "tel:+4500000000";
+
+const QUALITY_FRAMEWORK = [
+  {
+    title: "Regelefterlevelse",
+    body: "Fuld efterlevelse af dansk plejelovgivning og kommunale krav, med regelmæssige complianceaudits",
+  },
+  {
+    title: "Plejestandarder",
+    body: "Vi overgår minimumsstandarderne i hver del af leveringen — Premium Care er en målbar forpligtelse, ikke et mærkat",
+  },
+  {
+    title: "Løbende overvågning",
+    body: "Regelmæssige kvalitetsaudits, tilbagemeldinger fra klienter og resultatmål, der sikrer ensartet ekspertise",
+  },
+  {
+    title: "Medarbejdernes kompetence",
+    body: "Grundig uddannelse og løbende faglig udvikling for hver medarbejder",
+  },
+  {
+    title: "Kommunikation med familien",
+    body: "Gennemsigtig rapportering, regelmæssige opfølgninger og åbne kanaler for tilbagemelding",
+  },
+  {
+    title: "Ansvarlighed",
+    body: "Dokumenteret ejerskab af hver standard — kvaliteten har et navn knyttet til sig på alle niveauer",
+  },
+];
+
+const VERIFICATION_LAYERS = [
+  {
+    layer: "Lag 1 · Egenkontrol",
+    body: "Medarbejderne udfylder daglige plejenotater ved hvert besøg. Bekymringer indberettes straks. Dokumentation i realtid skaber ansvarlighed.",
+  },
+  {
+    layer: "Lag 2 · Supervision",
+    body: "Regelmæssige stikprøver og uanmeldte besøg. Ugentlige gennemgange af plejeplaner og vurderinger af klienternes trivsel.",
+  },
+  {
+    layer: "Lag 3 · Ekstern kontrol",
+    body: "Complianceaudits fra tilsynsmyndigheder, kommunale tilsyn og uafhængige tilfredshedsundersøgelser blandt klienter.",
+  },
+];
+
+const COMPLIANCE_AREAS = [
+  { area: "Dansk plejelovgivning", commitment: "Fuld efterlevelse af Serviceloven og kravene i hjemmeplejerammen" },
+  { area: "Kommunale partnerskaber", commitment: "Samarbejdsaftaler med fokus på kvalitet, dokumentation og åben rapportering" },
+  { area: "Arbejdsmiljø", commitment: "Efterlevelse af Arbejdsmiljøloven, risikovurderinger og sikkerhedsprocedurer" },
+  { area: "Databeskyttelse (GDPR)", commitment: "Fuld efterlevelse for følsomme helbredsoplysninger, samtykkehåndtering og datasikkerhed" },
+  { area: "Dokumentation", commitment: "Standarder for plejedokumentation og rapportering, der overgår lovmæssige minimumskrav" },
+];
 
 const DOCUMENTS = [
   { title: "Kvalitetshåndbog 2026", date: "Januar 2026", size: "4.2 MB" },
@@ -45,6 +95,9 @@ export default function TrustPage() {
           <p className="text-[19px] leading-body text-midnight/80 mt-8">
             Tillid bygges ikke af ord. Den bygges af dokumenter. Her er vores.
           </p>
+          <div className="mt-8">
+            <CrestSeal size={80} className="!p-4 !justify-start" />
+          </div>
         </div>
       </section>
 
@@ -62,6 +115,66 @@ export default function TrustPage() {
             Vi er ikke bange for at miste en kunde. Vi er bange for at holde
             fast i en, der ikke er tilfreds.
           </p>
+        </div>
+      </section>
+
+      <section className="snap-section bg-ivory section-padding">
+        <div className="reading-column">
+          <h2 className="text-[30px] leading-normal text-midnight">
+            Vores kvalitetsramme
+          </h2>
+          <p className="text-[17px] leading-body text-midnight/80 mt-6">
+            Ekspertise er ikke en ambition — det er vores standard
+          </p>
+          <ul className="mt-10 space-y-6 list-none">
+            {QUALITY_FRAMEWORK.map((item) => (
+              <li key={item.title}>
+                <h3 className="text-[19px] text-midnight">{item.title}</h3>
+                <p className="text-[17px] leading-body text-midnight/70 mt-2">
+                  {item.body}
+                </p>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </section>
+
+      <section className="snap-section bg-midnight section-padding">
+        <div className="reading-column">
+          <h2 className="text-[30px] leading-normal text-ivory">
+            Tre lag af verifikation
+          </h2>
+          <div className="mt-10 space-y-8">
+            {VERIFICATION_LAYERS.map((layer) => (
+              <div key={layer.layer}>
+                <h3 className="text-[19px] text-gold">{layer.layer}</h3>
+                <p className="text-[17px] leading-body text-ivory/80 mt-3">
+                  {layer.body}
+                </p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="snap-section bg-ivory section-padding">
+        <div className="reading-column">
+          <h2 className="text-[30px] leading-normal text-midnight">
+            Regelefterlevelse
+          </h2>
+          <div className="mt-10 space-y-0">
+            {COMPLIANCE_AREAS.map((row) => (
+              <div
+                key={row.area}
+                className="py-5 border-b border-midnight/10"
+              >
+                <p className="text-[17px] text-midnight font-medium">{row.area}</p>
+                <p className="text-[15px] leading-body text-midnight/70 mt-2">
+                  {row.commitment}
+                </p>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
 
@@ -121,15 +234,8 @@ export default function TrustPage() {
         </div>
       </section>
 
-      <section className="snap-section bg-ivory flex items-center justify-center">
-        <Image
-          src="/images/crest-monumental.png"
-          alt="Premium Care våbenskjold"
-          width={180}
-          height={180}
-          className="mx-auto"
-          priority
-        />
+      <section className="snap-section bg-ivory">
+        <CrestSeal size={180} className="mx-auto" />
       </section>
     </div>
   );

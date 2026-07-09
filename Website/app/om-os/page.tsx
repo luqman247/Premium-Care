@@ -1,5 +1,5 @@
-import Image from "next/image";
 import type { Metadata } from "next";
+import { CrestSeal } from "@/components/CrestSeal";
 import { HeroImage } from "@/components/HeroImage";
 
 export const metadata: Metadata = {
@@ -14,6 +14,23 @@ export const metadata: Metadata = {
     url: "https://premiumcare.dk/om-os",
   },
 };
+
+const CORE_VALUES = [
+  { title: "Medfølelse", body: "Ægte omsorg og tålmodighed for hver klient" },
+  { title: "Respekt", body: "Værdighed for hvert menneske, uanset alder og baggrund" },
+  { title: "Ekspertise", body: "Den højeste standard i hver del af vores arbejde" },
+  { title: "Integritet", body: "Vi taler sandt, indfrier forpligtelser og forbliver troværdige" },
+  { title: "Forbedring", body: "Stadig bedre måder at tjene, forbedre systemer og udvikle mennesker" },
+  { title: "Forvaltning", body: "Ansvarlig ledelse og kontinuerlig kvalitetsudvikling" },
+];
+
+const LEADERSHIP_PRINCIPLES = [
+  "Gå foran som eksempel — vis de standarder, du forventer",
+  "Lyt, før du beslutter — søg input, og handl derefter",
+  "Beslut på et oplyst grundlag — databaseret og gennemsigtig",
+  "Styrk andre til at lykkes — udvikl dit team",
+  "Gå aldrig på kompromis med integriteten — principper frem for profit",
+];
 
 export default function AboutPage() {
   return (
@@ -34,6 +51,46 @@ export default function AboutPage() {
             ældrepleje kunne gøres bedre — mere menneskelig, mere respektfuld, mere
             dansk.
           </p>
+        </div>
+      </section>
+
+      <section className="snap-section bg-midnight section-padding">
+        <div className="reading-column">
+          <h2 className="text-[30px] leading-normal text-ivory">Mission</h2>
+          <p className="text-[17px] leading-body text-ivory/80 mt-8">
+            At yde omsorgsfuld, værdig og professionel pleje til ældre — så de kan
+            leve trygt og komfortabelt i deres eget hjem. At støtte familier med
+            ærlighed og pålidelighed. At skabe en arbejdsplads, hvor medarbejdere
+            værdsættes og udvikles.
+          </p>
+        </div>
+      </section>
+
+      <section className="snap-section bg-ivory section-padding">
+        <div className="reading-column">
+          <h2 className="text-[30px] leading-normal text-midnight">Vision</h2>
+          <p className="text-[17px] leading-body text-midnight/80 mt-8">
+            At blive Danmarks mest betroede udbyder af ældrepleje — anerkendt for
+            enestående standarder inden for pleje, medfølelse, professionalisme og
+            etisk ledelse. En organisation, der respekteres lige så meget for sin
+            betydning for familier og lokalsamfund som for sin drift.
+          </p>
+        </div>
+      </section>
+
+      <section className="snap-section bg-ivory section-padding">
+        <div className="reading-column">
+          <h2 className="text-[30px] leading-normal text-midnight">Kerneværdier</h2>
+          <ul className="mt-10 space-y-6 list-none">
+            {CORE_VALUES.map((value) => (
+              <li key={value.title}>
+                <h3 className="text-[19px] text-midnight">{value.title}</h3>
+                <p className="text-[17px] leading-body text-midnight/70 mt-2">
+                  {value.body}
+                </p>
+              </li>
+            ))}
+          </ul>
         </div>
       </section>
 
@@ -63,10 +120,47 @@ export default function AboutPage() {
 
       <section className="snap-section bg-midnight section-padding">
         <div className="reading-column">
-          <p className="text-[19px] leading-body text-ivory">
+          <h2 className="text-[30px] leading-normal text-ivory">
+            Ledelsesprincipper
+          </h2>
+          <ul className="mt-10 space-y-4 list-none">
+            {LEADERSHIP_PRINCIPLES.map((principle) => (
+              <li key={principle} className="text-[17px] leading-body text-ivory/80">
+                {principle}
+              </li>
+            ))}
+          </ul>
+        </div>
+      </section>
+
+      <section className="snap-section bg-ivory section-padding">
+        <div className="reading-column">
+          <h2 className="text-[30px] leading-normal text-midnight">
+            Etisk fundament
+          </h2>
+          <p className="text-[17px] leading-body text-midnight/80 mt-8">
+            Hver beslutning vurderes mod otte spørgsmål: Tjener det klientens bedste
+            interesse? Er det lovligt? Bevarer det retfærdigheden? Beskytter det
+            vores medarbejdere? Styrker det virksomheden på lang sigt? Ville vi
+            forklare denne beslutning åbent?
+          </p>
+          <p className="text-[17px] leading-body text-midnight/80 mt-6">
+            Kultur er ikke en plakat på væggen — det er summen af hver daglig
+            kontakt
+          </p>
+        </div>
+      </section>
+
+      <section className="snap-section bg-midnight section-padding">
+        <div className="reading-column">
+          <h2 className="text-[30px] leading-normal text-ivory">
+            Forretningskontinuitet
+          </h2>
+          <p className="text-[17px] leading-body text-ivory/80 mt-8">
             Vi har ingen ejere i udlandet. Ingen investorer, der kræver afkast. Ingen
-            planer om at sælge. Vi er her, fordi vi tror på, at omsorg er en
-            institution — ikke en industri.
+            planer om at sælge. Virksomheden bygger på stærke værdier og
+            langsigtede principper, der sikrer stabilitet og kontinuitet — uanset hvem
+            der leder den. Vi bygger en arv, ikke blot en forretning.
           </p>
         </div>
       </section>
@@ -74,8 +168,8 @@ export default function AboutPage() {
       <section className="snap-section bg-ivory">
         <div className="w-full h-[60vh] relative">
           <HeroImage
-            src="/images/team-portrait.jpg"
-            alt="De mennesker, der passer på din mor"
+            src="/images/about-caregiver.jpg"
+            alt="En Premium Care caregiver i omsorgsfuld kontakt med en ældre klient"
             fill
             sizes="100vw"
           />
@@ -87,15 +181,8 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <section className="snap-section bg-ivory flex items-center justify-center">
-        <Image
-          src="/images/crest-monumental.png"
-          alt="Premium Care våbenskjold"
-          width={180}
-          height={180}
-          className="mx-auto"
-          priority
-        />
+      <section className="snap-section bg-ivory">
+        <CrestSeal size={180} className="mx-auto" />
       </section>
     </div>
   );

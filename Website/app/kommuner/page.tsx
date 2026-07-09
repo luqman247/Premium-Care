@@ -1,5 +1,6 @@
-import Image from "next/image";
 import type { Metadata } from "next";
+import { CrestSeal } from "@/components/CrestSeal";
+import { HeroImage } from "@/components/HeroImage";
 
 export const metadata: Metadata = {
   title: "Kommunalt samarbejde",
@@ -22,6 +23,14 @@ const GOVERNANCE_DOCS = [
   { href: "/documents/Aarsregnskab.pdf", label: "Seneste årsregnskab" },
 ];
 
+const PARTNER_COMMITMENTS = [
+  "Gennemsigtighed — ingen skjulte dagsordener, åbenhed i alle forhold",
+  "Levering — forpligtelse på aftalte standarder, vi leverer hvad vi lover",
+  "Kommunikation — regelmæssige opdateringer og ærlig dialog",
+  "Fælles succes — når vi vokser, vokser vores partnere",
+  "Etisk adfærd — principper styrer enhver forretningsbeslutning",
+];
+
 export default function MunicipalPage() {
   return (
     <div className="snap-y snap-mandatory h-screen overflow-y-scroll">
@@ -33,6 +42,28 @@ export default function MunicipalPage() {
           <p className="text-[19px] leading-body text-midnight/80 mt-8">
             Vi ved, at kommunal indkøb ikke handler om brochurer. Den handler om
             dokumentation, priser og resultater. Her er begge dele.
+          </p>
+          <div className="mt-8">
+            <CrestSeal size={80} className="!p-4 !justify-start" />
+          </div>
+        </div>
+      </section>
+
+      <section className="snap-section bg-midnight section-padding">
+        <div className="reading-column">
+          <h2 className="text-[30px] leading-normal text-ivory">
+            Markedsmuligheden
+          </h2>
+          <p className="text-[17px] leading-body text-ivory/80 mt-8">
+            Danmarks aldrende befolkning skaber vedvarende efterspørgsel i årtier.
+            Offentligt finansieret hjemmepleje giver stabile, tilbagevendende
+            kontrakter — og familier søger aktivt alternativer til uensartet
+            kvalitet
+          </p>
+          <p className="text-[17px] leading-body text-ivory/80 mt-6">
+            Premium Care er positioneret som en pålidelig partner, der overgår
+            compliance-standarderne — med gennemsigtig rapportering, uddannet
+            medarbejderstab og teknologidrevet effektivitet
           </p>
         </div>
       </section>
@@ -83,6 +114,33 @@ export default function MunicipalPage() {
         </div>
       </section>
 
+      <section className="snap-section bg-ivory">
+        <div className="w-full h-[40vh] relative">
+          <HeroImage
+            src="/images/municipal-technology.jpg"
+            alt="Digital plejekoordinering og kvalitetsovervågning"
+            fill
+            sizes="100vw"
+          />
+        </div>
+        <div className="section-padding reading-column">
+          <h2 className="text-[30px] leading-normal text-midnight">
+            Teknologi i plejens tjeneste
+          </h2>
+          <p className="text-[17px] leading-body text-midnight/80 mt-8">
+            Teknologi styrker den menneskelige forbindelse — den erstatter den
+            aldrig. Vores platform understøtter plejekoordinering i realtid,
+            sikker kommunikation med familier og datadrevet kvalitetsovervågning
+          </p>
+          <ul className="mt-8 space-y-3 text-[17px] leading-body text-midnight/80 list-none">
+            <li>Intelligent planlægning og disponering med optimerede ruter</li>
+            <li>Elektroniske plejeplaner og digitale plejenotater</li>
+            <li>Kommunalt integrationslag for rapportering og compliance</li>
+            <li>Datadrevet indsigt til løbende forbedring af plejens kvalitet</li>
+          </ul>
+        </div>
+      </section>
+
       <section className="snap-section bg-midnight section-padding">
         <div className="reading-column">
           <h2 className="text-[30px] leading-normal text-ivory">Kvalitetsdashboard</h2>
@@ -99,6 +157,21 @@ export default function MunicipalPage() {
           >
             Gå til dashboard
           </a>
+        </div>
+      </section>
+
+      <section className="snap-section bg-ivory section-padding">
+        <div className="reading-column">
+          <h2 className="text-[30px] leading-normal text-midnight">
+            Vores forpligtelse over for partnere
+          </h2>
+          <ul className="mt-10 space-y-4 list-none">
+            {PARTNER_COMMITMENTS.map((item) => (
+              <li key={item} className="text-[17px] leading-body text-midnight/80">
+                {item}
+              </li>
+            ))}
+          </ul>
         </div>
       </section>
 
@@ -138,15 +211,8 @@ export default function MunicipalPage() {
         </div>
       </section>
 
-      <section className="snap-section bg-ivory flex items-center justify-center">
-        <Image
-          src="/images/crest-monumental.png"
-          alt="Premium Care våbenskjold"
-          width={180}
-          height={180}
-          className="mx-auto"
-          priority
-        />
+      <section className="snap-section bg-ivory">
+        <CrestSeal size={180} className="mx-auto" />
       </section>
     </div>
   );
