@@ -9,25 +9,36 @@ export const SITE_USAGE_LOCATIONS: Record<string, SiteUsageLocation[]> = {
     { route: "/", pageLabel: "Homepage", section: "JSON-LD", component: "LocalBusiness schema" },
   ],
   [ASSET_IDS.servicesPersonalCare]: [
-    { route: "/", pageLabel: "Homepage", section: "Hero rotation", component: "RotatingHero" },
     { route: "/services", pageLabel: "Services", section: "Praktisk hjælp", component: "DamImage" },
   ],
   [ASSET_IDS.servicesCompanionship]: [
-    { route: "/", pageLabel: "Homepage", section: "Hero rotation", component: "RotatingHero" },
     { route: "/services", pageLabel: "Services", section: "Personlig pleje", component: "DamImage" },
+    { route: "/kontakt", pageLabel: "Contact", section: "Editorial image", component: "DamImage" },
   ],
   [ASSET_IDS.servicesPalliative]: [
-    { route: "/", pageLabel: "Homepage", section: "Hero rotation", component: "RotatingHero" },
     { route: "/services", pageLabel: "Services", section: "Sygeplejeydelser", component: "DamImage" },
-    { route: "/ledelse-og-governance", pageLabel: "Leadership", section: "Editorial image", component: "DamImage" },
+  ],
+  [ASSET_IDS.servicesPhysiotherapy]: [
+    { route: "/services", pageLabel: "Services", section: "Fysioterapi", component: "DamImage" },
+  ],
+  [ASSET_IDS.servicesOccupational]: [
+    { route: "/services", pageLabel: "Services", section: "Ergoterapi", component: "DamImage" },
+  ],
+  [ASSET_IDS.servicesAddon]: [
+    { route: "/services", pageLabel: "Services", section: "Tilkøbsydelser", component: "DamImage" },
   ],
   [ASSET_IDS.municipalHero]: [
     { route: "/kommuner", pageLabel: "Municipality", section: "Page hero", component: "DamImage" },
   ],
   [ASSET_IDS.careersHero]: [
     { route: "/karriere", pageLabel: "Careers", section: "Page hero", component: "DamImage" },
-    { route: "/karriere", pageLabel: "Careers", section: "Training image", component: "DamImage" },
     { route: "/", pageLabel: "Homepage", section: "Recruitment CTA", component: "RecruitmentSection" },
+  ],
+  [ASSET_IDS.careersTraining]: [
+    { route: "/karriere", pageLabel: "Careers", section: "Training image", component: "DamImage" },
+  ],
+  [ASSET_IDS.leadershipSection]: [
+    { route: "/ledelse-og-governance", pageLabel: "Leadership", section: "Editorial image", component: "DamImage" },
   ],
   [ASSET_IDS.founderStory]: [
     { route: "/min-historie", pageLabel: "Founder Story", section: "Founder portrait", component: "DamImage" },
@@ -93,10 +104,29 @@ export const SITE_USAGE_LOCATIONS: Record<string, SiteUsageLocation[]> = {
   [ASSET_IDS.brandAppIcon512]: [
     { route: "/*", pageLabel: "All pages", section: "PWA icon 512", component: "Web manifest" },
   ],
-  "PC-08-047": [
+  "PC-01-003": [
     { route: "/", pageLabel: "Homepage", section: "Hero rotation", component: "RotatingHero" },
   ],
-  "PC-06-030": [
+  "PC-01-005": [
+    { route: "/", pageLabel: "Homepage", section: "Hero rotation", component: "RotatingHero" },
+  ],
+  "PC-04-021": [
+    { route: "/tillid", pageLabel: "Trust", section: "Editorial image", component: "DamImage" },
+    { route: "/dokumentation", pageLabel: "Documentation", section: "Editorial image", component: "DamImage" },
+  ],
+  "PC-04-025": [
+    { route: "/", pageLabel: "Homepage", section: "Hero rotation", component: "RotatingHero" },
+  ],
+  "PC-08-043": [
+    { route: "/", pageLabel: "Homepage", section: "Hero rotation", component: "RotatingHero" },
+  ],
+  "PC-08-044": [
+    { route: "/", pageLabel: "Homepage", section: "Hero rotation", component: "RotatingHero" },
+  ],
+  "PC-08-047": [
+    { route: "/", pageLabel: "Homepage", section: "Calm interior", component: "DamImage" },
+  ],
+  "PC-08-048": [
     { route: "/", pageLabel: "Homepage", section: "Hero rotation", component: "RotatingHero" },
   ],
 };

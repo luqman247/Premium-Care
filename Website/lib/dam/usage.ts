@@ -11,22 +11,35 @@ export const SITE_USAGE_MAP: Record<string, UsageChannel[]> = {
   ],
   [ASSET_IDS.servicesPersonalCare]: [
     { key: "services", label: "Services", used: true },
-    { key: "homepage", label: "Homepage", used: true },
   ],
   [ASSET_IDS.servicesCompanionship]: [
     { key: "services", label: "Services", used: true },
-    { key: "homepage", label: "Homepage", used: true },
+    { key: "kontakt", label: "Contact", used: true },
   ],
   [ASSET_IDS.servicesPalliative]: [
     { key: "services", label: "Services", used: true },
-    { key: "homepage", label: "Homepage", used: true },
-    { key: "ledelse", label: "Ledelse", used: true },
+  ],
+  [ASSET_IDS.servicesPhysiotherapy]: [
+    { key: "services", label: "Services", used: true },
+  ],
+  [ASSET_IDS.servicesOccupational]: [
+    { key: "services", label: "Services", used: true },
+  ],
+  [ASSET_IDS.servicesAddon]: [
+    { key: "services", label: "Services", used: true },
   ],
   [ASSET_IDS.municipalHero]: [
     { key: "kommuner", label: "Municipality", used: true },
   ],
   [ASSET_IDS.careersHero]: [
     { key: "karriere", label: "Careers", used: true },
+    { key: "homepage", label: "Homepage", used: true },
+  ],
+  [ASSET_IDS.careersTraining]: [
+    { key: "karriere", label: "Careers", used: true },
+  ],
+  [ASSET_IDS.leadershipSection]: [
+    { key: "ledelse", label: "Ledelse", used: true },
   ],
   [ASSET_IDS.founderStory]: [
     { key: "min-historie", label: "Founder Story", used: true },

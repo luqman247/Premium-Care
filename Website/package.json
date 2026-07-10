@@ -7,7 +7,8 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "dam:prompts": "npx tsx scripts/generate-prompts.ts"
+    "dam:prompts": "npx tsx scripts/generate-prompts.ts",
+    "dam:import": "node --require ./scripts/stub-server-only.cjs --import tsx scripts/import-dam-images.ts"
   },
   "dependencies": {
     "next": "^15.3.3",
