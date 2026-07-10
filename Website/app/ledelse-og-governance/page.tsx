@@ -10,15 +10,15 @@ import { PHOTOGRAPHY, PHOTO_SIZES } from "@/lib/photography";
 
 export const metadata: Metadata = {
   title: {
-    absolute: "Ledelse og ansvar | Premium Care",
+    absolute: "Ledelse og ansvar | PremiumCare",
   },
   description:
-    "Ledelse, ansvar og kvalitetsarbejde i Premium Care ApS. Grundlagt af Bibi Naziyh Dowezai.",
+    "Ledelse, ansvar og kvalitetsarbejde i PremiumCare ApS. Grundlagt af Bibi Naziyh Dowezai.",
   alternates: { canonical: "/ledelse-og-governance" },
   openGraph: {
-    title: "Ledelse og ansvar | Premium Care",
+    title: "Ledelse og ansvar | PremiumCare",
     description:
-      "Ledelse, ansvar og kvalitetsarbejde i Premium Care ApS. Grundlagt af Bibi Naziyh Dowezai.",
+      "Ledelse, ansvar og kvalitetsarbejde i PremiumCare ApS. Grundlagt af Bibi Naziyh Dowezai.",
     url: `${COMPANY.url}/ledelse-og-governance`,
     images: [damMetadataImage(ASSET_IDS.leadershipPress)],
   },
@@ -165,7 +165,7 @@ function pageJsonLd() {
       "@type": "WebPage",
       name: "Ledelse og ansvar",
       description:
-        "Ledelse og ansvar i Premium Care ApS.",
+        "Ledelse og ansvar i PremiumCare ApS.",
       url: `${COMPANY.url}/ledelse-og-governance`,
       isPartOf: {
         "@type": "WebSite",
@@ -226,7 +226,7 @@ export default function LeadershipGovernancePage() {
                   borgerpleje og den daglige kvalitet
                 </p>
                 <p>
-                  Grundlægger af Premium Care ApS. Baggrund i hjemmepleje i Aarhus, Vejle
+                  Grundlægger af PremiumCare ApS. Baggrund i hjemmepleje i Aarhus, Vejle
                   og Fredericia, og i ledelse og drift af hjemmepleje
                 </p>
                 <p>
@@ -245,14 +245,14 @@ export default function LeadershipGovernancePage() {
           </div>
         </section>
 
-        {/* 2. Why Premium Care Exists */}
+        {/* 2. Why PremiumCare Exists */}
         <section className="section-padding" aria-labelledby="why-exists">
           <h2 id="why-exists" className="text-[30px] leading-normal text-midnight">
-            Hvorfor Premium Care findes
+            Hvorfor PremiumCare findes
           </h2>
           <div className="mt-10 space-y-6 text-[19px] leading-body text-midnight/90">
             <p>
-              Premium Care kom ud af en livshistorie. Min farmor fik værdig pleje i
+              PremiumCare kom ud af en livshistorie. Min farmor fik værdig pleje i
               Danmark. Senere arbejdede jeg i hjemmeplejen i Aarhus, Vejle og
               Fredericia og lærte, hvad der skal til, når mange borgere skal passes
               på samme tid.

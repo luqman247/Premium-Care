@@ -1,5 +1,6 @@
 import type { MetadataRoute } from "next";
 import { ASSET_IDS } from "@/lib/dam/asset-ids";
+import { COMPANY } from "@/lib/company";
 import { resolveAsset } from "@/lib/dam/resolve";
 
 export default function manifest(): MetadataRoute.Manifest {
@@ -7,8 +8,8 @@ export default function manifest(): MetadataRoute.Manifest {
   const icon512 = resolveAsset(ASSET_IDS.brandAppIcon512);
 
   return {
-    name: "Premium Care",
-    short_name: "Premium Care",
+    name: COMPANY.brandName,
+    short_name: COMPANY.brandName,
     description: "Hjemmepleje i Aarhus og Østjylland",
     lang: "da",
     start_url: "/",

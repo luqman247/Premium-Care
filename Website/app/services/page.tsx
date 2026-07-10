@@ -13,7 +13,7 @@ export const metadata: Metadata = {
     canonical: "/services",
   },
   openGraph: {
-    title: "Ydelser · Premium Care",
+    title: "Ydelser · PremiumCare",
     description: "Hvad vi gør i hjemmet - og hvad vi bevidst lader være",
     url: `${COMPANY.url}/services`,
   },

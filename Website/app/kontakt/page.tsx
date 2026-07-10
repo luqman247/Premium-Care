@@ -166,7 +166,7 @@ export default async function ContactPage({ searchParams }: ContactPageProps) {
         <div className="reading-column">
           <h2 className="text-[30px] leading-normal text-ivory">Akut hjælp</h2>
           <p className="text-[17px] leading-body text-ivory/80 mt-8">
-            Ved livstruende akutte situationer: ring 112. Premium Care leverer planlagt
+            Ved livstruende akutte situationer: ring 112. PremiumCare leverer planlagt
             hjemmepleje, ikke akut hospitalsberedskab
           </p>
           <p className="text-[17px] leading-body text-ivory/80 mt-6">

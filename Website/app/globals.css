@@ -829,67 +829,55 @@
     opacity: 1;
   }
 
+  .hero-secondary-link--on-dark {
+    color: rgba(247, 245, 240, 0.78);
+    opacity: 1;
+  }
+
+  .hero-secondary-link--on-dark:hover {
+    color: var(--color-ivory);
+  }
+
   /* —— RC20 cinematic acts —— */
 
   .act-fritvalg {
     background-color: var(--color-ivory);
-    padding: var(--space-16) 0;
+    padding: var(--space-20) 0;
   }
 
   @media (min-width: 768px) {
     .act-fritvalg {
       padding: var(--space-24) 0;
+      min-height: 56vh;
+      display: flex;
+      align-items: center;
     }
   }
 
   .act-fritvalg-stage {
-    max-width: 40rem;
+    max-width: 38rem;
     margin-left: auto;
     margin-right: auto;
     text-align: center;
   }
 
   .act-fritvalg-statement {
-    margin-top: var(--space-5);
-    margin-bottom: 0;
-    margin-left: auto;
-    margin-right: auto;
-    font-size: clamp(1.625rem, 3.6vw, 2.5rem);
+    margin: 0 auto;
+    font-size: clamp(1.75rem, 4vw, 2.625rem);
     line-height: var(--leading-snug);
-    letter-spacing: -0.02em;
+    letter-spacing: -0.022em;
     color: var(--color-midnight);
-    max-width: 22ch;
-  }
-
-  .act-fritvalg-note {
-    margin-top: var(--space-6);
-    margin-bottom: 0;
-    margin-left: auto;
-    margin-right: auto;
-    max-width: 38ch;
-    font-size: var(--text-body);
-    line-height: var(--leading-body);
-    color: rgba(6, 29, 55, 0.62);
+    max-width: 20ch;
   }
 
   .act-fritvalg-actions {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: var(--space-4);
     margin-top: var(--space-10);
-  }
-
-  @media (min-width: 640px) {
-    .act-fritvalg-actions {
-      flex-direction: row;
-      justify-content: center;
-    }
+    margin-bottom: 0;
   }
 
   .wow-compass {
     position: relative;
-    min-height: 88svh;
+    min-height: 92svh;
     display: flex;
     align-items: flex-end;
     overflow: hidden;
@@ -898,7 +886,7 @@
 
   @media (min-width: 768px) {
     .wow-compass {
-      min-height: 92vh;
+      min-height: 100vh;
       align-items: center;
     }
   }
@@ -914,15 +902,15 @@
     background:
       linear-gradient(
         180deg,
-        rgba(4, 21, 42, 0.45) 0%,
-        rgba(4, 21, 42, 0.35) 40%,
-        rgba(4, 21, 42, 0.82) 100%
+        rgba(4, 21, 42, 0.5) 0%,
+        rgba(4, 21, 42, 0.32) 42%,
+        rgba(4, 21, 42, 0.88) 100%
       ),
       linear-gradient(
         90deg,
-        rgba(4, 21, 42, 0.55) 0%,
-        rgba(4, 21, 42, 0.2) 60%,
-        rgba(4, 21, 42, 0.35) 100%
+        rgba(4, 21, 42, 0.62) 0%,
+        rgba(4, 21, 42, 0.18) 58%,
+        rgba(4, 21, 42, 0.4) 100%
       );
   }
 
@@ -930,10 +918,10 @@
     position: relative;
     z-index: 1;
     width: 100%;
-    max-width: 44rem;
+    max-width: 42rem;
     padding-top: var(--space-16);
     padding-bottom: var(--space-16);
-    animation: wow-compass-enter 1.4s var(--ease-standard) both;
+    animation: wow-compass-enter 1.5s var(--ease-standard) both;
   }
 
   @media (min-width: 768px) {
@@ -946,7 +934,7 @@
   @keyframes wow-compass-enter {
     from {
       opacity: 0;
-      transform: translateY(22px);
+      transform: translateY(20px);
     }
     to {
       opacity: 1;
@@ -954,44 +942,22 @@
     }
   }
 
-  .wow-compass-eyebrow {
-    color: var(--color-gold-light);
-    margin-bottom: var(--space-5);
-  }
-
   .wow-compass-quote {
     margin: 0;
-    font-size: clamp(1.75rem, 4.5vw, 3rem);
-    line-height: var(--leading-snug);
-    letter-spacing: -0.025em;
+    font-size: clamp(2rem, 5.2vw, 3.25rem);
+    line-height: 1.12;
+    letter-spacing: -0.03em;
     color: var(--color-ivory);
-    max-width: 16ch;
+    max-width: 14ch;
   }
 
   .wow-compass-lede {
     margin-top: var(--space-8);
     margin-bottom: 0;
-    max-width: 28ch;
+    max-width: 26ch;
     font-size: var(--text-body-lg);
     line-height: var(--leading-body);
-    color: rgba(247, 245, 240, 0.68);
-  }
-
-  .act-breath {
-    background-color: var(--color-ivory);
-    padding: var(--space-16) 0;
-    border-top: 1px solid rgba(6, 29, 55, 0.06);
-    border-bottom: 1px solid rgba(6, 29, 55, 0.06);
-  }
-
-  .act-breath-line {
-    margin: 0 auto;
-    max-width: 28ch;
-    text-align: center;
-    font-size: clamp(1.25rem, 2.4vw, 1.625rem);
-    line-height: var(--leading-snug);
-    letter-spacing: -0.015em;
-    color: var(--color-midnight);
+    color: rgba(247, 245, 240, 0.62);
   }
 
   .act-pathways {
@@ -999,7 +965,7 @@
   }
 
   .act-pathways-layout {
-    max-width: 1080px;
+    max-width: 960px;
     margin-left: auto;
     margin-right: auto;
     display: grid;
@@ -1009,7 +975,7 @@
 
   @media (min-width: 900px) {
     .act-pathways-layout {
-      grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.15fr);
+      grid-template-columns: minmax(0, 0.7fr) minmax(0, 1.3fr);
       gap: var(--space-16);
       align-items: start;
     }
@@ -1030,6 +996,11 @@
     gap: var(--space-3);
     padding: var(--space-5) 0;
     border-top: 1px solid rgba(6, 29, 55, 0.08);
+    align-items: baseline;
+  }
+
+  .pathway-item--title {
+    padding: 1.15rem 0;
   }
 
   .pathway-item:last-child {
@@ -1041,7 +1012,6 @@
     font-size: var(--text-caption);
     letter-spacing: 0.08em;
     color: var(--color-gold-dark);
-    padding-top: 0.35rem;
   }
 
   .pathway-title {
@@ -1049,7 +1019,7 @@
     line-height: var(--leading-snug);
     letter-spacing: -0.01em;
     color: var(--color-midnight);
-    margin-bottom: var(--space-2);
+    margin-bottom: 0;
     max-width: none;
   }
 
@@ -1066,33 +1036,20 @@
   }
 
   .act-trust-layout {
-    max-width: 920px;
+    max-width: 860px;
     margin-left: auto;
     margin-right: auto;
     display: grid;
     grid-template-columns: 1fr;
-    gap: var(--space-10);
+    gap: var(--space-8);
   }
 
   @media (min-width: 768px) {
     .act-trust-layout {
-      grid-template-columns: 1.1fr 0.9fr;
+      grid-template-columns: 0.7fr 1.3fr;
       gap: var(--space-12);
       align-items: end;
     }
-  }
-
-  .act-trust-eyebrow {
-    color: var(--color-gold);
-  }
-
-  .act-trust-lede {
-    margin-top: var(--space-5);
-    margin-bottom: 0;
-    max-width: 30ch;
-    font-size: var(--text-body-lg);
-    line-height: var(--leading-body);
-    color: rgba(247, 245, 240, 0.62);
   }
 
   .act-trust-list {
@@ -1105,7 +1062,7 @@
 
   .act-trust-link {
     display: block;
-    padding: 1rem 0;
+    padding: 0.95rem 0;
     border-top: 1px solid rgba(247, 245, 240, 0.12);
     font-size: var(--text-body-lg);
     letter-spacing: -0.01em;
@@ -1132,7 +1089,7 @@
     max-width: none;
     font-size: 0.75rem;
     letter-spacing: 0.04em;
-    color: rgba(6, 29, 55, 0.45);
+    color: rgba(6, 29, 55, 0.42);
   }
 
   .signature-link {

@@ -1,5 +1,5 @@
 /**
- * Premium Care editorial photography registry.
+ * PremiumCare editorial photography registry.
  * All images resolve through the DAM — no hardcoded paths.
  */
 

@@ -43,7 +43,7 @@ export function RotatingHero() {
     <div
       className="rotating-hero"
       role="img"
-      aria-label="Premium Care hjemmepleje i rolige, nordiske omgivelser"
+      aria-label="PremiumCare hjemmepleje i rolige, nordiske omgivelser"
     >
       {HERO_ROTATION_ASSET_IDS.map((assetId, index) => {
         const isActive = index === activeIndex;

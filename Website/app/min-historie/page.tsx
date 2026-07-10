@@ -9,17 +9,17 @@ import { PHOTOGRAPHY } from "@/lib/photography";
 
 export const metadata: Metadata = {
   title: {
-    absolute: "Min historie | Premium Care",
+    absolute: "Min historie | PremiumCare",
   },
   description:
-    "Historien bag Premium Care. Fra Sønderborg og en farmors sidste kapitel til hjemmepleje med værdighed i Aarhus og Østjylland.",
+    "Historien bag PremiumCare. Fra Sønderborg og en farmors sidste kapitel til hjemmepleje med værdighed i Aarhus og Østjylland.",
   alternates: {
     canonical: "/min-historie",
   },
   openGraph: {
-    title: "Min historie | Premium Care",
+    title: "Min historie | PremiumCare",
     description:
-      "Historien bag Premium Care. Fra Sønderborg og en farmors sidste kapitel til hjemmepleje med værdighed i Aarhus og Østjylland.",
+      "Historien bag PremiumCare. Fra Sønderborg og en farmors sidste kapitel til hjemmepleje med værdighed i Aarhus og Østjylland.",
     url: `${COMPANY.url}/min-historie`,
     images: [damMetadataImage(ASSET_IDS.founderStory)],
   },
@@ -57,7 +57,7 @@ export default function FounderStoryPage() {
           </h2>
           <div className="mt-10 space-y-6 text-[19px] leading-body text-midnight/90">
             <p>
-              Premium Care startede med en farmor, dansk pleje og et ønske om at give
+              PremiumCare startede med en farmor, dansk pleje og et ønske om at give
               noget tilbage
             </p>
           </div>
@@ -228,14 +228,14 @@ export default function FounderStoryPage() {
             id="section-hvorfor"
             className="text-[30px] leading-normal text-midnight"
           >
-            Hvorfor Premium Care blev skabt
+            Hvorfor PremiumCare blev skabt
           </h2>
           <div className="mt-10 space-y-6 text-[19px] leading-body text-midnight/90">
             <p>
               Jeg ville bygge en arbejdsplads, hvor medarbejdere mødes med respekt, og
               hvor borgeren aldrig bare bliver et nummer på en liste
             </p>
-            <p>Derfor stiftede jeg Premium Care ApS</p>
+            <p>Derfor stiftede jeg PremiumCare ApS</p>
             <p>
               Ikke fordi jeg gav op. Fordi jeg nu havde erfaringen til at gøre det,
               jeg altid havde tænkt på
@@ -277,7 +277,7 @@ export default function FounderStoryPage() {
           </h2>
           <div className="mt-10 space-y-6 text-[19px] leading-body text-midnight/90">
             <p>
-              Premium Care skal være et sted, hvor man er velkommen - med klare
+              PremiumCare skal være et sted, hvor man er velkommen - med klare
               rammer, ordentlig faglighed og plads til forskellighed
             </p>
             <p>For medarbejdere, der trives, skaber trygge borgere</p>
@@ -354,7 +354,7 @@ export default function FounderStoryPage() {
           <div className="mt-10 space-y-6 text-[19px] leading-body text-midnight/90">
             <p>
               Hvis jeg en dag mister kontakten til borgerne eller mine medarbejdere,
-              mister jeg samtidig kontakten til årsagen til, at Premium Care blev
+              mister jeg samtidig kontakten til årsagen til, at PremiumCare blev
               skabt
             </p>
             <p>Det må aldrig ske</p>

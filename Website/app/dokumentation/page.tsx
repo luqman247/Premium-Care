@@ -9,12 +9,12 @@ import { PHOTOGRAPHY } from "@/lib/photography";
 export const metadata: Metadata = {
   title: "Dokumentation",
   description:
-    "Politikker, procedurer og offentlige dokumenter fra Premium Care ApS.",
+    "Politikker, procedurer og offentlige dokumenter fra PremiumCare ApS.",
   alternates: { canonical: "/dokumentation" },
   openGraph: {
-    title: "Dokumentation · Premium Care",
+    title: "Dokumentation · PremiumCare",
     description:
-      "Politikker, procedurer og offentlige dokumenter fra Premium Care ApS.",
+      "Politikker, procedurer og offentlige dokumenter fra PremiumCare ApS.",
     url: `${COMPANY.url}/dokumentation`,
   },
 };

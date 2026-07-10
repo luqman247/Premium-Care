@@ -1,5 +1,5 @@
 /**
- * Premium Care brand asset registry — resolved from DAM.
+ * PremiumCare brand asset registry — resolved from DAM.
  */
 import { ASSET_IDS } from "@/lib/dam/asset-ids";
 import { getAssetById } from "@/lib/dam/registry";

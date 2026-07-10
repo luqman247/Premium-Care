@@ -26,7 +26,7 @@ export default function MediaLayout({
       <aside className="dam-sidebar">
         <div className="dam-sidebar-brand">
           <Link href="/media" className="dam-sidebar-title">
-            Premium Care Media
+            PremiumCare Media
           </Link>
           <p className="dam-sidebar-subtitle">Editorial Asset Management</p>
         </div>

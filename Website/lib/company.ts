@@ -3,8 +3,8 @@ import { ASSET_IDS } from "@/lib/dam/asset-ids";
 import { damAbsoluteUrl } from "@/lib/dam/site-images";
 
 export const COMPANY = {
-  legalName: "Premium Care ApS",
-  brandName: "Premium Care",
+  legalName: "PremiumCare ApS",
+  brandName: "PremiumCare",
   cvr: "46542568",
   address: {
     street: "Rosenhøj Alle 34, 1. th.",

@@ -10,12 +10,12 @@ import { TRUST_POLICIES } from "@/lib/trust-policies";
 export const metadata: Metadata = {
   title: "Tillidscenter",
   description:
-    "Gennemsigtighed, dokumentation og ansvarlighed - politikker, kvalitetsramme og ledelsesansvar for Premium Care ApS.",
+    "Gennemsigtighed, dokumentation og ansvarlighed - politikker, kvalitetsramme og ledelsesansvar for PremiumCare ApS.",
   alternates: { canonical: "/tillid" },
   openGraph: {
-    title: "Tillidscenter · Premium Care",
+    title: "Tillidscenter · PremiumCare",
     description:
-      "Gennemsigtighed, dokumentation og ansvarlighed - politikker, kvalitetsramme og ledelsesansvar for Premium Care ApS.",
+      "Gennemsigtighed, dokumentation og ansvarlighed - politikker, kvalitetsramme og ledelsesansvar for PremiumCare ApS.",
     url: `${COMPANY.url}/tillid`,
   },
 };

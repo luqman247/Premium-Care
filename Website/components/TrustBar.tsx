@@ -31,7 +31,7 @@ export function TrustBar() {
             <Link
               href="/"
               className="site-footer-crest focus-ring"
-              aria-label="Premium Care - forsiden"
+              aria-label="PremiumCare - forsiden"
             >
               <CrestSeal
                 size={CREST_SIZES.sm}

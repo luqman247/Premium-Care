@@ -13,7 +13,7 @@ export const metadata: Metadata = {
     canonical: "/om-os",
   },
   openGraph: {
-    title: "Om os · Premium Care",
+    title: "Om os · PremiumCare",
     description: "Hvorfor vi findes",
     url: `${COMPANY.url}/om-os`,
   },
@@ -48,7 +48,7 @@ export default function AboutPage() {
       <section className="snap-section bg-ivory section-padding">
         <div className="reading-column">
           <p className="text-[19px] leading-body text-midnight">
-            Premium Care er et familieejet selskab i Viby J. Vi blev stiftet, fordi
+            PremiumCare er et familieejet selskab i Viby J. Vi blev stiftet, fordi
             grundlæggeren havde arbejdet i hjemmeplejen og vidste, hvad der skulle til
             for at gøre det ordentligt
           </p>
@@ -117,7 +117,7 @@ export default function AboutPage() {
             <div className="md:order-1">
               <h2 className="text-[30px] leading-normal text-ivory">Ledelse</h2>
               <p className="text-[17px] leading-body text-ivory/80 mt-8">
-                Premium Care ledes af grundlægger og administrerende direktør Bibi Naziyh
+                PremiumCare ledes af grundlægger og administrerende direktør Bibi Naziyh
                 Dowezai - med synlig ledelse tæt på borgere, medarbejdere og drift.
               </p>
               <p className="mt-10">

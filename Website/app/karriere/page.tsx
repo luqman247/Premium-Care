@@ -16,14 +16,14 @@ import {
 } from "@/lib/recruitment";
 
 export const metadata: Metadata = {
-  title: "Bliv en del af Premium Care",
+  title: "Bliv en del af PremiumCare",
   description:
     "Arbejd med værdighed, struktur og faglighed i Aarhus og Østjylland. Betalt oplæring, mentorordning og synlig ledelse.",
   alternates: {
     canonical: "/karriere",
   },
   openGraph: {
-    title: "Bliv en del af Premium Care",
+    title: "Bliv en del af PremiumCare",
     description:
       "Arbejd med værdighed, struktur og faglighed i Aarhus og Østjylland. Betalt oplæring, mentorordning og synlig ledelse.",
     url: `${COMPANY.url}/karriere`,
@@ -39,7 +39,7 @@ export default function CareersPage() {
             {RECRUITMENT_REGION}
           </p>
           <h1 className="type-page-title text-midnight tracking-tight mt-4">
-            Bliv en del af Premium Care
+            Bliv en del af PremiumCare
           </h1>
           <p className="text-[19px] leading-body text-midnight/80 mt-8 max-w-[55ch]">
             Vi søger folk, der vil gøre arbejdet ordentligt - med tid til borgeren

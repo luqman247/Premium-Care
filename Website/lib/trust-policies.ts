@@ -15,7 +15,7 @@ export const TRUST_POLICIES: TrustPolicy[] = [
     slug: "privatliv",
     title: "Privatlivspolitik",
     description:
-      "Sådan beskytter Premium Care personoplysninger og helbredsdata i overensstemmelse med GDPR og dansk lovgivning",
+      "Sådan beskytter PremiumCare personoplysninger og helbredsdata i overensstemmelse med GDPR og dansk lovgivning",
     purpose:
       "At alle oplysninger om borgere, pårørende og medarbejdere behandles lovligt, sikkert og med respekt for privatlivets fred",
     whyItMatters:
@@ -36,7 +36,7 @@ export const TRUST_POLICIES: TrustPolicy[] = [
     slug: "klager",
     title: "Klageprocedure",
     description:
-      "Sådan indgiver borgere, pårørende og samarbejdspartnere klager, og hvordan Premium Care håndterer dem",
+      "Sådan indgiver borgere, pårørende og samarbejdspartnere klager, og hvordan PremiumCare håndterer dem",
     purpose:
       "At give en klar vej til at udtrykke utilfredshed, få svar og sikre, at fejl fører til handling",
     whyItMatters:
@@ -57,7 +57,7 @@ export const TRUST_POLICIES: TrustPolicy[] = [
     slug: "beskyttelse",
     title: "Beskyttelse af sårbare borgere",
     description:
-      "Premium Cares forpligtelse til at beskytte borgere mod mishandling, forsømmelse og utrygge forhold",
+      "PremiumCare ApS' forpligtelse til at beskytte borgere mod mishandling, forsømmelse og utrygge forhold",
     purpose:
       "At medarbejdere ser, hører og reagerer på tegn på risiko, og at bekymringer behandles hurtigt og fagligt",
     whyItMatters:
@@ -76,7 +76,7 @@ export const TRUST_POLICIES: TrustPolicy[] = [
     slug: "kvalitet",
     title: "Kvalitetsforpligtelse",
     description:
-      "Premium Cares løfte om dokumenteret og løbende forbedret plejekvalitet",
+      "PremiumCare ApS' løfte om dokumenteret og løbende forbedret plejekvalitet",
     purpose:
       "At hver borger modtager pleje, der holder, og at kvalitet kan dokumenteres for familier og kommuner",
     whyItMatters:
@@ -95,7 +95,7 @@ export const TRUST_POLICIES: TrustPolicy[] = [
     slug: "ligebehandling",
     title: "Ligebehandling og inklusion",
     description:
-      "Premium Cares forpligtelse til respekt og ligebehandling for borgere og medarbejdere",
+      "PremiumCare ApS' forpligtelse til respekt og ligebehandling for borgere og medarbejdere",
     purpose:
       "At alle mennesker mødes med værdighed i vores arbejde, uanset baggrund",
     whyItMatters:
@@ -113,7 +113,7 @@ export const TRUST_POLICIES: TrustPolicy[] = [
     slug: "cookiepolitik",
     title: "Cookiepolitik",
     description:
-      "Sådan bruger Premium Care cookies på hjemmesiden, og hvordan du styrer dit samtykke",
+      "Sådan bruger PremiumCare cookies på hjemmesiden, og hvordan du styrer dit samtykke",
     purpose:
       "At give gennemsigtighed om nødvendige og valgfrie cookies, og at respektere brugerens valg",
     whyItMatters:
@@ -153,7 +153,7 @@ export const TRUST_POLICIES: TrustPolicy[] = [
     slug: "ledelsesansvar",
     title: "Ledelse og kvalitetsansvar",
     description:
-      "Hvordan Premium Care er styret, dokumenteret og revideret som plejeorganisation",
+      "Hvordan PremiumCare er styret, dokumenteret og revideret som plejeorganisation",
     purpose:
       "Én ledelsesstruktur med tydeligt ejerskab, godkendelse og revision af politikker og procedurer",
     whyItMatters:

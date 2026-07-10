@@ -32,7 +32,7 @@ export function RecruitmentSection({ variant = "ivory" }: RecruitmentSectionProp
             id="recruitment-heading"
             className="type-section-title text-midnight mt-3"
           >
-            Bliv en del af Premium Care
+            Bliv en del af PremiumCare
           </h2>
           <p className="text-[17px] leading-body text-midnight/80 mt-6 max-w-[55ch]">
             Vi søger folk, der vil gøre arbejdet ordentligt - med tid til borgeren
@@ -43,7 +43,7 @@ export function RecruitmentSection({ variant = "ivory" }: RecruitmentSectionProp
               href="/karriere"
               className="text-[17px] leading-body text-midnight underline underline-offset-4 hover:text-midnight/80 transition-colors focus-ring"
             >
-              Bliv en del af Premium Care
+              Bliv en del af PremiumCare
             </Link>
           </p>
         </div>
@@ -66,7 +66,7 @@ export function RecruitmentSection({ variant = "ivory" }: RecruitmentSectionProp
               id="recruitment-heading"
               className={`type-section-title ${textClass} mt-3`}
             >
-              Bliv en del af Premium Care
+              Bliv en del af PremiumCare
             </h2>
             <p className={`text-[19px] leading-body ${mutedClass} mt-6 max-w-[55ch]`}>
               {WORKPLACE_PROMISES[0].body}
@@ -84,7 +84,7 @@ export function RecruitmentSection({ variant = "ivory" }: RecruitmentSectionProp
                 Send en ansøgning
               </a>
               <Link href="/karriere" className="btn-secondary">
-                Bliv en del af Premium Care
+                Bliv en del af PremiumCare
               </Link>
             </div>
             <p className={`text-[13px] mt-6 ${isMidnight ? "text-ivory/60" : "text-midnight/60"}`}>

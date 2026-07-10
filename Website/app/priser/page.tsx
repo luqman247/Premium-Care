@@ -12,7 +12,7 @@ export const metadata: Metadata = {
     canonical: "/priser",
   },
   openGraph: {
-    title: "Gratis hjemmepleje · Premium Care",
+    title: "Gratis hjemmepleje · PremiumCare",
     description:
       "Frit valg af privat hjemmepleje når du er visiteret af kommunen - uden ekstra betaling",
     url: `${COMPANY.url}/priser`,

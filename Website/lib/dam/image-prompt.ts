@@ -2,7 +2,7 @@ import type { CreativeBrief, DamAsset } from "@/lib/dam/types";
 import { getCreativeBriefForAsset } from "@/lib/dam/photography-guide";
 
 const EDITORIAL_CONSTRAINTS = [
-  "Editorial photography for Premium Care — a Danish home care institution",
+  "Editorial photography for PremiumCare — a Danish home care institution",
   "Scandinavian aesthetic: calm, dignified, human, never performative",
   "Natural Nordic light, muted film-like colour rendering",
   "No direct eye contact with camera unless the brief specifies otherwise",

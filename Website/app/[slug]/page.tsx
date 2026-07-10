@@ -20,11 +20,11 @@ export async function generateMetadata({
   if (!policy) return {};
 
   return {
-    title: `${policy.title} | Premium Care`,
+    title: `${policy.title} | ${COMPANY.brandName}`,
     description: policy.description,
     alternates: { canonical: `/${slug}` },
     openGraph: {
-      title: `${policy.title} | Premium Care`,
+      title: `${policy.title} | ${COMPANY.brandName}`,
       description: policy.description,
       url: `${COMPANY.url}/${slug}`,
     },

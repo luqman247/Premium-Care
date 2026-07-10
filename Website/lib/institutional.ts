@@ -36,4 +36,4 @@ export const MUNICIPAL_DOCUMENTS = [
 
 export const COMPANY_IDENTITY_LINE = `${COMPANY.legalName} · CVR ${COMPANY.cvr}`;
 
-export const MUNICIPAL_CONTACT_SUBJECT = "Kommunal indkøb - Premium Care ApS";
+export const MUNICIPAL_CONTACT_SUBJECT = "Kommunal indkøb - PremiumCare ApS";

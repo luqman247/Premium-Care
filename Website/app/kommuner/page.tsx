@@ -13,12 +13,12 @@ import { PHOTOGRAPHY, PHOTO_SIZES } from "@/lib/photography";
 export const metadata: Metadata = {
   title: "Kommunalt samarbejde",
   description:
-    "Beslutningsgrundlag, dokumentation, kvalitetsdata og virksomhedsoplysninger for kommunal indkøb - Premium Care ApS",
+    "Beslutningsgrundlag, dokumentation, kvalitetsdata og virksomhedsoplysninger for kommunal indkøb - PremiumCare ApS",
   alternates: {
     canonical: "/kommuner",
   },
   openGraph: {
-    title: "Kommunalt samarbejde · Premium Care",
+    title: "Kommunalt samarbejde · PremiumCare",
     description:
       "Beslutningsgrundlag, dokumentation, kvalitetsdata og virksomhedsoplysninger for kommunal indkøb",
     url: `${COMPANY.url}/kommuner`,
@@ -111,7 +111,7 @@ export default function MunicipalPage() {
             Samarbejde med kommuner
           </h2>
           <p className="text-[17px] leading-body text-ivory/80 mt-8 max-w-[55ch]">
-            Premium Care leverer hjemmepleje efter gældende lovgivning og kommunale
+            PremiumCare leverer hjemmepleje efter gældende lovgivning og kommunale
             aftaler. Vi dokumenterer kvalitet, indberetter afvigelser og rapporterer åbent
             til samarbejdspartnere
           </p>

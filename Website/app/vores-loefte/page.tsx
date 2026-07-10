@@ -10,17 +10,17 @@ import {
 
 export const metadata: Metadata = {
   title: {
-    absolute: "Vores løfte | Premium Care",
+    absolute: "Vores løfte | PremiumCare",
   },
   description:
-    "Premium Cares offentlige løfte om værdighed, ærlig kommunikation, medarbejderudvikling, læring, kvalitet og menneskelig omsorg.",
+    "PremiumCare ApS' offentlige løfte om værdighed, ærlig kommunikation, medarbejderudvikling, læring, kvalitet og menneskelig omsorg.",
   alternates: {
     canonical: "/vores-loefte",
   },
   openGraph: {
-    title: "Vores løfte | Premium Care",
+    title: "Vores løfte | PremiumCare",
     description:
-      "Premium Cares offentlige løfte om værdighed, ærlig kommunikation, medarbejderudvikling, læring, kvalitet og menneskelig omsorg.",
+      "PremiumCare ApS' offentlige løfte om værdighed, ærlig kommunikation, medarbejderudvikling, læring, kvalitet og menneskelig omsorg.",
     url: `${COMPANY.url}/vores-loefte`,
   },
 };

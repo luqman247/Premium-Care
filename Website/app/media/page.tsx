@@ -17,7 +17,7 @@ export default function MediaDashboardPage() {
       <div className="dam-page-header">
         <h1 className="dam-page-title">Dashboard</h1>
         <p className="dam-page-description">
-          Editorial asset overview across the Premium Care ecosystem
+          Editorial asset overview across the PremiumCare ecosystem
         </p>
       </div>
 

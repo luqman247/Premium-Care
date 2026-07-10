@@ -68,7 +68,7 @@ export function Wordmark() {
       className={`site-header-wordmark site-header-wordmark--${tone}${
         compact ? " site-header-wordmark--compact" : ""
       } focus-ring`}
-      aria-label="Premium Care - forsiden"
+      aria-label="PremiumCare - forsiden"
     >
       <span className="site-header-wordmark-stack" aria-hidden="true">
         <BrandWordmark
