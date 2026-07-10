@@ -5,11 +5,13 @@ import type { DamAsset, UsageChannel } from "@/lib/dam/types";
 export const SITE_USAGE_MAP: Record<string, UsageChannel[]> = {
   [ASSET_IDS.homepageHero]: [
     { key: "homepage", label: "Homepage", used: true },
+    { key: "about", label: "About", used: true },
     { key: "seo", label: "SEO Pages", used: true },
     { key: "social", label: "Social Cards", used: false },
   ],
   [ASSET_IDS.homepageCompass]: [
     { key: "homepage", label: "Homepage", used: true },
+    { key: "min-historie", label: "Founder Story", used: true },
   ],
   [ASSET_IDS.aboutClosing]: [
     { key: "about", label: "About", used: true },
@@ -49,6 +51,7 @@ export const SITE_USAGE_MAP: Record<string, UsageChannel[]> = {
   ],
   [ASSET_IDS.leadershipSection]: [
     { key: "ledelse", label: "Ledelse", used: true },
+    { key: "min-historie", label: "Founder Story", used: true },
   ],
   [ASSET_IDS.founderStory]: [
     { key: "min-historie", label: "Founder Story", used: true },
@@ -62,6 +65,14 @@ export const SITE_USAGE_MAP: Record<string, UsageChannel[]> = {
   ],
   [ASSET_IDS.founderLegacy]: [
     { key: "min-historie", label: "Founder Story", used: true },
+  ],
+  [ASSET_IDS.priserHero]: [
+    { key: "priser", label: "Frit valg", used: true },
+    { key: "homepage", label: "Homepage", used: true },
+  ],
+  [ASSET_IDS.priserSplit]: [
+    { key: "priser", label: "Frit valg", used: true },
+    { key: "homepage", label: "Homepage", used: true },
   ],
   [ASSET_IDS.leadershipFormal]: [
     { key: "about", label: "About", used: true },

@@ -35,6 +35,10 @@ export const PHOTOGRAPHY = {
   founderLegacy: photo(ASSET_IDS.founderLegacy, "founder"),
   compass: photo(ASSET_IDS.homepageCompass, "founder"),
   contact: photo(ASSET_IDS.contactEditorial, "contact"),
+  priserHero: photo(ASSET_IDS.priserHero, "hero"),
+  priserSplit: photo(ASSET_IDS.priserSplit, "details"),
+  aboutPageHero: photo(ASSET_IDS.aboutPageHero, "hero"),
+  founderPageHero: photo(ASSET_IDS.founderPageHero, "founder"),
   trust: photo(ASSET_IDS.trustEditorial, "trust"),
   documentation: photo(ASSET_IDS.documentationEditorial, "trust"),
 } as const;
