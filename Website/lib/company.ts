@@ -22,6 +22,7 @@ export const COMPANY = {
     display: "Man–fre 07:00–15:00",
     schema: ["Mo-Fr 07:00-15:00"],
   },
+  /** Canonical production origin — used for metadata, OG, JSON-LD, sitemap, robots */
   url: "https://www.premiumcare.dk",
   foundedYear: 2026,
 } as const;

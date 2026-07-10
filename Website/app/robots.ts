@@ -1,6 +1,8 @@
 import type { MetadataRoute } from "next";
 import { COMPANY } from "@/lib/company";
 
+const productionHost = new URL(COMPANY.url).host;
+
 export default function robots(): MetadataRoute.Robots {
   return {
     rules: {
@@ -9,6 +11,6 @@ export default function robots(): MetadataRoute.Robots {
       disallow: ["/media/", "/api/"],
     },
     sitemap: `${COMPANY.url}/sitemap.xml`,
-    host: COMPANY.url,
+    host: productionHost,
   };
 }
