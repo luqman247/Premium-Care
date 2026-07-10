@@ -84,17 +84,17 @@ export default function FounderStoryPage() {
             </p>
           </div>
           <figure className="mt-12">
-            <div className="relative w-full aspect-[3/2]">
+            <div className="relative w-full max-w-[22rem] mx-auto aspect-[3/4]">
               <DamImage
                 assetId={ASSET_IDS.founderGrandmother}
                 category="founder"
                 fill
-                sizes="(max-width: 680px) 100vw, 680px"
-                objectPosition="center 35%"
+                sizes="(max-width: 680px) 88vw, 352px"
+                objectPosition="center 18%"
                 priority
               />
             </div>
-            <figcaption className="text-[13px] text-midnight/60 mt-4 leading-body">
+            <figcaption className="text-[13px] text-midnight/60 mt-4 leading-body text-center max-w-[36ch] mx-auto">
               Farmors fotografi. Det minde, PremiumCare stadig måler sig på
             </figcaption>
           </figure>
