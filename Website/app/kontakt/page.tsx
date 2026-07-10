@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { ContactForm } from "@/components/ContactForm";
 import { CrisisHelp } from "@/components/CrisisHelp";
 import { EditorialBanner } from "@/components/EditorialBanner";
 import { FreeCareMessage } from "@/components/FreeCareMessage";
@@ -17,14 +18,7 @@ export const metadata: Metadata = {
   },
 };
 
-type ContactPageProps = {
-  searchParams: Promise<{ sendt?: string }>;
-};
-
-export default async function ContactPage({ searchParams }: ContactPageProps) {
-  const { sendt } = await searchParams;
-  const formSent = sendt === "1";
-
+export default function ContactPage() {
   return (
     <div className="page-flow">
       <section className="snap-section bg-ivory section-padding">
@@ -102,54 +96,8 @@ export default async function ContactPage({ searchParams }: ContactPageProps) {
       </section>
 
       <section id="kontaktformular" className="snap-section bg-ivory section-padding">
-        <div className="reading-column max-w-[480px]">
-          {formSent && (
-            <p className="text-[17px] leading-body text-midnight mb-8" role="status">
-              Tak. Vi vender tilbage inden for to arbejdsdage
-            </p>
-          )}
-          <h2 className="text-[30px] leading-normal text-midnight">
-            Skriv til os
-          </h2>
-          <p className="text-[17px] leading-body text-midnight/80 mt-6">
-            Du behøver ikke at vide, hvad du vil spørge om. Skriv eller ring - vi
-            finder ud af resten sammen
-          </p>
-          <form className="space-y-8 mt-10" action="/api/contact" method="POST">
-            <div>
-              <input
-                type="text"
-                name="name"
-                placeholder="Dit navn"
-                aria-label="Dit navn"
-                className="w-full"
-              />
-            </div>
-            <div>
-              <input
-                type="tel"
-                name="phone"
-                placeholder="Dit telefonnummer"
-                aria-label="Dit telefonnummer"
-                className="w-full"
-              />
-            </div>
-            <div>
-              <textarea
-                name="message"
-                placeholder="Hvad vil du gerne tale om? (valgfri)"
-                aria-label="Hvad vil du gerne tale om?"
-                rows={4}
-                className="w-full resize-none"
-              />
-            </div>
-            <button type="submit" className="btn-primary w-full">
-              Send
-            </button>
-          </form>
-          <p className="text-[13px] text-midnight/50 mt-6 text-center">
-            Navn eller telefon gør det lettere for os at vende tilbage
-          </p>
+        <div className="page-margin flex justify-center">
+          <ContactForm />
         </div>
       </section>
 
