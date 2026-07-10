@@ -16,6 +16,11 @@ const nextConfig: NextConfig = {
         destination: "/ledelsesansvar",
         permanent: true,
       },
+      {
+        source: "/ledelse-og-governance",
+        destination: "/ledelse-og-ansvar",
+        permanent: true,
+      },
     ];
   },
 };

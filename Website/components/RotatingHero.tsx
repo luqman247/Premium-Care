@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 import { DamImage } from "@/components/DamImage";
 import {
+  HERO_FOCAL_POINTS,
   HERO_ROTATION_ASSET_IDS,
   HERO_ROTATION_FADE_MS,
   HERO_ROTATION_INITIAL_DELAY_MS,
@@ -57,6 +58,7 @@ export function RotatingHero() {
             fill
             priority={index === 0}
             sizes={PHOTO_SIZES.hero}
+            objectPosition={HERO_FOCAL_POINTS[assetId] ?? "center 38%"}
             className={`rotating-hero-image ${isActive ? "is-active" : ""}`}
             style={{
               transitionDuration: `${HERO_ROTATION_FADE_MS}ms`,

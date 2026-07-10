@@ -5,16 +5,20 @@ import type { DamAsset, UsageChannel } from "@/lib/dam/types";
 export const SITE_USAGE_MAP: Record<string, UsageChannel[]> = {
   [ASSET_IDS.homepageHero]: [
     { key: "homepage", label: "Homepage", used: true },
-    { key: "about", label: "About", used: true },
     { key: "seo", label: "SEO Pages", used: true },
     { key: "social", label: "Social Cards", used: false },
+  ],
+  [ASSET_IDS.homepageCompass]: [
+    { key: "homepage", label: "Homepage", used: true },
+  ],
+  [ASSET_IDS.aboutClosing]: [
+    { key: "about", label: "About", used: true },
   ],
   [ASSET_IDS.servicesPersonalCare]: [
     { key: "services", label: "Services", used: true },
   ],
   [ASSET_IDS.servicesCompanionship]: [
     { key: "services", label: "Services", used: true },
-    { key: "kontakt", label: "Contact", used: true },
   ],
   [ASSET_IDS.servicesPalliative]: [
     { key: "services", label: "Services", used: true },
@@ -33,10 +37,15 @@ export const SITE_USAGE_MAP: Record<string, UsageChannel[]> = {
   ],
   [ASSET_IDS.careersHero]: [
     { key: "karriere", label: "Careers", used: true },
-    { key: "homepage", label: "Homepage", used: true },
   ],
-  [ASSET_IDS.careersTraining]: [
-    { key: "karriere", label: "Careers", used: true },
+  [ASSET_IDS.contactEditorial]: [
+    { key: "kontakt", label: "Contact", used: true },
+  ],
+  [ASSET_IDS.trustEditorial]: [
+    { key: "tillid", label: "Trust", used: true },
+  ],
+  [ASSET_IDS.documentationEditorial]: [
+    { key: "dokumentation", label: "Documentation", used: true },
   ],
   [ASSET_IDS.leadershipSection]: [
     { key: "ledelse", label: "Ledelse", used: true },

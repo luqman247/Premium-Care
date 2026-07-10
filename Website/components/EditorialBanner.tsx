@@ -7,6 +7,7 @@ type EditorialBannerProps = {
   category?: PublicImageCategory;
   alt?: string;
   priority?: boolean;
+  objectPosition?: string;
 };
 
 export function EditorialBanner({
@@ -14,6 +15,7 @@ export function EditorialBanner({
   category = "details",
   alt,
   priority = false,
+  objectPosition,
 }: EditorialBannerProps) {
   return (
     <div className="editorial-banner" aria-hidden={alt ? undefined : true}>
@@ -24,6 +26,7 @@ export function EditorialBanner({
         sizes={PHOTO_SIZES.service}
         alt={alt ?? ""}
         priority={priority}
+        objectPosition={objectPosition ?? "center 38%"}
       />
     </div>
   );

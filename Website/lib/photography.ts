@@ -16,7 +16,7 @@ function photo(assetId: string, category?: PublicImageCategory): EditorialPhoto 
 
 export const PHOTOGRAPHY = {
   hero: photo(ASSET_IDS.homepageHero, "hero"),
-  about: photo(ASSET_IDS.aboutHero, "about"),
+  about: photo(ASSET_IDS.aboutClosing, "details"),
   personalCare: photo(ASSET_IDS.servicesPersonalCare, "services"),
   companionship: photo(ASSET_IDS.servicesCompanionship, "services"),
   palliative: photo(ASSET_IDS.servicesPalliative, "services"),
@@ -24,13 +24,15 @@ export const PHOTOGRAPHY = {
   occupational: photo(ASSET_IDS.servicesOccupational, "services"),
   addonServices: photo(ASSET_IDS.servicesAddon, "services"),
   municipal: photo(ASSET_IDS.municipalHero, "municipality"),
-  calmInterior: photo("PC-08-047", "details"),
+  calmInterior: photo(ASSET_IDS.aboutHero, "details"),
   professionalTraining: photo(ASSET_IDS.careersTraining, "careers"),
+  careers: photo(ASSET_IDS.careersHero, "careers"),
   ledelse: photo(ASSET_IDS.leadershipSection, "about"),
   founder: photo(ASSET_IDS.founderStory, "founder"),
-  contact: photo(ASSET_IDS.servicesCompanionship, "contact"),
-  trust: photo("PC-04-021", "trust"),
-  documentation: photo("PC-04-021", "trust"),
+  compass: photo(ASSET_IDS.homepageCompass, "founder"),
+  contact: photo(ASSET_IDS.contactEditorial, "contact"),
+  trust: photo(ASSET_IDS.trustEditorial, "trust"),
+  documentation: photo(ASSET_IDS.documentationEditorial, "trust"),
 } as const;
 
 /** Responsive sizes hints for common layouts */

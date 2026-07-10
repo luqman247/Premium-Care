@@ -5,15 +5,19 @@ import type { SiteUsageLocation } from "@/lib/dam/types";
 export const SITE_USAGE_LOCATIONS: Record<string, SiteUsageLocation[]> = {
   [ASSET_IDS.homepageHero]: [
     { route: "/", pageLabel: "Homepage", section: "Hero rotation", component: "RotatingHero" },
-    { route: "/om-os", pageLabel: "About", section: "Closing editorial image", component: "DamImage" },
     { route: "/", pageLabel: "Homepage", section: "JSON-LD", component: "LocalBusiness schema" },
+  ],
+  [ASSET_IDS.homepageCompass]: [
+    { route: "/", pageLabel: "Homepage", section: "Compass band", component: "DamImage" },
+  ],
+  [ASSET_IDS.aboutClosing]: [
+    { route: "/om-os", pageLabel: "About", section: "Closing editorial image", component: "DamImage" },
   ],
   [ASSET_IDS.servicesPersonalCare]: [
     { route: "/services", pageLabel: "Services", section: "Praktisk hjælp", component: "DamImage" },
   ],
   [ASSET_IDS.servicesCompanionship]: [
     { route: "/services", pageLabel: "Services", section: "Personlig pleje", component: "DamImage" },
-    { route: "/kontakt", pageLabel: "Contact", section: "Editorial image", component: "DamImage" },
   ],
   [ASSET_IDS.servicesPalliative]: [
     { route: "/services", pageLabel: "Services", section: "Sygeplejeydelser", component: "DamImage" },
@@ -31,28 +35,33 @@ export const SITE_USAGE_LOCATIONS: Record<string, SiteUsageLocation[]> = {
     { route: "/kommuner", pageLabel: "Municipality", section: "Page hero", component: "DamImage" },
   ],
   [ASSET_IDS.careersHero]: [
-    { route: "/karriere", pageLabel: "Careers", section: "Page hero", component: "DamImage" },
-    { route: "/", pageLabel: "Homepage", section: "Recruitment CTA", component: "RecruitmentSection" },
-  ],
-  [ASSET_IDS.careersTraining]: [
-    { route: "/karriere", pageLabel: "Careers", section: "Training image", component: "DamImage" },
+    { route: "/karriere", pageLabel: "Careers", section: "Editorial band", component: "DamImage" },
   ],
   [ASSET_IDS.leadershipSection]: [
-    { route: "/ledelse-og-governance", pageLabel: "Leadership", section: "Editorial image", component: "DamImage" },
+    { route: "/ledelse-og-ansvar", pageLabel: "Leadership", section: "Editorial image", component: "DamImage" },
   ],
   [ASSET_IDS.founderStory]: [
     { route: "/min-historie", pageLabel: "Founder Story", section: "Founder portrait", component: "DamImage" },
     { route: "/min-historie", pageLabel: "Founder Story", section: "Open Graph", component: "Metadata" },
   ],
+  [ASSET_IDS.contactEditorial]: [
+    { route: "/kontakt", pageLabel: "Contact", section: "Editorial banner", component: "EditorialBanner" },
+  ],
+  [ASSET_IDS.trustEditorial]: [
+    { route: "/tillid", pageLabel: "Trust", section: "Editorial banner", component: "EditorialBanner" },
+  ],
+  [ASSET_IDS.documentationEditorial]: [
+    { route: "/dokumentation", pageLabel: "Documentation", section: "Editorial banner", component: "EditorialBanner" },
+  ],
   [ASSET_IDS.leadershipFormal]: [
     { route: "/om-os", pageLabel: "About", section: "CEO portrait", component: "DamImage" },
   ],
   [ASSET_IDS.leadershipSmiling]: [
-    { route: "/ledelse-og-governance", pageLabel: "Leadership", section: "CEO portrait", component: "DamImage" },
+    { route: "/ledelse-og-ansvar", pageLabel: "Leadership", section: "CEO portrait", component: "DamImage" },
   ],
   [ASSET_IDS.leadershipPress]: [
-    { route: "/ledelse-og-governance", pageLabel: "Leadership", section: "Open Graph", component: "Metadata" },
-    { route: "/ledelse-og-governance", pageLabel: "Leadership", section: "JSON-LD", component: "Person schema" },
+    { route: "/ledelse-og-ansvar", pageLabel: "Leadership", section: "Open Graph", component: "Metadata" },
+    { route: "/ledelse-og-ansvar", pageLabel: "Leadership", section: "JSON-LD", component: "Person schema" },
   ],
   [ASSET_IDS.brandWordmarkNavy]: [
     { route: "/404", pageLabel: "Not found", section: "Brand mark", component: "BrandWordmark" },
@@ -75,7 +84,7 @@ export const SITE_USAGE_LOCATIONS: Record<string, SiteUsageLocation[]> = {
     { route: "/om-os", pageLabel: "About", section: "Section seal", component: "CrestSeal" },
     { route: "/tillid", pageLabel: "Trust", section: "Section seal", component: "CrestSeal" },
     { route: "/min-historie", pageLabel: "Founder Story", section: "Section seal", component: "CrestSeal" },
-    { route: "/ledelse-og-governance", pageLabel: "Leadership", section: "Section seal", component: "CrestSeal" },
+    { route: "/ledelse-og-ansvar", pageLabel: "Leadership", section: "Section seal", component: "CrestSeal" },
     { route: "/karriere", pageLabel: "Careers", section: "Section seal", component: "CrestSeal" },
     { route: "/vores-loefte", pageLabel: "Our Promise", section: "Section seal", component: "CrestSeal" },
   ],
@@ -110,10 +119,6 @@ export const SITE_USAGE_LOCATIONS: Record<string, SiteUsageLocation[]> = {
   "PC-01-005": [
     { route: "/", pageLabel: "Homepage", section: "Hero rotation", component: "RotatingHero" },
   ],
-  "PC-04-021": [
-    { route: "/tillid", pageLabel: "Trust", section: "Editorial image", component: "DamImage" },
-    { route: "/dokumentation", pageLabel: "Documentation", section: "Editorial image", component: "DamImage" },
-  ],
   "PC-04-025": [
     { route: "/", pageLabel: "Homepage", section: "Hero rotation", component: "RotatingHero" },
   ],
@@ -122,9 +127,6 @@ export const SITE_USAGE_LOCATIONS: Record<string, SiteUsageLocation[]> = {
   ],
   "PC-08-044": [
     { route: "/", pageLabel: "Homepage", section: "Hero rotation", component: "RotatingHero" },
-  ],
-  "PC-08-047": [
-    { route: "/", pageLabel: "Homepage", section: "Calm interior", component: "DamImage" },
   ],
   "PC-08-048": [
     { route: "/", pageLabel: "Homepage", section: "Hero rotation", component: "RotatingHero" },
@@ -140,7 +142,7 @@ const PAGE_ROUTE_MAP: Record<string, string> = {
   karriere: "/karriere",
   kommuner: "/kommuner",
   "min-historie": "/min-historie",
-  ledelse: "/ledelse-og-governance",
+  ledelse: "/ledelse-og-ansvar",
   kontakt: "/kontakt",
   priser: "/priser",
 };
@@ -153,7 +155,7 @@ export function getAssetUsageLocations(assetId: string, websitePages: string[]):
   return websitePages.map((page) => ({
     route: PAGE_ROUTE_MAP[page] ?? `/${page}`,
     pageLabel: page.charAt(0).toUpperCase() + page.slice(1).replace(/-/g, " "),
-    section: "Planned placement",
+    section: "Catalogue placement",
     component: "Catalog",
   }));
 }

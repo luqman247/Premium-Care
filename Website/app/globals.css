@@ -622,9 +622,15 @@
   .editorial-banner {
     position: relative;
     width: 100%;
-    height: clamp(220px, 36vh, 420px);
+    height: clamp(180px, 28vh, 420px);
     overflow: hidden;
     background-color: var(--color-midnight);
+  }
+
+  @media (min-width: 768px) {
+    .editorial-banner {
+      height: clamp(220px, 36vh, 420px);
+    }
   }
 
   .editorial-ticker-track {
@@ -704,16 +710,16 @@
     background:
       linear-gradient(
         180deg,
-        rgba(4, 21, 42, 0.35) 0%,
-        rgba(4, 21, 42, 0.18) 38%,
-        rgba(4, 21, 42, 0.55) 68%,
-        rgba(4, 21, 42, 0.88) 100%
+        rgba(4, 21, 42, 0.42) 0%,
+        rgba(4, 21, 42, 0.22) 36%,
+        rgba(4, 21, 42, 0.62) 66%,
+        rgba(4, 21, 42, 0.92) 100%
       ),
       linear-gradient(
         90deg,
-        rgba(4, 21, 42, 0.45) 0%,
-        rgba(4, 21, 42, 0.12) 55%,
-        rgba(4, 21, 42, 0.2) 100%
+        rgba(4, 21, 42, 0.52) 0%,
+        rgba(4, 21, 42, 0.16) 52%,
+        rgba(4, 21, 42, 0.28) 100%
       );
   }
 
@@ -1168,8 +1174,14 @@
 
   .service-pathway-media {
     position: relative;
-    min-height: 48vw;
+    min-height: min(42vw, 17.5rem);
     background-color: var(--color-midnight);
+  }
+
+  @media (min-width: 640px) {
+    .service-pathway-media {
+      min-height: min(48vw, 22rem);
+    }
   }
 
   @media (min-width: 900px) {
@@ -1182,7 +1194,13 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    padding: var(--space-10) 8%;
+    padding: var(--space-8) 8%;
+  }
+
+  @media (min-width: 640px) {
+    .service-pathway-copy {
+      padding: var(--space-10) 8%;
+    }
   }
 
   .trust-module-grid {

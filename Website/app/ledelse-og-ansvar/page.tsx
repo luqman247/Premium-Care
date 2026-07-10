@@ -15,12 +15,12 @@ export const metadata: Metadata = {
   },
   description:
     "Ledelse, ansvar og kvalitetsarbejde i PremiumCare ApS. Grundlagt af Bibi Naziyh Dowezai.",
-  alternates: { canonical: "/ledelse-og-governance" },
+  alternates: { canonical: "/ledelse-og-ansvar" },
   openGraph: {
     title: "Ledelse og ansvar | PremiumCare",
     description:
       "Ledelse, ansvar og kvalitetsarbejde i PremiumCare ApS. Grundlagt af Bibi Naziyh Dowezai.",
-    url: `${COMPANY.url}/ledelse-og-governance`,
+    url: `${COMPANY.url}/ledelse-og-ansvar`,
     images: [damMetadataImage(ASSET_IDS.leadershipPress)],
   },
 };
@@ -28,92 +28,92 @@ export const metadata: Metadata = {
 const CORE_VALUES = [
   {
     title: "Faglighed",
-    body: "Vi er uddannede og forberedte. Procedurerne er til for at beskytte borgere og os selv.",
+    body: "Vi er uddannede og forberedte. Procedurerne er til for at beskytte borgere og os selv",
   },
   {
     title: "Ærlighed",
-    body: "Vi siger fra, når noget halter, også når det er ubehageligt.",
+    body: "Vi siger fra, når noget halter, også når det er ubehageligt",
   },
   {
     title: "Sikkerhed",
-    body: "Ingen tidsplan vejer tungere end borgerens sikkerhed.",
+    body: "Ingen tidsplan vejer tungere end borgerens sikkerhed",
   },
   {
     title: "Kontinuitet",
-    body: "Den samme medarbejder, når det er muligt. Det gør en forskel.",
+    body: "Den samme medarbejder, når det er muligt. Det gør en forskel",
   },
 ];
 
 const LEADERSHIP_PRINCIPLES = [
   {
     title: "Ledelse i praksis",
-    body: "Jeg deltager i opstart, besøger hjem, følger kvaliteten og træder til, når en borger har brug for hjælp. Også en sen aften, hvis det kræves.",
+    body: "Jeg deltager i opstart, besøger hjem, følger kvaliteten og træder til, når en borger har brug for hjælp. Også en sen aften, hvis det kræves",
   },
   {
     title: "Navngivet ansvar",
-    body: "Hver standard har en ejer. Beslutninger kan forklares. Fejl indberettes tidligt og følges op.",
+    body: "Hver standard har en ejer. Beslutninger kan forklares. Fejl indberettes tidligt og følges op",
   },
   {
     title: "Respekt i hverdagen",
-    body: "Kolleger, borgere og pårørende mødes med værdighed. Det gælder også de svære dage.",
+    body: "Kolleger, borgere og pårørende mødes med værdighed. Det gælder også de svære dage",
   },
   {
     title: "Kvalitet man kan dokumentere",
-    body: "Vi arbejder ud over kommunale minimumskrav med punktlighed, kontinuitet og målbar pleje.",
+    body: "Vi arbejder ud over kommunale minimumskrav med punktlighed, kontinuitet og målbar pleje",
   },
 ];
 
 const LEDELSE_OMRAADER = [
   {
     title: "Bestyrelse",
-    body: "Bestyrelsen godkender strategiske beslutninger og modtager løbende rapportering om kvalitet og risiko.",
+    body: "Bestyrelsen godkender strategiske beslutninger og modtager løbende rapportering om kvalitet og risiko",
   },
   {
     title: "Daglig ledelse",
-    body: "Den administrerende direktør har ansvar for drift, personale, borgerpleje og regelefterlevelse.",
+    body: "Den administrerende direktør har ansvar for drift, personale, borgerpleje og regelefterlevelse",
   },
   {
     title: "Beslutninger",
-    body: "Væsentlige beslutninger dokumenteres. Kliniske vurderinger og delegerede opgaver ligger hos kvalificerede personer.",
+    body: "Væsentlige beslutninger dokumenteres. Kliniske vurderinger og delegerede opgaver ligger hos kvalificerede personer",
   },
   {
     title: "Kvalitet",
-    body: "Audits, borgerfeedback, klager og hændelser fører til handling og opfølgning. Årlig ledelsesgennemgang.",
+    body: "Audits, borgerfeedback, klager og hændelser fører til handling og opfølgning. Årlig ledelsesgennemgang",
   },
   {
     title: "Risiko",
-    body: "Risici inden for arbejdsmiljø, patientsikkerhed og databeskyttelse vurderes løbende.",
+    body: "Risici inden for arbejdsmiljø, patientsikkerhed og databeskyttelse vurderes løbende",
   },
   {
     title: "Politikker",
-    body: "Én gældende version pr. emne. Årlig revision og opdatering ved lovændringer.",
+    body: "Én gældende version pr. emne. Årlig revision og opdatering ved lovændringer",
   },
 ];
 
 const QUALITY_COMMITMENTS = [
   {
     title: "Klinisk ledelse",
-    body: "Delegerede sundhedsopgaver udføres kun efter uddannelse og formel godkendelse.",
+    body: "Delegerede sundhedsopgaver udføres kun efter uddannelse og formel godkendelse",
   },
   {
     title: "Audits",
-    body: "Årligt program dækker dokumentation, medicin, GDPR, klager og arbejdsmiljø. Fund følges til lukning.",
+    body: "Årligt program dækker dokumentation, medicin, GDPR, klager og arbejdsmiljø. Fund følges til lukning",
   },
   {
     title: "Oplæring",
-    body: "Ingen arbejder ud over sin uddannelse. Obligatorisk oplæring i betalt tid.",
+    body: "Ingen arbejder ud over sin uddannelse. Obligatorisk oplæring i betalt tid",
   },
   {
     title: "Dokumentation",
-    body: "Plejenotater udfyldes samme dag. Journalen er overleveringen til næste kollega.",
+    body: "Plejenotater udfyldes samme dag. Journalen er overleveringen til næste kollega",
   },
   {
     title: "Familier",
-    body: "Vi fortæller, hvad vi ser og planlægger. Pårørende guides til klagevejen.",
+    body: "Vi fortæller, hvad vi ser og planlægger. Pårørende guides til klagevejen",
   },
   {
     title: "Kommuner",
-    body: "Åben rapportering til kommunalpartnere fra fælles registre, ikke parallelle regneark.",
+    body: "Åben rapportering til kommunalpartnere fra fælles registre, ikke parallelle regneark",
   },
 ];
 
@@ -144,7 +144,7 @@ function pageJsonLd() {
           "@type": "ListItem",
           position: 2,
           name: "Ledelse og ansvar",
-          item: `${COMPANY.url}/ledelse-og-governance`,
+          item: `${COMPANY.url}/ledelse-og-ansvar`,
         },
       ],
     },
@@ -159,7 +159,7 @@ function pageJsonLd() {
         url: COMPANY.url,
       },
       image: damAbsoluteUrl(ASSET_IDS.leadershipPress, COMPANY.url),
-      url: `${COMPANY.url}/ledelse-og-governance`,
+      url: `${COMPANY.url}/ledelse-og-ansvar`,
     },
     {
       "@context": "https://schema.org",
@@ -167,7 +167,7 @@ function pageJsonLd() {
       name: "Ledelse og ansvar",
       description:
         "Ledelse og ansvar i PremiumCare ApS.",
-      url: `${COMPANY.url}/ledelse-og-governance`,
+      url: `${COMPANY.url}/ledelse-og-ansvar`,
       isPartOf: {
         "@type": "WebSite",
         name: COMPANY.brandName,
@@ -181,7 +181,7 @@ function pageJsonLd() {
   ];
 }
 
-export default function LeadershipGovernancePage() {
+export default function LeadershipResponsibilityPage() {
   return (
     <article className="bg-ivory pb-24">
       <header className="section-padding page-margin">

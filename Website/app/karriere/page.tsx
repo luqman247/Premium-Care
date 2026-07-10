@@ -88,10 +88,11 @@ export default function CareersPage() {
       <section className="snap-section bg-ivory">
         <div className="w-full h-[50vh] relative">
           <DamImage
-            assetId={ASSET_IDS.careersTraining}
+            assetId={ASSET_IDS.careersHero}
             category="careers"
             fill
             sizes="100vw"
+            objectPosition="center 35%"
           />
         </div>
         <div className="section-padding reading-column text-center">
@@ -150,7 +151,7 @@ export default function CareersPage() {
           </p>
           <p className="mt-8">
             <Link
-              href="/ledelse-og-governance"
+              href="/ledelse-og-ansvar"
               className="text-[17px] underline underline-offset-4 focus-ring"
             >
               Læs om ledelse og ansvar

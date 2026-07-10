@@ -104,7 +104,7 @@ export default function DocumentationPage() {
           </p>
           <p className="mt-8">
             <Link
-              href="/ledelse-og-governance"
+              href="/ledelse-og-ansvar"
               className="text-[17px] leading-body text-midnight underline underline-offset-4 hover:text-midnight/80 transition-colors focus-ring"
             >
               Ledelse og ansvar

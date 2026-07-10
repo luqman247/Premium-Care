@@ -255,7 +255,7 @@ export default function MunicipalPage() {
             </Link>
             {" · "}
             <Link
-              href="/ledelse-og-governance"
+              href="/ledelse-og-ansvar"
               className="underline underline-offset-4 hover:text-ivory transition-colors focus-ring"
             >
               Ledelse og ansvar

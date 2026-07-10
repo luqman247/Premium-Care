@@ -124,7 +124,7 @@ export default function AboutPage() {
               </p>
               <p className="mt-10">
                 <Link
-                  href="/ledelse-og-governance"
+                  href="/ledelse-og-ansvar"
                   className="text-[17px] leading-body text-gold underline underline-offset-4 hover:text-gold-light transition-colors focus-ring"
                 >
                   Læs om ledelse og ansvar
@@ -220,7 +220,7 @@ export default function AboutPage() {
             få det forklaret
           </p>
           <Link
-            href="/ledelse-og-governance"
+            href="/ledelse-og-ansvar"
             className="block py-5 text-[17px] text-gold hover:tracking-wide transition-all duration-300 focus-ring"
           >
             Ledelse og ansvar

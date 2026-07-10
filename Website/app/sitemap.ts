@@ -11,7 +11,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${baseUrl}/services`, priority: 0.9 },
     { url: `${baseUrl}/priser`, priority: 0.8 },
     { url: `${baseUrl}/om-os`, priority: 0.8 },
-    { url: `${baseUrl}/ledelse-og-governance`, priority: 0.9 },
+    { url: `${baseUrl}/ledelse-og-ansvar`, priority: 0.9 },
     { url: `${baseUrl}/min-historie`, priority: 0.8 },
     { url: `${baseUrl}/kontakt`, priority: 0.9 },
     { url: `${baseUrl}/kommuner`, priority: 0.8 },

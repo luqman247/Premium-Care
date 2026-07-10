@@ -67,12 +67,12 @@ export default function HomePage() {
       >
         <div className="wow-compass-media" aria-hidden="true">
           <DamImage
-            assetId={ASSET_IDS.founderStory}
+            assetId={ASSET_IDS.homepageCompass}
             category="founder"
             fill
             sizes={PHOTO_SIZES.hero}
             className="object-cover"
-            objectPosition="center 28%"
+            objectPosition="center 30%"
             priority
           />
         </div>
