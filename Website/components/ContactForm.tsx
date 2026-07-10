@@ -20,7 +20,6 @@ export function ContactForm() {
   const messageId = `${formId}-message`;
   const helperId = `${formId}-helper`;
   const statusId = `${formId}-status`;
-  const privacyId = `${formId}-privacy`;
 
   const [name, setName] = useState("");
   const [phone, setPhone] = useState("");
@@ -112,15 +111,15 @@ export function ContactForm() {
 
   return (
     <div className="contact-form-panel">
-      <div className="contact-form-panel-top" aria-hidden="true">
-        <CrestSeal size={40} decorative className="!p-0" />
+      <div className="contact-form-header">
+        <CrestSeal size={36} decorative className="!p-0 contact-form-crest" />
+        <p className="type-eyebrow contact-form-eyebrow">Henvendelse</p>
+        <h2 className="contact-form-title">Skriv til os</h2>
+        <p className="contact-form-lede">
+          Du behøver ikke at kende den rigtige proces. Skriv eller ring - vi hjælper
+          dig trygt videre
+        </p>
       </div>
-
-      <h2 className="contact-form-title">Skriv til os</h2>
-      <p className="contact-form-lede">
-        Du behøver ikke at kende den rigtige proces. Skriv eller ring - vi hjælper
-        dig trygt videre
-      </p>
 
       <div
         id={statusId}
@@ -209,7 +208,7 @@ export function ContactForm() {
             name="message"
             placeholder="Hvad vil du gerne tale med os om?"
             className="contact-textarea"
-            rows={6}
+            rows={5}
             value={message}
             onChange={(event) => setMessage(event.target.value)}
             disabled={isSubmitting}
@@ -225,40 +224,43 @@ export function ContactForm() {
             </p>
           ) : null}
           <p id={helperId} className="contact-helper">
-            Du kan skrive kort. Vi vender tilbage og hjælper dig videre
+            Skriv gerne kort. Vi vender tilbage
           </p>
         </div>
 
-        <button
-          type="submit"
-          className="btn-primary contact-submit"
-          disabled={isSubmitting}
-        >
-          {isSubmitting ? "Sender…" : "Send besked"}
-        </button>
+        <div className="contact-actions">
+          <button
+            type="submit"
+            className="btn-primary contact-submit"
+            disabled={isSubmitting}
+          >
+            {isSubmitting ? "Sender…" : "Send besked"}
+          </button>
+        </div>
       </form>
 
-      <p className="contact-trust">
-        Vi bruger kun dine oplysninger til at vende tilbage på din henvendelse
-      </p>
-
-      <p className="contact-direct">
-        <a href={`mailto:${COMPANY.email}`} className="focus-ring">
-          {COMPANY.email}
-        </a>
-        <span aria-hidden="true"> · </span>
-        <a href={COMPANY.phone.href} className="focus-ring">
-          {COMPANY.phone.display}
-        </a>
-      </p>
-
-      <p id={privacyId} className="contact-privacy">
-        Vi behandler din henvendelse fortroligt og bruger kun oplysningerne til at
-        kontakte dig.{" "}
-        <Link href="/privatliv" className="underline underline-offset-4 focus-ring">
-          Privatliv
-        </Link>
-      </p>
+      <footer className="contact-form-footer">
+        <p className="contact-trust">
+          Vi bruger kun dine oplysninger til at vende tilbage
+        </p>
+        <p className="contact-direct">
+          <a href={COMPANY.phone.href} className="signature-link">
+            {COMPANY.phone.display}
+          </a>
+          <span className="contact-direct-sep" aria-hidden="true">
+            ·
+          </span>
+          <a href={`mailto:${COMPANY.email}`} className="signature-link">
+            {COMPANY.email}
+          </a>
+        </p>
+        <p className="contact-privacy">
+          Fortrolig behandling.{" "}
+          <Link href="/privatliv" className="signature-link">
+            Privatliv
+          </Link>
+        </p>
+      </footer>
     </div>
   );
 }
