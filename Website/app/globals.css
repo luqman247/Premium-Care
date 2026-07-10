@@ -494,7 +494,7 @@
   .editorial-ticker-track {
     display: flex;
     width: max-content;
-    animation: editorial-ticker-scroll 96s linear infinite;
+    animation: editorial-ticker-scroll 120s linear infinite;
     gap: var(--space-8);
     padding: 0.625rem 0;
   }
@@ -539,8 +539,8 @@
     position: relative;
     width: 100%;
     aspect-ratio: 16 / 9;
-    max-height: 52vh;
-    min-height: 240px;
+    max-height: 42vh;
+    min-height: 200px;
     overflow: hidden;
     background-color: var(--color-midnight);
   }
@@ -549,6 +549,7 @@
     .rotating-hero-wrap {
       aspect-ratio: 21 / 9;
       max-height: 48vh;
+      min-height: 280px;
     }
   }
 
@@ -799,7 +800,7 @@
     background-color: var(--color-midnight);
     color: var(--color-ivory);
     border-top: 1px solid rgba(196, 160, 95, 0.28);
-    padding: var(--space-4) 0;
+    padding: var(--space-4) 0 calc(var(--space-4) + env(safe-area-inset-bottom, 0px));
   }
 
   .cookie-consent-inner {
@@ -851,6 +852,7 @@
     font-size: var(--text-caption);
     color: rgba(247, 245, 240, 0.85);
     cursor: pointer;
+    min-height: 44px;
   }
 
   .cookie-consent-actions {
@@ -863,10 +865,11 @@
   .cookie-consent-btn {
     font-family: var(--font-body);
     font-size: var(--text-caption);
-    padding: 0.625rem 1rem;
+    padding: 0.75rem 1.125rem;
     border: 1px solid transparent;
     cursor: pointer;
     transition: opacity var(--transition-hover);
+    min-height: 44px;
   }
 
   .cookie-consent-btn:focus-visible {

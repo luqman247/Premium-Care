@@ -269,7 +269,7 @@ export default function AboutPage() {
           </h2>
           <p className="text-[17px] leading-body text-ivory/80 mt-8">
             Familieejet. Ingen udenlandske ejere. Ingen investorer, der kræver
-            hurtigt afkast. Vi bygger noget, der skal holde.
+            hurtigt afkast. Vi bygger noget, der skal holde
           </p>
         </div>
       </section>
@@ -287,6 +287,14 @@ export default function AboutPage() {
           <p className="text-[13px] uppercase tracking-wide text-midnight/60">
             De mennesker, der passer på din mor
           </p>
+          <div className="mt-10 flex flex-col sm:flex-row gap-4 justify-center">
+            <Link href="/kontakt" className="btn-primary">
+              Kontakt os om frit valg
+            </Link>
+            <Link href="/min-historie" className="btn-secondary">
+              Læs grundlæggerens historie
+            </Link>
+          </div>
         </div>
       </section>
     </div>

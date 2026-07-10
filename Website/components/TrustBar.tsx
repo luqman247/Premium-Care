@@ -3,16 +3,23 @@ import { CrestSeal } from "@/components/CrestSeal";
 import { CREST_SIZES } from "@/lib/brand";
 import { COMPANY } from "@/lib/company";
 
-const FOOTER_NAV = [
-  { href: "/kommuner", label: "Kommunal indkøb" },
+const FOOTER_PRIMARY = [
+  { href: "/services", label: "Ydelser" },
+  { href: "/priser", label: "Gratis hjemmepleje" },
+  { href: "/kontakt", label: "Kontakt" },
+  { href: "/om-os", label: "Om os" },
+  { href: "/min-historie", label: "Min historie" },
+  { href: "/karriere", label: "Bliv en del af teamet" },
+];
+
+const FOOTER_TRUST = [
   { href: "/tillid", label: "Tillidscenter" },
   { href: "/dokumentation", label: "Dokumentation" },
   { href: "/vores-loefte", label: "Vores løfte" },
   { href: "/whistleblowing", label: "Whistleblower-ordning" },
   { href: "/privatliv", label: "Privatliv" },
+  { href: "/cookiepolitik", label: "Cookiepolitik" },
   { href: "/klager", label: "Klager" },
-  { href: "/karriere", label: "Bliv en del af teamet" },
-  { href: "/min-historie", label: "Min historie" },
 ];
 
 export function TrustBar() {
@@ -32,6 +39,10 @@ export function TrustBar() {
               <br />
               {COMPANY.address.country}
             </address>
+            <p className="site-footer-detail mt-6 max-w-[32ch]">
+              Hvis du er visiteret til hjemmepleje, kan du som udgangspunkt vælge
+              privat leverandør uden ekstra betaling
+            </p>
           </div>
 
           <div>
@@ -53,9 +64,19 @@ export function TrustBar() {
           </div>
 
           <nav aria-label="Footer navigation">
-            <p className="site-footer-label">Navigation</p>
+            <p className="site-footer-label">Sider</p>
             <ul className="site-footer-nav mt-3">
-              {FOOTER_NAV.map((item) => (
+              {FOOTER_PRIMARY.map((item) => (
+                <li key={item.href}>
+                  <Link href={item.href} className="site-footer-link focus-ring">
+                    {item.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+            <p className="site-footer-label mt-8">Tillid</p>
+            <ul className="site-footer-nav mt-3">
+              {FOOTER_TRUST.map((item) => (
                 <li key={item.href}>
                   <Link href={item.href} className="site-footer-link focus-ring">
                     {item.label}
@@ -80,7 +101,7 @@ export function TrustBar() {
             />
           </Link>
           <p className="site-footer-detail">
-            © {year} {COMPANY.legalName}. Alle rettigheder forbeholdes.
+            © {year} {COMPANY.legalName}. Alle rettigheder forbeholdes
           </p>
         </div>
       </div>

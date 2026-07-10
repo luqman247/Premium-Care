@@ -25,24 +25,33 @@ export default function HomePage() {
             <h1 className="hero-statement text-midnight max-w-[22ch]">
               Tryghed i hjemmet
             </h1>
-            <p className="hero-quality text-midnight max-w-[32ch]">
+            <p className="hero-quality text-midnight max-w-[36ch]">
               Den samme medarbejder. Tydelig besked til familien
             </p>
-            <p className="hero-human text-midnight/85 max-w-[38ch]">
+            <p className="hero-human text-midnight/85 max-w-[40ch]">
               De fleste vil helst blive hjemme. Det prøver vi at gøre muligt
             </p>
-            <p className="hero-support text-midnight/70 max-w-[42ch]">
+            <p className="hero-support text-midnight/70 max-w-[44ch]">
               Hvis du er bekymret for hendes sikkerhed, ringer du bare. Vi finder
               en løsning - også i dag
             </p>
             <div className="hero-actions">
-              <a href={COMPANY.phone.href} className="btn-primary">
-                Ring os nu
-              </a>
-              <Link href="/kontakt" className="btn-secondary">
-                Skriv til os
+              <Link href="/kontakt" className="btn-primary">
+                Kontakt os om frit valg
+              </Link>
+              <Link href="/priser" className="btn-secondary">
+                Læs om gratis hjemmepleje
               </Link>
             </div>
+            <p className="text-[15px] text-midnight/60 mt-6">
+              Eller ring{" "}
+              <a
+                href={COMPANY.phone.href}
+                className="underline underline-offset-4 hover:text-midnight transition-colors focus-ring"
+              >
+                {COMPANY.phone.display}
+              </a>
+            </p>
           </div>
         </div>
       </header>
@@ -69,38 +78,10 @@ export default function HomePage() {
           <h2 className="type-section-title text-midnight">
             Gratis hjemmepleje gennem frit valg
           </h2>
-          <FreeCareMessage className="mt-8" linkLabel="Læs mere om frit valg" />
-        </div>
-      </section>
-
-      <section className="bg-ivory section-padding section-rule">
-        <div className="reading-column">
-          <h2 className="type-section-title text-midnight">
-            Danmark bliver ældre. Flere vil blive hjemme
-          </h2>
-          <div className="mt-12 grid grid-cols-1 sm:grid-cols-3 gap-10 text-left">
-            <div>
-              <p className="type-stat">20%</p>
-              <p className="type-caption text-midnight/55 mt-3">
-                af danskerne er 65+ i 2030
-              </p>
-            </div>
-            <div>
-              <p className="type-stat">87%</p>
-              <p className="type-caption text-midnight/55 mt-3">
-                foretrækker at blive gamle i eget hjem
-              </p>
-            </div>
-            <div>
-              <p className="type-stat">81,5</p>
-              <p className="type-caption text-midnight/55 mt-3">
-                år, gennemsnitlig levealder
-              </p>
-            </div>
-          </div>
-          <p className="text-[13px] leading-loose text-midnight/45 mt-10">
-            Tal fra Danmarks Statistik og Ældre Sagen
-          </p>
+          <FreeCareMessage
+            className="mt-8"
+            linkLabel="Sådan fungerer frit valg"
+          />
         </div>
       </section>
 
@@ -121,11 +102,11 @@ export default function HomePage() {
           <div className="mt-10 space-y-6 text-[17px] leading-body text-ivory/80">
             <p>
               Vi tager os tid til at lære huset at kende. Den samme person kommer
-              igen, når det er muligt. Vi ringer, når noget ændrer sig.
+              igen, når det er muligt. Vi ringer, når noget ændrer sig
             </p>
             <p>
               Hvis hun siger nej den første uge, kommer vi alligevel tilbage.
-              Tillid tager tid.
+              Tillid tager tid
             </p>
           </div>
           <p className="mt-12">
@@ -139,17 +120,35 @@ export default function HomePage() {
         </div>
       </section>
 
+      <section className="bg-ivory section-padding section-rule">
+        <div className="reading-column">
+          <h2 className="type-section-title text-midnight">Hvad vi gør</h2>
+          <p className="type-lead text-midnight/80 mt-8">
+            Praktisk hjælp, personlig pleje, sygepleje, fysioterapi, ergoterapi og
+            tilkøb - altid i borgerens eget hjem
+          </p>
+          <p className="mt-10">
+            <Link
+              href="/services"
+              className="text-[17px] leading-body text-midnight underline underline-offset-4 hover:text-midnight/80 transition-colors focus-ring"
+            >
+              Se vores ydelser
+            </Link>
+          </p>
+        </div>
+      </section>
+
       <section className="bg-ivory section-padding">
         <div className="reading-column">
           <h2 className="type-section-title text-midnight">Hvem vi er</h2>
           <p className="type-lead text-midnight/80 mt-8">
             Premium Care blev stiftet af Bibi Naziyh Dowezai, med baggrund i
             hjemmepleje i Aarhus, Vejle og Fredericia. Virksomheden er familieejet
-            og har hjemsted i Viby J.
+            og har hjemsted i Viby J
           </p>
           <p className="type-lead text-midnight mt-8">
             Grundlæggeren voksede op med en farmor, der fik værdig pleje i Danmark.
-            Det er udgangspunktet for alt, vi gør.
+            Det er udgangspunktet for alt, vi gør
           </p>
           <p className="mt-10">
             <Link
@@ -175,14 +174,10 @@ export default function HomePage() {
       </section>
 
       <section className="testimonial-section bg-ivory section-padding">
-        <div className="reading-column text-center">
-          <p className="type-stat">94%</p>
-          <p className="type-caption text-midnight/55 mt-4">
-            Tilfredshed blandt borgere og pårørende
-          </p>
-          <p className="text-[13px] text-midnight/45 mt-2">
-            Målt af uafhængig part, seneste år
-          </p>
+        <div className="reading-column">
+          <h2 className="type-section-title text-midnight text-center">
+            Det, familier fortæller os
+          </h2>
           <div className="mt-16 text-left">
             <p className="type-lead text-midnight max-w-[55ch]">
               De første to uger sagde min mor nej til alt. Den tredje uge
@@ -202,12 +197,18 @@ export default function HomePage() {
               Søn til borger med demens
             </p>
           </div>
+          <p className="mt-16 text-center">
+            <Link
+              href="/dokumentation"
+              className="text-[17px] leading-body text-midnight underline underline-offset-4 hover:text-midnight/80 transition-colors focus-ring"
+            >
+              Se vores dokumentation
+            </Link>
+          </p>
         </div>
       </section>
 
-      <RecruitmentSection />
-
-      <section className="bg-ivory section-padding">
+      <section className="bg-ivory section-padding section-rule">
         <div className="reading-column text-center">
           <p className="type-pullquote text-midnight">
             Har du brug for hjælp nu, ringer du
@@ -217,12 +218,12 @@ export default function HomePage() {
             derfra
           </p>
           <div className="mt-12 flex flex-col sm:flex-row gap-4 justify-center items-center">
-            <a href={COMPANY.phone.href} className="btn-primary">
-              Ring os nu
-            </a>
-            <Link href="/kontakt" className="btn-secondary">
-              Skriv til os
+            <Link href="/kontakt" className="btn-primary">
+              Kontakt os om frit valg
             </Link>
+            <a href={COMPANY.phone.href} className="btn-secondary">
+              Ring {COMPANY.phone.display}
+            </a>
           </div>
           <p className="text-[13px] text-midnight/50 mt-6">
             {COMPANY.openingHours.display}
@@ -230,6 +231,7 @@ export default function HomePage() {
         </div>
       </section>
 
+      <RecruitmentSection variant="quiet" />
     </div>
   );
 }

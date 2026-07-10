@@ -52,7 +52,7 @@ export default function VoresLoftePage() {
           </p>
           <p className="text-[19px] leading-body text-midnight/80 mt-10 max-w-[55ch]">
             Det her er det, vi mener. Det står også i vores politikker og
-            dokumentation.
+            dokumentation
           </p>
         </section>
 

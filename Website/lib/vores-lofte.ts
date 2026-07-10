@@ -1,44 +1,44 @@
 export const VORES_LOFTE_PROMISES = [
   {
     id: "vaerdighed",
-    statement: "Vi tager os tid.",
+    statement: "Vi tager os tid",
     practice:
-      "Rutiner og vaner respekteres. Et nej tæller. Den samme medarbejder kommer tilbage, når det er muligt. Ingen behandles som en post på en liste.",
+      "Rutiner og vaner respekteres. Et nej tæller. Den samme medarbejder kommer tilbage, når det er muligt. Ingen behandles som en post på en liste",
   },
   {
     id: "kommunikation",
-    statement: "Vi fortæller, hvad vi ser.",
+    statement: "Vi fortæller, hvad vi ser",
     practice:
-      "Hvad vi planlægger. Hvad der bekymrer os. Familien hører fra os, når noget ændrer sig, også når beskeden er svær at give.",
+      "Hvad vi planlægger. Hvad der bekymrer os. Familien hører fra os, når noget ændrer sig, også når beskeden er svær at give",
   },
   {
     id: "medarbejdere",
-    statement: "Vi oplærer vores folk ordentligt.",
+    statement: "Vi oplærer vores folk ordentligt",
     practice:
-      "Fast løn, mentorordning, betalt oplæring og uniform. Medarbejderne er dem, der bærer arbejdet. Det afspejles i, hvad vi investerer i dem.",
+      "Fast løn, mentorordning, betalt oplæring og uniform. Medarbejderne er dem, der bærer arbejdet. Det afspejles i, hvad vi investerer i dem",
   },
   {
     id: "laering",
-    statement: "Når noget går galt, siger vi det.",
+    statement: "Når noget går galt, siger vi det",
     practice:
-      "Vi dokumenterer, gennemgår det og informerer familien. Klager tages alvorligt. Fejl skal føre til bedre praksis, ikke til tavshed.",
+      "Vi dokumenterer, gennemgår det og informerer familien. Klager tages alvorligt. Fejl skal føre til bedre praksis, ikke til tavshed",
   },
   {
     id: "forbedring",
-    statement: "Kvalitet er noget, vi gør hver dag.",
+    statement: "Kvalitet er noget, vi gør hver dag",
     practice:
-      "Plejenotater, supervision, ekstern kontrol og tilbagemeldinger fra borgere og pårørende. Vi følger op, når noget halter.",
+      "Plejenotater, supervision, ekstern kontrol og tilbagemeldinger fra borgere og pårørende. Vi følger op, når noget halter",
   },
   {
     id: "mennesket",
-    statement: "Bag hver plejeplan står et menneske.",
+    statement: "Bag hver plejeplan står et menneske",
     practice:
-      "Historie, frygt, vaner og ønsker. Planen er vigtig. Personen bag den er vigtigere.",
+      "Historie, frygt, vaner og ønsker. Planen er vigtig. Personen bag den er vigtigere",
   },
 ] as const;
 
 export const VORES_LOFTE_HERO =
-  "Det, vi lover her, skal kunne mærkes i hverdagen.";
+  "Det, vi lover her, skal kunne mærkes i hverdagen";
 
 export const VORES_LOFTE_COMPASS =
   "Hvis det var min farmor, der sad i den stol, hvad ville jeg ønske, vi gjorde?";

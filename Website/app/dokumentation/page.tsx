@@ -30,7 +30,7 @@ export default function DocumentationPage() {
           <p className="text-[19px] leading-body text-midnight/80 mt-8 max-w-[55ch]">
             Offentlige politikker, procedurer og erklæringer fra {COMPANY.legalName}.
             Det fulde dokument gælder ved uoverensstemmelse med resuméer på
-            hjemmesiden.
+            hjemmesiden
           </p>
           <p className="text-[13px] text-midnight/60 mt-6">
             CVR {COMPANY.cvr}
@@ -67,7 +67,7 @@ export default function DocumentationPage() {
           </ul>
           <p className="mt-6">
             <Link href="/kommuner" className="text-[17px] underline underline-offset-4 focus-ring">
-              Kommunal indkøb og samarbejde →
+              Kommunal indkøb og samarbejde
             </Link>
           </p>
         </section>
@@ -83,7 +83,7 @@ export default function DocumentationPage() {
                   href={item.href}
                   className="block py-5 text-[17px] text-midnight hover:tracking-wide transition-all duration-300 focus-ring"
                 >
-                  {item.label} →
+                  {item.label}
                 </Link>
               </li>
             ))}
@@ -103,9 +103,23 @@ export default function DocumentationPage() {
               href="/ledelse-og-governance"
               className="text-[17px] leading-body text-midnight underline underline-offset-4 hover:text-midnight/80 transition-colors focus-ring"
             >
-              Ledelse og ansvar →
+              Ledelse og ansvar
             </Link>
           </p>
+        </section>
+
+        <section className="section-padding" aria-labelledby="doc-cta">
+          <h2 id="doc-cta" className="sr-only">
+            Kontakt
+          </h2>
+          <div className="flex flex-col sm:flex-row gap-4">
+            <Link href="/kontakt" className="btn-primary">
+              Kontakt os om frit valg
+            </Link>
+            <Link href="/tillid" className="btn-secondary">
+              Se vores dokumentation
+            </Link>
+          </div>
         </section>
       </div>
     </article>

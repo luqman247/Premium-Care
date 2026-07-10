@@ -29,7 +29,7 @@ export default function ServicesPage() {
           <p className="text-[19px] leading-body text-midnight/80 mt-8">
             Pleje i hjemmet, tilpasset den enkelte borger
           </p>
-          <FreeCareMessage className="mt-10" />
+          <FreeCareMessage className="mt-10" linkLabel="Sådan fungerer frit valg" />
         </div>
       </section>
 
@@ -70,11 +70,14 @@ export default function ServicesPage() {
           <p className="text-[17px] leading-body text-ivory/80 mt-12 max-w-[55ch]">
             Vi overtager ikke familiens plads. Du kender din mor bedst. Vi rådgiver
             ikke mod lægens ordination. Vi er her, når I ikke kan være. Og vi giver
-            ikke op, fordi hun siger nej den første uge.
+            ikke op, fordi hun siger nej den første uge
           </p>
-          <div className="mt-10">
+          <div className="mt-10 flex flex-col sm:flex-row gap-4">
             <Link href="/kontakt" className="btn-primary">
-              Kontakt os, hvis du vil høre, hvordan frit valg fungerer
+              Kontakt os om frit valg
+            </Link>
+            <Link href="/priser" className="btn-secondary">
+              Læs om gratis hjemmepleje
             </Link>
           </div>
         </div>

@@ -48,7 +48,7 @@ export default async function ContactPage({ searchParams }: ContactPageProps) {
       <section className="snap-section bg-midnight section-padding">
         <div className="reading-column text-center">
           <p className="text-[19px] leading-body text-ivory">
-            Ring til os i åbningstiden. Ved akut livstruende situationer: ring 112.
+            Ring til os i åbningstiden. Ved akut livstruende situationer: ring 112
           </p>
           <a
             href={COMPANY.phone.href}
@@ -67,13 +67,12 @@ export default async function ContactPage({ searchParams }: ContactPageProps) {
           <h2 className="text-[30px] leading-normal text-midnight">
             Gratis hjemmepleje gennem frit valg
           </h2>
-          <FreeCareMessage className="mt-8" />
-          <Link
-            href="/priser"
-            className="inline-block mt-10 text-[17px] text-midnight hover:tracking-wide transition-all duration-300 focus-ring"
-          >
-            Læs om gratis hjemmepleje →
-          </Link>
+          <FreeCareMessage
+            className="mt-8"
+            showLink
+            linkHref="/priser"
+            linkLabel="Sådan fungerer frit valg"
+          />
         </div>
       </section>
 
@@ -106,28 +105,26 @@ export default async function ContactPage({ searchParams }: ContactPageProps) {
             {COMPANY.address.country}
           </address>
           <p className="text-[17px] leading-body text-midnight/70 mt-8">
-            Kontor efter aftale. Pleje leveres i borgernes hjem, ikke på kontoret.
+            Kontor efter aftale. Pleje leveres i borgernes hjem, ikke på kontoret
           </p>
         </div>
       </section>
 
-      <section className="snap-section bg-ivory section-padding text-center">
-        <div className="reading-column">
+      <section id="kontaktformular" className="snap-section bg-ivory section-padding">
+        <div className="reading-column max-w-[480px]">
           {formSent && (
             <p className="text-[17px] leading-body text-midnight mb-8" role="status">
-              Tak. Vi vender tilbage inden for to arbejdsdage.
+              Tak. Vi vender tilbage inden for to arbejdsdage
             </p>
           )}
-          <p className="text-[17px] leading-body text-midnight/80">
-            Du behøver ikke at vide, hvad du vil spørge om. Du behøver ikke at have
-            besluttet dig. Skriv eller ring. Vi finder ud af resten sammen.
+          <h2 className="text-[30px] leading-normal text-midnight">
+            Skriv til os
+          </h2>
+          <p className="text-[17px] leading-body text-midnight/80 mt-6">
+            Du behøver ikke at vide, hvad du vil spørge om. Skriv eller ring - vi
+            finder ud af resten sammen
           </p>
-        </div>
-      </section>
-
-      <section className="snap-section bg-ivory section-padding">
-        <div className="reading-column max-w-[480px]">
-          <form className="space-y-8" action="/api/contact" method="POST">
+          <form className="space-y-8 mt-10" action="/api/contact" method="POST">
             <div>
               <input
                 type="text"
@@ -160,7 +157,7 @@ export default async function ContactPage({ searchParams }: ContactPageProps) {
             </button>
           </form>
           <p className="text-[13px] text-midnight/50 mt-6 text-center">
-            Alle felter er valgfrie. Vi vender tilbage inden for to arbejdsdage.
+            Navn eller telefon gør det lettere for os at vende tilbage
           </p>
         </div>
       </section>
@@ -170,11 +167,11 @@ export default async function ContactPage({ searchParams }: ContactPageProps) {
           <h2 className="text-[30px] leading-normal text-ivory">Akut hjælp</h2>
           <p className="text-[17px] leading-body text-ivory/80 mt-8">
             Ved livstruende akutte situationer: ring 112. Premium Care leverer planlagt
-            hjemmepleje, ikke akut hospitalsberedskab.
+            hjemmepleje, ikke akut hospitalsberedskab
           </p>
           <p className="text-[17px] leading-body text-ivory/80 mt-6">
             Bekymringer om en borgers sikkerhed uden for åbningstid: kontakt den
-            kommunale vagtcentral eller 112, hvis situationen er akut.
+            kommunale vagtcentral eller 112, hvis situationen er akut
           </p>
           <p className="text-[17px] leading-body text-ivory/80 mt-6">
             <Link

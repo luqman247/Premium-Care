@@ -11,13 +11,45 @@ import {
 } from "@/lib/recruitment";
 
 type RecruitmentSectionProps = {
-  variant?: "ivory" | "midnight";
+  variant?: "ivory" | "midnight" | "quiet";
 };
 
 export function RecruitmentSection({ variant = "ivory" }: RecruitmentSectionProps) {
+  const isQuiet = variant === "quiet";
   const isMidnight = variant === "midnight";
   const textClass = isMidnight ? "text-ivory" : "text-midnight";
   const mutedClass = isMidnight ? "text-ivory/80" : "text-midnight/80";
+
+  if (isQuiet) {
+    return (
+      <section
+        className="section-padding page-margin bg-ivory section-rule"
+        aria-labelledby="recruitment-heading"
+      >
+        <div className="reading-column">
+          <p className="type-eyebrow text-midnight/60">{RECRUITMENT_REGION}</p>
+          <h2
+            id="recruitment-heading"
+            className="type-section-title text-midnight mt-3"
+          >
+            Bliv en del af Premium Care
+          </h2>
+          <p className="text-[17px] leading-body text-midnight/80 mt-6 max-w-[55ch]">
+            Vi søger faglige plejemedarbejdere, der vil gøre arbejdet ordentligt -
+            med tid til borgeren og respekt for kollegerne
+          </p>
+          <p className="mt-8">
+            <Link
+              href="/karriere"
+              className="text-[17px] leading-body text-midnight underline underline-offset-4 hover:text-midnight/80 transition-colors focus-ring"
+            >
+              Bliv en del af Premium Care
+            </Link>
+          </p>
+        </div>
+      </section>
+    );
+  }
 
   return (
     <section
@@ -52,7 +84,7 @@ export function RecruitmentSection({ variant = "ivory" }: RecruitmentSectionProp
                 Send en ansøgning
               </a>
               <Link href="/karriere" className="btn-secondary">
-                Læs om arbejde hos os
+                Bliv en del af Premium Care
               </Link>
             </div>
             <p className={`text-[13px] mt-6 ${isMidnight ? "text-ivory/60" : "text-midnight/60"}`}>

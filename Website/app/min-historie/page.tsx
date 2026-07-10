@@ -139,7 +139,7 @@ export default function FounderStoryPage() {
             </div>
             <figcaption className="text-[13px] text-midnight/60 mt-4 leading-body">
               Tandsbjerg, Sønderborg. Her boede min farmor, og her lærte jeg som barn,
-              lærte, hvad omsorg kan betyde
+              hvad omsorg kan betyde
             </figcaption>
           </figure>
           <div className="mt-10 space-y-6 text-[19px] leading-body text-midnight/90">
@@ -242,9 +242,8 @@ export default function FounderStoryPage() {
               jeg altid havde tænkt på.
             </p>
             <p className="text-[17px] text-midnight/70">
-              Læs mere om{" "}
               <Link href="/om-os" className="underline underline-offset-4 hover:text-midnight transition-colors focus-ring">
-                mission, vision og værdier
+                Om mission, vision og værdier
               </Link>
             </p>
           </div>

@@ -4,6 +4,6 @@ export const EDITORIAL_TICKER_STATEMENTS = [
   "Frit valg af hjemmepleje",
   "Synlig ledelse",
   "Mennesket før opgaven",
-  "Struktur, nærvær og faglighed",
+  "Den samme medarbejder, når det er muligt",
   "Ingen borger må blive glemt",
 ] as const;

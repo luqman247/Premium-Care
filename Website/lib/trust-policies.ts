@@ -15,11 +15,11 @@ export const TRUST_POLICIES: TrustPolicy[] = [
     slug: "privatliv",
     title: "Privatlivspolitik",
     description:
-      "Sådan beskytter Premium Care personoplysninger og helbredsdata i overensstemmelse med GDPR og dansk lovgivning.",
+      "Sådan beskytter Premium Care personoplysninger og helbredsdata i overensstemmelse med GDPR og dansk lovgivning",
     purpose:
-      "At alle oplysninger om borgere, pårørende og medarbejdere behandles lovligt, sikkert og med respekt for privatlivets fred.",
+      "At alle oplysninger om borgere, pårørende og medarbejdere behandles lovligt, sikkert og med respekt for privatlivets fred",
     whyItMatters:
-      "Hjemmepleje foregår i det mest private rum. Borgere og familier skal kunne dele følsomme oplysninger uden at frygte misbrug.",
+      "Hjemmepleje foregår i det mest private rum. Borgere og familier skal kunne dele følsomme oplysninger uden at frygte misbrug",
     commitments: [
       "Fuld efterlevelse af GDPR og databeskyttelsesloven for følsomme helbredsoplysninger",
       "Samtykke og tydelig information, før data behandles eller deles",
@@ -30,17 +30,17 @@ export const TRUST_POLICIES: TrustPolicy[] = [
     documentHref: "/documents/persondata_politik.pdf",
     documentLabel: "Persondata politik (PDF)",
     contactNote:
-      "Spørgsmål om databeskyttelse rettes til administrerende direktør via kontaktoplysningerne nederst på siden.",
+      "Spørgsmål om databeskyttelse rettes til administrerende direktør via kontaktoplysningerne nederst på siden",
   },
   {
     slug: "klager",
     title: "Klageprocedure",
     description:
-      "Sådan indgiver borgere, pårørende og samarbejdspartnere klager, og hvordan Premium Care håndterer dem.",
+      "Sådan indgiver borgere, pårørende og samarbejdspartnere klager, og hvordan Premium Care håndterer dem",
     purpose:
-      "At give en klar vej til at udtrykke utilfredshed, få svar og sikre, at fejl fører til handling.",
+      "At give en klar vej til at udtrykke utilfredshed, få svar og sikre, at fejl fører til handling",
     whyItMatters:
-      "En klage fortæller os, at noget skal rettes. Vi tager den alvorligt.",
+      "En klage fortæller os, at noget skal rettes. Vi tager den alvorligt",
     commitments: [
       "Alle klager modtages og registreres uden forsinkelse",
       "Borgere og pårørende guides til klagevejen",
@@ -51,17 +51,17 @@ export const TRUST_POLICIES: TrustPolicy[] = [
     documentHref: "/documents/Klageprocedure.pdf",
     documentLabel: "Klageprocedure (PDF)",
     contactNote:
-      "Klager kan indgives telefonisk, skriftligt eller via kontaktformularen. Akutte sikkerhedsproblemer: ring 112 først.",
+      "Klager kan indgives telefonisk, skriftligt eller via kontaktformularen. Akutte sikkerhedsproblemer: ring 112 først",
   },
   {
     slug: "beskyttelse",
     title: "Beskyttelse af sårbare borgere",
     description:
-      "Premium Cares forpligtelse til at beskytte borgere mod mishandling, forsømmelse og utrygge forhold.",
+      "Premium Cares forpligtelse til at beskytte borgere mod mishandling, forsømmelse og utrygge forhold",
     purpose:
-      "At medarbejdere ser, hører og reagerer på tegn på risiko, og at bekymringer behandles hurtigt og fagligt.",
+      "At medarbejdere ser, hører og reagerer på tegn på risiko, og at bekymringer behandles hurtigt og fagligt",
     whyItMatters:
-      "Vi er ofte de eneste, der kommer forbi. At se og reagere hører til arbejdet.",
+      "Vi er ofte de eneste, der kommer forbi. At se og reagere hører til arbejdet",
     commitments: [
       "Bekymringer indberettes samme dag",
       "Samtykke og kapacitetsvurdering før enhver plejehandling",
@@ -76,11 +76,11 @@ export const TRUST_POLICIES: TrustPolicy[] = [
     slug: "kvalitet",
     title: "Kvalitetsforpligtelse",
     description:
-      "Premium Cares løfte om dokumenteret og løbende forbedret plejekvalitet.",
+      "Premium Cares løfte om dokumenteret og løbende forbedret plejekvalitet",
     purpose:
-      "At hver borger modtager pleje, der holder, og at kvalitet kan dokumenteres for familier og kommuner.",
+      "At hver borger modtager pleje, der holder, og at kvalitet kan dokumenteres for familier og kommuner",
     whyItMatters:
-      "Borgere vælger os frit. Det, der tæller, er det, de oplever i deres eget hjem.",
+      "Borgere vælger os frit. Det, der tæller, er det, de oplever i deres eget hjem",
     commitments: [
       "Skriftlig servicestandard ud over kommunale minimumskrav",
       "Små, stabile teams og kontinuitet, når det er muligt",
@@ -95,11 +95,11 @@ export const TRUST_POLICIES: TrustPolicy[] = [
     slug: "ligebehandling",
     title: "Ligebehandling og inklusion",
     description:
-      "Premium Cares forpligtelse til respekt og ligebehandling for borgere og medarbejdere.",
+      "Premium Cares forpligtelse til respekt og ligebehandling for borgere og medarbejdere",
     purpose:
-      "At alle mennesker mødes med værdighed i vores arbejde, uanset baggrund.",
+      "At alle mennesker mødes med værdighed i vores arbejde, uanset baggrund",
     whyItMatters:
-      "Vores borgere og medarbejdere afspejler Danmark. Respekt er en forudsætning for tryg pleje.",
+      "Vores borgere og medarbejdere afspejler Danmark. Respekt er en forudsætning for tryg pleje",
     commitments: [
       "Nultolerance over for diskrimination, chikane og mobning",
       "Lige adgang til udvikling og ansvar i hverdagen",
@@ -113,11 +113,11 @@ export const TRUST_POLICIES: TrustPolicy[] = [
     slug: "cookiepolitik",
     title: "Cookiepolitik",
     description:
-      "Sådan bruger Premium Care cookies på hjemmesiden, og hvordan du styrer dit samtykke.",
+      "Sådan bruger Premium Care cookies på hjemmesiden, og hvordan du styrer dit samtykke",
     purpose:
-      "At give gennemsigtighed om nødvendige og valgfrie cookies, og at respektere brugerens valg.",
+      "At give gennemsigtighed om nødvendige og valgfrie cookies, og at respektere brugerens valg",
     whyItMatters:
-      "Besøgende skal kunne forstå, hvilke cookies der bruges, og hvordan de kan fravælge dem.",
+      "Besøgende skal kunne forstå, hvilke cookies der bruges, og hvordan de kan fravælge dem",
     commitments: [
       "Nødvendige cookies bruges for at få hjemmesiden til at fungere",
       "Valgfrie cookies aktiveres kun efter samtykke",
@@ -126,17 +126,17 @@ export const TRUST_POLICIES: TrustPolicy[] = [
       "Politikken opdateres ved væsentlige ændringer i cookie-brug",
     ],
     contactNote:
-      "Spørgsmål om cookies rettes til administrerende direktør via kontaktoplysningerne på siden.",
+      "Spørgsmål om cookies rettes til administrerende direktør via kontaktoplysningerne på siden",
   },
   {
     slug: "whistleblowing",
     title: "Whistleblower-ordning",
     description:
-      "Fortrolig indberetning af alvorlige forhold, beskyttet efter dansk lovgivning.",
+      "Fortrolig indberetning af alvorlige forhold, beskyttet efter dansk lovgivning",
     purpose:
-      "At give medarbejdere og samarbejdspartnere en sikker kanal til alvorlige bekymringer, der ikke kan løses i den daglige ledelse.",
+      "At give medarbejdere og samarbejdspartnere en sikker kanal til alvorlige bekymringer, der ikke kan løses i den daglige ledelse",
     whyItMatters:
-      "Alvorlige brud på lov, sikkerhed eller etik skal kunne indberettes uden frygt for repressalier.",
+      "Alvorlige brud på lov, sikkerhed eller etik skal kunne indberettes uden frygt for repressalier",
     commitments: [
       "Fortrolig kanal uafhængig af ordinær linjeledelse",
       "Anerkendelse inden for syv dage; svar inden for tre måneder",
@@ -145,7 +145,7 @@ export const TRUST_POLICIES: TrustPolicy[] = [
       "God tro beskytter. Fejlvalg af kanal medfører aldrig sanktion",
     ],
     contactNote:
-      "Alvorlige bekymringer kan indberettes til bibi@premiumcare.dk. En dedikeret whistleblower-kanal etableres, når den er på plads.",
+      "Alvorlige bekymringer kan indberettes fortroligt til bibi@premiumcare.dk. Du kan også bruge eksterne myndighedskanaler, når det er relevant",
     documentHref: "/documents/whistleblower_politik.pdf",
     documentLabel: "Whistleblower politik (PDF)",
   },
@@ -153,11 +153,11 @@ export const TRUST_POLICIES: TrustPolicy[] = [
     slug: "ledelsesansvar",
     title: "Ledelse og kvalitetsansvar",
     description:
-      "Hvordan Premium Care er styret, dokumenteret og revideret som plejeorganisation.",
+      "Hvordan Premium Care er styret, dokumenteret og revideret som plejeorganisation",
     purpose:
-      "Én ledelsesstruktur med tydeligt ejerskab, godkendelse og revision af politikker og procedurer.",
+      "Én ledelsesstruktur med tydeligt ejerskab, godkendelse og revision af politikker og procedurer",
     whyItMatters:
-      "Kommuner, borgere og medarbejdere skal kunne se, hvem der er ansvarlig, og hvordan kvalitet følges op.",
+      "Kommuner, borgere og medarbejdere skal kunne se, hvem der er ansvarlig, og hvordan kvalitet følges op",
     commitments: [
       "Dokumentbibliotek med én gældende version pr. emne",
       "Navngivne ejere og godkendelsesmyndigheder for hvert dokument",

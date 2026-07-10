@@ -13,8 +13,6 @@ const CATEGORIES = [
   { key: "necessary" as const, label: "Nødvendige cookies", locked: true },
   { key: "functional" as const, label: "Funktionalitet", locked: false },
   { key: "experience" as const, label: "Brugeroplevelse", locked: false },
-  { key: "measurement" as const, label: "Måling", locked: false },
-  { key: "marketing" as const, label: "Markedsføring", locked: false },
 ];
 
 export function CookieConsent() {
@@ -57,6 +55,8 @@ export function CookieConsent() {
     saveConsent({
       necessary: true,
       ...prefs,
+      measurement: false,
+      marketing: false,
       decidedAt: new Date().toISOString(),
     });
   }
@@ -77,12 +77,11 @@ export function CookieConsent() {
           </h2>
           <p id="cookie-consent-desc" className="cookie-consent-body">
             Vi bruger nødvendige cookies for at få hjemmesiden til at fungere. Med dit
-            samtykke bruger vi også cookies til statistik og forbedring af
-            brugeroplevelsen.
+            samtykke kan vi også bruge cookies til at forbedre brugeroplevelsen
           </p>
           <p className="cookie-consent-body mt-3">
             <Link href="/cookiepolitik" className="cookie-consent-link focus-ring">
-              Læs mere
+              Læs cookiepolitik
             </Link>
           </p>
 
@@ -119,16 +118,23 @@ export function CookieConsent() {
           >
             Afvis alle
           </button>
-          <button
-            type="button"
-            className="cookie-consent-btn cookie-consent-btn-secondary focus-ring"
-            onClick={() => {
-              if (expanded) handleSaveChoices();
-              else setExpanded(true);
-            }}
-          >
-            Gem valg
-          </button>
+          {expanded ? (
+            <button
+              type="button"
+              className="cookie-consent-btn cookie-consent-btn-secondary focus-ring"
+              onClick={handleSaveChoices}
+            >
+              Gem valg
+            </button>
+          ) : (
+            <button
+              type="button"
+              className="cookie-consent-btn cookie-consent-btn-secondary focus-ring"
+              onClick={() => setExpanded(true)}
+            >
+              Tilpas
+            </button>
+          )}
           <button
             type="button"
             className="cookie-consent-btn cookie-consent-btn-primary focus-ring"
