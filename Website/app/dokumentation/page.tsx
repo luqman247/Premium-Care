@@ -9,12 +9,12 @@ import { PHOTOGRAPHY } from "@/lib/photography";
 export const metadata: Metadata = {
   title: "Dokumentation",
   description:
-    "Politikker, procedurer og offentlige dokumenter fra PremiumCare ApS.",
+    "Politikker, procedurer og offentlige dokumenter fra PremiumCare ApS",
   alternates: { canonical: "/dokumentation" },
   openGraph: {
     title: "Dokumentation · PremiumCare",
     description:
-      "Politikker, procedurer og offentlige dokumenter fra PremiumCare ApS.",
+      "Politikker, procedurer og offentlige dokumenter fra PremiumCare ApS",
     url: `${COMPANY.url}/dokumentation`,
   },
 };
@@ -28,9 +28,8 @@ export default function DocumentationPage() {
             Dokumentation
           </h1>
           <p className="text-[19px] leading-body text-midnight/80 mt-8 max-w-[55ch]">
-            Offentlige politikker, procedurer og erklæringer fra {COMPANY.legalName}.
-            Det fulde dokument gælder ved uoverensstemmelse med resuméer på
-            hjemmesiden
+            Her samler vi de dokumenter, der viser, hvordan {COMPANY.legalName}{" "}
+            arbejder med ansvar, kvalitet, privatliv og borgernes tryghed
           </p>
           <p className="text-[13px] text-midnight/60 mt-6">
             CVR {COMPANY.cvr}
@@ -54,14 +53,19 @@ export default function DocumentationPage() {
           </p>
           <ul className="mt-8 space-y-4 list-none">
             {MUNICIPAL_DOCUMENTS.slice(0, 3).map((doc) => (
-              <li key={doc.href}>
-                <a
-                  href={doc.href}
-                  className="text-[17px] text-midnight underline underline-offset-4 focus-ring"
-                  download
-                >
-                  {doc.label}
-                </a>
+              <li key={doc.label} className="text-[17px] leading-body text-midnight">
+                <span>{doc.label}</span>
+                <span className="block text-[14px] text-midnight/55 mt-1">
+                  {doc.status}
+                </span>
+                {"summaryHref" in doc && doc.summaryHref ? (
+                  <Link
+                    href={doc.summaryHref}
+                    className="inline-block mt-2 text-[15px] underline underline-offset-4 focus-ring"
+                  >
+                    Læs oversigt
+                  </Link>
+                ) : null}
               </li>
             ))}
           </ul>
@@ -114,10 +118,10 @@ export default function DocumentationPage() {
           </h2>
           <div className="flex flex-col sm:flex-row gap-4">
             <Link href="/kontakt" className="btn-primary">
-              Kontakt os om frit valg
+              Kontakt os
             </Link>
             <Link href="/tillid" className="btn-secondary">
-              Se vores dokumentation
+              Tillidscenter
             </Link>
           </div>
         </section>

@@ -4,7 +4,8 @@ import { CrestSeal } from "@/components/CrestSeal";
 import { DamImage } from "@/components/DamImage";
 import { ASSET_IDS } from "@/lib/dam/asset-ids";
 import { damAbsoluteUrl, damMetadataImage } from "@/lib/dam/site-images";
-import { COMPANY } from "@/lib/company";
+import { COMPANY, companyLocalityLine } from "@/lib/company";
+import { MISSION_FULL } from "@/lib/mission";
 import { LEADERSHIP_IMAGES } from "@/lib/leadership-images";
 import { PHOTOGRAPHY, PHOTO_SIZES } from "@/lib/photography";
 
@@ -271,8 +272,7 @@ export default function LeadershipGovernancePage() {
             Mission
           </h2>
           <p className="text-[19px] leading-body text-midnight/90 mt-8">
-            Hjemmepleje, man kan leve med. Ærlig besked til familien. En
-            arbejdsplads, folk bliver i
+            {MISSION_FULL}
           </p>
         </section>
 
@@ -426,8 +426,9 @@ export default function LeadershipGovernancePage() {
           <p className="text-[17px] leading-body text-midnight/80">
             {COMPANY.legalName} · CVR {COMPANY.cvr}
             <br />
-            {COMPANY.address.street}, {COMPANY.address.postalCode}{" "}
-            {COMPANY.address.locality}
+            {companyLocalityLine()}
+            <br />
+            {COMPANY.address.country}
           </p>
           <p className="text-[17px] leading-body text-midnight/80 mt-4">
             <a

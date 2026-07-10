@@ -7,7 +7,6 @@ export const COMPANY = {
   brandName: "PremiumCare",
   cvr: "46542568",
   address: {
-    street: "Rosenhøj Alle 34, 1. th.",
     postalCode: "8260",
     locality: "Viby J",
     country: "Danmark",
@@ -20,17 +19,21 @@ export const COMPANY = {
     schema: "+45-42-26-44-21",
   },
   openingHours: {
-    display: "Man–Fre: 07.00–15.00",
+    display: "Man–fre 07:00–15:00",
     schema: ["Mo-Fr 07:00-15:00"],
   },
   url: "https://www.premiumcare.dk",
   foundedYear: 2026,
 } as const;
 
+/** Public locality line — no street address */
+export function companyLocalityLine() {
+  return `${COMPANY.address.postalCode} ${COMPANY.address.locality}`;
+}
+
 export function companyPostalAddress() {
   return {
     "@type": "PostalAddress" as const,
-    streetAddress: COMPANY.address.street,
     postalCode: COMPANY.address.postalCode,
     addressLocality: COMPANY.address.locality,
     addressCountry: COMPANY.address.countryCode,

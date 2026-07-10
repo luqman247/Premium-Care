@@ -3,10 +3,12 @@
 import { useEffect, useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { BrandWordmark } from "@/components/BrandWordmark";
-import { WORDMARK_HEIGHT } from "@/lib/brand";
+import { CrestSeal } from "@/components/CrestSeal";
 
 type HeaderTone = "dark" | "light";
+
+/** Header crest width — PC-BR-010 aspect yields ~51px max height */
+const HEADER_CREST_SIZE = 40;
 
 export function Wordmark() {
   const pathname = usePathname();
@@ -60,30 +62,28 @@ export function Wordmark() {
     };
   }, [pathname]);
 
-  const height = compact ? WORDMARK_HEIGHT.footer : WORDMARK_HEIGHT.header;
-
   return (
     <Link
       href="/"
       className={`site-header-wordmark site-header-wordmark--${tone}${
         compact ? " site-header-wordmark--compact" : ""
       } focus-ring`}
-      aria-label="PremiumCare - forsiden"
+      aria-label="PremiumCare ApS - forsiden"
     >
       <span className="site-header-wordmark-stack" aria-hidden="true">
-        <BrandWordmark
+        <CrestSeal
+          size={HEADER_CREST_SIZE}
           variant="white"
-          height={height}
-          priority
-          className={`site-header-wordmark-img site-header-wordmark-img--white${
+          decorative
+          className={`site-header-crest site-header-wordmark-img site-header-wordmark-img--white${
             tone === "dark" ? " is-visible" : " is-hidden"
           }`}
         />
-        <BrandWordmark
-          variant="gold"
-          height={height}
-          priority
-          className={`site-header-wordmark-img site-header-wordmark-img--gold${
+        <CrestSeal
+          size={HEADER_CREST_SIZE}
+          variant="navy"
+          decorative
+          className={`site-header-crest site-header-wordmark-img site-header-wordmark-img--navy${
             tone === "light" ? " is-visible" : " is-hidden"
           }`}
         />

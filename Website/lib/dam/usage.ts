@@ -44,13 +44,13 @@ export const SITE_USAGE_MAP: Record<string, UsageChannel[]> = {
     { key: "social", label: "Social Cards", used: true },
   ],
   [ASSET_IDS.brandWordmarkNavy]: [
-    { key: "all", label: "All Pages", used: true },
+    { key: "all", label: "Not Found", used: true },
   ],
   [ASSET_IDS.brandWordmarkWhite]: [
-    { key: "all", label: "All Pages", used: true },
+    { key: "dam", label: "DAM Catalogue", used: true },
   ],
   [ASSET_IDS.brandWordmarkGold]: [
-    { key: "all", label: "All Pages", used: true },
+    { key: "dam", label: "DAM Catalogue", used: true },
   ],
   [ASSET_IDS.brandCrest]: [
     { key: "all", label: "All Pages", used: true },
@@ -63,7 +63,7 @@ export const SITE_USAGE_MAP: Record<string, UsageChannel[]> = {
     { key: "all", label: "All Pages", used: false },
   ],
   [ASSET_IDS.brandCrestNavy]: [
-    { key: "all", label: "All Pages", used: false },
+    { key: "all", label: "All Pages", used: true },
   ],
   [ASSET_IDS.brandCrestWhite]: [
     { key: "all", label: "All Pages", used: true },

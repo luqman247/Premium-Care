@@ -1,7 +1,8 @@
 import Link from "next/link";
 import { CrestSeal } from "@/components/CrestSeal";
 import { CREST_SIZES } from "@/lib/brand";
-import { COMPANY } from "@/lib/company";
+import { COMPANY, companyLocalityLine } from "@/lib/company";
+import { MISSION_SHORT } from "@/lib/mission";
 
 const FOOTER_ESSENTIAL = [
   { href: "/services", label: "Ydelser" },
@@ -31,7 +32,7 @@ export function TrustBar() {
             <Link
               href="/"
               className="site-footer-crest focus-ring"
-              aria-label="PremiumCare - forsiden"
+              aria-label="PremiumCare ApS - forsiden"
             >
               <CrestSeal
                 size={CREST_SIZES.sm}
@@ -43,9 +44,9 @@ export function TrustBar() {
             <div>
               <p className="site-footer-brand">{COMPANY.legalName}</p>
               <p className="site-footer-detail">CVR {COMPANY.cvr}</p>
-              <p className="site-footer-trust-note">
-                Privat hjemmepleje gennem frit valg
-              </p>
+              <p className="site-footer-detail">{companyLocalityLine()}</p>
+              <p className="site-footer-detail">{COMPANY.address.country}</p>
+              <p className="site-footer-trust-note">{MISSION_SHORT}</p>
             </div>
           </div>
 

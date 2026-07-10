@@ -5,8 +5,8 @@ export type TrustPolicy = {
   purpose: string;
   whyItMatters: string;
   commitments: string[];
-  documentHref?: string;
-  documentLabel?: string;
+  /** When set, shows preparation status instead of a PDF download */
+  documentStatus?: string;
   contactNote?: string;
 };
 
@@ -27,8 +27,7 @@ export const TRUST_POLICIES: TrustPolicy[] = [
       "Borgere og pårørende kan anmode om indsigt i relevante oplysninger",
       "Databrud indberettes til Datatilsynet, når loven kræver det",
     ],
-    documentHref: "/documents/persondata_politik.pdf",
-    documentLabel: "Persondata politik (PDF)",
+    documentStatus: "Under udarbejdelse",
     contactNote:
       "Spørgsmål om databeskyttelse rettes til administrerende direktør via kontaktoplysningerne nederst på siden",
   },
@@ -48,8 +47,7 @@ export const TRUST_POLICIES: TrustPolicy[] = [
       "Læring fra klager indgår i kvalitetsarbejdet",
       "Dokumentation af klagebehandling til kommuner og tilsyn",
     ],
-    documentHref: "/documents/Klageprocedure.pdf",
-    documentLabel: "Klageprocedure (PDF)",
+    documentStatus: "Under udarbejdelse",
     contactNote:
       "Klager kan indgives telefonisk, skriftligt eller via kontaktformularen. Akutte sikkerhedsproblemer: ring 112 først",
   },
@@ -69,8 +67,7 @@ export const TRUST_POLICIES: TrustPolicy[] = [
       "Koordinering med klinisk ledelse og myndigheder ved behov",
       "Bekræftelse til indberetter, at bekymringen er modtaget",
     ],
-    documentHref: "/documents/demens-_og_faldprotokol.pdf",
-    documentLabel: "Demens- og faldprotokol (PDF)",
+    documentStatus: "Under udarbejdelse",
   },
   {
     slug: "kvalitet",
@@ -88,8 +85,7 @@ export const TRUST_POLICIES: TrustPolicy[] = [
       "Løbende uddannelse, kompetencevurdering og kvalitetsgennemgange",
       "Åben rapportering til kommunalpartnere",
     ],
-    documentHref: "/documents/kvalitetshåndbog_2026.pdf",
-    documentLabel: "Kvalitetshåndbog 2026 (PDF)",
+    documentStatus: "Under udarbejdelse",
   },
   {
     slug: "ligebehandling",
@@ -106,8 +102,7 @@ export const TRUST_POLICIES: TrustPolicy[] = [
       "Klare sanktioner ved overtrædelse af adfærdsstandarder",
       "Løbende opmærksomhed på barrierer og forbedring",
     ],
-    documentHref: "/documents/ligebehandlingspolitik.pdf",
-    documentLabel: "Ligebehandlingspolitik (PDF)",
+    documentStatus: "Under udarbejdelse",
   },
   {
     slug: "cookiepolitik",
@@ -146,8 +141,7 @@ export const TRUST_POLICIES: TrustPolicy[] = [
     ],
     contactNote:
       "Alvorlige bekymringer kan indberettes fortroligt til bibi@premiumcare.dk. Du kan også bruge eksterne myndighedskanaler, når det er relevant",
-    documentHref: "/documents/whistleblower_politik.pdf",
-    documentLabel: "Whistleblower politik (PDF)",
+    documentStatus: "Under udarbejdelse",
   },
   {
     slug: "ledelsesansvar",
@@ -165,8 +159,7 @@ export const TRUST_POLICIES: TrustPolicy[] = [
       "Struktur, der kan redegøres for over for kommune og tilsyn",
       "Ledelse, der er synlig i driften, ikke kun i rapporter",
     ],
-    documentHref: "/documents/årlig_kvalitetsrevisionsrapport.pdf",
-    documentLabel: "Årlig kvalitetsrevisionsrapport (PDF)",
+    documentStatus: "Under udarbejdelse",
   },
 ];
 

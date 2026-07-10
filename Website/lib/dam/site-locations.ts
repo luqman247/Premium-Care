@@ -44,18 +44,22 @@ export const SITE_USAGE_LOCATIONS: Record<string, SiteUsageLocation[]> = {
     { route: "/ledelse-og-governance", pageLabel: "Leadership", section: "JSON-LD", component: "Person schema" },
   ],
   [ASSET_IDS.brandWordmarkNavy]: [
-    { route: "/*", pageLabel: "All pages", section: "Header (light backgrounds)", component: "BrandWordmark" },
+    { route: "/404", pageLabel: "Not found", section: "Brand mark", component: "BrandWordmark" },
   ],
   [ASSET_IDS.brandWordmarkWhite]: [
-    { route: "/*", pageLabel: "All pages", section: "Header (dark hero)", component: "BrandWordmark" },
+    { route: "/media", pageLabel: "DAM", section: "Brand catalogue", component: "BrandWordmark" },
   ],
   [ASSET_IDS.brandWordmarkGold]: [
-    { route: "/*", pageLabel: "All pages", section: "Header (scrolled)", component: "BrandWordmark" },
+    { route: "/media", pageLabel: "DAM", section: "Brand catalogue", component: "BrandWordmark" },
   ],
   [ASSET_IDS.brandCrest]: [
     { route: "/", pageLabel: "Homepage", section: "Hero trust anchor", component: "CrestSeal" },
   ],
+  [ASSET_IDS.brandCrestNavy]: [
+    { route: "/*", pageLabel: "All pages", section: "Header (light backgrounds)", component: "Wordmark" },
+  ],
   [ASSET_IDS.brandCrestWhite]: [
+    { route: "/*", pageLabel: "All pages", section: "Header (dark hero)", component: "Wordmark" },
     { route: "/*", pageLabel: "All pages", section: "Footer", component: "CrestSeal" },
     { route: "/om-os", pageLabel: "About", section: "Section seal", component: "CrestSeal" },
     { route: "/tillid", pageLabel: "Trust", section: "Section seal", component: "CrestSeal" },

@@ -6,6 +6,8 @@ type CrestSealProps = {
   variant?: CrestVariant;
   className?: string;
   decorative?: boolean;
+  /** Override DAM alt when the crest is the sole brand identifier */
+  alt?: string;
 };
 
 export function CrestSeal({
@@ -13,6 +15,7 @@ export function CrestSeal({
   variant = "fullcolour",
   className = "",
   decorative = false,
+  alt,
 }: CrestSealProps) {
   const asset = BRAND.crest[variant];
   const assetId = BRAND_ASSET_IDS.crest[variant];
@@ -26,14 +29,15 @@ export function CrestSeal({
     >
       <DamImage
         assetId={assetId}
-        alt={decorative ? "" : asset.alt}
+        alt={decorative ? "" : (alt ?? asset.alt)}
         width={size}
         height={height}
-        className="object-contain"
+        className="!object-contain object-contain"
         style={{
           width: size,
           height: "auto",
           maxHeight: height,
+          objectFit: "contain",
         }}
         sizes={`${size}px`}
       />

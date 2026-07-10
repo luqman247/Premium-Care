@@ -29,7 +29,7 @@ export default function ServicesPage() {
             Hvad vi gør
           </h1>
           <p className="type-lead text-midnight/75 mt-8 max-w-[34ch]">
-            Pleje i hjemmet — i det tempo, borgeren kan
+            Pleje i hjemmet - i det tempo, borgeren kan
           </p>
           <FreeCareMessage className="mt-10" linkLabel="Sådan fungerer frit valg" />
         </div>

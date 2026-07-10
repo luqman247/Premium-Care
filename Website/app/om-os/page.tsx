@@ -2,7 +2,8 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { CrestSeal } from "@/components/CrestSeal";
 import { DamImage } from "@/components/DamImage";
-import { COMPANY } from "@/lib/company";
+import { COMPANY, companyLocalityLine } from "@/lib/company";
+import { MISSION_FULL } from "@/lib/mission";
 import { LEADERSHIP_IMAGES } from "@/lib/leadership-images";
 import { PHOTOGRAPHY, PHOTO_SIZES } from "@/lib/photography";
 
@@ -80,8 +81,9 @@ export default function AboutPage() {
             <br />
             CVR {COMPANY.cvr}
             <br />
-            {COMPANY.address.street}, {COMPANY.address.postalCode}{" "}
-            {COMPANY.address.locality}
+            {companyLocalityLine()}
+            <br />
+            {COMPANY.address.country}
           </p>
           <p className="text-[17px] leading-body text-midnight/80 mt-6">
             <a
@@ -137,8 +139,7 @@ export default function AboutPage() {
         <div className="reading-column">
           <h2 className="text-[30px] leading-normal text-ivory">Mission</h2>
           <p className="text-[17px] leading-body text-ivory/80 mt-8">
-            Hjemmepleje, man kan leve med. Ærlig besked til familien. En
-            arbejdsplads, folk bliver i
+            {MISSION_FULL}
           </p>
         </div>
       </section>

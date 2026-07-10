@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { FreeCareMessage } from "@/components/FreeCareMessage";
 import { DamImage } from "@/components/DamImage";
-import { COMPANY } from "@/lib/company";
+import { COMPANY, companyLocalityLine } from "@/lib/company";
 import {
   MUNICIPAL_CONTACT_SUBJECT,
   MUNICIPAL_DOCUMENTS,
@@ -50,15 +50,11 @@ export default function MunicipalPage() {
             {COMPANY.legalName} · CVR {COMPANY.cvr}
           </p>
           <div className="mt-8 flex flex-col sm:flex-row gap-4">
-            <a
-              href="/documents/Premium_Care_Kommunalt_Beslutningsgrundlag.pdf"
-              className="btn-primary inline-flex"
-              download
-            >
-              Download beslutningsgrundlag
-            </a>
-            <Link href="/tillid" className="btn-secondary inline-flex">
+            <Link href="/tillid" className="btn-primary inline-flex">
               Tillidscenter og dokumenter
+            </Link>
+            <Link href="/dokumentation" className="btn-secondary inline-flex">
+              Dokumentation
             </Link>
           </div>
         </div>
@@ -79,8 +75,7 @@ export default function MunicipalPage() {
             </p>
             <p>
               <strong className="text-midnight font-medium">Adresse:</strong>{" "}
-              {COMPANY.address.street}, {COMPANY.address.postalCode}{" "}
-              {COMPANY.address.locality}
+              {companyLocalityLine()}, {COMPANY.address.country}
             </p>
             <p>
               <strong className="text-midnight font-medium">Ledelse:</strong> Bibi
@@ -208,16 +203,21 @@ export default function MunicipalPage() {
       <section className="snap-section bg-ivory section-padding">
         <div className="reading-column">
           <h2 className="text-[30px] leading-normal text-midnight">Dokumenter til indkøb</h2>
-          <ul className="mt-8 space-y-4 list-none">
+          <ul className="mt-8 space-y-5 list-none">
             {MUNICIPAL_DOCUMENTS.map((doc) => (
-              <li key={doc.href}>
-                <a
-                  href={doc.href}
-                  className="text-[17px] text-midnight underline underline-offset-4 focus-ring"
-                  download
-                >
-                  {doc.label}
-                </a>
+              <li key={doc.label} className="text-[17px] leading-body text-midnight">
+                <span>{doc.label}</span>
+                <span className="block text-[14px] text-midnight/55 mt-1">
+                  {doc.status}
+                </span>
+                {"summaryHref" in doc && doc.summaryHref ? (
+                  <Link
+                    href={doc.summaryHref}
+                    className="inline-block mt-2 text-[15px] underline underline-offset-4 focus-ring"
+                  >
+                    Læs oversigt
+                  </Link>
+                ) : null}
               </li>
             ))}
           </ul>

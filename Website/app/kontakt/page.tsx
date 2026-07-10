@@ -3,16 +3,16 @@ import Link from "next/link";
 import { CrisisHelp } from "@/components/CrisisHelp";
 import { EditorialBanner } from "@/components/EditorialBanner";
 import { FreeCareMessage } from "@/components/FreeCareMessage";
-import { COMPANY } from "@/lib/company";
+import { COMPANY, companyLocalityLine } from "@/lib/company";
 import { PHOTOGRAPHY } from "@/lib/photography";
 
 export const metadata: Metadata = {
   title: "Kontakt",
-  description: `Kontakt ${COMPANY.legalName}. Telefon, e-mail og åbningstider.`,
+  description: `Kontakt ${COMPANY.legalName}. Telefon, e-mail og åbningstider`,
   alternates: { canonical: "/kontakt" },
   openGraph: {
     title: `Kontakt · ${COMPANY.brandName}`,
-    description: `Kontakt ${COMPANY.legalName}. Telefon, e-mail og åbningstider.`,
+    description: `Kontakt ${COMPANY.legalName}. Telefon, e-mail og åbningstider`,
     url: `${COMPANY.url}/kontakt`,
   },
 };
@@ -47,7 +47,8 @@ export default async function ContactPage({ searchParams }: ContactPageProps) {
 
       <section className="snap-section bg-midnight section-padding">
         <div className="reading-column text-center">
-          <p className="text-[19px] leading-body text-ivory">
+          <h2 className="text-[30px] leading-normal text-ivory">Kontakt os</h2>
+          <p className="text-[19px] leading-body text-ivory/80 mt-8">
             Ring til os i åbningstiden. Ved akut livstruende situationer: ring 112
           </p>
           <a
@@ -56,6 +57,14 @@ export default async function ContactPage({ searchParams }: ContactPageProps) {
           >
             {COMPANY.phone.display}
           </a>
+          <p className="mt-6">
+            <a
+              href={`mailto:${COMPANY.email}`}
+              className="text-[24px] leading-normal text-ivory/90 hover:text-ivory transition-colors focus-ring"
+            >
+              {COMPANY.email}
+            </a>
+          </p>
           <p className="text-[13px] text-ivory/60 mt-6 uppercase tracking-wide">
             {COMPANY.openingHours.display}
           </p>
@@ -78,29 +87,11 @@ export default async function ContactPage({ searchParams }: ContactPageProps) {
 
       <section className="snap-section bg-ivory section-padding">
         <div className="reading-column">
-          <h2 className="text-[30px] leading-normal text-midnight">E-mail</h2>
-          <a
-            href={`mailto:${COMPANY.email}`}
-            className="text-[24px] leading-normal text-midnight mt-6 inline-block hover:opacity-80 transition-opacity duration-300 focus-ring"
-          >
-            {COMPANY.email}
-          </a>
-          <p className="text-[17px] leading-body text-midnight/80 mt-8">
-            Ved akut behov: ring. E-mail besvares inden for to arbejdsdage i
-            åbningstiden
-          </p>
-        </div>
-      </section>
-
-      <section className="snap-section bg-ivory section-padding">
-        <div className="reading-column">
-          <h2 className="text-[30px] leading-normal text-midnight">Besøgsadresse</h2>
+          <h2 className="text-[30px] leading-normal text-midnight">Adresse</h2>
           <address className="text-[19px] leading-body text-midnight/90 mt-8 not-italic">
             {COMPANY.legalName}
             <br />
-            {COMPANY.address.street}
-            <br />
-            {COMPANY.address.postalCode} {COMPANY.address.locality}
+            {companyLocalityLine()}
             <br />
             {COMPANY.address.country}
           </address>
@@ -207,7 +198,6 @@ export default async function ContactPage({ searchParams }: ContactPageProps) {
               taxID: `CVR ${COMPANY.cvr}`,
               address: {
                 "@type": "PostalAddress",
-                streetAddress: COMPANY.address.street,
                 postalCode: COMPANY.address.postalCode,
                 addressLocality: COMPANY.address.locality,
                 addressCountry: COMPANY.address.countryCode,

@@ -535,8 +535,14 @@
     pointer-events: none;
   }
 
-  .site-header-wordmark-img--gold.is-visible {
-    filter: saturate(0.92) contrast(0.96);
+  .site-header-crest {
+    padding: 0;
+    line-height: 0;
+  }
+
+  .site-header-crest .brand-crest,
+  .site-header-crest.brand-crest {
+    padding: 0;
   }
 
   .brand-wordmark-img {

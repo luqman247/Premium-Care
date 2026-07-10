@@ -28,7 +28,7 @@ export default function HomePage() {
                 </p>
               </div>
               <h1 className="hero-statement text-ivory">
-                Pleje, der føles tryg
+                Pleje, der føles trygt
               </h1>
               <p className="hero-quality text-ivory/85">
                 Den samme medarbejder. Tydelig besked til familien
@@ -161,13 +161,19 @@ export default function HomePage() {
       <section className="act-close section-padding">
         <div className="reading-column text-center">
           <h2 className="type-section-title text-midnight">
-            Ring, hvis du er i tvivl
+            Kontakt os
           </h2>
-          <p className="mt-10">
+          <div className="mt-10 flex flex-col items-center gap-4">
             <a href={COMPANY.phone.href} className="btn-primary">
               {COMPANY.phone.display}
             </a>
-          </p>
+            <a
+              href={`mailto:${COMPANY.email}`}
+              className="signature-link"
+            >
+              {COMPANY.email}
+            </a>
+          </div>
           <p className="act-close-meta">
             CVR {COMPANY.cvr}
             <span aria-hidden="true"> · </span>

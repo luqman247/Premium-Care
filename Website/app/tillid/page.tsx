@@ -27,7 +27,7 @@ const QUALITY_FRAMEWORK = [
   },
   {
     title: "Vores standard",
-    body: "Punktlighed, kontinuitet og dokumenteret pleje — også ud over minimumskrav",
+    body: "Punktlighed, kontinuitet og dokumenteret pleje - også ud over minimumskrav",
   },
   {
     title: "Opfølgning",
@@ -63,24 +63,18 @@ const VERIFICATION_LAYERS = [
 ];
 
 const DOCUMENTS = [
-  { title: "Kvalitetshåndbog 2026", date: "Januar 2026", href: "/documents/kvalitetshåndbog_2026.pdf" },
-  {
-    title: "Årlig kvalitetsrevisionsrapport",
-    date: "Januar 2026",
-    href: "/documents/årlig_kvalitetsrevisionsrapport.pdf",
-  },
-  { title: "Klagerapport", date: "Januar 2026", href: "/documents/klagerapport_2025.pdf" },
-  { title: "Persondata politik", date: "Januar 2026", href: "/documents/persondata_politik.pdf" },
-  { title: "Whistleblower politik", date: "Januar 2026", href: "/documents/whistleblower_politik.pdf" },
-  { title: "Ligebehandlingspolitik", date: "Januar 2026", href: "/documents/ligebehandlingspolitik.pdf" },
-  { title: "Miljøpolitik", date: "Januar 2026", href: "/documents/miljøpolitik.pdf" },
-  { title: "Demens- og faldprotokol", date: "Januar 2026", href: "/documents/demens-_og_faldprotokol.pdf" },
-  {
-    title: "Sikkerhedsvurdering skabelon",
-    date: "Januar 2026",
-    href: "/documents/sikkerhedsvurdering_skabelon.pdf",
-  },
-];
+  { title: "Privatlivspolitik", status: "Offentlig oversigt", href: "/privatliv" },
+  { title: "Klageprocedure", status: "Offentlig oversigt", href: "/klager" },
+  { title: "Beskyttelse af sårbare borgere", status: "Offentlig oversigt", href: "/beskyttelse" },
+  { title: "Kvalitetsforpligtelse", status: "Offentlig oversigt", href: "/kvalitet" },
+  { title: "Whistleblower-ordning", status: "Offentlig oversigt", href: "/whistleblowing" },
+  { title: "Ligebehandling og inklusion", status: "Offentlig oversigt", href: "/ligebehandling" },
+  { title: "Cookiepolitik", status: "Offentlig oversigt", href: "/cookiepolitik" },
+  { title: "Ledelse og kvalitetsansvar", status: "Offentlig oversigt", href: "/ledelsesansvar" },
+  { title: "Kvalitetshåndbog 2026", status: "Under udarbejdelse" },
+  { title: "Årlig kvalitetsrevisionsrapport", status: "Under udarbejdelse" },
+  { title: "Klagerapport", status: "Kommer snart" },
+] as const;
 
 export default function TrustPage() {
   return (
@@ -92,8 +86,7 @@ export default function TrustPage() {
             Tillidscenter
           </h1>
           <p className="type-lead text-midnight/75 mt-8 max-w-[40ch]">
-            Politikker, kvalitet og dokumentation for {COMPANY.legalName}. Det
-            fulde dokument gælder ved uoverensstemmelse
+            Politikker, kvalitet og dokumentation for {COMPANY.legalName}
           </p>
           <InstitutionalIdentity className="mt-8" />
           <div className="mt-10">
@@ -206,18 +199,23 @@ export default function TrustPage() {
             Dokumenter
           </h2>
           <div className="mt-10">
-            {DOCUMENTS.map((doc) => (
-              <a
-                key={doc.title}
-                href={doc.href}
-                className="trust-library-item focus-ring"
-                download
-                aria-label={`Download ${doc.title}`}
-              >
-                <span className="text-[17px] leading-snug">{doc.title}</span>
-                <span className="trust-library-meta">{doc.date} · PDF</span>
-              </a>
-            ))}
+            {DOCUMENTS.map((doc) =>
+              "href" in doc && doc.href ? (
+                <Link
+                  key={doc.title}
+                  href={doc.href}
+                  className="trust-library-item focus-ring"
+                >
+                  <span className="text-[17px] leading-snug">{doc.title}</span>
+                  <span className="trust-library-meta">{doc.status}</span>
+                </Link>
+              ) : (
+                <div key={doc.title} className="trust-library-item">
+                  <span className="text-[17px] leading-snug">{doc.title}</span>
+                  <span className="trust-library-meta">{doc.status}</span>
+                </div>
+              ),
+            )}
           </div>
           <p className="mt-10">
             <Link href="/dokumentation" className="signature-link">

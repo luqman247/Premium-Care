@@ -77,11 +77,10 @@ export default function FounderStoryPage() {
               Danmark blev landet, der gav os tryghed, muligheder og en fremtid.
             </p>
             <p>
-              Nogle år senere mistede vi min ældste onkel i Afghanistan. Tilbage stod
-              min farmor alene. Hun blev inviteret til Danmark, hvor hun, ligesom os,
+              Nogle år senere mistede vi min onkel i Afghanistan. Tilbage stod min
+              farmor alene. Hun blev inviteret til Danmark, hvor hun, ligesom os,
               blev mødt med åbne arme. Mine forældre arbejdede begge hårdt for at
-              skabe en tilværelse, mens min mor samtidig passede min farmor og min
-              lillebror, som på daværende tidspunkt led af svær kolik.
+              skabe en tilværelse, mens min mor samtidig passede min farmor.
             </p>
           </div>
         </section>
@@ -102,9 +101,9 @@ export default function FounderStoryPage() {
             <p>
               Vi besøgte hende hver eneste dag. Nogle gange overnattede vi hos hende.
               Personalet blev langt mere end medarbejdere. De blev en del af vores
-              familie. Da min farmor gik bort efter to år i Danmark, deltog flere af
-              plejepersonalet i hendes begravelse. Den omsorg og medmenneskelighed, de
-              viste os, er noget, jeg aldrig vil glemme.
+              familie. Da min farmor gik bort, deltog flere af plejepersonalet i
+              hendes begravelse. Den omsorg og medmenneskelighed, de viste os, er
+              noget, jeg aldrig vil glemme.
             </p>
           </div>
         </section>
@@ -206,7 +205,6 @@ export default function FounderStoryPage() {
               valgte jeg at gribe den. Jeg fik værdifuld erfaring med økonomi,
               kvalitetsarbejde, personaleledelse, kommunalt samarbejde og drift.
             </p>
-            <p>Vi fik driften til at hænge sammen, og folk blev</p>
             <p>
               Men med tiden blev det tydeligt for mig, at en virksomhed med mange års
               kultur og historik også har rammer, som kan være svære at forandre. Jeg

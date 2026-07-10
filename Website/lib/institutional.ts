@@ -21,17 +21,43 @@ export const MUNICIPAL_KPIS = [
   },
 ] as const;
 
+/**
+ * Municipal document catalogue.
+ * Empty placeholder PDFs are not offered as downloads — status only until real files exist.
+ */
 export const MUNICIPAL_DOCUMENTS = [
   {
-    href: "/documents/Premium_Care_Kommunalt_Beslutningsgrundlag.pdf",
-    label: "Kommunalt beslutningsgrundlag (PDF)",
+    label: "Kommunalt beslutningsgrundlag",
+    status: "Under udarbejdelse",
+    summaryHref: "/kommuner",
   },
-  { href: "/documents/ISO_9001_2015.pdf", label: "ISO 9001:2015 certifikat" },
-  { href: "/documents/årlig_kvalitetsrevisionsrapport.pdf", label: "Årlig kvalitetsrevisionsrapport" },
-  { href: "/documents/GDPR_Politik.pdf", label: "GDPR- og persondatapolitik" },
-  { href: "/documents/Klageprocedure.pdf", label: "Klageprocedure" },
-  { href: "/documents/Arbejdsmiljoe.pdf", label: "Arbejdsmiljøpolitik" },
-  { href: "/documents/Aarsregnskab.pdf", label: "Seneste årsregnskab" },
+  {
+    label: "ISO 9001:2015 certifikat",
+    status: "Ikke offentliggjort endnu",
+  },
+  {
+    label: "Årlig kvalitetsrevisionsrapport",
+    status: "Under udarbejdelse",
+    summaryHref: "/kvalitet",
+  },
+  {
+    label: "GDPR- og persondatapolitik",
+    status: "Kommer snart",
+    summaryHref: "/privatliv",
+  },
+  {
+    label: "Klageprocedure",
+    status: "Kommer snart",
+    summaryHref: "/klager",
+  },
+  {
+    label: "Arbejdsmiljøpolitik",
+    status: "Under udarbejdelse",
+  },
+  {
+    label: "Seneste årsregnskab",
+    status: "Ikke offentliggjort endnu",
+  },
 ] as const;
 
 export const COMPANY_IDENTITY_LINE = `${COMPANY.legalName} · CVR ${COMPANY.cvr}`;

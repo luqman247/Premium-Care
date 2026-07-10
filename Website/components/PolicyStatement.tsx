@@ -63,22 +63,18 @@ export function PolicyStatement({ policy }: PolicyStatementProps) {
           </div>
         </section>
 
-        {policy.documentHref && (
+        {policy.documentStatus && (
           <section className="section-padding" aria-labelledby="policy-document">
             <h2 id="policy-document" className="text-[30px] leading-normal text-midnight">
               Fuldt dokument
             </h2>
             <p className="text-[17px] leading-body text-midnight/80 mt-8">
-              Resuméet her er vejledende. Det fulde dokument gælder, hvis noget ikke
-              stemmer overens
+              Det fulde PDF-dokument er endnu ikke offentliggjort. Resuméet på denne
+              side er den gældende offentlige beskrivelse
             </p>
-            <a
-              href={policy.documentHref}
-              className="btn-secondary mt-8 inline-flex"
-              download
-            >
-              {policy.documentLabel ?? "Download PDF"}
-            </a>
+            <p className="text-[15px] text-midnight/55 mt-4">
+              {policy.documentStatus}
+            </p>
           </section>
         )}
 
