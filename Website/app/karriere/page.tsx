@@ -26,7 +26,7 @@ export const metadata: Metadata = {
     title: "Bliv en del af Premium Care",
     description:
       "Arbejd med værdighed, struktur og faglighed i Aarhus og Østjylland. Betalt oplæring, mentorordning og synlig ledelse.",
-    url: "https://premiumcare.dk/karriere",
+    url: `${COMPANY.url}/karriere`,
   },
 };
 

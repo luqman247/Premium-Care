@@ -23,7 +23,7 @@ export const COMPANY = {
     display: "Man–Fre: 07.00–15.00",
     schema: ["Mo-Fr 07:00-15:00"],
   },
-  url: "https://premiumcare.dk",
+  url: "https://www.premiumcare.dk",
   foundedYear: 2026,
 } as const;
 

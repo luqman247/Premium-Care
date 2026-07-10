@@ -16,7 +16,7 @@ export const metadata: Metadata = {
     title: "Tillidscenter · Premium Care",
     description:
       "Gennemsigtighed, dokumentation og ansvarlighed - politikker, kvalitetsramme og ledelsesansvar for Premium Care ApS.",
-    url: "https://premiumcare.dk/tillid",
+    url: `${COMPANY.url}/tillid`,
   },
 };
 

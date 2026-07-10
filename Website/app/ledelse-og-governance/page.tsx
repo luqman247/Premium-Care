@@ -19,7 +19,7 @@ export const metadata: Metadata = {
     title: "Ledelse og ansvar | Premium Care",
     description:
       "Ledelse, ansvar og kvalitetsarbejde i Premium Care ApS. Grundlagt af Bibi Naziyh Dowezai.",
-    url: "https://premiumcare.dk/ledelse-og-governance",
+    url: `${COMPANY.url}/ledelse-og-governance`,
     images: [damMetadataImage(ASSET_IDS.leadershipPress)],
   },
 };

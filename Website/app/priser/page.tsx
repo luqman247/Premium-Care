@@ -15,7 +15,7 @@ export const metadata: Metadata = {
     title: "Gratis hjemmepleje · Premium Care",
     description:
       "Frit valg af privat hjemmepleje når du er visiteret af kommunen - uden ekstra betaling",
-    url: "https://premiumcare.dk/priser",
+    url: `${COMPANY.url}/priser`,
   },
 };
 

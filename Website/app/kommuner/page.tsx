@@ -21,7 +21,7 @@ export const metadata: Metadata = {
     title: "Kommunalt samarbejde · Premium Care",
     description:
       "Beslutningsgrundlag, dokumentation, kvalitetsdata og virksomhedsoplysninger for kommunal indkøb",
-    url: "https://premiumcare.dk/kommuner",
+    url: `${COMPANY.url}/kommuner`,
   },
 };
 

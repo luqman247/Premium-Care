@@ -21,7 +21,7 @@ export const metadata: Metadata = {
     title: "Vores løfte | Premium Care",
     description:
       "Premium Cares offentlige løfte om værdighed, ærlig kommunikation, medarbejderudvikling, læring, kvalitet og menneskelig omsorg.",
-    url: "https://premiumcare.dk/vores-loefte",
+    url: `${COMPANY.url}/vores-loefte`,
   },
 };
 

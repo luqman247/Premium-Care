@@ -47,7 +47,7 @@ export const metadata: Metadata = {
     locale: "da_DK",
     title: "Premium Care",
     description: "Hjemmepleje i Aarhus og Østjylland",
-    url: "https://premiumcare.dk",
+    url: COMPANY.url,
     images: [defaultOgImage],
   },
   twitter: {

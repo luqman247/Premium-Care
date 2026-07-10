@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { PolicyStatement } from "@/components/PolicyStatement";
+import { COMPANY } from "@/lib/company";
 import { getTrustPolicy, TRUST_POLICIES } from "@/lib/trust-policies";
 
 type PolicyPageProps = {
@@ -25,7 +26,7 @@ export async function generateMetadata({
     openGraph: {
       title: `${policy.title} | Premium Care`,
       description: policy.description,
-      url: `https://premiumcare.dk/${slug}`,
+      url: `${COMPANY.url}/${slug}`,
     },
   };
 }

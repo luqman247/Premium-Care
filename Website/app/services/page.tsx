@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { COMPANY } from "@/lib/company";
 import Link from "next/link";
 import { DamImage } from "@/components/DamImage";
 import { FreeCareMessage } from "@/components/FreeCareMessage";
@@ -14,7 +15,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Ydelser · Premium Care",
     description: "Hvad vi gør i hjemmet - og hvad vi bevidst lader være",
-    url: "https://premiumcare.dk/services",
+    url: `${COMPANY.url}/services`,
   },
 };
 

@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { COMPANY } from "@/lib/company";
 import Link from "next/link";
 import { CrestSeal } from "@/components/CrestSeal";
 import { DamImage } from "@/components/DamImage";
@@ -19,7 +20,7 @@ export const metadata: Metadata = {
     title: "Min historie | Premium Care",
     description:
       "Historien bag Premium Care. Fra Sønderborg og en farmors sidste kapitel til hjemmepleje med værdighed i Aarhus og Østjylland.",
-    url: "https://premiumcare.dk/min-historie",
+    url: `${COMPANY.url}/min-historie`,
     images: [damMetadataImage(ASSET_IDS.founderStory)],
   },
 };

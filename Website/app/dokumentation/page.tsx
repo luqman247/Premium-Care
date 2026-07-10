@@ -15,7 +15,7 @@ export const metadata: Metadata = {
     title: "Dokumentation · Premium Care",
     description:
       "Politikker, procedurer og offentlige dokumenter fra Premium Care ApS.",
-    url: "https://premiumcare.dk/dokumentation",
+    url: `${COMPANY.url}/dokumentation`,
   },
 };
 

@@ -15,7 +15,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Om os · Premium Care",
     description: "Hvorfor vi findes",
-    url: "https://premiumcare.dk/om-os",
+    url: `${COMPANY.url}/om-os`,
   },
 };
 

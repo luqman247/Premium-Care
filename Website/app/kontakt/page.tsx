@@ -13,7 +13,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: `Kontakt · ${COMPANY.brandName}`,
     description: `Kontakt ${COMPANY.legalName}. Telefon, e-mail og åbningstider.`,
-    url: "https://premiumcare.dk/kontakt",
+    url: `${COMPANY.url}/kontakt`,
   },
 };
 
