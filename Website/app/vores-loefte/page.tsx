@@ -34,7 +34,7 @@ export default function VoresLoftePage() {
             Vores løfte
           </h1>
           <p className="text-[13px] uppercase tracking-wide text-midnight/60 mt-8">
-            Et offentligt tilsagn til borgere, familier, medarbejdere og kommuner
+            Det, vi lover borgere, familier, medarbejdere og kommuner
           </p>
           <p className="text-[13px] text-midnight/60 mt-4">
             {COMPANY.legalName} · CVR {COMPANY.cvr}
@@ -51,8 +51,7 @@ export default function VoresLoftePage() {
             {VORES_LOFTE_HERO}
           </p>
           <p className="text-[19px] leading-body text-midnight/80 mt-10 max-w-[55ch]">
-            Det her er det, vi mener. Det står også i vores politikker og
-            dokumentation
+            Det her er det, vi mener. Du kan også læse det i vores politikker
           </p>
         </section>
 
@@ -95,11 +94,10 @@ export default function VoresLoftePage() {
             id="lofte-tillid"
             className="text-[30px] leading-normal text-midnight"
           >
-            Løftet er forankret i dokumentation
+            Løftet står også på papir
           </h2>
           <p className="text-[17px] leading-body text-midnight/80 mt-8 max-w-[55ch]">
-            Løftet står i politikker, ledelsesansvar og dokumentation i vores
-            tillidscenter.
+            Du kan læse det i vores politikker og i tillidscenteret
           </p>
           <p className="mt-10">
             <Link
@@ -119,7 +117,7 @@ export default function VoresLoftePage() {
             Løftet har en historie
           </h2>
           <p className="text-[17px] leading-body text-midnight/80 mt-8 max-w-[55ch]">
-            Læs grundlæggerens historie, hvis du vil vide, hvor løftet kommer fra.
+            Læs grundlæggerens historie, hvis du vil vide, hvor løftet kommer fra
           </p>
           <p className="mt-10">
             <Link
@@ -147,7 +145,7 @@ export default function VoresLoftePage() {
             &ldquo;{VORES_LOFTE_COMPASS}&rdquo;
           </blockquote>
           <p className="text-[17px] leading-body text-ivory/70 mt-12 max-w-[42ch] mx-auto">
-            Det spørgsmål stiller vi, når vi er i tvivl.
+            Det spørgsmål stiller vi, når vi er i tvivl
           </p>
         </div>
       </section>

@@ -42,8 +42,8 @@ export default function CareersPage() {
             Bliv en del af Premium Care
           </h1>
           <p className="text-[19px] leading-body text-midnight/80 mt-8 max-w-[55ch]">
-            Vi søger faglige plejemedarbejdere, der vil gøre arbejdet ordentligt -
-            med tid til borgeren, respekt for kollegerne og stolthed over faget
+            Vi søger folk, der vil gøre arbejdet ordentligt - med tid til borgeren
+            og respekt for kollegerne
           </p>
           <p className="text-[13px] text-midnight/60 mt-6">
             {COMPANY.legalName} · CVR {COMPANY.cvr} · {COMPANY.address.locality}
@@ -109,8 +109,8 @@ export default function CareersPage() {
           </h2>
           <p className="text-[17px] leading-body text-midnight/80 mt-8 max-w-[55ch]">
             Ingen ny medarbejder starter alene. Du gennemgår fire ugers oplæring.
-            Derefter følger du en mentor i otte uger. Vi investerer i dig, fordi
-            kvaliteten i hjemmet afhænger af, at du er forberedt
+            Derefter følger du en mentor i otte uger. Kvaliteten i hjemmet afhænger
+            af, at du er forberedt
           </p>
           <ul className="mt-10 space-y-3 list-none">
             {TRAINING_PROGRAMME.map((item) => (

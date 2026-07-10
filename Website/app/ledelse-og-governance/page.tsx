@@ -222,34 +222,15 @@ export default function LeadershipGovernancePage() {
               </p>
               <div className="mt-8 space-y-6 text-[17px] leading-body text-midnight/90">
                 <p>
-                  Driftsmæssig ekspertise og lokalkendskab, med ledelse tæt på driften,
-                  ikke på afstand. Ansvarlig for den daglige drift, personaleledelse,
-                  borgerpleje, regelefterlevelse og virksomhedens udvikling.
+                  Hun leder tæt på driften - ikke på afstand. Ansvar for personale,
+                  borgerpleje og den daglige kvalitet
                 </p>
                 <p>
                   Grundlægger af Premium Care ApS. Baggrund i hjemmepleje i Aarhus, Vejle
-                  og Fredericia, ledelse og drift af hjemmeplejevirksomhed, og uddannelse
-                  som tandplejer.
+                  og Fredericia, og i ledelse og drift af hjemmepleje
                 </p>
                 <p>
-                  <strong className="font-medium text-midnight">
-                    Over for borgere:
-                  </strong>{" "}
-                  Den rigtige pleje, de rigtige mennesker, og en åben vej til at
-                  klage.
-                </p>
-                <p>
-                  <strong className="font-medium text-midnight">
-                    Over for medarbejdere:
-                  </strong>{" "}
-                  Klare rammer, oplæring og ledelse, der kan findes.
-                </p>
-                <p>
-                  <strong className="font-medium text-midnight">
-                    Over for kvalitet:
-                  </strong>{" "}
-                  Målbar standard, årlig revision og ledelse, der også er ude i
-                  hjemmene.
+                  Rigtig pleje, folk man kan finde, og en klar vej, hvis noget går galt
                 </p>
               </div>
               <p className="mt-10">
@@ -290,9 +271,8 @@ export default function LeadershipGovernancePage() {
             Mission
           </h2>
           <p className="text-[19px] leading-body text-midnight/90 mt-8">
-            At levere hjemmepleje, borgere kan leve med i eget hjem. At støtte
-            familier med ærlig besked. At være en arbejdsplads, medarbejdere gider
-            blive i.
+            Hjemmepleje, man kan leve med. Ærlig besked til familien. En
+            arbejdsplads, folk bliver i
           </p>
         </section>
 
@@ -302,8 +282,8 @@ export default function LeadershipGovernancePage() {
             Vision
           </h2>
           <p className="text-[19px] leading-body text-midnight/90 mt-8">
-            At blive en hjemmepleje, kommuner kan samarbejde med, borgere vælger, og
-            medarbejdere gerne arbejder for.
+            En hjemmepleje, kommuner kan stole på, borgere vælger, og medarbejdere
+            gerne arbejder for
           </p>
         </section>
 

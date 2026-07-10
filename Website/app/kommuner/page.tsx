@@ -168,9 +168,8 @@ export default function MunicipalPage() {
             Dokumentation og rapportering
           </h2>
           <p className="text-[17px] leading-body text-midnight/80 mt-8 max-w-[55ch]">
-            Elektroniske plejeplaner, daglige plejenotater og kommunalt integrationslag
-            til rapportering. Teknologi understøtter faglighed og sporbarhed - den
-            erstatter ikke den menneskelige vurdering
+            Vi dokumenterer elektronisk og rapporterer til kommunen. Systemerne
+            hjælper - de erstatter ikke den faglige vurdering
           </p>
         </div>
       </section>

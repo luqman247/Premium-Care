@@ -147,8 +147,8 @@ export default function HomePage() {
             og har hjemsted i Viby J
           </p>
           <p className="type-lead text-midnight mt-8">
-            Grundlæggeren voksede op med en farmor, der fik værdig pleje i Danmark.
-            Det er udgangspunktet for alt, vi gør
+            Bibi voksede op med en farmor, der fik værdig pleje i Danmark. Det er
+            udgangspunktet for alt, vi gør
           </p>
           <p className="mt-10">
             <Link

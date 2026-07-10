@@ -23,42 +23,42 @@ export const metadata: Metadata = {
 const QUALITY_FRAMEWORK = [
   {
     title: "Loven",
-    body: "Vi følger dansk plejelovgivning og kommunale krav. Revisionsprogram og tilsyn.",
+    body: "Vi følger dansk plejelovgivning og kommunale krav",
   },
   {
     title: "Vores standard",
-    body: "Skriftlig servicestandard ud over minimumskrav. Punktlighed, kontinuitet og dokumenteret pleje.",
+    body: "Punktlighed, kontinuitet og dokumenteret pleje - også ud over minimumskrav",
   },
   {
     title: "Opfølgning",
-    body: "Audits, tilbagemeldinger fra borgere og pårørende, og faste mål, vi måler os mod.",
+    body: "Vi følger op, når noget halter. Borgere og pårørende kan sige til",
   },
   {
     title: "Medarbejdernes fag",
-    body: "Oplæring før første besøg alene. Løbende efteruddannelse og kompetencevurdering.",
+    body: "Oplæring før første besøg alene. Løbende efteruddannelse",
   },
   {
     title: "Familier",
-    body: "Vi fortæller, hvad vi ser. Pårørende kan altid kontakte os og indgive klage.",
+    body: "Vi fortæller, hvad vi ser. Pårørende kan altid kontakte os",
   },
   {
     title: "Ansvar",
-    body: "Hver standard har en navngivet ejer. Kvaliteten kan forklares og dokumenteres.",
+    body: "Hver standard har en navngivet ejer. Kvaliteten kan forklares",
   },
 ];
 
 const VERIFICATION_LAYERS = [
   {
     layer: "Daglig dokumentation",
-    body: "Medarbejderne udfylder plejenotater ved hvert besøg. Bekymringer indberettes med det samme.",
+    body: "Plejenotater ved hvert besøg. Bekymringer indberettes med det samme",
   },
   {
     layer: "Supervision",
-    body: "Stikprøver og uanmeldte besøg. Ugentlig gennemgang af plejeplaner.",
+    body: "Stikprøver og uanmeldte besøg. Ugentlig gennemgang af plejeplaner",
   },
   {
     layer: "Ekstern kontrol",
-    body: "Tilsyn, kommunale gennemgange og uafhængige tilfredshedsundersøgelser.",
+    body: "Tilsyn, kommunale gennemgange og uafhængige tilfredshedsundersøgelser",
   },
 ];
 
@@ -193,9 +193,8 @@ export default function TrustPage() {
             Klager og eskalering
           </h2>
           <p className="text-[17px] leading-body text-ivory/80 mt-8 max-w-[55ch]">
-            Klager tages alvorligt og behandles efter dokumenteret procedure med
-            navngivet ansvarlig, tidsfrister og opfølgning til borger, pårørende og
-            kommune, når det er relevant
+            En klage får en ansvarlig, en frist og et svar. Familien og kommunen får
+            besked, når det er relevant
           </p>
           <p className="text-[17px] leading-body text-ivory/80 mt-6">
             <Link

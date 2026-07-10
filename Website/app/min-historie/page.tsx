@@ -58,8 +58,8 @@ export default function FounderStoryPage() {
           </h2>
           <div className="mt-10 space-y-6 text-[19px] leading-body text-midnight/90">
             <p>
-              Premium Care startede ikke som en forretningsplan på et whiteboard. Det
-              startede med en farmor, dansk pleje og et løfte om at give noget tilbage.
+              Premium Care startede med en farmor, dansk pleje og et ønske om at give
+              noget tilbage
             </p>
           </div>
         </section>
@@ -207,7 +207,7 @@ export default function FounderStoryPage() {
               valgte jeg at gribe den. Jeg fik værdifuld erfaring med økonomi,
               kvalitetsarbejde, personaleledelse, kommunalt samarbejde og drift.
             </p>
-            <p>Vi skabte stabile resultater og opbyggede et stærkt team.</p>
+            <p>Vi fik driften til at hænge sammen, og folk blev</p>
             <p>
               Men med tiden blev det tydeligt for mig, at en virksomhed med mange års
               kultur og historik også har rammer, som kan være svære at forandre. Jeg
@@ -234,12 +234,12 @@ export default function FounderStoryPage() {
           <div className="mt-10 space-y-6 text-[19px] leading-body text-midnight/90">
             <p>
               Jeg ville bygge en arbejdsplads, hvor medarbejdere mødes med respekt, og
-              hvor borgeren aldrig bare bliver et nummer på en liste.
+              hvor borgeren aldrig bare bliver et nummer på en liste
             </p>
-            <p>Derfor stiftede jeg Premium Care ApS.</p>
+            <p>Derfor stiftede jeg Premium Care ApS</p>
             <p>
               Ikke fordi jeg gav op. Fordi jeg nu havde erfaringen til at gøre det,
-              jeg altid havde tænkt på.
+              jeg altid havde tænkt på
             </p>
             <p className="text-[17px] text-midnight/70">
               <Link href="/om-os" className="underline underline-offset-4 hover:text-midnight transition-colors focus-ring">
@@ -278,12 +278,10 @@ export default function FounderStoryPage() {
           </h2>
           <div className="mt-10 space-y-6 text-[19px] leading-body text-midnight/90">
             <p>
-              Premium Care skal være en arbejdsplads, hvor mennesker føler sig velkomne,
-              uanset alder, køn, hudfarve, tro, uddannelse eller baggrund. En
-              arbejdsplads med klare rammer, høj faglighed, struktur og plads til
-              forskellighed.
+              Premium Care skal være et sted, hvor man er velkommen - med klare
+              rammer, ordentlig faglighed og plads til forskellighed
             </p>
-            <p>For medarbejdere, der trives, skaber trygge borgere.</p>
+            <p>For medarbejdere, der trives, skaber trygge borgere</p>
             <p className="text-[17px] text-midnight/70">
               Læs om{" "}
               <Link href="/karriere" className="underline underline-offset-4 hover:text-midnight transition-colors focus-ring">
@@ -331,9 +329,8 @@ export default function FounderStoryPage() {
               mulighed for at afslutte sit liv med værdighed, omsorg og respekt.
             </p>
             <p>
-              Mit mål er ikke at blive endnu en leverandør på listen. Det er at blive
-              den, kommuner kan stole på, medarbejdere gider arbejde for, og borgere
-              møder med respekt, hver gang vi kommer ind ad døren.
+              Jeg vil ikke bare være endnu en på listen. Jeg vil være en, kommuner
+              kan stole på - og som borgere møder med ro, når vi kommer ind
             </p>
             <p>
               Jeg kender følelsen af at være den familie, der står ved siden af en
@@ -353,20 +350,18 @@ export default function FounderStoryPage() {
             id="section-fremtiden"
             className="text-[30px] leading-normal text-midnight"
           >
-            Kompasset for fremtiden
+            Det, vi ikke må glemme
           </h2>
           <div className="mt-10 space-y-6 text-[19px] leading-body text-midnight/90">
             <p>
               Hvis jeg en dag mister kontakten til borgerne eller mine medarbejdere,
               mister jeg samtidig kontakten til årsagen til, at Premium Care blev
-              skabt.
+              skabt
             </p>
-            <p>Det må aldrig ske.</p>
+            <p>Det må aldrig ske</p>
             <p>
-              Min historie om farmor er ikke kun historien om Premium Care. Den er
-              virksomhedens kompas. En dag kan vi have 20 medarbejdere. Så 50. Så 100.
-              Og den dag bliver den største risiko ikke økonomien eller kommunen. Den
-              største risiko bliver, at man glemmer, hvorfor man begyndte.
+              Historien om farmor er ikke kun baggrund. Den er det, vi måler os på -
+              også hvis vi vokser
             </p>
             <p className="text-[17px] text-midnight/70">
               Har du spørgsmål til historien eller virksomheden, er du velkommen til at{" "}

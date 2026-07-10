@@ -35,8 +35,8 @@ export function RecruitmentSection({ variant = "ivory" }: RecruitmentSectionProp
             Bliv en del af Premium Care
           </h2>
           <p className="text-[17px] leading-body text-midnight/80 mt-6 max-w-[55ch]">
-            Vi søger faglige plejemedarbejdere, der vil gøre arbejdet ordentligt -
-            med tid til borgeren og respekt for kollegerne
+            Vi søger folk, der vil gøre arbejdet ordentligt - med tid til borgeren
+            og respekt for kollegerne
           </p>
           <p className="mt-8">
             <Link

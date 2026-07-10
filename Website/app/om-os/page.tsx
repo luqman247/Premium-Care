@@ -137,8 +137,8 @@ export default function AboutPage() {
         <div className="reading-column">
           <h2 className="text-[30px] leading-normal text-ivory">Mission</h2>
           <p className="text-[17px] leading-body text-ivory/80 mt-8">
-            At yde hjemmepleje, borgere kan leve med i eget hjem. At støtte familier
-            med ærlig besked. At være en arbejdsplads, medarbejdere gider blive i.
+            Hjemmepleje, man kan leve med. Ærlig besked til familien. En
+            arbejdsplads, folk bliver i
           </p>
         </div>
       </section>
@@ -147,8 +147,8 @@ export default function AboutPage() {
         <div className="reading-column">
           <h2 className="text-[30px] leading-normal text-midnight">Vision</h2>
           <p className="text-[17px] leading-body text-midnight/80 mt-8">
-            At blive en hjemmepleje, familier vælger, kommuner kan samarbejde med, og
-            medarbejdere gerne arbejder for.
+            En hjemmepleje, familier vælger, kommuner kan stole på, og medarbejdere
+            gerne arbejder for
           </p>
         </div>
       </section>
@@ -160,11 +160,11 @@ export default function AboutPage() {
             Hvorfor logoet betyder noget
           </h2>
           <p className="text-[19px] leading-body text-midnight/80 mt-8 max-w-[55ch]">
-            Logoet minder os om, hvorfor vi startede. Det er ikke pynt.
+            Logoet minder os om, hvorfor vi startede. Det er ikke pynt
           </p>
           <p className="text-[17px] leading-body text-midnight/80 mt-6 max-w-[55ch]">
             Grundlæggerens farmor fik værdig pleje i Danmark. Våbenskjoldet er en
-            påmindelse om den taknemmelighed og det ansvar, der følger med.
+            påmindelse om den taknemmelighed og det ansvar, der følger med
           </p>
         </div>
       </section>
@@ -215,21 +215,20 @@ export default function AboutPage() {
             Ledelse og ansvar
           </h2>
           <p className="text-[17px] leading-body text-ivory/80 mt-8 max-w-[55ch]">
-            Premium Care er bygget på synlig ledelse, dokumenteret ansvar og en
-            ledelsesstruktur, der kan redegøres for over for borgere, familier og
-            kommuner
+            Vi leder tæt på driften. Ansvaret er navngivet. Kommuner og familier kan
+            få det forklaret
           </p>
           <Link
             href="/ledelse-og-governance"
             className="block py-5 text-[17px] text-gold hover:tracking-wide transition-all duration-300 focus-ring"
           >
-            Ledelse og ansvar →
+            Ledelse og ansvar
           </Link>
           <Link
             href="/whistleblowing"
             className="block py-5 text-[17px] text-ivory hover:tracking-wide transition-all duration-300 focus-ring"
           >
-            Whistleblower-ordning →
+            Whistleblower-ordning
           </Link>
         </div>
       </section>
@@ -252,12 +251,11 @@ export default function AboutPage() {
       <section className="snap-section bg-ivory section-padding">
         <div className="reading-column">
           <h2 className="text-[30px] leading-normal text-midnight">
-            Etisk fundament
+            Når vi er i tvivl
           </h2>
           <p className="text-[17px] leading-body text-midnight/80 mt-8">
-            Før vi træffer en væsentlig beslutning, spørger vi: Tjener det borgeren?
-            Er det lovligt? Kan vi forklare det åbent? Ville vi gøre det samme, hvis
-            det var vores egen familie?
+            Før en væsentlig beslutning spørger vi, om det tjener borgeren - og om
+            vi ville gøre det samme for vores egen familie
           </p>
         </div>
       </section>
