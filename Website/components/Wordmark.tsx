@@ -5,9 +5,9 @@ import { DamImage } from "@/components/DamImage";
 import { useNav } from "@/components/Navigation";
 import { ASSET_IDS } from "@/lib/dam/asset-ids";
 
-/** Crest width — aspect yields ~44–46px height on desktop */
-const CREST_WIDTH = 36;
-const CREST_HEIGHT = 46;
+/** Intrinsic render size (sharp); CSS box is optically smaller */
+const CREST_WIDTH = 40;
+const CREST_HEIGHT = 51;
 
 export function Wordmark() {
   const { headerTone, headerCompact } = useNav();

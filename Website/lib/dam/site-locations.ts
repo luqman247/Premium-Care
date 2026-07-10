@@ -53,7 +53,7 @@ export const SITE_USAGE_LOCATIONS: Record<string, SiteUsageLocation[]> = {
     { route: "/media", pageLabel: "DAM", section: "Brand catalogue", component: "BrandWordmark" },
   ],
   [ASSET_IDS.brandCrest]: [
-    { route: "/", pageLabel: "Homepage", section: "Hero trust anchor", component: "CrestSeal" },
+    { route: "/om-os", pageLabel: "About", section: "Section seal", component: "CrestSeal" },
   ],
   [ASSET_IDS.brandCrestNavy]: [
     { route: "/*", pageLabel: "All pages", section: "Header (light backgrounds)", component: "Wordmark" },

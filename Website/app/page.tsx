@@ -1,5 +1,4 @@
 import Link from "next/link";
-import { CrestSeal } from "@/components/CrestSeal";
 import { DamImage } from "@/components/DamImage";
 import { EditorialTicker } from "@/components/EditorialTicker";
 import { RotatingHero } from "@/components/RotatingHero";
@@ -21,12 +20,6 @@ export default function HomePage() {
           <div className="cinematic-hero-veil" aria-hidden="true" />
           <div className="cinematic-hero-content page-margin">
             <div className="cinematic-hero-inner">
-              <div className="hero-trust-anchor">
-                <CrestSeal size={36} variant="white" decorative className="!p-0" />
-                <p className="hero-eyebrow hero-eyebrow--on-dark">
-                  Aarhus og Østjylland
-                </p>
-              </div>
               <h1 className="hero-statement text-ivory">
                 Pleje, der føles trygt
               </h1>
@@ -85,7 +78,6 @@ export default function HomePage() {
         </div>
         <div className="wow-compass-veil" aria-hidden="true" />
         <div className="wow-compass-content page-margin">
-          <CrestSeal size={44} variant="white" decorative className="!p-0 mb-12" />
           <h2 id="compass-heading" className="wow-compass-quote">
             {VORES_LOFTE_COMPASS}
           </h2>
