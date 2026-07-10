@@ -37,3 +37,5 @@ Website/PREMIUM_*.pdf
 Website/PUBLIC_IMAGE_COVERAGE.md
 .vercel
 .env*
+!.env.example
+!Website/.env.example
