@@ -50,7 +50,7 @@ export default function AboutPage() {
           <p className="text-[19px] leading-body text-midnight">
             Premium Care er et familieejet selskab i Viby J. Vi blev stiftet, fordi
             grundlæggeren havde arbejdet i hjemmeplejen og vidste, hvad der skulle til
-            for at gøre det ordentligt.
+            for at gøre det ordentligt
           </p>
           <p className="mt-12">
             <Link

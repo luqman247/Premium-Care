@@ -30,9 +30,7 @@ export default function FreeCarePage() {
           <h1 className="type-page-title text-midnight tracking-tight">
             Gratis hjemmepleje
           </h1>
-          <p className="text-[13px] uppercase tracking-wide text-midnight/60 mt-6">
-            Frit valg af privat leverandør
-          </p>
+          <p className="type-eyebrow mt-6">Frit valg af privat leverandør</p>
         </div>
       </section>
 
@@ -44,7 +42,7 @@ export default function FreeCarePage() {
 
       <section className="snap-section bg-midnight section-padding">
         <div className="reading-column">
-          <h2 className="text-[30px] leading-normal text-ivory">
+          <h2 className="type-section-title text-ivory">
             Sådan fungerer frit valg
           </h2>
           <p className="text-[17px] leading-body text-ivory/80 mt-8 max-w-[55ch]">
@@ -62,7 +60,7 @@ export default function FreeCarePage() {
 
       <section className="snap-section bg-ivory section-padding section-rule">
         <div className="reading-column">
-          <h2 className="text-[30px] leading-normal text-midnight">
+          <h2 className="type-section-title text-midnight">
             Tilkøb ud over visitationen
           </h2>
           <p className="text-[17px] leading-body text-midnight/80 mt-8 max-w-[55ch]">

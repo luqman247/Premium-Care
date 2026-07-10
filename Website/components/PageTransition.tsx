@@ -9,7 +9,7 @@ export function PageTransition() {
 
   useEffect(() => {
     setIsTransitioning(true);
-    const timer = setTimeout(() => setIsTransitioning(false), 320);
+    const timer = setTimeout(() => setIsTransitioning(false), 420);
     return () => clearTimeout(timer);
   }, [pathname]);
 

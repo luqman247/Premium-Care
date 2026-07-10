@@ -18,9 +18,9 @@ export function FreeCareMessage({
 }: FreeCareMessageProps) {
   return (
     <div className={className}>
-      <p className="text-[19px] leading-body text-midnight max-w-[55ch]">{FREE_CARE_MESSAGE}</p>
+      <p className="type-lead text-midnight max-w-[42ch]">{FREE_CARE_MESSAGE}</p>
       {showNote ? (
-        <p className="text-[15px] leading-body text-midnight/70 mt-6 max-w-[55ch]">
+        <p className="text-[17px] leading-body text-midnight/68 mt-6 max-w-[48ch]">
           {FREE_CARE_NOTE}
         </p>
       ) : null}
@@ -28,7 +28,7 @@ export function FreeCareMessage({
         <p className="mt-8">
           <Link
             href={linkHref}
-            className="text-[17px] leading-body text-midnight underline underline-offset-4 hover:text-midnight/80 transition-colors focus-ring"
+            className="signature-link focus-ring"
           >
             {linkLabel}
           </Link>

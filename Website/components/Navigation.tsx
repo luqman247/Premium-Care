@@ -10,12 +10,11 @@ import {
 import Link from "next/link";
 
 const NAV_LINKS = [
-  { href: "/", label: "Hjem" },
   { href: "/services", label: "Ydelser" },
   { href: "/priser", label: "Gratis hjemmepleje" },
   { href: "/om-os", label: "Om os" },
+  { href: "/min-historie", label: "Min historie" },
   { href: "/kontakt", label: "Kontakt" },
-  { href: "/tillid", label: "Tillid" },
 ];
 
 type NavContextValue = {
@@ -80,18 +79,18 @@ export function NavigationProvider({ children }: { children: ReactNode }) {
           <button
             type="button"
             onClick={close}
-            className="absolute top-6 right-[8%] type-caption text-midnight/70 hover:text-midnight transition-colors duration-500 focus-ring"
+            className="nav-overlay-close type-caption text-midnight/55 hover:text-midnight focus-ring"
             aria-label="Luk menu"
           >
             Luk
           </button>
-          <nav className="flex flex-col items-center gap-6" aria-label="Primær">
+          <nav className="nav-overlay-nav" aria-label="Primær">
             {NAV_LINKS.map((link) => (
               <Link
                 key={link.href}
                 href={link.href}
                 onClick={close}
-                className="text-[24px] font-body text-midnight hover:opacity-70 transition-opacity duration-500 focus-ring"
+                className="nav-overlay-link focus-ring"
               >
                 {link.label}
               </Link>

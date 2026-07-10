@@ -23,20 +23,21 @@ export default function ServicesPage() {
     <div className="page-flow">
       <section className="snap-section bg-ivory section-padding">
         <div className="reading-column">
-          <h1 className="type-page-title text-midnight tracking-tight">
+          <p className="type-eyebrow">Ydelser</p>
+          <h1 className="type-page-title text-midnight tracking-tight mt-4">
             Hvad vi gør
           </h1>
-          <p className="text-[19px] leading-body text-midnight/80 mt-8">
-            Pleje i hjemmet - i det tempo, borgeren kan
+          <p className="type-lead text-midnight/80 mt-8 max-w-[36ch]">
+            Pleje i hjemmet — i det tempo, borgeren kan
           </p>
           <FreeCareMessage className="mt-10" linkLabel="Sådan fungerer frit valg" />
         </div>
       </section>
 
-      {SERVICE_CATEGORIES.map((service) => (
+      {SERVICE_CATEGORIES.map((service, index) => (
         <section key={service.id} className="snap-section bg-ivory">
           {service.photo ? (
-            <div className="w-full h-[40vh] relative">
+            <div className="editorial-banner">
               <DamImage
                 assetId={service.photo.assetId}
                 category="services"
@@ -47,14 +48,17 @@ export default function ServicesPage() {
             </div>
           ) : null}
           <div className="section-padding reading-column">
-            <h2 className="text-[30px] leading-normal text-midnight">{service.title}</h2>
-            <p className="text-[19px] leading-body text-midnight/80 mt-6 max-w-[55ch]">
+            <p className="pathway-index" aria-hidden="true">
+              {String(index + 1).padStart(2, "0")}
+            </p>
+            <h2 className="type-section-title text-midnight mt-4">{service.title}</h2>
+            <p className="type-lead text-midnight/80 mt-6 max-w-[48ch]">
               {service.intro}
             </p>
             {service.items ? (
               <ul className="mt-8 space-y-3 list-none">
                 {service.items.map((item) => (
-                  <li key={item} className="text-[17px] leading-body text-midnight/80">
+                  <li key={item} className="text-[17px] leading-body text-midnight/75">
                     {item}
                   </li>
                 ))}
@@ -66,17 +70,17 @@ export default function ServicesPage() {
 
       <section className="snap-section bg-midnight section-padding">
         <div className="reading-column">
-          <h2 className="text-[30px] leading-normal text-ivory">Det gør vi ikke</h2>
-          <p className="text-[17px] leading-body text-ivory/80 mt-12 max-w-[55ch]">
+          <h2 className="type-section-title text-ivory">Det gør vi ikke</h2>
+          <p className="text-[17px] leading-body text-ivory/80 mt-10 max-w-[48ch]">
             Vi overtager ikke familiens plads. Du kender din mor bedst. Vi rådgiver
             ikke mod lægens ordination. Vi er her, når I ikke kan være. Og vi giver
             ikke op, fordi hun siger nej den første uge
           </p>
-          <div className="mt-10 flex flex-col sm:flex-row gap-4">
-            <Link href="/kontakt" className="btn-primary">
+          <div className="mt-12 flex flex-col sm:flex-row gap-4">
+            <Link href="/kontakt" className="btn-primary btn-primary--on-dark">
               Kontakt os om frit valg
             </Link>
-            <Link href="/priser" className="btn-secondary">
+            <Link href="/priser" className="btn-secondary btn-secondary--on-dark">
               Læs om gratis hjemmepleje
             </Link>
           </div>

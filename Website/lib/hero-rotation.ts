@@ -3,6 +3,6 @@ import { ASSET_IDS } from "@/lib/dam/asset-ids";
 /** Curated hero rotation asset IDs — resolved at render time via DamImage */
 export const HERO_ROTATION_ASSET_IDS = [...ASSET_IDS.homepageHeroRotation];
 
-export const HERO_ROTATION_INTERVAL_MS = 14_000;
-export const HERO_ROTATION_FADE_MS = 2_400;
-export const HERO_ROTATION_INITIAL_DELAY_MS = 5_000;
+export const HERO_ROTATION_INTERVAL_MS = 16_000;
+export const HERO_ROTATION_FADE_MS = 3_200;
+export const HERO_ROTATION_INITIAL_DELAY_MS = 6_000;

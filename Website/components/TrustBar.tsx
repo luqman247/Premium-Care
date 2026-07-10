@@ -8,24 +8,20 @@ const FOOTER_MAIN = [
   { href: "/priser", label: "Gratis hjemmepleje" },
   { href: "/om-os", label: "Om os" },
   { href: "/min-historie", label: "Min historie" },
-  { href: "/karriere", label: "Bliv en del af teamet" },
   { href: "/kontakt", label: "Kontakt" },
 ];
 
 const FOOTER_TRUST = [
   { href: "/tillid", label: "Tillidscenter" },
   { href: "/dokumentation", label: "Dokumentation" },
-  { href: "/vores-loefte", label: "Vores løfte" },
-  { href: "/whistleblowing", label: "Whistleblower-ordning" },
+  { href: "/vores-lofte", label: "Vores løfte" },
+  { href: "/karriere", label: "Karriere" },
   { href: "/privatliv", label: "Privatliv" },
-  { href: "/cookiepolitik", label: "Cookiepolitik" },
   { href: "/klager", label: "Klager" },
 ];
 
 export function TrustBar() {
   const year = new Date().getFullYear();
-  const trustLeft = FOOTER_TRUST.slice(0, 4);
-  const trustRight = FOOTER_TRUST.slice(4);
 
   return (
     <footer role="contentinfo" aria-label="Virksomhedsoplysninger" className="site-footer">
@@ -38,11 +34,9 @@ export function TrustBar() {
               {COMPANY.address.street}
               <br />
               {COMPANY.address.postalCode} {COMPANY.address.locality}
-              <br />
-              {COMPANY.address.country}
             </address>
             <p className="site-footer-trust-note">
-              Privat hjemmepleje gennem frit valg, når du er visiteret af kommunen
+              Privat hjemmepleje gennem frit valg
             </p>
           </div>
 
@@ -66,11 +60,6 @@ export function TrustBar() {
                 <span className="site-footer-detail">{COMPANY.openingHours.display}</span>
               </li>
             </ul>
-            <p className="site-footer-cta">
-              <Link href="/kontakt" className="site-footer-link site-footer-link-cta focus-ring">
-                Kontakt os om frit valg
-              </Link>
-            </p>
           </div>
 
           <nav className="site-footer-col" aria-label="Hovedsider">
@@ -88,26 +77,15 @@ export function TrustBar() {
 
           <nav className="site-footer-col" aria-label="Tillid og juridisk">
             <p className="site-footer-label">Tillid</p>
-            <div className="site-footer-trust-grid">
-              <ul className="site-footer-nav">
-                {trustLeft.map((item) => (
-                  <li key={item.href}>
-                    <Link href={item.href} className="site-footer-link focus-ring">
-                      {item.label}
-                    </Link>
-                  </li>
-                ))}
-              </ul>
-              <ul className="site-footer-nav">
-                {trustRight.map((item) => (
-                  <li key={item.href}>
-                    <Link href={item.href} className="site-footer-link focus-ring">
-                      {item.label}
-                    </Link>
-                  </li>
-                ))}
-              </ul>
-            </div>
+            <ul className="site-footer-nav">
+              {FOOTER_TRUST.map((item) => (
+                <li key={item.href}>
+                  <Link href={item.href} className="site-footer-link focus-ring">
+                    {item.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
           </nav>
         </div>
 
@@ -130,13 +108,6 @@ export function TrustBar() {
               ·
             </span>
             CVR {COMPANY.cvr}
-            <span className="site-footer-legal-sep" aria-hidden="true">
-              ·
-            </span>
-            Alle rettigheder forbeholdes
-          </p>
-          <p className="site-footer-signature">
-            Udviklet med omsorg, struktur og ansvar
           </p>
         </div>
       </div>
