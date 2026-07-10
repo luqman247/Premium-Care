@@ -5,9 +5,9 @@ import { DamImage } from "@/components/DamImage";
 import { useNav } from "@/components/Navigation";
 import { ASSET_IDS } from "@/lib/dam/asset-ids";
 
-/** Intrinsic render size (sharp); CSS box is optically smaller */
-const CREST_WIDTH = 40;
-const CREST_HEIGHT = 51;
+/** Intrinsic render size (sharp); CSS box uses --header-mark-* tokens */
+const CREST_WIDTH = 48;
+const CREST_HEIGHT = 61;
 
 export function Wordmark() {
   const { headerTone, headerCompact } = useNav();
