@@ -14,7 +14,7 @@ const FOOTER_MAIN = [
 const FOOTER_TRUST = [
   { href: "/tillid", label: "Tillidscenter" },
   { href: "/dokumentation", label: "Dokumentation" },
-  { href: "/vores-lofte", label: "Vores løfte" },
+  { href: "/vores-loefte", label: "Vores løfte" },
   { href: "/karriere", label: "Karriere" },
   { href: "/privatliv", label: "Privatliv" },
   { href: "/klager", label: "Klager" },

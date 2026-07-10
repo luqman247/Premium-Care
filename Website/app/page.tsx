@@ -74,7 +74,7 @@ export default function HomePage() {
             Planen er vigtig. Personen bag den er vigtigere
           </p>
           <p className="mt-10">
-            <Link href="/vores-lofte" className="signature-link signature-link--on-dark">
+            <Link href="/vores-loefte" className="signature-link signature-link--on-dark">
               Læs om vores løfte
             </Link>
           </p>
@@ -213,7 +213,7 @@ export default function HomePage() {
                 </Link>
               </li>
               <li>
-                <Link href="/vores-lofte" className="trust-evidence-link focus-ring">
+                <Link href="/vores-loefte" className="trust-evidence-link focus-ring">
                   <span className="trust-evidence-label">Vores løfte</span>
                   <span className="trust-evidence-desc">
                     Det, vi lover at gøre — og hvordan
