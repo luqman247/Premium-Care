@@ -37,8 +37,12 @@ export const PHOTOGRAPHY = {
   contact: photo(ASSET_IDS.contactEditorial, "contact"),
   priserHero: photo(ASSET_IDS.priserHero, "hero"),
   priserSplit: photo(ASSET_IDS.priserSplit, "details"),
-  aboutPageHero: photo(ASSET_IDS.aboutPageHero, "hero"),
+  priserBleed: photo(ASSET_IDS.priserBleed, "details"),
+  aboutPageHero: photo(ASSET_IDS.aboutPageHero, "details"),
+  aboutCompass: photo(ASSET_IDS.aboutCompass, "founder"),
   founderPageHero: photo(ASSET_IDS.founderPageHero, "founder"),
+  founderStoryBleed: photo(ASSET_IDS.founderStoryBleed, "details"),
+  founderCompass: photo(ASSET_IDS.founderCompass, "details"),
   trust: photo(ASSET_IDS.trustEditorial, "trust"),
   documentation: photo(ASSET_IDS.documentationEditorial, "trust"),
 } as const;

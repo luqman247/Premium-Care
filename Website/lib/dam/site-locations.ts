@@ -6,7 +6,6 @@ export const SITE_USAGE_LOCATIONS: Record<string, SiteUsageLocation[]> = {
   [ASSET_IDS.homepageHero]: [
     { route: "/", pageLabel: "Homepage", section: "Hero rotation", component: "RotatingHero" },
     { route: "/", pageLabel: "Homepage", section: "JSON-LD", component: "LocalBusiness schema" },
-    { route: "/om-os", pageLabel: "About", section: "Page hero", component: "PageHero" },
   ],
   [ASSET_IDS.founderGrandmother]: [
     { route: "/min-historie", pageLabel: "Founder Story", section: "Grandmother memory", component: "DamImage" },
@@ -21,12 +20,18 @@ export const SITE_USAGE_LOCATIONS: Record<string, SiteUsageLocation[]> = {
   ],
   [ASSET_IDS.founderGratitude]: [
     { route: "/min-historie", pageLabel: "Founder Story", section: "Gratitude", component: "DamImage" },
+    { route: "/om-os", pageLabel: "About", section: "Compass band", component: "DamImage" },
   ],
   [ASSET_IDS.founderLegacy]: [
     { route: "/min-historie", pageLabel: "Founder Story", section: "Legacy", component: "DamImage" },
   ],
   [ASSET_IDS.aboutClosing]: [
     { route: "/om-os", pageLabel: "About", section: "Trust bridge image", component: "DamImage" },
+    { route: "/min-historie", pageLabel: "Founder Story", section: "Compass band", component: "DamImage" },
+  ],
+  [ASSET_IDS.aboutPageHero]: [
+    { route: "/", pageLabel: "Homepage", section: "Hero rotation", component: "RotatingHero" },
+    { route: "/om-os", pageLabel: "About", section: "Page hero", component: "PageHero" },
   ],
   [ASSET_IDS.priserHero]: [
     { route: "/", pageLabel: "Homepage", section: "Hero rotation", component: "RotatingHero" },
@@ -35,6 +40,13 @@ export const SITE_USAGE_LOCATIONS: Record<string, SiteUsageLocation[]> = {
   [ASSET_IDS.priserSplit]: [
     { route: "/", pageLabel: "Homepage", section: "Hero rotation", component: "RotatingHero" },
     { route: "/priser", pageLabel: "Frit valg", section: "Image/text split", component: "DamImage" },
+  ],
+  [ASSET_IDS.contactEditorial]: [
+    { route: "/priser", pageLabel: "Frit valg", section: "Relief bleed", component: "DamImage" },
+    { route: "/kontakt", pageLabel: "Contact", section: "Editorial banner", component: "EditorialBanner" },
+  ],
+  [ASSET_IDS.founderStoryBleed]: [
+    { route: "/min-historie", pageLabel: "Founder Story", section: "Chapter bleed", component: "DamImage" },
   ],
   [ASSET_IDS.servicesPersonalCare]: [
     { route: "/services", pageLabel: "Services", section: "Praktisk hjælp", component: "DamImage" },
@@ -63,9 +75,6 @@ export const SITE_USAGE_LOCATIONS: Record<string, SiteUsageLocation[]> = {
   [ASSET_IDS.leadershipSection]: [
     { route: "/ledelse-og-ansvar", pageLabel: "Leadership", section: "Editorial image", component: "DamImage" },
     { route: "/min-historie", pageLabel: "Founder Story", section: "Visible leadership", component: "DamImage" },
-  ],
-  [ASSET_IDS.contactEditorial]: [
-    { route: "/kontakt", pageLabel: "Contact", section: "Editorial banner", component: "EditorialBanner" },
   ],
   [ASSET_IDS.trustEditorial]: [
     { route: "/tillid", pageLabel: "Trust", section: "Editorial banner", component: "EditorialBanner" },
@@ -140,9 +149,6 @@ export const SITE_USAGE_LOCATIONS: Record<string, SiteUsageLocation[]> = {
     { route: "/", pageLabel: "Homepage", section: "Hero rotation", component: "RotatingHero" },
   ],
   "PC-04-025": [
-    { route: "/", pageLabel: "Homepage", section: "Hero rotation", component: "RotatingHero" },
-  ],
-  "PC-08-043": [
     { route: "/", pageLabel: "Homepage", section: "Hero rotation", component: "RotatingHero" },
   ],
 };

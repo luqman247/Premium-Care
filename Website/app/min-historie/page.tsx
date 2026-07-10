@@ -135,6 +135,23 @@ export default function FounderStoryPage() {
         </div>
       </section>
 
+      <section
+        className="editorial-bleed"
+        aria-hidden="true"
+        data-header-tone="dark"
+      >
+        <div className="editorial-bleed-media">
+          <DamImage
+            assetId={ASSET_IDS.founderStoryBleed}
+            category="details"
+            fill
+            sizes={PHOTO_SIZES.hero}
+            objectPosition="center 40%"
+          />
+        </div>
+        <div className="editorial-bleed-veil" />
+      </section>
+
       <section className="editorial-pull editorial-pull--midnight">
         <div className="page-margin">
           <p className="editorial-pull-quote text-ivory">
@@ -446,13 +463,27 @@ export default function FounderStoryPage() {
         </div>
       </section>
 
-      <section className="founder-kompas" aria-labelledby="section-kompasset">
-        <div className="founder-kompas-inner page-margin">
-          <CrestSeal size={64} variant="white" decorative className="!p-0 mb-10 mx-auto" />
-          <p id="section-kompasset" className="type-eyebrow wow-compass-eyebrow mb-10">
+      <section
+        className="wow-compass"
+        aria-labelledby="section-kompasset"
+        data-header-tone="dark"
+      >
+        <div className="wow-compass-media" aria-hidden="true">
+          <DamImage
+            assetId={ASSET_IDS.founderCompass}
+            category="details"
+            fill
+            sizes={PHOTO_SIZES.hero}
+            objectPosition="center 45%"
+          />
+        </div>
+        <div className="wow-compass-veil" aria-hidden="true" />
+        <div className="wow-compass-content page-margin">
+          <CrestSeal size={56} variant="white" decorative className="!p-0 mb-10" />
+          <p id="section-kompasset" className="wow-compass-eyebrow mb-8">
             Kompasset
           </p>
-          <blockquote className="founder-kompas-quote">
+          <blockquote className="wow-compass-quote">
             {VORES_LOFTE_COMPASS}
           </blockquote>
         </div>
