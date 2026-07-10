@@ -1,0 +1,37 @@
+# macOS
+.DS_Store
+**/.DS_Store
+
+# Dependencies / build (Website)
+Website/node_modules/
+Website/.next/
+Website/out/
+Website/build/
+Website/coverage/
+Website/*.tsbuildinfo
+
+# Env secrets
+Website/.env
+Website/.env*.local
+*.pem
+
+# Internal Premium Care materials — keep locally, never commit
+Formal Docs/
+Handbook and Employee material/
+PC Handbook/
+High quality Danish images/
+Premium-Care_Logo-Suite/
+Read/
+Uniform/
+
+# Root-level internal archives and governance docs
+*.zip
+PC-GOV-*.docx
+goverance.zip
+Premium_Care_Brand_Operating_System_v1.0.html
+EMAIL IDENTITY SYSTEM.zip
+
+# Website internal audit / changeset / review PDFs (not public downloads)
+Website/CHANGESET_*.pdf
+Website/PREMIUM_*.pdf
+Website/PUBLIC_IMAGE_COVERAGE.md

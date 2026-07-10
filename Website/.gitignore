@@ -29,8 +29,14 @@ yarn-error.log*
 .pnpm-debug.log*
 
 # env files
+.env
 .env*.local
 
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# Internal audit / changeset / review docs (not public downloads)
+CHANGESET_*.pdf
+PREMIUM_*.pdf
+PUBLIC_IMAGE_COVERAGE.md
