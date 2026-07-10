@@ -54,6 +54,15 @@ export const SITE_USAGE_MAP: Record<string, UsageChannel[]> = {
     { key: "min-historie", label: "Founder Story", used: true },
     { key: "seo", label: "SEO Pages", used: true },
   ],
+  [ASSET_IDS.founderGrandmother]: [
+    { key: "min-historie", label: "Founder Story", used: true },
+  ],
+  [ASSET_IDS.founderGratitude]: [
+    { key: "min-historie", label: "Founder Story", used: true },
+  ],
+  [ASSET_IDS.founderLegacy]: [
+    { key: "min-historie", label: "Founder Story", used: true },
+  ],
   [ASSET_IDS.leadershipFormal]: [
     { key: "about", label: "About", used: true },
   ],

@@ -7,8 +7,21 @@ export const SITE_USAGE_LOCATIONS: Record<string, SiteUsageLocation[]> = {
     { route: "/", pageLabel: "Homepage", section: "Hero rotation", component: "RotatingHero" },
     { route: "/", pageLabel: "Homepage", section: "JSON-LD", component: "LocalBusiness schema" },
   ],
-  [ASSET_IDS.homepageCompass]: [
+  [ASSET_IDS.founderGrandmother]: [
+    { route: "/min-historie", pageLabel: "Founder Story", section: "Grandmother memory", component: "DamImage" },
+  ],
+  [ASSET_IDS.founderStory]: [
+    { route: "/min-historie", pageLabel: "Founder Story", section: "Danish home / Tandsbjerg", component: "DamImage" },
+    { route: "/min-historie", pageLabel: "Founder Story", section: "Open Graph", component: "Metadata" },
+  ],
+  [ASSET_IDS.founderReflection]: [
     { route: "/", pageLabel: "Homepage", section: "Compass band", component: "DamImage" },
+  ],
+  [ASSET_IDS.founderGratitude]: [
+    { route: "/min-historie", pageLabel: "Founder Story", section: "Gratitude", component: "DamImage" },
+  ],
+  [ASSET_IDS.founderLegacy]: [
+    { route: "/min-historie", pageLabel: "Founder Story", section: "Legacy", component: "DamImage" },
   ],
   [ASSET_IDS.aboutClosing]: [
     { route: "/om-os", pageLabel: "About", section: "Closing editorial image", component: "DamImage" },
@@ -39,10 +52,6 @@ export const SITE_USAGE_LOCATIONS: Record<string, SiteUsageLocation[]> = {
   ],
   [ASSET_IDS.leadershipSection]: [
     { route: "/ledelse-og-ansvar", pageLabel: "Leadership", section: "Editorial image", component: "DamImage" },
-  ],
-  [ASSET_IDS.founderStory]: [
-    { route: "/min-historie", pageLabel: "Founder Story", section: "Founder portrait", component: "DamImage" },
-    { route: "/min-historie", pageLabel: "Founder Story", section: "Open Graph", component: "Metadata" },
   ],
   [ASSET_IDS.contactEditorial]: [
     { route: "/kontakt", pageLabel: "Contact", section: "Editorial banner", component: "EditorialBanner" },

@@ -83,6 +83,21 @@ export default function FounderStoryPage() {
               skabe en tilværelse, mens min mor samtidig passede min farmor.
             </p>
           </div>
+          <figure className="mt-12">
+            <div className="relative w-full aspect-[3/2]">
+              <DamImage
+                assetId={ASSET_IDS.founderGrandmother}
+                category="founder"
+                fill
+                sizes="(max-width: 680px) 100vw, 680px"
+                objectPosition="center 35%"
+                priority
+              />
+            </div>
+            <figcaption className="text-[13px] text-midnight/60 mt-4 leading-body">
+              Farmors fotografi. Det minde, PremiumCare stadig måler sig på
+            </figcaption>
+          </figure>
         </section>
 
         <section className="section-padding" aria-labelledby="section-omsorg">
@@ -129,7 +144,8 @@ export default function FounderStoryPage() {
           <figure className="mt-12">
             <div className="relative w-full aspect-[3/2]">
               <DamImage
-                assetId={PHOTOGRAPHY.founder.assetId}
+                assetId={ASSET_IDS.founderStory}
+                category="founder"
                 fill
                 sizes="(max-width: 680px) 100vw, 680px"
                 objectPosition={PHOTOGRAPHY.founder.objectPosition}
@@ -325,6 +341,22 @@ export default function FounderStoryPage() {
               Danmark. Et land, der gav min familie en ny begyndelse og gav min farmor
               mulighed for at afslutte sit liv med værdighed, omsorg og respekt.
             </p>
+          </div>
+          <figure className="mt-12">
+            <div className="relative w-full aspect-[3/2]">
+              <DamImage
+                assetId={ASSET_IDS.founderGratitude}
+                category="founder"
+                fill
+                sizes="(max-width: 680px) 100vw, 680px"
+                objectPosition="center 40%"
+              />
+            </div>
+            <figcaption className="text-[13px] text-midnight/60 mt-4 leading-body">
+              Taknemmelighed. Den følelse, der stadig former vores arbejde
+            </figcaption>
+          </figure>
+          <div className="mt-10 space-y-6 text-[19px] leading-body text-midnight/90">
             <p>
               Jeg vil ikke bare være endnu en på listen. Jeg vil være en, kommuner
               kan stole på - og som borgere møder med ro, når vi kommer ind
@@ -360,6 +392,22 @@ export default function FounderStoryPage() {
               Historien om farmor er ikke kun baggrund. Den er det, vi måler os på -
               også hvis vi vokser
             </p>
+          </div>
+          <figure className="mt-12">
+            <div className="relative w-full aspect-[3/2]">
+              <DamImage
+                assetId={ASSET_IDS.founderLegacy}
+                category="founder"
+                fill
+                sizes="(max-width: 680px) 100vw, 680px"
+                objectPosition="center 38%"
+              />
+            </div>
+            <figcaption className="text-[13px] text-midnight/60 mt-4 leading-body">
+              Den næste generation. Det, vi bygger videre på
+            </figcaption>
+          </figure>
+          <div className="mt-10 space-y-6 text-[19px] leading-body text-midnight/90">
             <p className="text-[17px] text-midnight/70">
               Har du spørgsmål til historien eller virksomheden, er du velkommen til at{" "}
               <Link href="/kontakt" className="underline underline-offset-4 hover:text-midnight transition-colors focus-ring">

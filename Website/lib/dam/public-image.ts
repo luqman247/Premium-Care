@@ -38,7 +38,7 @@ export const CATEGORY_FALLBACKS: Record<PublicImageCategory, string[]> = {
     "PC-02-013",
   ],
   about: ["PC-03-018", "PC-03-016", "PC-03-017", "PC-01-001", "PC-02-006"],
-  founder: ["PC-07-036", "PC-07-037", "PC-01-001", "PC-08-047"],
+  founder: ["PC-07-036", "PC-07-035", "PC-07-038", "PC-07-039", "PC-07-037", "PC-01-001"],
   trust: ["PC-04-021", "PC-04-025", "PC-01-004", "PC-02-006"],
   careers: ["PC-06-032", "PC-06-030", "PC-BR-006", "PC-03-017"],
   municipality: ["PC-05-026", "PC-05-028", "PC-05-029", "PC-01-001"],
