@@ -2,7 +2,6 @@ import Link from "next/link";
 import { CrestSeal } from "@/components/CrestSeal";
 import { DamImage } from "@/components/DamImage";
 import { EditorialTicker } from "@/components/EditorialTicker";
-import { RecruitmentSection } from "@/components/RecruitmentSection";
 import { RotatingHero } from "@/components/RotatingHero";
 import { ASSET_IDS } from "@/lib/dam/asset-ids";
 import { COMPANY } from "@/lib/company";
@@ -11,11 +10,10 @@ import { PHOTO_SIZES } from "@/lib/photography";
 import { SERVICE_CATEGORIES } from "@/lib/services";
 import { VORES_LOFTE_COMPASS } from "@/lib/vores-lofte";
 
-const HOME_PATHWAYS = SERVICE_CATEGORIES.slice(0, 4);
-
 export default function HomePage() {
   return (
     <div className="page-flow">
+      {/* ACT 1 — Arrival */}
       <header className="homepage-hero" data-header-tone="dark">
         <div className="cinematic-hero">
           <div className="rotating-hero-wrap">
@@ -30,11 +28,13 @@ export default function HomePage() {
                   Aarhus og Østjylland
                 </p>
               </div>
-              <h1 className="hero-statement text-ivory">Tryghed i hjemmet</h1>
+              <h1 className="hero-statement text-ivory">
+                Pleje, der føles tryg
+              </h1>
               <p className="hero-quality text-ivory/90">
                 Den samme medarbejder. Tydelig besked til familien
               </p>
-              <p className="hero-human text-ivory/72">
+              <p className="hero-human text-ivory/70">
                 Privat hjemmepleje gennem frit valg — når du er visiteret af
                 kommunen
               </p>
@@ -61,42 +61,23 @@ export default function HomePage() {
         <EditorialTicker />
       </header>
 
+      {/* ACT 2 — Free choice revelation */}
       <section
-        className="signature-promise"
-        aria-labelledby="quiet-promise-heading"
-      >
-        <div className="signature-promise-inner page-margin">
-          <p className="type-eyebrow signature-promise-eyebrow">Det stille løfte</p>
-          <h2 id="quiet-promise-heading" className="signature-promise-statement">
-            Vi lover aldrig at glemme, at der bag hver plejeplan står et menneske
-          </h2>
-          <p className="signature-promise-lede">
-            Planen er vigtig. Personen bag den er vigtigere
-          </p>
-          <p className="mt-10">
-            <Link href="/vores-loefte" className="signature-link signature-link--on-dark">
-              Læs om vores løfte
-            </Link>
-          </p>
-        </div>
-      </section>
-
-      <section
-        className="signature-fritvalg section-padding"
+        className="act-fritvalg"
         aria-labelledby="fritvalg-heading"
       >
         <div className="page-margin">
-          <div className="signature-fritvalg-panel">
-            <p className="type-eyebrow">Gratis hjemmepleje</p>
-            <h2 id="fritvalg-heading" className="signature-fritvalg-statement">
+          <div className="act-fritvalg-stage">
+            <p className="type-eyebrow">Frit valg</p>
+            <h2 id="fritvalg-heading" className="act-fritvalg-statement">
               {FREE_CARE_MESSAGE}
             </h2>
-            <p className="signature-fritvalg-note">{FREE_CARE_NOTE}</p>
-            <div className="signature-fritvalg-actions">
+            <p className="act-fritvalg-note">{FREE_CARE_NOTE}</p>
+            <div className="act-fritvalg-actions">
               <Link href="/priser" className="btn-primary">
-                Sådan fungerer frit valg
+                Sådan fungerer det
               </Link>
-              <Link href="/kontakt" className="btn-secondary">
+              <Link href="/kontakt" className="signature-link">
                 Få hjælp til at skifte
               </Link>
             </div>
@@ -104,50 +85,63 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* ACT 3 — Founder compass (WOW) */}
       <section
-        className="signature-compass"
+        className="wow-compass"
         aria-labelledby="compass-heading"
+        data-header-tone="dark"
       >
-        <div className="signature-compass-media">
+        <div className="wow-compass-media" aria-hidden="true">
           <DamImage
             assetId={ASSET_IDS.founderStory}
             category="founder"
             fill
-            sizes={PHOTO_SIZES.service}
+            sizes={PHOTO_SIZES.hero}
             className="object-cover"
-            objectPosition="center 30%"
+            objectPosition="center 28%"
+            priority
           />
         </div>
-        <div className="signature-compass-copy page-margin">
-          <p className="type-eyebrow">Grundlæggerens kompas</p>
-          <h2 id="compass-heading" className="signature-compass-quote">
+        <div className="wow-compass-veil" aria-hidden="true" />
+        <div className="wow-compass-content page-margin">
+          <CrestSeal size={48} variant="white" decorative className="!p-0 mb-10" />
+          <p className="type-eyebrow wow-compass-eyebrow">Kompasset</p>
+          <h2 id="compass-heading" className="wow-compass-quote">
             {VORES_LOFTE_COMPASS}
           </h2>
-          <p className="signature-compass-lede">
-            Det spørgsmål stiller vi os, før vi træder ind i et hjem. Det er
-            udgangspunktet for Premium Care
+          <p className="wow-compass-lede">
+            Det spørgsmål stiller vi os, før vi træder ind i et hjem
           </p>
-          <p className="mt-10">
-            <Link href="/min-historie" className="signature-link">
+          <p className="mt-12">
+            <Link href="/min-historie" className="signature-link signature-link--on-dark">
               Læs grundlæggerens historie
             </Link>
           </p>
         </div>
       </section>
 
+      {/* Quiet institutional breath */}
+      <section className="act-breath" aria-label="Vores løfte">
+        <div className="page-margin">
+          <p className="act-breath-line">
+            Vi lover aldrig at glemme, at der bag hver plejeplan står et menneske
+          </p>
+        </div>
+      </section>
+
+      {/* ACT 4 — Services as pathways */}
       <section
-        className="signature-pathways section-padding section-rule"
+        className="act-pathways section-padding"
         aria-labelledby="pathways-heading"
       >
-        <div className="page-margin signature-pathways-layout">
-          <div className="signature-pathways-intro">
+        <div className="page-margin act-pathways-layout">
+          <div className="act-pathways-intro">
             <p className="type-eyebrow">Ydelser</p>
             <h2 id="pathways-heading" className="type-section-title text-midnight">
-              Rolige veje ind i hjemmet
+              Seks veje ind i hjemmet
             </h2>
-            <p className="type-lead text-midnight/75 mt-6 max-w-[36ch]">
-              Praktisk hjælp, personlig pleje, sygepleje og genoptræning — altid i
-              borgerens eget tempo
+            <p className="type-lead text-midnight/70 mt-6 max-w-[32ch]">
+              Altid i borgerens tempo. Altid med respekt for det, der er privat
             </p>
             <p className="mt-8">
               <Link href="/services" className="signature-link">
@@ -155,8 +149,8 @@ export default function HomePage() {
               </Link>
             </p>
           </div>
-          <ol className="pathway-list">
-            {HOME_PATHWAYS.map((service, index) => (
+          <ol className="pathway-list pathway-list--full">
+            {SERVICE_CATEGORIES.map((service, index) => (
               <li key={service.id} className="pathway-item">
                 <span className="pathway-index" aria-hidden="true">
                   {String(index + 1).padStart(2, "0")}
@@ -171,91 +165,69 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* ACT 5 — Trust and action */}
       <section
-        className="signature-trust section-padding"
+        className="act-trust section-padding"
         aria-labelledby="trust-heading"
       >
-        <div className="page-margin">
-          <div className="signature-trust-inner">
-            <div className="signature-trust-intro">
-              <p className="type-eyebrow signature-trust-eyebrow">Tillid som bevis</p>
-              <h2 id="trust-heading" className="type-section-title text-ivory">
-                Synlig ansvarlighed
-              </h2>
-              <p className="signature-trust-lede">
-                Dokumentation, kvalitet og klageadgang er ikke bilag. Det er den
-                måde, vi står til ansvar på
-              </p>
-            </div>
-            <ul className="trust-evidence-list">
-              <li>
-                <Link href="/dokumentation" className="trust-evidence-link focus-ring">
-                  <span className="trust-evidence-label">Dokumentation</span>
-                  <span className="trust-evidence-desc">
-                    Kvalitetshåndbog, politikker og årsregnskab
-                  </span>
-                </Link>
-              </li>
-              <li>
-                <Link href="/tillid" className="trust-evidence-link focus-ring">
-                  <span className="trust-evidence-label">Tillidscenter</span>
-                  <span className="trust-evidence-desc">
-                    Privatliv, cookies og whistleblower
-                  </span>
-                </Link>
-              </li>
-              <li>
-                <Link href="/klager" className="trust-evidence-link focus-ring">
-                  <span className="trust-evidence-label">Klager</span>
-                  <span className="trust-evidence-desc">
-                    En tydelig vej, hvis noget ikke er i orden
-                  </span>
-                </Link>
-              </li>
-              <li>
-                <Link href="/vores-loefte" className="trust-evidence-link focus-ring">
-                  <span className="trust-evidence-label">Vores løfte</span>
-                  <span className="trust-evidence-desc">
-                    Det, vi lover at gøre — og hvordan
-                  </span>
-                </Link>
-              </li>
-            </ul>
+        <div className="page-margin act-trust-layout">
+          <div>
+            <p className="type-eyebrow act-trust-eyebrow">Tillid</p>
+            <h2 id="trust-heading" className="type-section-title text-ivory">
+              Synlig ansvarlighed
+            </h2>
+            <p className="act-trust-lede">
+              Dokumentation, klager og whistleblower er ikke bilag. Det er den
+              måde, vi står til ansvar på
+            </p>
           </div>
+          <ul className="act-trust-list">
+            <li>
+              <Link href="/dokumentation" className="act-trust-link focus-ring">
+                Dokumentation
+              </Link>
+            </li>
+            <li>
+              <Link href="/tillid" className="act-trust-link focus-ring">
+                Tillidscenter
+              </Link>
+            </li>
+            <li>
+              <Link href="/klager" className="act-trust-link focus-ring">
+                Klager
+              </Link>
+            </li>
+            <li>
+              <Link href="/whistleblowing" className="act-trust-link focus-ring">
+                Whistleblower
+              </Link>
+            </li>
+          </ul>
         </div>
       </section>
 
-      <section className="signature-voice section-padding section-rule">
-        <div className="reading-column">
-          <p className="type-pullquote text-midnight">
-            De første to uger sagde min mor nej til alt. Den tredje uge spurgte
-            hun, om Mette kunne komme tidligere
-          </p>
-          <p className="signature-voice-attribution">Søn til borger</p>
-        </div>
-      </section>
-
-      <section className="signature-close section-padding">
+      <section className="act-close section-padding">
         <div className="reading-column text-center">
-          <CrestSeal size={48} decorative className="!p-0 mx-auto mb-10" />
+          <CrestSeal size={44} decorative className="!p-0 mx-auto mb-10" />
           <h2 className="type-section-title text-midnight">
-            Har du brug for hjælp nu, ringer du
+            Ring, hvis du er i tvivl
           </h2>
-          <p className="type-lead text-midnight/65 mt-6 mx-auto max-w-[36ch]">
-            Du behøver ikke have styr på papirerne endnu. Ring, så tager vi den
-            derfra
+          <p className="type-lead text-midnight/60 mt-6 mx-auto max-w-[32ch]">
+            Du behøver ikke have styr på papirerne endnu
           </p>
           <div className="hero-actions justify-center mt-12">
-            <Link href="/kontakt" className="btn-primary">
-              Kontakt os om frit valg
-            </Link>
-            <a href={COMPANY.phone.href} className="btn-secondary">
+            <a href={COMPANY.phone.href} className="btn-primary">
               Ring {COMPANY.phone.display}
             </a>
+            <Link href="/kontakt" className="btn-secondary">
+              Skriv til os
+            </Link>
           </div>
-          <p className="text-[13px] text-midnight/50 mt-8">
+          <p className="act-close-meta">
+            CVR {COMPANY.cvr}
+            <span aria-hidden="true"> · </span>
             {COMPANY.openingHours.display}
-            {" · "}
+            <span aria-hidden="true"> · </span>
             Ved akut livstruende fare:{" "}
             <a href="tel:112" className="underline underline-offset-4 focus-ring">
               ring 112
@@ -263,8 +235,6 @@ export default function HomePage() {
           </p>
         </div>
       </section>
-
-      <RecruitmentSection variant="quiet" />
     </div>
   );
 }

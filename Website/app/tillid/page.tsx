@@ -27,7 +27,7 @@ const QUALITY_FRAMEWORK = [
   },
   {
     title: "Vores standard",
-    body: "Punktlighed, kontinuitet og dokumenteret pleje - også ud over minimumskrav",
+    body: "Punktlighed, kontinuitet og dokumenteret pleje — også ud over minimumskrav",
   },
   {
     title: "Opfølgning",
@@ -62,29 +62,6 @@ const VERIFICATION_LAYERS = [
   },
 ];
 
-const COMPLIANCE_AREAS = [
-  {
-    area: "Dansk plejelovgivning",
-    commitment: "Efterlevelse af Serviceloven og kravene i hjemmeplejerammen",
-  },
-  {
-    area: "Kommunal samarbejde",
-    commitment: "Aftaler med fokus på kvalitet, dokumentation og åben rapportering",
-  },
-  {
-    area: "Arbejdsmiljø",
-    commitment: "Efterlevelse af Arbejdsmiljøloven, risikovurderinger og sikkerhedsprocedurer",
-  },
-  {
-    area: "Databeskyttelse",
-    commitment: "GDPR for følsomme helbredsoplysninger, samtykke og datasikkerhed",
-  },
-  {
-    area: "Dokumentation",
-    commitment: "Plejedokumentation og rapportering ud over lovmæssige minimumskrav",
-  },
-];
-
 const DOCUMENTS = [
   { title: "Kvalitetshåndbog 2026", date: "Januar 2026", href: "/documents/kvalitetshåndbog_2026.pdf" },
   {
@@ -108,33 +85,19 @@ const DOCUMENTS = [
 export default function TrustPage() {
   return (
     <div className="page-flow">
-      <section className="snap-section bg-ivory section-padding">
+      <section className="bg-ivory section-padding">
         <div className="reading-column">
-          <h1 className="type-page-title text-midnight tracking-tight">
+          <p className="type-eyebrow">Tillid</p>
+          <h1 className="type-page-title text-midnight tracking-tight mt-4">
             Tillidscenter
           </h1>
-          <p className="text-[19px] leading-body text-midnight/80 mt-8">
-            Politikker, procedurer og dokumenter for {COMPANY.legalName}. Det fulde
-            dokument gælder, hvis noget her og i PDF&apos;en ikke stemmer overens.
+          <p className="type-lead text-midnight/75 mt-8 max-w-[40ch]">
+            Politikker, kvalitet og dokumentation for {COMPANY.legalName}. Det
+            fulde dokument gælder ved uoverensstemmelse
           </p>
-          <p className="text-[17px] leading-body text-midnight/80 mt-6">
-            <Link
-              href="/kommuner"
-              className="underline underline-offset-4 hover:text-midnight transition-colors focus-ring"
-            >
-              Kommunal indkøb og beslutningsgrundlag
-            </Link>
-            {" · "}
-            <Link
-              href="/dokumentation"
-              className="underline underline-offset-4 hover:text-midnight transition-colors focus-ring"
-            >
-              Dokumentation
-            </Link>
-          </p>
-          <InstitutionalIdentity className="mt-6" />
-          <div className="mt-8">
-            <CrestSeal size={80} decorative className="!p-4 !justify-start" />
+          <InstitutionalIdentity className="mt-8" />
+          <div className="mt-10">
+            <CrestSeal size={64} decorative className="!p-0 !justify-start" />
           </div>
         </div>
       </section>
@@ -145,41 +108,58 @@ export default function TrustPage() {
         alt="Dokumenteret pleje og faglig omsorg i hjemmet"
       />
 
-      <section className="snap-section bg-ivory section-padding">
-        <div className="reading-column">
-          <h2 className="text-[30px] leading-normal text-midnight">Whistleblower-ordning</h2>
-          <p className="text-[17px] leading-body text-midnight/80 mt-6 max-w-[55ch]">
-            Alvorlige forhold skal kunne indberettes uden frygt for repressalier.
-          </p>
-          <Link
-            href="/whistleblowing"
-            className="block py-5 mt-6 text-[17px] text-midnight hover:tracking-wide transition-all duration-300 focus-ring border-t border-midnight/10"
-          >
-            Whistleblower-ordning →
-          </Link>
+      <section className="bg-ivory section-padding section-rule">
+        <div className="page-margin trust-page-shell">
+          <p className="type-eyebrow">Ansvarlighed</p>
+          <h2 className="type-section-title text-midnight mt-4">
+            Når noget skal kunne siges
+          </h2>
+          <div className="trust-module-grid mt-10">
+            <div className="trust-module">
+              <h3 className="trust-module-title">Klager</h3>
+              <p className="trust-module-body">
+                En klage får en ansvarlig, en frist og et svar
+              </p>
+              <p className="mt-4">
+                <Link href="/klager" className="signature-link">
+                  Klageprocedure
+                </Link>
+              </p>
+            </div>
+            <div className="trust-module">
+              <h3 className="trust-module-title">Whistleblower</h3>
+              <p className="trust-module-body">
+                Alvorlige forhold skal kunne indberettes uden frygt
+              </p>
+              <p className="mt-4">
+                <Link href="/whistleblowing" className="signature-link">
+                  Whistleblower-ordning
+                </Link>
+              </p>
+            </div>
+          </div>
         </div>
       </section>
 
-      <section className="snap-section bg-ivory section-padding">
+      <section className="bg-ivory section-padding section-rule">
         <div className="reading-column">
-          <h2 className="text-[30px] leading-normal text-midnight">Politikker</h2>
-          <p className="text-[17px] leading-body text-midnight/80 mt-6">
-            Offentlige resuméer af vores kontrollerede dokumenter. Det fulde dokument
-            gælder ved uoverensstemmelse.
-          </p>
+          <p className="type-eyebrow">Politikker</p>
+          <h2 className="type-section-title text-midnight mt-4">
+            Offentlige resuméer
+          </h2>
           <ul className="mt-10 space-y-0 list-none">
             {TRUST_POLICIES.map((policy) => (
-              <li key={policy.slug} className="border-b border-midnight/10">
+              <li key={policy.slug}>
                 <Link
                   href={`/${policy.slug}`}
-                  className="block py-5 group hover:bg-midnight/[0.02] transition-colors duration-300 focus-ring"
+                  className="trust-library-item focus-ring"
                 >
-                  <p className="text-[19px] text-midnight group-hover:tracking-wide transition-all duration-300">
-                    {policy.title}
-                  </p>
-                  <p className="text-[15px] leading-body text-midnight/70 mt-2">
-                    {policy.description}
-                  </p>
+                  <span>
+                    <span className="block text-[18px] leading-snug">{policy.title}</span>
+                    <span className="block text-[15px] leading-body text-midnight/60 mt-2">
+                      {policy.description}
+                    </span>
+                  </span>
                 </Link>
               </li>
             ))}
@@ -187,142 +167,78 @@ export default function TrustPage() {
         </div>
       </section>
 
-      <section className="snap-section bg-midnight section-padding">
-        <div className="reading-column">
-          <h2 className="text-[30px] leading-normal text-ivory">
-            Klager og eskalering
-          </h2>
-          <p className="text-[17px] leading-body text-ivory/80 mt-8 max-w-[55ch]">
-            En klage får en ansvarlig, en frist og et svar. Familien og kommunen får
-            besked, når det er relevant
-          </p>
-          <p className="text-[17px] leading-body text-ivory/80 mt-6">
-            <Link
-              href="/klager"
-              className="underline underline-offset-4 text-gold hover:text-gold-light transition-colors focus-ring"
-            >
-              Klageprocedure
-            </Link>
-            {" · "}
-            <Link
-              href="/whistleblowing"
-              className="underline underline-offset-4 text-gold hover:text-gold-light transition-colors focus-ring"
-            >
-              Whistleblower-ordning
-            </Link>
-          </p>
-        </div>
-      </section>
-
-      <section className="snap-section bg-ivory section-padding">
-        <div className="reading-column">
-          <h2 className="text-[30px] leading-normal text-midnight">
-            Vores kvalitetsramme
-          </h2>
-          <ul className="mt-10 space-y-6 list-none">
+      <section className="bg-midnight section-padding">
+        <div className="page-margin trust-page-shell">
+          <p className="type-eyebrow act-trust-eyebrow">Kvalitet</p>
+          <h2 className="type-section-title text-ivory mt-4">Vores ramme</h2>
+          <div className="trust-module-grid mt-10">
             {QUALITY_FRAMEWORK.map((item) => (
-              <li key={item.title}>
-                <h3 className="text-[19px] text-midnight">{item.title}</h3>
-                <p className="text-[17px] leading-body text-midnight/70 mt-2">
-                  {item.body}
-                </p>
-              </li>
-            ))}
-          </ul>
-        </div>
-      </section>
-
-      <section className="snap-section bg-midnight section-padding">
-        <div className="reading-column">
-          <h2 className="text-[30px] leading-normal text-ivory">
-            Sådan tjekker vi kvaliteten
-          </h2>
-          <div className="mt-10 space-y-8">
-            {VERIFICATION_LAYERS.map((layer) => (
-              <div key={layer.layer}>
-                <h3 className="text-[19px] text-gold">{layer.layer}</h3>
-                <p className="text-[17px] leading-body text-ivory/80 mt-3">
-                  {layer.body}
-                </p>
+              <div key={item.title} className="trust-module trust-module--on-dark">
+                <h3 className="trust-module-title">{item.title}</h3>
+                <p className="trust-module-body">{item.body}</p>
               </div>
             ))}
+          </div>
+          <div className="mt-16">
+            <h3 className="text-[24px] leading-snug text-ivory tracking-tight">
+              Sådan tjekker vi
+            </h3>
+            <div className="mt-8 space-y-6">
+              {VERIFICATION_LAYERS.map((layer) => (
+                <div key={layer.layer}>
+                  <p className="text-[15px] tracking-wide uppercase text-gold">
+                    {layer.layer}
+                  </p>
+                  <p className="text-[17px] leading-body text-ivory/75 mt-2 max-w-[48ch]">
+                    {layer.body}
+                  </p>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </section>
 
-      <div className="brand-divider" aria-hidden="true">
-        <CrestSeal size={64} decorative className="!p-0" />
-      </div>
-
-      <section className="snap-section bg-ivory section-padding">
+      <section className="bg-ivory section-padding">
         <div className="reading-column">
-          <h2 className="text-[30px] leading-normal text-midnight">
-            Regelefterlevelse
+          <p className="type-eyebrow">Bibliotek</p>
+          <h2 className="type-section-title text-midnight mt-4">
+            Dokumenter
           </h2>
-          <div className="mt-10 space-y-0">
-            {COMPLIANCE_AREAS.map((row) => (
-              <div key={row.area} className="py-5 border-b border-midnight/10">
-                <p className="text-[17px] text-midnight font-medium">{row.area}</p>
-                <p className="text-[15px] leading-body text-midnight/70 mt-2">
-                  {row.commitment}
-                </p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section className="snap-section bg-ivory section-padding">
-        <div className="reading-column">
-          <h2 className="text-[30px] leading-normal text-midnight">Dokumentbibliotek</h2>
-          <div className="mt-12 space-y-0">
+          <div className="mt-10">
             {DOCUMENTS.map((doc) => (
               <a
                 key={doc.title}
                 href={doc.href}
-                className="flex items-center justify-between py-5 border-b border-midnight/10 group hover:bg-midnight/[0.02] transition-colors duration-300 focus-ring"
+                className="trust-library-item focus-ring"
                 download
                 aria-label={`Download ${doc.title}`}
               >
-                <div>
-                  <p className="text-[17px] text-midnight group-hover:tracking-wide transition-all duration-300">
-                    {doc.title}
-                  </p>
-                  <p className="text-[13px] text-midnight/50 mt-1">{doc.date} · PDF</p>
-                </div>
-                <span
-                  className="text-[13px] text-gold font-medium opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-                  aria-hidden="true"
-                >
-                  Download →
-                </span>
+                <span className="text-[17px] leading-snug">{doc.title}</span>
+                <span className="trust-library-meta">{doc.date} · PDF</span>
               </a>
             ))}
           </div>
+          <p className="mt-10">
+            <Link href="/dokumentation" className="signature-link">
+              Se også dokumentationssiden
+            </Link>
+          </p>
         </div>
       </section>
 
-      <section className="snap-section bg-midnight section-padding">
+      <section className="bg-midnight section-padding">
         <div className="reading-column text-center">
-          <p className="text-[19px] leading-body text-ivory">
-            Spørgsmål til politikker, kvalitet eller dokumentation? Kontakt os i
-            åbningstiden. Vi svarer inden for to arbejdsdage.
+          <p className="type-lead text-ivory/80 mx-auto max-w-[36ch]">
+            Spørgsmål til politikker eller dokumentation? Ring i åbningstiden
           </p>
           <a
             href={COMPANY.phone.href}
-            className="text-[30px] leading-normal text-gold font-body mt-8 inline-block hover:opacity-80 transition-opacity duration-300 focus-ring"
+            className="text-[28px] leading-normal text-gold mt-8 inline-block focus-ring"
           >
             {COMPANY.phone.display}
           </a>
-          <p className="text-[13px] text-ivory/60 mt-4">
-            <a
-              href={`mailto:${COMPANY.email}`}
-              className="underline underline-offset-4 hover:text-ivory transition-colors focus-ring"
-            >
-              {COMPANY.email}
-            </a>
-          </p>
-          <p className="text-[13px] text-ivory/60 mt-6 uppercase tracking-wide">
+          <p className="text-[13px] text-ivory/50 mt-4">
             {COMPANY.openingHours.display}
           </p>
         </div>

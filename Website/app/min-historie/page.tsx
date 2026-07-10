@@ -42,9 +42,7 @@ export default function FounderStoryPage() {
           <h1 className="type-page-title text-midnight tracking-tight">
             Min historie
           </h1>
-          <p className="text-[13px] uppercase tracking-wide text-midnight/60 mt-8">
-            Grundlæggerens brev
-          </p>
+          <p className="type-eyebrow mt-8">Grundlæggerens brev</p>
         </div>
       </header>
 
@@ -122,11 +120,11 @@ export default function FounderStoryPage() {
             <p>
               Som barn var jeg fascineret af livet på plejehjemmet. Jeg sad ofte foran
               akvariet, så fiskene svømmede rundt, og talte med beboerne. Jeg var den
-              nysgerrige pige, der altid havde tid til en samtale.
+              nysgerrige pige, der altid havde tid til en samtale
             </p>
-            <p>
+            <p className="founder-letter-quote">
               Dengang vidste jeg ikke, at netop dét sted mange år senere skulle blive
-              begyndelsen på mit arbejdsliv.
+              begyndelsen på mit arbejdsliv
             </p>
           </div>
           <figure className="mt-12">
@@ -379,19 +377,19 @@ export default function FounderStoryPage() {
       </div>
 
       <section
-        className="section-padding bg-midnight"
+        className="founder-kompas"
         aria-labelledby="section-kompasset"
       >
-        <div className="reading-column page-margin text-center">
+        <div className="founder-kompas-inner page-margin">
           <p
             id="section-kompasset"
-            className="text-[13px] uppercase tracking-wide text-gold mb-10"
+            className="type-eyebrow wow-compass-eyebrow mb-10"
           >
             Kompasset
           </p>
-          <blockquote className="text-[30px] sm:text-[34px] leading-snug text-ivory max-w-[28ch] mx-auto">
-            &ldquo;Hvis det var min farmor, der sad i den stol, hvad ville jeg ønske,
-            vi gjorde?&rdquo;
+          <blockquote className="founder-kompas-quote">
+            Hvis det var min farmor, der sad i den stol, hvad ville jeg ønske,
+            vi gjorde?
           </blockquote>
         </div>
       </section>
