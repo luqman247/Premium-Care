@@ -35,3 +35,5 @@ EMAIL IDENTITY SYSTEM.zip
 Website/CHANGESET_*.pdf
 Website/PREMIUM_*.pdf
 Website/PUBLIC_IMAGE_COVERAGE.md
+.vercel
+.env*
