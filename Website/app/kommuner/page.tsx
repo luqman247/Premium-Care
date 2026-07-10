@@ -6,7 +6,6 @@ import { COMPANY, companyLocalityLine } from "@/lib/company";
 import {
   MUNICIPAL_CONTACT_SUBJECT,
   MUNICIPAL_DOCUMENTS,
-  MUNICIPAL_KPIS,
 } from "@/lib/institutional";
 import { PHOTOGRAPHY, PHOTO_SIZES } from "@/lib/photography";
 
@@ -119,24 +118,14 @@ export default function MunicipalPage() {
 
       <section className="snap-section bg-ivory section-padding">
         <div className="reading-column">
-          <h2 className="text-[30px] leading-normal text-midnight text-center">
-            Nøgletal
+          <h2 className="text-[30px] leading-normal text-midnight">
+            Kvalitetstal og rapportering
           </h2>
-          <p className="text-[15px] leading-body text-midnight/60 mt-4 text-center max-w-[50ch] mx-auto">
-            Tal med metode og periode. Det fulde grundlag findes i beslutningsgrundlaget
-            og kvalitetsrevisionsrapporten
+          <p className="text-[17px] leading-body text-midnight/80 mt-8 max-w-[55ch]">
+            Vi offentliggør ikke nøgletal uden metode, periode og bilag. Kommunale
+            samarbejdspartnere får adgang til kvalitetsdata, afvigelser og opfølgning
+            efter aftale - herunder dashboard-adgang nedenfor
           </p>
-          <div className="mt-12 grid grid-cols-1 sm:grid-cols-3 gap-10 text-center">
-            {MUNICIPAL_KPIS.map((kpi) => (
-              <div key={kpi.label}>
-                <p className="text-[48px] leading-tight text-gold font-body">{kpi.value}</p>
-                <p className="text-[13px] text-midnight/60 uppercase tracking-wide mt-2">
-                  {kpi.label}
-                </p>
-                <p className="kpi-context">{kpi.context}</p>
-              </div>
-            ))}
-          </div>
         </div>
       </section>
 

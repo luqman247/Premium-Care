@@ -71,9 +71,6 @@ const DOCUMENTS = [
   { title: "Ligebehandling og inklusion", status: "Offentlig oversigt", href: "/ligebehandling" },
   { title: "Cookiepolitik", status: "Offentlig oversigt", href: "/cookiepolitik" },
   { title: "Ledelse og kvalitetsansvar", status: "Offentlig oversigt", href: "/ledelsesansvar" },
-  { title: "Kvalitetshåndbog 2026", status: "Under udarbejdelse" },
-  { title: "Årlig kvalitetsrevisionsrapport", status: "Under udarbejdelse" },
-  { title: "Klagerapport", status: "Kommer snart" },
 ] as const;
 
 export default function TrustPage() {
@@ -199,23 +196,16 @@ export default function TrustPage() {
             Dokumenter
           </h2>
           <div className="mt-10">
-            {DOCUMENTS.map((doc) =>
-              "href" in doc && doc.href ? (
-                <Link
-                  key={doc.title}
-                  href={doc.href}
-                  className="trust-library-item focus-ring"
-                >
-                  <span className="text-[17px] leading-snug">{doc.title}</span>
-                  <span className="trust-library-meta">{doc.status}</span>
-                </Link>
-              ) : (
-                <div key={doc.title} className="trust-library-item">
-                  <span className="text-[17px] leading-snug">{doc.title}</span>
-                  <span className="trust-library-meta">{doc.status}</span>
-                </div>
-              ),
-            )}
+            {DOCUMENTS.map((doc) => (
+              <Link
+                key={doc.title}
+                href={doc.href}
+                className="trust-library-item focus-ring"
+              >
+                <span className="text-[17px] leading-snug">{doc.title}</span>
+                <span className="trust-library-meta">{doc.status}</span>
+              </Link>
+            ))}
           </div>
           <p className="mt-10">
             <Link href="/dokumentation" className="signature-link">

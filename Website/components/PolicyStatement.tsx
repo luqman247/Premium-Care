@@ -66,11 +66,11 @@ export function PolicyStatement({ policy }: PolicyStatementProps) {
         {policy.documentStatus && (
           <section className="section-padding" aria-labelledby="policy-document">
             <h2 id="policy-document" className="text-[30px] leading-normal text-midnight">
-              Fuldt dokument
+              Offentlig beskrivelse
             </h2>
             <p className="text-[17px] leading-body text-midnight/80 mt-8">
-              Det fulde PDF-dokument er endnu ikke offentliggjort. Resuméet på denne
-              side er den gældende offentlige beskrivelse
+              Denne side er den gældende offentlige beskrivelse. Kommuner og tilsyn
+              kan rekvirere udvidet dokumentation efter forespørgsel
             </p>
             <p className="text-[15px] text-midnight/55 mt-4">
               {policy.documentStatus}

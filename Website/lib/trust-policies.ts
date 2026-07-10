@@ -27,7 +27,7 @@ export const TRUST_POLICIES: TrustPolicy[] = [
       "Borgere og pårørende kan anmode om indsigt i relevante oplysninger",
       "Databrud indberettes til Datatilsynet, når loven kræver det",
     ],
-    documentStatus: "Under udarbejdelse",
+    documentStatus: "Gældende offentlig beskrivelse",
     contactNote:
       "Spørgsmål om databeskyttelse rettes til administrerende direktør via kontaktoplysningerne nederst på siden",
   },
@@ -47,7 +47,7 @@ export const TRUST_POLICIES: TrustPolicy[] = [
       "Læring fra klager indgår i kvalitetsarbejdet",
       "Dokumentation af klagebehandling til kommuner og tilsyn",
     ],
-    documentStatus: "Under udarbejdelse",
+    documentStatus: "Gældende offentlig beskrivelse",
     contactNote:
       "Klager kan indgives telefonisk, skriftligt eller via kontaktformularen. Akutte sikkerhedsproblemer: ring 112 først",
   },
@@ -67,7 +67,7 @@ export const TRUST_POLICIES: TrustPolicy[] = [
       "Koordinering med klinisk ledelse og myndigheder ved behov",
       "Bekræftelse til indberetter, at bekymringen er modtaget",
     ],
-    documentStatus: "Under udarbejdelse",
+    documentStatus: "Gældende offentlig beskrivelse",
   },
   {
     slug: "kvalitet",
@@ -85,7 +85,7 @@ export const TRUST_POLICIES: TrustPolicy[] = [
       "Løbende uddannelse, kompetencevurdering og kvalitetsgennemgange",
       "Åben rapportering til kommunalpartnere",
     ],
-    documentStatus: "Under udarbejdelse",
+    documentStatus: "Gældende offentlig beskrivelse",
   },
   {
     slug: "ligebehandling",
@@ -102,7 +102,7 @@ export const TRUST_POLICIES: TrustPolicy[] = [
       "Klare sanktioner ved overtrædelse af adfærdsstandarder",
       "Løbende opmærksomhed på barrierer og forbedring",
     ],
-    documentStatus: "Under udarbejdelse",
+    documentStatus: "Gældende offentlig beskrivelse",
   },
   {
     slug: "cookiepolitik",
@@ -141,7 +141,7 @@ export const TRUST_POLICIES: TrustPolicy[] = [
     ],
     contactNote:
       "Alvorlige bekymringer kan indberettes fortroligt til bibi@premiumcare.dk. Du kan også bruge eksterne myndighedskanaler, når det er relevant",
-    documentStatus: "Under udarbejdelse",
+    documentStatus: "Gældende offentlig beskrivelse",
   },
   {
     slug: "ledelsesansvar",
@@ -159,7 +159,7 @@ export const TRUST_POLICIES: TrustPolicy[] = [
       "Struktur, der kan redegøres for over for kommune og tilsyn",
       "Ledelse, der er synlig i driften, ikke kun i rapporter",
     ],
-    documentStatus: "Under udarbejdelse",
+    documentStatus: "Gældende offentlig beskrivelse",
   },
 ];
 

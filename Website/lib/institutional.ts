@@ -1,62 +1,43 @@
 import { COMPANY } from "@/lib/company";
 
-/** Factual KPIs shown to kommunal indkøb — each includes measurement context */
-export const MUNICIPAL_KPIS = [
-  {
-    value: "94%",
-    label: "Årlig borger-/pårørendetilfredshed",
-    context:
-      "Uafhængig måling, seneste tilgængelige år. Metode og scope beskrives i kommunalt beslutningsgrundlag",
-  },
-  {
-    value: "87%",
-    label: "Medarbejderfastholdelse (12 måneder)",
-    context: "Intern HR-rapport. Definition og periode i kvalitetsrevisionsrapporten",
-  },
-  {
-    value: "0",
-    label: "Alvorlige hændelser (2025)",
-    context:
-      "Registrerede alvorlige hændelser efter intern klassifikation. Indberetning følger gældende tilsynskrav",
-  },
-] as const;
-
 /**
- * Municipal document catalogue.
- * Empty placeholder PDFs are not offered as downloads — status only until real files exist.
+ * Municipal document catalogue — only entries that reduce doubt.
+ * Do not list certificates or reports that are not actually available.
+ * Empty PDFs are never offered as downloads.
  */
 export const MUNICIPAL_DOCUMENTS = [
   {
-    label: "Kommunalt beslutningsgrundlag",
-    status: "Under udarbejdelse",
-    summaryHref: "/kommuner",
-  },
-  {
-    label: "ISO 9001:2015 certifikat",
-    status: "Ikke offentliggjort endnu",
-  },
-  {
-    label: "Årlig kvalitetsrevisionsrapport",
-    status: "Under udarbejdelse",
-    summaryHref: "/kvalitet",
-  },
-  {
-    label: "GDPR- og persondatapolitik",
-    status: "Kommer snart",
+    label: "Privatlivs- og persondatapolitik",
+    status: "Offentlig oversigt",
     summaryHref: "/privatliv",
   },
   {
     label: "Klageprocedure",
-    status: "Kommer snart",
+    status: "Offentlig oversigt",
     summaryHref: "/klager",
   },
   {
-    label: "Arbejdsmiljøpolitik",
-    status: "Under udarbejdelse",
+    label: "Kvalitetsforpligtelse",
+    status: "Offentlig oversigt",
+    summaryHref: "/kvalitet",
   },
   {
-    label: "Seneste årsregnskab",
-    status: "Ikke offentliggjort endnu",
+    label: "Whistleblower-ordning",
+    status: "Offentlig oversigt",
+    summaryHref: "/whistleblowing",
+  },
+  {
+    label: "Ledelse og kvalitetsansvar",
+    status: "Offentlig oversigt",
+    summaryHref: "/ledelsesansvar",
+  },
+  {
+    label: "Kommunalt beslutningsgrundlag",
+    status: "Udarbejdes til den enkelte kommune efter forespørgsel",
+  },
+  {
+    label: "Årsregnskab og øvrige bilag",
+    status: "Kan rekvireres af kommunal indkøb",
   },
 ] as const;
 
