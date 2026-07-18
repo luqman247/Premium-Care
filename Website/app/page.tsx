@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import { DamImage } from "@/components/DamImage";
 import { EditorialTicker } from "@/components/EditorialTicker";
@@ -7,7 +8,18 @@ import { COMPANY } from "@/lib/company";
 import { FREE_CARE_MESSAGE } from "@/lib/free-care";
 import { PHOTO_SIZES } from "@/lib/photography";
 import { SERVICE_CATEGORIES } from "@/lib/services";
+import { buildPageMetadata, SITE_SEO } from "@/lib/seo";
 import { VORES_LOFTE_COMPASS } from "@/lib/vores-lofte";
+
+export const metadata: Metadata = buildPageMetadata({
+  title: SITE_SEO.defaultTitle,
+  description: SITE_SEO.defaultDescription,
+  path: "/",
+  openGraphTitle: SITE_SEO.openGraphTitle,
+  openGraphDescription: SITE_SEO.openGraphDescription,
+  imageAssetId: ASSET_IDS.brandOpenGraph,
+  absoluteTitle: true,
+});
 
 export default function HomePage() {
   return (

@@ -3,22 +3,19 @@ import Link from "next/link";
 import { CrestSeal } from "@/components/CrestSeal";
 import { EditorialBanner } from "@/components/EditorialBanner";
 import { InstitutionalIdentity } from "@/components/InstitutionalIdentity";
+import { ASSET_IDS } from "@/lib/dam/asset-ids";
 import { COMPANY } from "@/lib/company";
 import { PHOTOGRAPHY } from "@/lib/photography";
+import { buildPageMetadata } from "@/lib/seo";
 import { TRUST_POLICIES } from "@/lib/trust-policies";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = buildPageMetadata({
   title: "Tillidscenter",
   description:
     "Gennemsigtighed, dokumentation og ansvarlighed - politikker, kvalitetsramme og ledelsesansvar for PremiumCare ApS.",
-  alternates: { canonical: "/tillid" },
-  openGraph: {
-    title: "Tillidscenter · PremiumCare",
-    description:
-      "Gennemsigtighed, dokumentation og ansvarlighed - politikker, kvalitetsramme og ledelsesansvar for PremiumCare ApS.",
-    url: `${COMPANY.url}/tillid`,
-  },
-};
+  path: "/tillid",
+  imageAssetId: ASSET_IDS.trustEditorial,
+});
 
 const QUALITY_FRAMEWORK = [
   {

@@ -1,23 +1,16 @@
 import type { Metadata } from "next";
-import { COMPANY } from "@/lib/company";
 import Link from "next/link";
 import { DamImage } from "@/components/DamImage";
 import { FreeCareMessage } from "@/components/FreeCareMessage";
 import { SERVICE_CATEGORIES } from "@/lib/services";
 import { PHOTO_SIZES } from "@/lib/photography";
+import { buildPageMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = buildPageMetadata({
   title: "Ydelser",
   description: "Hvad vi gør i hjemmet - og hvad vi bevidst lader være",
-  alternates: {
-    canonical: "/services",
-  },
-  openGraph: {
-    title: "Ydelser · PremiumCare",
-    description: "Hvad vi gør i hjemmet - og hvad vi bevidst lader være",
-    url: `${COMPANY.url}/services`,
-  },
-};
+  path: "/services",
+});
 
 export default function ServicesPage() {
   return (

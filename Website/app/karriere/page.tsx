@@ -14,21 +14,15 @@ import {
   WORKPLACE_BENEFITS,
   WORKPLACE_PROMISES,
 } from "@/lib/recruitment";
+import { buildPageMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = buildPageMetadata({
   title: "Bliv en del af PremiumCare",
   description:
     "Arbejd med værdighed, struktur og faglighed i Aarhus og Østjylland. Betalt oplæring, mentorordning og synlig ledelse.",
-  alternates: {
-    canonical: "/karriere",
-  },
-  openGraph: {
-    title: "Bliv en del af PremiumCare",
-    description:
-      "Arbejd med værdighed, struktur og faglighed i Aarhus og Østjylland. Betalt oplæring, mentorordning og synlig ledelse.",
-    url: `${COMPANY.url}/karriere`,
-  },
-};
+  path: "/karriere",
+  imageAssetId: ASSET_IDS.careersHero,
+});
 
 export default function CareersPage() {
   return (

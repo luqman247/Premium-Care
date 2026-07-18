@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { PolicyStatement } from "@/components/PolicyStatement";
-import { COMPANY } from "@/lib/company";
 import { getTrustPolicy, TRUST_POLICIES } from "@/lib/trust-policies";
+import { buildPageMetadata } from "@/lib/seo";
 
 type PolicyPageProps = {
   params: Promise<{ slug: string }>;
@@ -19,16 +19,11 @@ export async function generateMetadata({
   const policy = getTrustPolicy(slug);
   if (!policy) return {};
 
-  return {
-    title: `${policy.title} | ${COMPANY.brandName}`,
+  return buildPageMetadata({
+    title: policy.title,
     description: policy.description,
-    alternates: { canonical: `/${slug}` },
-    openGraph: {
-      title: `${policy.title} | ${COMPANY.brandName}`,
-      description: policy.description,
-      url: `${COMPANY.url}/${slug}`,
-    },
-  };
+    path: `/${slug}`,
+  });
 }
 
 export default async function PolicyPage({ params }: PolicyPageProps) {

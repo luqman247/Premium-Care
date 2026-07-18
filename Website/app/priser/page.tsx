@@ -6,21 +6,15 @@ import { ASSET_IDS } from "@/lib/dam/asset-ids";
 import { COMPANY } from "@/lib/company";
 import { FREE_CARE_MESSAGE, FREE_CARE_NOTE } from "@/lib/free-care";
 import { PHOTO_SIZES } from "@/lib/photography";
+import { buildPageMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = buildPageMetadata({
   title: "Gratis hjemmepleje gennem frit valg",
   description:
     "Hvis du er visiteret til hjemmepleje af din kommune, kan du som udgangspunkt vælge en privat leverandør uden ekstra betaling",
-  alternates: {
-    canonical: "/priser",
-  },
-  openGraph: {
-    title: "Gratis hjemmepleje gennem frit valg · PremiumCare",
-    description:
-      "Hvis du er visiteret til hjemmepleje af din kommune, kan du som udgangspunkt vælge en privat leverandør uden ekstra betaling",
-    url: `${COMPANY.url}/priser`,
-  },
-};
+  path: "/priser",
+  imageAssetId: ASSET_IDS.priserHero,
+});
 
 const STEPS = [
   "Kommunen visiterer dig til hjemmepleje",

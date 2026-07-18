@@ -4,19 +4,17 @@ import { ContactForm } from "@/components/ContactForm";
 import { CrisisHelp } from "@/components/CrisisHelp";
 import { EditorialBanner } from "@/components/EditorialBanner";
 import { FreeCareMessage } from "@/components/FreeCareMessage";
+import { ASSET_IDS } from "@/lib/dam/asset-ids";
 import { COMPANY, companyLocalityLine } from "@/lib/company";
 import { PHOTOGRAPHY } from "@/lib/photography";
+import { buildPageMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = buildPageMetadata({
   title: "Kontakt",
   description: `Kontakt ${COMPANY.legalName}. Telefon, e-mail og åbningstider`,
-  alternates: { canonical: "/kontakt" },
-  openGraph: {
-    title: `Kontakt · ${COMPANY.brandName}`,
-    description: `Kontakt ${COMPANY.legalName}. Telefon, e-mail og åbningstider`,
-    url: `${COMPANY.url}/kontakt`,
-  },
-};
+  path: "/kontakt",
+  imageAssetId: ASSET_IDS.contactEditorial,
+});
 
 export default function ContactPage() {
   return (

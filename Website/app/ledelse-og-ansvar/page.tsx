@@ -3,27 +3,21 @@ import Link from "next/link";
 import { CrestSeal } from "@/components/CrestSeal";
 import { DamImage } from "@/components/DamImage";
 import { ASSET_IDS } from "@/lib/dam/asset-ids";
-import { damAbsoluteUrl, damMetadataImage } from "@/lib/dam/site-images";
+import { damAbsoluteUrl } from "@/lib/dam/site-images";
 import { COMPANY, companyLocalityLine } from "@/lib/company";
 import { MISSION_FULL } from "@/lib/mission";
 import { LEADERSHIP_IMAGES } from "@/lib/leadership-images";
 import { PHOTOGRAPHY, PHOTO_SIZES } from "@/lib/photography";
+import { buildPageMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
-  title: {
-    absolute: "Ledelse og ansvar | PremiumCare",
-  },
+export const metadata: Metadata = buildPageMetadata({
+  title: "Ledelse og ansvar | PremiumCare",
   description:
     "Ledelse, ansvar og kvalitetsarbejde i PremiumCare ApS. Grundlagt af Bibi Naziyh Dowezai.",
-  alternates: { canonical: "/ledelse-og-ansvar" },
-  openGraph: {
-    title: "Ledelse og ansvar | PremiumCare",
-    description:
-      "Ledelse, ansvar og kvalitetsarbejde i PremiumCare ApS. Grundlagt af Bibi Naziyh Dowezai.",
-    url: `${COMPANY.url}/ledelse-og-ansvar`,
-    images: [damMetadataImage(ASSET_IDS.leadershipPress)],
-  },
-};
+  path: "/ledelse-og-ansvar",
+  imageAssetId: ASSET_IDS.leadershipPress,
+  absoluteTitle: true,
+});
 
 const CORE_VALUES = [
   {

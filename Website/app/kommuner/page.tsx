@@ -2,27 +2,22 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { FreeCareMessage } from "@/components/FreeCareMessage";
 import { DamImage } from "@/components/DamImage";
+import { ASSET_IDS } from "@/lib/dam/asset-ids";
 import { COMPANY, companyLocalityLine } from "@/lib/company";
 import {
   MUNICIPAL_CONTACT_SUBJECT,
   MUNICIPAL_DOCUMENTS,
 } from "@/lib/institutional";
 import { PHOTOGRAPHY, PHOTO_SIZES } from "@/lib/photography";
+import { buildPageMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = buildPageMetadata({
   title: "Kommunalt samarbejde",
   description:
     "Beslutningsgrundlag, dokumentation, kvalitetsdata og virksomhedsoplysninger for kommunal indkøb - PremiumCare ApS",
-  alternates: {
-    canonical: "/kommuner",
-  },
-  openGraph: {
-    title: "Kommunalt samarbejde · PremiumCare",
-    description:
-      "Beslutningsgrundlag, dokumentation, kvalitetsdata og virksomhedsoplysninger for kommunal indkøb",
-    url: `${COMPANY.url}/kommuner`,
-  },
-};
+  path: "/kommuner",
+  imageAssetId: ASSET_IDS.municipalHero,
+});
 
 const PARTNER_COMMITMENTS = [
   "Åben rapportering og dokumenteret kvalitet",

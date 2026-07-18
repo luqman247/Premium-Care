@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { resolveAsset } from "@/lib/dam/resolve";
+import { getAssetById } from "@/lib/dam/registry";
 
 export type DamMetadataImage = {
   url: string;
@@ -8,18 +9,29 @@ export type DamMetadataImage = {
   alt: string;
 };
 
+/**
+ * Prefer crawlable public paths for social metadata.
+ * Robots disallow `/api/`, so crawlers must not rely on `/api/dam/image/...`.
+ * When an explicit open-graph variant exists, prefer it (typically 1200 × 630).
+ */
 export function damMetadataImage(assetId: string): DamMetadataImage {
   const asset = resolveAsset(assetId);
+  const catalog = getAssetById(assetId);
+  const explicitOg = catalog?.variants?.["open-graph"];
+  const url = explicitOg ?? asset.publicSrc ?? asset.src;
+  const usesOgVariant = Boolean(explicitOg);
+
   return {
-    url: asset.src,
-    width: asset.width,
-    height: asset.height,
+    url,
+    width: usesOgVariant ? 1200 : asset.width,
+    height: usesOgVariant ? 630 : asset.height,
     alt: asset.alt,
   };
 }
 
 export function damAbsoluteUrl(assetId: string, siteUrl: string): string {
-  return `${siteUrl}${resolveAsset(assetId).src}`;
+  const image = damMetadataImage(assetId);
+  return `${siteUrl}${image.url}`;
 }
 
 export function damOpenGraphImages(assetId: string) {
@@ -27,7 +39,7 @@ export function damOpenGraphImages(assetId: string) {
 }
 
 export function damTwitterImages(assetId: string) {
-  return [resolveAsset(assetId).src];
+  return [damMetadataImage(assetId).url];
 }
 
 export function damLayoutIcons(assetIds: {
