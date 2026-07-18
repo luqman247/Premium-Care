@@ -1,23 +1,20 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { EditorialBanner } from "@/components/EditorialBanner";
+import { ASSET_IDS } from "@/lib/dam/asset-ids";
 import { DOCUMENTATION_LINKS } from "@/lib/documentation";
 import { COMPANY } from "@/lib/company";
 import { MUNICIPAL_DOCUMENTS } from "@/lib/institutional";
 import { PHOTOGRAPHY } from "@/lib/photography";
+import { buildPageMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = buildPageMetadata({
   title: "Dokumentation",
   description:
     "Politikker, procedurer og offentlige dokumenter fra PremiumCare ApS",
-  alternates: { canonical: "/dokumentation" },
-  openGraph: {
-    title: "Dokumentation · PremiumCare",
-    description:
-      "Politikker, procedurer og offentlige dokumenter fra PremiumCare ApS",
-    url: `${COMPANY.url}/dokumentation`,
-  },
-};
+  path: "/dokumentation",
+  imageAssetId: ASSET_IDS.documentationEditorial,
+});
 
 export default function DocumentationPage() {
   return (

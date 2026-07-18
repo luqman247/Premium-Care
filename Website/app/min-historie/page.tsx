@@ -4,28 +4,18 @@ import { CrestSeal } from "@/components/CrestSeal";
 import { DamImage } from "@/components/DamImage";
 import { PageHero } from "@/components/PageHero";
 import { ASSET_IDS } from "@/lib/dam/asset-ids";
-import { COMPANY } from "@/lib/company";
-import { damMetadataImage } from "@/lib/dam/site-images";
 import { PHOTOGRAPHY, PHOTO_SIZES } from "@/lib/photography";
+import { buildPageMetadata } from "@/lib/seo";
 import { VORES_LOFTE_COMPASS } from "@/lib/vores-lofte";
 
-export const metadata: Metadata = {
-  title: {
-    absolute: "Min historie | PremiumCare",
-  },
+export const metadata: Metadata = buildPageMetadata({
+  title: "Min historie | PremiumCare",
   description:
     "Historien bag PremiumCare. Fra Sønderborg og en farmors sidste kapitel til hjemmepleje med værdighed i Aarhus og Østjylland",
-  alternates: {
-    canonical: "/min-historie",
-  },
-  openGraph: {
-    title: "Min historie | PremiumCare",
-    description:
-      "Historien bag PremiumCare. Fra Sønderborg og en farmors sidste kapitel til hjemmepleje med værdighed i Aarhus og Østjylland",
-    url: `${COMPANY.url}/min-historie`,
-    images: [damMetadataImage(ASSET_IDS.founderStory)],
-  },
-};
+  path: "/min-historie",
+  imageAssetId: ASSET_IDS.founderStory,
+  absoluteTitle: true,
+});
 
 const LEADERSHIP_PRINCIPLES = [
   "Synlig ledelse",

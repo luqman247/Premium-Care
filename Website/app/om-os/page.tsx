@@ -8,22 +8,16 @@ import { COMPANY, companyLocalityLine } from "@/lib/company";
 import { LEADERSHIP_IMAGES } from "@/lib/leadership-images";
 import { MISSION_FULL } from "@/lib/mission";
 import { PHOTO_SIZES } from "@/lib/photography";
+import { buildPageMetadata } from "@/lib/seo";
 import { VORES_LOFTE_COMPASS } from "@/lib/vores-lofte";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = buildPageMetadata({
   title: "Om PremiumCare ApS",
   description:
     "Skabt ud fra erfaring, taknemmelighed og ønsket om at give værdighed tilbage til hjemmeplejen",
-  alternates: {
-    canonical: "/om-os",
-  },
-  openGraph: {
-    title: "Om PremiumCare ApS",
-    description:
-      "Skabt ud fra erfaring, taknemmelighed og ønsket om at give værdighed tilbage til hjemmeplejen",
-    url: `${COMPANY.url}/om-os`,
-  },
-};
+  path: "/om-os",
+  imageAssetId: ASSET_IDS.aboutPageHero,
+});
 
 const VALUES = [
   {

@@ -2,28 +2,20 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { CrestSeal } from "@/components/CrestSeal";
 import { COMPANY } from "@/lib/company";
+import { buildPageMetadata } from "@/lib/seo";
 import {
   VORES_LOFTE_COMPASS,
   VORES_LOFTE_HERO,
   VORES_LOFTE_PROMISES,
 } from "@/lib/vores-lofte";
 
-export const metadata: Metadata = {
-  title: {
-    absolute: "Vores løfte | PremiumCare",
-  },
+export const metadata: Metadata = buildPageMetadata({
+  title: "Vores løfte | PremiumCare",
   description:
     "PremiumCare ApS' offentlige løfte om værdighed, ærlig kommunikation, medarbejderudvikling, læring, kvalitet og menneskelig omsorg.",
-  alternates: {
-    canonical: "/vores-loefte",
-  },
-  openGraph: {
-    title: "Vores løfte | PremiumCare",
-    description:
-      "PremiumCare ApS' offentlige løfte om værdighed, ærlig kommunikation, medarbejderudvikling, læring, kvalitet og menneskelig omsorg.",
-    url: `${COMPANY.url}/vores-loefte`,
-  },
-};
+  path: "/vores-lofte",
+  absoluteTitle: true,
+});
 
 export default function VoresLoftePage() {
   return (

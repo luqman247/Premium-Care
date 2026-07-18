@@ -36,6 +36,9 @@ yarn-error.log*
 *.tsbuildinfo
 next-env.d.ts
 
+# OG generation font cache (downloaded by scripts/generate-og-brand.mjs)
+/scripts/.og-fonts/
+
 # Internal audit / changeset / review docs (not public downloads)
 CHANGESET_*.pdf
 PREMIUM_*.pdf

@@ -7,13 +7,10 @@ import { Wordmark } from "@/components/Wordmark";
 import { MenuTrigger, NavigationProvider } from "@/components/Navigation";
 import { CookieConsent } from "@/components/CookieConsent";
 import { SiteChrome } from "@/components/SiteChrome";
-import { COMPANY, localBusinessJsonLd, organizationJsonLd } from "@/lib/company";
+import { localBusinessJsonLd, organizationJsonLd } from "@/lib/company";
 import { ASSET_IDS } from "@/lib/dam/asset-ids";
-import {
-  damLayoutIcons,
-  damMetadataImage,
-  damTwitterImages,
-} from "@/lib/dam/site-images";
+import { damLayoutIcons } from "@/lib/dam/site-images";
+import { defaultSiteMetadata } from "@/lib/seo";
 
 const cormorant = Cormorant_Garamond({
   subsets: ["latin"],
@@ -29,33 +26,8 @@ const cinzel = Cinzel({
   display: "swap",
 });
 
-const defaultOgImage = damMetadataImage(ASSET_IDS.brandOpenGraph);
-
 export const metadata: Metadata = {
-  title: {
-    default: COMPANY.brandName,
-    template: `%s · ${COMPANY.brandName}`,
-  },
-  description: "Hjemmepleje i Aarhus og Østjylland",
-  metadataBase: new URL(COMPANY.url),
-  alternates: {
-    canonical: "/",
-  },
-  openGraph: {
-    type: "website",
-    siteName: COMPANY.brandName,
-    locale: "da_DK",
-    title: COMPANY.brandName,
-    description: "Hjemmepleje i Aarhus og Østjylland",
-    url: COMPANY.url,
-    images: [defaultOgImage],
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: COMPANY.brandName,
-    description: "Hjemmepleje i Aarhus og Østjylland",
-    images: damTwitterImages(ASSET_IDS.brandOpenGraph),
-  },
+  ...defaultSiteMetadata(),
   icons: damLayoutIcons({
     favicon16: ASSET_IDS.brandFavicon16,
     favicon32: ASSET_IDS.brandFavicon32,

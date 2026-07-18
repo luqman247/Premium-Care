@@ -7078,8 +7078,8 @@
       "id": "PC-BR-005",
       "sceneNumber": 0,
       "imageNumber": 0,
-      "title": "Open Graph Brand",
-      "description": "Brand asset — Open Graph Brand",
+      "title": "Open Graph — institutional social preview",
+      "description": "1200 × 630 institutional Open Graph image for PremiumCare ApS — split editorial layout with care photography and branded panel",
       "category": "brand-marketing",
       "websitePages": [
         "all"
@@ -7088,7 +7088,7 @@
         "Metadata"
       ],
       "photographer": "PremiumCare Creative Studio",
-      "dateShot": "2025-01-01",
+      "dateShot": "2026-07-18",
       "status": "published",
       "priority": "high",
       "orientation": "landscape",
@@ -7105,23 +7105,26 @@
         "#F7F5F0"
       ],
       "blurPlaceholder": "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0nMTYnIGhlaWdodD0nMTAnIHhtbG5zPSdodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZycnPjxyZWN0IGZpbGw9JyNGNUYzRUYnIHdpZHRoPScxNicgaGVpZ2h0PScxMCcvPjwvc3ZnPg==",
-      "altText": "Open Graph Brand",
-      "seoTitle": "Open Graph Brand | PremiumCare",
-      "seoDescription": "PremiumCare brand asset — Open Graph Brand",
-      "openGraphDescription": "PremiumCare — Open Graph Brand",
+      "altText": "PremiumCare ApS – professionel og værdig omsorg med mennesket i centrum",
+      "seoTitle": "Pleje, der føles trygt | PremiumCare ApS",
+      "seoDescription": "Professionel, personlig og værdig pleje fra PremiumCare ApS",
+      "openGraphDescription": "Professionel, personlig og værdig pleje fra PremiumCare ApS",
       "copyright": "© PremiumCare ApS",
       "usageRights": "PremiumCare internal and marketing use only",
-      "versionNumber": 1,
+      "versionNumber": 2,
       "uploadDate": "2026-07-09T00:00:00.000Z",
-      "lastModified": "2026-07-09T00:00:00.000Z",
+      "lastModified": "2026-07-18T00:00:00.000Z",
       "tags": [
         "brand",
-        "brand-marketing"
+        "brand-marketing",
+        "open-graph",
+        "social"
       ],
       "searchKeywords": [
         "premium care",
         "brand",
-        "open graph brand"
+        "open graph",
+        "social preview"
       ],
       "mediaType": "photography",
       "filename": "og-brand.jpg",
@@ -7133,7 +7136,13 @@
           "versionNumber": 1,
           "src": "/assets/brand/og-brand.jpg",
           "uploadDate": "2026-07-09T00:00:00.000Z",
-          "note": "Brand kit"
+          "note": "Brand kit — portrait logo (superseded)"
+        },
+        {
+          "versionNumber": 2,
+          "src": "/assets/brand/og-brand.jpg",
+          "uploadDate": "2026-07-18T00:00:00.000Z",
+          "note": "Institutional 1200×630 editorial social preview"
         }
       ],
       "variants": {}
