@@ -47,7 +47,7 @@ export default function HomePage() {
                 </Link>
               </div>
               <p className="hero-trust-line">
-                <span>CVR {COMPANY.cvr}</span>
+                <span>{COMPANY.legalName}</span>
                 <span aria-hidden="true">·</span>
                 <span>{COMPANY.openingHours.display}</span>
               </p>
@@ -179,7 +179,7 @@ export default function HomePage() {
             </a>
           </div>
           <p className="act-close-meta">
-            CVR {COMPANY.cvr}
+            {COMPANY.legalName}
             <span aria-hidden="true"> · </span>
             {COMPANY.openingHours.display}
           </p>

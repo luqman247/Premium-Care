@@ -54,8 +54,8 @@ const VERIFICATION_LAYERS = [
     body: "Stikprøver og uanmeldte besøg. Ugentlig gennemgang af plejeplaner",
   },
   {
-    layer: "Ekstern kontrol",
-    body: "Tilsyn, kommunale gennemgange og uafhængige tilfredshedsundersøgelser",
+    layer: "Ekstern kontrol (planlagt)",
+    body: "PLANLAGT. Der er endnu ikke gennemført tilsyn, kommunal gennemgang eller tilfredshedsundersøgelse",
   },
 ];
 
@@ -80,7 +80,7 @@ export default function TrustPage() {
             Tillidscenter
           </h1>
           <p className="type-lead text-midnight/75 mt-8 max-w-[40ch]">
-            Politikker, kvalitet og dokumentation for {COMPANY.legalName}
+            Politikker, kvalitet og dokumentation
           </p>
           <InstitutionalIdentity className="mt-8" />
           <div className="mt-10">

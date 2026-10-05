@@ -9,17 +9,19 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        ivory: "#F7F5F0",
-        midnight: "#061D37",
-        "midnight-deep": "#04152A",
-        gold: "#C4A05F",
-        "gold-light": "#E4C77D",
-        "gold-dark": "#8C6A2D",
-        red: "#941715",
+        ivory: "#F2EEE6",
+        midnight: "#16222F",
+        "midnight-deep": "#0F1820",
+        gold: "#9C7C4A",
+        "gold-light": "#C3A77C",
+        "gold-dark": "#7A5F38",
+        red: "#8E2622",
       },
       fontFamily: {
         display: ["var(--font-display)", "serif"],
         body: ["var(--font-body)", "serif"],
+        ui: ["var(--font-ui)", "sans-serif"],
+        sans: ["var(--font-ui)", "sans-serif"],
       },
       lineHeight: {
         tight: "1.1",

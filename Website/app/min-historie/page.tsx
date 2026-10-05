@@ -9,9 +9,9 @@ import { buildPageMetadata } from "@/lib/seo";
 import { VORES_LOFTE_COMPASS } from "@/lib/vores-lofte";
 
 export const metadata: Metadata = buildPageMetadata({
-  title: "Min historie | PremiumCare",
+  title: "Min historie · Premium Care",
   description:
-    "Historien bag PremiumCare. Fra Sønderborg og en farmors sidste kapitel til hjemmepleje med værdighed i Aarhus og Østjylland",
+    "Historien bag Premium Care. Fra Sønderborg og en farmors sidste kapitel til hjemmepleje med værdighed i Aarhus og Østjylland",
   path: "/min-historie",
   imageAssetId: ASSET_IDS.founderStory,
   absoluteTitle: true,
@@ -486,7 +486,7 @@ export default function FounderStoryPage() {
           </p>
           <div className="mt-10 flex flex-col sm:flex-row gap-4 justify-center">
             <Link href="/kontakt" className="btn-primary">
-              Kontakt PremiumCare
+              Kontakt Premium Care
             </Link>
             <Link href="/vores-lofte" className="btn-secondary">
               Læs vores løfte

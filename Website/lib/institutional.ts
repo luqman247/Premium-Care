@@ -37,10 +37,11 @@ export const MUNICIPAL_DOCUMENTS = [
   },
   {
     label: "Årsregnskab og øvrige bilag",
-    status: "Kan rekvireres af kommunal indkøb",
+    status: "Foreligger ikke — selskabet har endnu ikke aflagt regnskab",
   },
 ] as const;
 
+/** Single legal identity line — do not also print legalName beside this */
 export const COMPANY_IDENTITY_LINE = `${COMPANY.legalName} · CVR ${COMPANY.cvr}`;
 
 export const MUNICIPAL_CONTACT_SUBJECT = "Kommunal indkøb - PremiumCare ApS";

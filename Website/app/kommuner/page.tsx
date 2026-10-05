@@ -3,7 +3,7 @@ import Link from "next/link";
 import { FreeCareMessage } from "@/components/FreeCareMessage";
 import { DamImage } from "@/components/DamImage";
 import { ASSET_IDS } from "@/lib/dam/asset-ids";
-import { COMPANY, companyLocalityLine } from "@/lib/company";
+import { COMPANY } from "@/lib/company";
 import {
   MUNICIPAL_CONTACT_SUBJECT,
   MUNICIPAL_DOCUMENTS,
@@ -41,7 +41,7 @@ export default function MunicipalPage() {
             kontaktpunkt - uden markedsføring
           </p>
           <p className="text-[13px] text-midnight/60 mt-6">
-            {COMPANY.legalName} · CVR {COMPANY.cvr}
+            {COMPANY.legalName}
           </p>
           <div className="mt-8 flex flex-col sm:flex-row gap-4">
             <Link href="/tillid" className="btn-primary inline-flex">
@@ -66,10 +66,6 @@ export default function MunicipalPage() {
             </p>
             <p>
               <strong className="text-midnight font-medium">CVR:</strong> {COMPANY.cvr}
-            </p>
-            <p>
-              <strong className="text-midnight font-medium">Adresse:</strong>{" "}
-              {companyLocalityLine()}, {COMPANY.address.country}
             </p>
             <p>
               <strong className="text-midnight font-medium">Ledelse:</strong> Bibi
@@ -100,13 +96,14 @@ export default function MunicipalPage() {
             Samarbejde med kommuner
           </h2>
           <p className="text-[17px] leading-body text-ivory/80 mt-8 max-w-[55ch]">
-            PremiumCare leverer hjemmepleje efter gældende lovgivning og kommunale
-            aftaler. Vi dokumenterer kvalitet, indberetter afvigelser og rapporterer åbent
-            til samarbejdspartnere
+            PremiumCare er under etablering og har endnu ikke indgivet ansøgning om
+            kommunal godkendelse. Der er ingen kommunale aftaler, og der leveres ingen
+            hjemmepleje på nuværende tidspunkt
           </p>
           <p className="text-[17px] leading-body text-ivory/80 mt-6 max-w-[55ch]">
-            Vi arbejder ud fra Servicelovens krav, kommunale kvalitetsstandarder og
-            gældende databeskyttelse ved levering i borgernes hjem
+            Kvalitetsledelsessystemet er opbygget efter gældende dansk lovgivning på
+            ældreområdet og efter databeskyttelsesreglerne. Systemet er dokumenteret,
+            men endnu ikke i drift
           </p>
         </div>
       </section>
@@ -117,9 +114,9 @@ export default function MunicipalPage() {
             Kvalitetstal og rapportering
           </h2>
           <p className="text-[17px] leading-body text-midnight/80 mt-8 max-w-[55ch]">
-            Vi offentliggør ikke nøgletal uden metode, periode og bilag. Kommunale
-            samarbejdspartnere får adgang til kvalitetsdata, afvigelser og opfølgning
-            efter aftale - herunder dashboard-adgang nedenfor
+            Vi offentliggør ikke nøgletal uden metode, periode og bilag. Der findes
+            endnu ingen driftsdata, fordi der ikke leveres pleje. Når drift er
+            påbegyndt, gives kommunal adgang til kvalitetsdata efter aftale
           </p>
         </div>
       </section>
@@ -155,16 +152,16 @@ export default function MunicipalPage() {
 
       <section className="snap-section bg-midnight section-padding">
         <div className="reading-column">
-          <h2 className="text-[30px] leading-normal text-ivory">Kvalitetsdashboard</h2>
+          <h2 className="text-[30px] leading-normal text-ivory">Kvalitetsdata</h2>
           <p className="text-[17px] leading-body text-ivory/80 mt-8 max-w-[55ch]">
-            Adgang til live kvalitetsdata gives efter aftale med kommunal samarbejdspartner.
-            Kontakt os for oprettelse af adgang og orientering i datastrukturen
+            UNDER UDVIKLING. Der findes endnu ikke et kvalitetsdashboard og ingen
+            driftsdata. Beskrivelse af den planlagte datastruktur kan rekvireres
           </p>
           <a
             href={`mailto:${COMPANY.email}?subject=${encodeURIComponent(MUNICIPAL_CONTACT_SUBJECT)}`}
             className="btn-primary mt-8 inline-flex"
           >
-            Anmod om dashboard-adgang
+            Anmod om beskrivelse af datastruktur
           </a>
         </div>
       </section>
@@ -228,7 +225,7 @@ export default function MunicipalPage() {
             {COMPANY.email}
           </a>
           <p className="text-[13px] text-ivory/60 mt-6 uppercase tracking-wide">
-            {COMPANY.openingHours.display} · Svar inden for to arbejdsdage
+            {COMPANY.openingHours.display}
           </p>
           <p className="text-[13px] text-ivory/60 mt-4">
             <Link

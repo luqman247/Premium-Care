@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { CrestSeal } from "@/components/CrestSeal";
 import { CREST_SIZES } from "@/lib/brand";
-import { COMPANY, companyLocalityLine } from "@/lib/company";
+import { COMPANY, companyLegalLine } from "@/lib/company";
 import { MISSION_SHORT } from "@/lib/mission";
 
 const FOOTER_ESSENTIAL = [
@@ -15,15 +15,13 @@ const FOOTER_ESSENTIAL = [
 const FOOTER_TRUST = [
   { href: "/tillid", label: "Tillid" },
   { href: "/dokumentation", label: "Dokumentation" },
-  { href: "/vores-loefte", label: "Vores løfte" },
+  { href: "/vores-lofte", label: "Vores løfte" },
   { href: "/privatliv", label: "Privatliv" },
   { href: "/klager", label: "Klager" },
   { href: "/karriere", label: "Karriere" },
 ];
 
 export function TrustBar() {
-  const year = new Date().getFullYear();
-
   return (
     <footer role="contentinfo" aria-label="Virksomhedsoplysninger" className="site-footer">
       <div className="site-footer-inner page-margin">
@@ -32,7 +30,7 @@ export function TrustBar() {
             <Link
               href="/"
               className="site-footer-crest focus-ring"
-              aria-label="PremiumCare ApS - forsiden"
+              aria-label={`${COMPANY.brandName} - forsiden`}
             >
               <CrestSeal
                 size={CREST_SIZES.sm}
@@ -42,10 +40,7 @@ export function TrustBar() {
               />
             </Link>
             <div>
-              <p className="site-footer-brand">{COMPANY.legalName}</p>
-              <p className="site-footer-detail">CVR {COMPANY.cvr}</p>
-              <p className="site-footer-detail">{companyLocalityLine()}</p>
-              <p className="site-footer-detail">{COMPANY.address.country}</p>
+              <p className="site-footer-brand">{COMPANY.brandName}</p>
               <p className="site-footer-trust-note">{MISSION_SHORT}</p>
             </div>
           </div>
@@ -117,13 +112,7 @@ export function TrustBar() {
           </nav>
         </div>
 
-        <p className="site-footer-legal">
-          © {year} {COMPANY.legalName}
-          <span className="site-footer-legal-sep" aria-hidden="true">
-            ·
-          </span>
-          CVR {COMPANY.cvr}
-        </p>
+        <p className="site-footer-legal">{companyLegalLine()}</p>
       </div>
     </footer>
   );

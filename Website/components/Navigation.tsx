@@ -214,7 +214,7 @@ export function MenuTrigger({
       className={[
         "nav-menu-trigger",
         "nav-menu-pill",
-        `nav-menu-pill--${headerTone}`,
+        headerTone === "dark" ? "nav-menu-pill-ink" : "nav-menu-pill-bone",
         headerCompact ? "nav-menu-pill--compact" : "",
         variantClass,
         className,
@@ -225,7 +225,12 @@ export function MenuTrigger({
       aria-expanded={false}
       aria-controls={overlayId}
     >
-      <span className="nav-menu-pill-label">Menu</span>
+      <span className="nav-menu-icon" aria-hidden="true">
+        <span className="nav-menu-icon-line" />
+        <span className="nav-menu-icon-line" />
+        <span className="nav-menu-icon-line" />
+      </span>
+      <span className="nav-menu-pill-label">MENU</span>
     </button>
   );
 }

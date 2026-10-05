@@ -8,7 +8,7 @@ export function EditorialTicker() {
   return (
     <div
       className="editorial-ticker border-y border-midnight/[0.06] bg-ivory overflow-hidden"
-      aria-label="PremiumCare"
+      aria-label="Premium Care"
     >
       <div className="editorial-ticker-track">
         {items.map((statement, index) => (
