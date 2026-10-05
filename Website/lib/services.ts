@@ -8,6 +8,22 @@ export type ServiceCategory = {
   photo?: (typeof PHOTOGRAPHY)[keyof typeof PHOTOGRAPHY];
 };
 
+/**
+ * PLANNED SERVICES — NOT CURRENTLY OFFERED.
+ * Sygeplejeydelser (herunder medicinhaandtering og saarpleje), fysioterapi og
+ * ergoterapi er UNDER UDVIKLING og udbydes ikke paa nuvaerende tidspunkt.
+ * De maa ikke fremstilles som nuvaerende ydelser, foer:
+ *   (1) en autoriseret sygeplejefaglig ansvarlig er udpeget,
+ *   (2) PremiumCare er registreret som behandlingssted hos Styrelsen for Patientsikkerhed, og
+ *   (3) de kliniske SOP'er er fagligt godkendt.
+ * Kontrol: AUD-2026-009 / R-37. Fjern ikke denne note uden en registreret beslutning.
+ */
+export const PLANNED_NOT_OFFERED = [
+  "Sygeplejeydelser",
+  "Fysioterapi",
+  "Ergoterapi",
+] as const;
+
 export const SERVICE_CATEGORIES: ServiceCategory[] = [
   {
     id: "praktisk-hjaelp",
@@ -22,34 +38,6 @@ export const SERVICE_CATEGORIES: ServiceCategory[] = [
     intro:
       "Bad, påklædning og mobilitet i borgerens tempo. Vi respekterer vaner, grænser og det, der føles privat",
     photo: PHOTOGRAPHY.companionship,
-  },
-  {
-    id: "sygeplejeydelser",
-    title: "Sygeplejeydelser",
-    intro:
-      "Sygepleje i hjemmet, koordineret med læge og andre, der er involveret i borgerens forløb",
-    items: [
-      "Medicinering",
-      "Sårpleje og bandageskift",
-      "Observation af helbredstilstand",
-      "Støtte ved kronisk sygdom og genoptræning",
-      "Samarbejde med læge og andre sundhedsudbydere",
-    ],
-    photo: PHOTOGRAPHY.palliative,
-  },
-  {
-    id: "fysioterapi",
-    title: "Fysioterapi",
-    intro:
-      "Genoptræning og faldforebyggelse efter indlæggelse eller når kroppen ikke længere bærer som før",
-    photo: PHOTOGRAPHY.physiotherapy,
-  },
-  {
-    id: "ergoterapi",
-    title: "Ergoterapi",
-    intro:
-      "Hjælpemidler, tilpasning af hjemmet og øvelser, så borgeren kan klare mere selv",
-    photo: PHOTOGRAPHY.occupational,
   },
   {
     id: "tilkoebsydelser",

@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from "next";
-import { Cormorant_Garamond, Cinzel } from "next/font/google";
+import { EB_Garamond, Inter } from "next/font/google";
 import "./globals.css";
 import { TrustBar } from "@/components/TrustBar";
 import { PageTransition } from "@/components/PageTransition";
@@ -12,17 +12,19 @@ import { ASSET_IDS } from "@/lib/dam/asset-ids";
 import { damLayoutIcons } from "@/lib/dam/site-images";
 import { defaultSiteMetadata } from "@/lib/seo";
 
-const cormorant = Cormorant_Garamond({
+/** Ed1.1 editorial serif — display and brand-led reading */
+const ebGaramond = EB_Garamond({
   subsets: ["latin"],
-  weight: ["400", "500"],
-  variable: "--font-body",
+  weight: ["400", "500", "600"],
+  variable: "--font-serif",
   display: "swap",
 });
 
-const cinzel = Cinzel({
+/** Ed1.1 UI sans — navigation, labels, forms, controls */
+const inter = Inter({
   subsets: ["latin"],
-  weight: ["400"],
-  variable: "--font-display",
+  weight: ["400", "500"],
+  variable: "--font-sans",
   display: "swap",
 });
 
@@ -36,7 +38,7 @@ export const metadata: Metadata = {
 };
 
 export const viewport: Viewport = {
-  themeColor: "#061D37",
+  themeColor: "#16222F",
 };
 
 export default function RootLayout({
@@ -45,7 +47,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="da" className={`${cormorant.variable} ${cinzel.variable}`}>
+    <html lang="da" className={`${ebGaramond.variable} ${inter.variable}`}>
       <body>
         <NavigationProvider>
           <PageTransition />
@@ -58,18 +60,18 @@ export default function RootLayout({
             <TrustBar />
           </SiteChrome>
           <CookieConsent />
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify(organizationJsonLd()),
-          }}
-        />
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify(localBusinessJsonLd()),
-          }}
-        />
+          <script
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{
+              __html: JSON.stringify(organizationJsonLd()),
+            }}
+          />
+          <script
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{
+              __html: JSON.stringify(localBusinessJsonLd()),
+            }}
+          />
         </NavigationProvider>
       </body>
     </html>

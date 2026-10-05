@@ -5,13 +5,13 @@ import { CrisisHelp } from "@/components/CrisisHelp";
 import { EditorialBanner } from "@/components/EditorialBanner";
 import { FreeCareMessage } from "@/components/FreeCareMessage";
 import { ASSET_IDS } from "@/lib/dam/asset-ids";
-import { COMPANY, companyLocalityLine } from "@/lib/company";
+import { COMPANY } from "@/lib/company";
 import { PHOTOGRAPHY } from "@/lib/photography";
 import { buildPageMetadata } from "@/lib/seo";
 
 export const metadata: Metadata = buildPageMetadata({
   title: "Kontakt",
-  description: `Kontakt ${COMPANY.legalName}. Telefon, e-mail og åbningstider`,
+  description: `Kontakt ${COMPANY.brandName}. Telefon, e-mail og åbningstider`,
   path: "/kontakt",
   imageAssetId: ASSET_IDS.contactEditorial,
 });
@@ -26,7 +26,7 @@ export default function ContactPage() {
             Kontakt
           </h1>
           <p className="text-[19px] leading-body text-midnight/80 mt-8">
-            {COMPANY.legalName} · CVR {COMPANY.cvr}
+            {COMPANY.brandName}
           </p>
         </div>
       </section>
@@ -79,16 +79,13 @@ export default function ContactPage() {
 
       <section className="snap-section bg-ivory section-padding">
         <div className="reading-column">
-          <h2 className="text-[30px] leading-normal text-midnight">Adresse</h2>
-          <address className="text-[19px] leading-body text-midnight/90 mt-8 not-italic">
+          <h2 className="text-[30px] leading-normal text-midnight">Område</h2>
+          <p className="text-[19px] leading-body text-midnight/90 mt-8">
             {COMPANY.legalName}
-            <br />
-            {companyLocalityLine()}
-            <br />
-            {COMPANY.address.country}
-          </address>
-          <p className="text-[17px] leading-body text-midnight/70 mt-8">
-            Kontor efter aftale. Pleje leveres i borgernes hjem, ikke på kontoret
+          </p>
+          <p className="text-[17px] leading-body text-midnight/70 mt-6">
+            Hjemmepleje i Aarhus og Østjylland. Kontor efter aftale. Pleje leveres i
+            borgernes hjem
           </p>
         </div>
       </section>
@@ -141,13 +138,6 @@ export default function ContactPage() {
               name: COMPANY.legalName,
               telephone: COMPANY.phone.schema,
               email: COMPANY.email,
-              taxID: `CVR ${COMPANY.cvr}`,
-              address: {
-                "@type": "PostalAddress",
-                postalCode: COMPANY.address.postalCode,
-                addressLocality: COMPANY.address.locality,
-                addressCountry: COMPANY.address.countryCode,
-              },
             },
           }),
         }}

@@ -3,8 +3,16 @@ import { ASSET_IDS } from "@/lib/dam/asset-ids";
 import { damAbsoluteUrl } from "@/lib/dam/site-images";
 
 export const COMPANY = {
+  /** Legal entity — contracts, footer legal line, governance */
   legalName: "PremiumCare ApS",
-  brandName: "PremiumCare",
+  /** Public brand — headings, metadata, manifest, UI brand voice */
+  brandName: "Premium Care",
+  /**
+   * CVR appears on the public legal line (Ed1.1):
+   * “PremiumCare ApS · CVR 46542568”
+   * Registered address is retained for internal/governance use only —
+   * do not render postal locality in the global public footer.
+   */
   cvr: "46542568",
   address: {
     postalCode: "8260",
@@ -27,9 +35,14 @@ export const COMPANY = {
   foundedYear: 2026,
 } as const;
 
-/** Public locality line — no street address */
+/** Public locality line — retained for internal/governance pages only */
 export function companyLocalityLine() {
   return `${COMPANY.address.postalCode} ${COMPANY.address.locality}`;
+}
+
+/** Ed1.1 public legal line for footers */
+export function companyLegalLine(year = new Date().getFullYear()) {
+  return `© ${year} ${COMPANY.legalName} · CVR ${COMPANY.cvr}`;
 }
 
 export function companyPostalAddress() {
@@ -50,8 +63,6 @@ export function organizationJsonLd() {
     url: COMPANY.url,
     email: COMPANY.email,
     telephone: COMPANY.phone.schema,
-    taxID: `CVR ${COMPANY.cvr}`,
-    address: companyPostalAddress(),
     logo: damAbsoluteUrl(ASSET_IDS.brandHorizontalNavy, COMPANY.url),
     image: damAbsoluteUrl(ASSET_IDS.brandMaster, COMPANY.url),
     contactPoint: {
@@ -77,11 +88,11 @@ export function localBusinessJsonLd() {
     "@type": "LocalBusiness",
     "@id": `${COMPANY.url}/#organization`,
     name: COMPANY.legalName,
+    alternateName: COMPANY.brandName,
     image: damAbsoluteUrl(PHOTOGRAPHY.hero.assetId, COMPANY.url),
     url: COMPANY.url,
     telephone: COMPANY.phone.schema,
     email: COMPANY.email,
-    address: companyPostalAddress(),
     openingHoursSpecification: {
       "@type": "OpeningHoursSpecification",
       dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],

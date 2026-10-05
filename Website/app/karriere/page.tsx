@@ -17,9 +17,9 @@ import {
 import { buildPageMetadata } from "@/lib/seo";
 
 export const metadata: Metadata = buildPageMetadata({
-  title: "Bliv en del af PremiumCare",
+  title: "Bliv en del af Premium Care",
   description:
-    "Arbejd med værdighed, struktur og faglighed i Aarhus og Østjylland. Betalt oplæring, mentorordning og synlig ledelse.",
+    "Arbejd med værdighed, struktur og faglighed i Aarhus og Østjylland. Premium Care er under etablering.",
   path: "/karriere",
   imageAssetId: ASSET_IDS.careersHero,
 });
@@ -33,14 +33,14 @@ export default function CareersPage() {
             {RECRUITMENT_REGION}
           </p>
           <h1 className="type-page-title text-midnight tracking-tight mt-4">
-            Bliv en del af PremiumCare
+            Bliv en del af Premium Care
           </h1>
           <p className="text-[19px] leading-body text-midnight/80 mt-8 max-w-[55ch]">
             Vi søger folk, der vil gøre arbejdet ordentligt - med tid til borgeren
             og respekt for kollegerne
           </p>
           <p className="text-[13px] text-midnight/60 mt-6">
-            {COMPANY.legalName} · CVR {COMPANY.cvr} · {COMPANY.address.locality}
+            {COMPANY.legalName}
           </p>
         </div>
       </section>
@@ -74,7 +74,8 @@ export default function CareersPage() {
             ))}
           </ul>
           <p className="text-[15px] leading-body text-ivory/60 mt-8 max-w-[55ch]">
-            Løn og vilkår følger gældende overenskomst og aftales ved ansættelse
+            Løn og ansættelsesvilkår aftales individuelt ved ansættelse. PremiumCare er
+            ikke overenskomstbundet
           </p>
         </div>
       </section>
@@ -103,9 +104,9 @@ export default function CareersPage() {
             Oplæring og mentorordning
           </h2>
           <p className="text-[17px] leading-body text-midnight/80 mt-8 max-w-[55ch]">
-            Ingen ny medarbejder starter alene. Du gennemgår fire ugers oplæring.
-            Derefter følger du en mentor i otte uger. Kvaliteten i hjemmet afhænger
-            af, at du er forberedt
+            PLANLAGT — endnu ikke i drift. Oplæringsforløbet er beskrevet i vores
+            procedurer og sættes i værk ved første ansættelse. Ingen ny medarbejder
+            skal starte alene i komplekse situationer
           </p>
           <ul className="mt-10 space-y-3 list-none">
             {TRAINING_PROGRAMME.map((item) => (

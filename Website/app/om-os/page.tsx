@@ -4,7 +4,7 @@ import { CrestSeal } from "@/components/CrestSeal";
 import { DamImage } from "@/components/DamImage";
 import { PageHero } from "@/components/PageHero";
 import { ASSET_IDS } from "@/lib/dam/asset-ids";
-import { COMPANY, companyLocalityLine } from "@/lib/company";
+import { COMPANY } from "@/lib/company";
 import { LEADERSHIP_IMAGES } from "@/lib/leadership-images";
 import { MISSION_FULL } from "@/lib/mission";
 import { PHOTO_SIZES } from "@/lib/photography";
@@ -12,7 +12,7 @@ import { buildPageMetadata } from "@/lib/seo";
 import { VORES_LOFTE_COMPASS } from "@/lib/vores-lofte";
 
 export const metadata: Metadata = buildPageMetadata({
-  title: "Om PremiumCare ApS",
+  title: "Om os",
   description:
     "Skabt ud fra erfaring, taknemmelighed og ønsket om at give værdighed tilbage til hjemmeplejen",
   path: "/om-os",
@@ -50,7 +50,7 @@ export default function AboutPage() {
   return (
     <div className="page-flow">
       <PageHero
-        title="Om PremiumCare ApS"
+        title="Om Premium Care"
         subtitle="Skabt ud fra erfaring, taknemmelighed og ønsket om at give værdighed tilbage til hjemmeplejen"
         assetId={ASSET_IDS.aboutPageHero}
         category="details"
@@ -78,20 +78,19 @@ export default function AboutPage() {
             {MISSION_FULL}
           </p>
           <p className="text-[15px] leading-body text-ivory/45 mt-12 max-w-[42ch]">
-            {COMPANY.legalName} · Familieejet hjemmepleje i {companyLocalityLine()} ·
-            CVR {COMPANY.cvr}
+            {COMPANY.legalName} · Familieejet hjemmepleje · CVR {COMPANY.cvr}
           </p>
         </div>
       </section>
 
       <section className="editorial-split">
-        <div className="editorial-split-media editorial-split-media--tall">
+        <div className="editorial-split-media editorial-split-media--portrait">
           <DamImage
             assetId={LEADERSHIP_IMAGES.ceoFormal.assetId}
             category="about"
             fill
             sizes={PHOTO_SIZES.service}
-            objectPosition="center 18%"
+            objectPosition="center 42%"
           />
         </div>
         <div className="editorial-split-copy">
@@ -221,7 +220,7 @@ export default function AboutPage() {
           </p>
           <div className="mt-10 flex flex-col sm:flex-row gap-4 justify-center">
             <Link href="/kontakt" className="btn-primary">
-              Kontakt PremiumCare
+              Kontakt Premium Care
             </Link>
             <Link href="/vores-lofte" className="btn-secondary">
               Læs vores løfte

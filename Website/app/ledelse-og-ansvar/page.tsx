@@ -4,14 +4,14 @@ import { CrestSeal } from "@/components/CrestSeal";
 import { DamImage } from "@/components/DamImage";
 import { ASSET_IDS } from "@/lib/dam/asset-ids";
 import { damAbsoluteUrl } from "@/lib/dam/site-images";
-import { COMPANY, companyLocalityLine } from "@/lib/company";
+import { COMPANY } from "@/lib/company";
 import { MISSION_FULL } from "@/lib/mission";
 import { LEADERSHIP_IMAGES } from "@/lib/leadership-images";
 import { PHOTOGRAPHY, PHOTO_SIZES } from "@/lib/photography";
 import { buildPageMetadata } from "@/lib/seo";
 
 export const metadata: Metadata = buildPageMetadata({
-  title: "Ledelse og ansvar | PremiumCare",
+  title: "Ledelse og ansvar",
   description:
     "Ledelse, ansvar og kvalitetsarbejde i PremiumCare ApS. Grundlagt af Bibi Naziyh Dowezai.",
   path: "/ledelse-og-ansvar",
@@ -60,7 +60,7 @@ const LEADERSHIP_PRINCIPLES = [
 const LEDELSE_OMRAADER = [
   {
     title: "Bestyrelse",
-    body: "Bestyrelsen godkender strategiske beslutninger og modtager løbende rapportering om kvalitet og risiko",
+    body: "PLANLAGT. Der er endnu ikke nedsat en bestyrelse. Når den nedsættes, godkender den strategiske beslutninger og modtager rapportering om kvalitet og risiko",
   },
   {
     title: "Daglig ledelse",
@@ -68,7 +68,7 @@ const LEDELSE_OMRAADER = [
   },
   {
     title: "Beslutninger",
-    body: "Væsentlige beslutninger dokumenteres. Kliniske vurderinger og delegerede opgaver ligger hos kvalificerede personer",
+    body: "Væsentlige beslutninger dokumenteres. Kliniske vurderinger og delegerede opgaver må først finde sted, når en autoriseret sygeplejefaglig ansvarlig er udpeget",
   },
   {
     title: "Kvalitet",
@@ -107,7 +107,7 @@ const QUALITY_COMMITMENTS = [
   },
   {
     title: "Kommuner",
-    body: "Åben rapportering til kommunalpartnere fra fælles registre, ikke parallelle regneark",
+    body: "Rapportering til kommuner sker fra fælles registre, ikke parallelle regneark. Der er endnu ikke indgået kommunalt samarbejde",
   },
 ];
 
@@ -243,11 +243,11 @@ export default function LeadershipResponsibilityPage() {
         {/* 2. Why PremiumCare Exists */}
         <section className="section-padding" aria-labelledby="why-exists">
           <h2 id="why-exists" className="text-[30px] leading-normal text-midnight">
-            Hvorfor PremiumCare findes
+            Hvorfor Premium Care findes
           </h2>
           <div className="mt-10 space-y-6 text-[19px] leading-body text-midnight/90">
             <p>
-              PremiumCare kom ud af en livshistorie. Min farmor fik værdig pleje i
+              Premium Care kom ud af en livshistorie. Min farmor fik værdig pleje i
               Danmark. Senere arbejdede jeg i hjemmeplejen i Aarhus, Vejle og
               Fredericia og lærte, hvad der skal til, når mange borgere skal passes
               på samme tid.
@@ -419,10 +419,6 @@ export default function LeadershipResponsibilityPage() {
         <section className="section-padding border-t border-midnight/10">
           <p className="text-[17px] leading-body text-midnight/80">
             {COMPANY.legalName} · CVR {COMPANY.cvr}
-            <br />
-            {companyLocalityLine()}
-            <br />
-            {COMPANY.address.country}
           </p>
           <p className="text-[17px] leading-body text-midnight/80 mt-4">
             <a

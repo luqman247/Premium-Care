@@ -1,8 +1,9 @@
 /**
- * Generate the PremiumCare ApS institutional Open Graph image (1200 × 630).
- * Uses licensed DAM photography + official crest + brand tokens.
+ * Generate the Premium Care institutional Open Graph image (1200 × 630).
+ * Ed1.1: Ink / Bone / Antique Brass · EB Garamond + Inter · shield mark.
  *
  * Run: node scripts/generate-og-brand.mjs
+ * Or:  npm run og:brand
  */
 import fs from "node:fs";
 import path from "node:path";
@@ -16,13 +17,14 @@ const WIDTH = 1200;
 const HEIGHT = 630;
 const PHOTO_WIDTH = 580; // ~48% — within 45–55% preferred range
 
+/** Ed1.1 colour tokens */
 const COLORS = {
-  midnight: "#061d37",
-  midnightDeep: "#04152a",
-  ivory: "#f7f5f0",
-  ivoryMuted: "rgba(247, 245, 240, 0.72)",
-  gold: "#c4a05f",
-  goldSoft: "rgba(196, 160, 95, 0.55)",
+  midnight: "#16222f",
+  midnightDeep: "#0f1820",
+  ivory: "#f2eee6",
+  ivoryMuted: "rgba(242, 238, 230, 0.72)",
+  gold: "#9c7c4a",
+  goldSoft: "rgba(156, 124, 74, 0.55)",
 };
 
 const COPY = {
@@ -41,14 +43,15 @@ const crestPath = path.join(root, "public/assets/brand/crest-gold.png");
 const outPath = path.join(root, "public/assets/brand/og-brand.jpg");
 const fontsDir = path.join(__dirname, ".og-fonts");
 
+/** Ed1.1: EB Garamond (display) + Inter (UI / labels / metadata) */
 const FONT_SOURCES = [
   {
-    name: "Cinzel-Variable.ttf",
-    url: "https://github.com/google/fonts/raw/main/ofl/cinzel/Cinzel%5Bwght%5D.ttf",
+    name: "EBGaramond-Variable.ttf",
+    url: "https://github.com/google/fonts/raw/main/ofl/ebgaramond/EBGaramond%5Bwght%5D.ttf",
   },
   {
-    name: "CormorantGaramond-Variable.ttf",
-    url: "https://github.com/google/fonts/raw/main/ofl/cormorantgaramond/CormorantGaramond%5Bwght%5D.ttf",
+    name: "Inter-Variable.ttf",
+    url: "https://github.com/google/fonts/raw/main/ofl/inter/Inter%5Bopsz%2Cwght%5D.ttf",
   },
 ];
 
@@ -110,8 +113,8 @@ async function main() {
     throw new Error(`Crest not found: ${crestPath}`);
   }
 
-  const cinzel = fontDataUri("Cinzel-Variable.ttf");
-  const cormorant = fontDataUri("CormorantGaramond-Variable.ttf");
+  const ebGaramond = fontDataUri("EBGaramond-Variable.ttf");
+  const inter = fontDataUri("Inter-Variable.ttf");
 
   const photoPanel = await sharp(photoPath)
     .rotate()
@@ -143,13 +146,13 @@ async function main() {
   <defs>
     <style type="text/css"><![CDATA[
       @font-face {
-        font-family: 'CinzelOG';
-        src: url('${cinzel}') format('truetype');
+        font-family: 'EBGaramondOG';
+        src: url('${ebGaramond}') format('truetype');
         font-weight: 400 700;
       }
       @font-face {
-        font-family: 'CormorantOG';
-        src: url('${cormorant}') format('truetype');
+        font-family: 'InterOG';
+        src: url('${inter}') format('truetype');
         font-weight: 400 600;
       }
     ]]></style>
@@ -172,9 +175,10 @@ async function main() {
     <text
       x="0"
       y="0"
-      font-family="CinzelOG, Georgia, serif"
-      font-size="15"
-      letter-spacing="0.28em"
+      font-family="InterOG, system-ui, sans-serif"
+      font-size="14"
+      font-weight="500"
+      letter-spacing="0.22em"
       fill="${COLORS.gold}"
     >${escapeXml(COPY.eyebrow)}</text>
 
@@ -190,7 +194,7 @@ async function main() {
     <text
       x="0"
       y="92"
-      font-family="CormorantOG, Georgia, serif"
+      font-family="EBGaramondOG, Georgia, serif"
       font-size="46"
       font-weight="500"
       fill="${COLORS.ivory}"
@@ -200,7 +204,7 @@ async function main() {
     <text
       x="0"
       y="168"
-      font-family="CormorantOG, Georgia, serif"
+      font-family="EBGaramondOG, Georgia, serif"
       font-size="22"
       fill="${COLORS.ivoryMuted}"
       letter-spacing="0.01em"
@@ -210,9 +214,10 @@ async function main() {
   <text
     x="${contentX}"
     y="${HEIGHT - 56}"
-    font-family="CinzelOG, Georgia, serif"
+    font-family="InterOG, system-ui, sans-serif"
     font-size="13"
-    letter-spacing="0.22em"
+    font-weight="500"
+    letter-spacing="0.18em"
     fill="${COLORS.gold}"
     opacity="0.9"
   >${escapeXml(COPY.footer)}</text>
@@ -265,6 +270,8 @@ async function main() {
         height: meta.height,
         sizeBytes: fs.statSync(outPath).size,
         copy: COPY,
+        fonts: ["EB Garamond", "Inter"],
+        colours: COLORS,
       },
       null,
       2,

@@ -10,7 +10,7 @@ import {
 } from "@/lib/vores-lofte";
 
 export const metadata: Metadata = buildPageMetadata({
-  title: "Vores løfte | PremiumCare",
+  title: "Vores løfte · Premium Care",
   description:
     "PremiumCare ApS' offentlige løfte om værdighed, ærlig kommunikation, medarbejderudvikling, læring, kvalitet og menneskelig omsorg.",
   path: "/vores-lofte",
@@ -29,7 +29,7 @@ export default function VoresLoftePage() {
             Det, vi lover borgere, familier, medarbejdere og kommuner
           </p>
           <p className="text-[13px] text-midnight/60 mt-4">
-            {COMPANY.legalName} · CVR {COMPANY.cvr}
+            {COMPANY.legalName}
           </p>
         </div>
       </header>
