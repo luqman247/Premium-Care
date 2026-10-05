@@ -13,9 +13,9 @@ export const VORES_LOFTE_PROMISES = [
   },
   {
     id: "medarbejdere",
-    statement: "Vi oplærer vores folk ordentligt",
+    statement: "Vi vil oplære vores folk ordentligt",
     practice:
-      "Fast løn, mentorordning, betalt oplæring og uniform. Medarbejderne er dem, der bærer arbejdet. Det afspejles i, hvad vi investerer i dem",
+      "Mentorordning og oplæring er beskrevet i vores procedurer og sættes i værk ved første ansættelse. Medarbejderne er dem, der bærer arbejdet",
   },
   {
     id: "laering",

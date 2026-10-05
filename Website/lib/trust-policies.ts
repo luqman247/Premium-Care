@@ -21,9 +21,9 @@ export const TRUST_POLICIES: TrustPolicy[] = [
     whyItMatters:
       "Hjemmepleje foregår i det mest private rum. Borgere og familier skal kunne dele følsomme oplysninger uden at frygte misbrug",
     commitments: [
-      "Fuld efterlevelse af GDPR og databeskyttelsesloven for følsomme helbredsoplysninger",
+      "Databehandling tilrettelægges efter GDPR og databeskyttelsesloven for følsomme helbredsoplysninger",
       "Samtykke og tydelig information, før data behandles eller deles",
-      "Adgangskontrol, kryptering og sikker dokumentation i godkendte systemer",
+      "Adgangskontrol, kryptering og sikker dokumentation. Journalsystem er endnu ikke anskaffet",
       "Borgere og pårørende kan anmode om indsigt i relevante oplysninger",
       "Databrud indberettes til Datatilsynet, når loven kræver det",
     ],
@@ -43,7 +43,7 @@ export const TRUST_POLICIES: TrustPolicy[] = [
     commitments: [
       "Alle klager modtages og registreres uden forsinkelse",
       "Borgere og pårørende guides til klagevejen",
-      "Svar inden for 48 timer på første kontakt; fuld behandling efter procedurens faser",
+      "Klager besvares hurtigst muligt efter procedurens faser. Svarfrister fastsættes ved driftsstart",
       "Læring fra klager indgår i kvalitetsarbejdet",
       "Dokumentation af klagebehandling til kommuner og tilsyn",
     ],
@@ -79,11 +79,11 @@ export const TRUST_POLICIES: TrustPolicy[] = [
     whyItMatters:
       "Borgere vælger os frit. Det, der tæller, er det, de oplever i deres eget hjem",
     commitments: [
-      "Skriftlig servicestandard ud over kommunale minimumskrav",
+      "Skriftlig servicestandard",
       "Små, stabile teams og kontinuitet, når det er muligt",
-      "Egenkontrol, supervision og ekstern kontrol",
+      "Egenkontrol og supervision. Ekstern kontrol er endnu ikke gennemført",
       "Løbende uddannelse, kompetencevurdering og kvalitetsgennemgange",
-      "Åben rapportering til kommunalpartnere",
+      "Åben rapportering til kommuner, når et samarbejde er indgået",
     ],
     documentStatus: "Gældende offentlig beskrivelse",
   },
@@ -95,7 +95,7 @@ export const TRUST_POLICIES: TrustPolicy[] = [
     purpose:
       "At alle mennesker mødes med værdighed i vores arbejde, uanset baggrund",
     whyItMatters:
-      "Vores borgere og medarbejdere afspejler Danmark. Respekt er en forudsætning for tryg pleje",
+      "Borgere og medarbejdere i dansk ældrepleje afspejler Danmark. Respekt er en forudsætning for tryg pleje",
     commitments: [
       "Nultolerance over for diskrimination, chikane og mobning",
       "Lige adgang til udvikling og ansvar i hverdagen",
@@ -133,8 +133,8 @@ export const TRUST_POLICIES: TrustPolicy[] = [
     whyItMatters:
       "Alvorlige brud på lov, sikkerhed eller etik skal kunne indberettes uden frygt for repressalier",
     commitments: [
-      "Fortrolig kanal uafhængig af ordinær linjeledelse",
-      "Anerkendelse inden for syv dage; svar inden for tre måneder",
+      "UNDER ETABLERING. En kanal uafhængig af ordinær linjeledelse er endnu ikke etableret; indberetninger går indtil videre til ledelsen",
+      "Frister følger de danske whistleblowerregler, når ordningen er etableret",
       "Beskyttelse mod repressalier efter danske whistleblower-regler",
       "Eksterne myndighedskanaler er altid lovlige at bruge",
       "God tro beskytter. Fejlvalg af kanal medfører aldrig sanktion",

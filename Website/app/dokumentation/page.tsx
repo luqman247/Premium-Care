@@ -29,7 +29,7 @@ export default function DocumentationPage() {
             arbejder med ansvar, kvalitet, privatliv og borgernes tryghed
           </p>
           <p className="text-[13px] text-midnight/60 mt-6">
-            CVR {COMPANY.cvr}
+            {COMPANY.legalName} · CVR {COMPANY.cvr}
           </p>
         </div>
       </header>

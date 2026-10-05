@@ -5,15 +5,15 @@ export const RECRUITMENT_REGION = "Aarhus og Østjylland";
 export const WORKPLACE_PROMISES = [
   {
     title: "Dit fag tæller",
-    body: "Du er uddannet plejepersonale. Vi forventer faglighed og giver dig oplæring, struktur og tid nok til at gøre arbejdet ordentligt",
+    body: "Du er uddannet plejepersonale. Vi forventer faglighed, og vores procedurer er bygget op omkring oplæring, struktur og tid nok til at gøre arbejdet ordentligt",
   },
   {
     title: "Ledelse du kan finde",
     body: "Når noget er svært, ved du, hvem du ringer til. Du skal ikke gå hjem med bekymringer, du skal bære alene",
   },
   {
-    title: "Fire uger plus otte uger mentor",
-    body: "Du starter ikke alene i komplekse situationer. Betalt tid til at lære borgerens hjem og rutiner",
+    title: "Oplæring og mentorordning (planlagt)",
+    body: "PLANLAGT — endnu ikke i drift. Oplæringsforløbet er beskrevet i vores procedurer og sættes i værk ved første ansættelse",
   },
   {
     title: "Du kan sige fra",
@@ -21,13 +21,14 @@ export const WORKPLACE_PROMISES = [
   },
 ] as const;
 
+/**
+ * ANSAETTELSESVILKAAR — kontrol AUD-2026-009 / D8.
+ * PremiumCare er IKKE overenskomstbundet og har endnu ingen ansatte.
+ * Der maa ikke angives loen-, pensions- eller personalegodeloefter her,
+ * foer vilkaarene faktisk er fastlagt og kan dokumenteres.
+ */
 export const WORKPLACE_BENEFITS = [
-  "Fast månedsløn",
-  "Pension efter gældende overenskomst",
-  "Betalt oplæring og efteruddannelse",
-  "Uniform og udstyr",
-  "Planlagte vagter og tydelig besked fra planlægning",
-  "Kollegaer, der kender borgerne",
+  "Vilkår aftales individuelt ved ansættelse",
 ] as const;
 
 export const TRAINING_PROGRAMME = [
