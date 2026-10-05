@@ -27,7 +27,7 @@ export const COMPANY = {
     schema: "+45-42-26-44-21",
   },
   openingHours: {
-    display: "Man–fre 07:00–15:00",
+    display: "Man-fre 07:00-15:00",
     schema: ["Mo-Fr 07:00-15:00"],
   },
   /** Canonical production origin — used for metadata, OG, JSON-LD, sitemap, robots */

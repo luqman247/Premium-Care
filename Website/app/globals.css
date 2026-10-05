@@ -875,6 +875,60 @@
 
   /* —— RC20 cinematic acts —— */
 
+  /* Homepage Mission / Vision — early, calm institutional declaration */
+  .act-purpose {
+    background-color: var(--color-ivory);
+    border-bottom: 1px solid rgba(22, 34, 47, 0.06);
+  }
+
+  .act-purpose-pair {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--space-8);
+    max-width: 58rem;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  @media (min-width: 768px) {
+    .act-purpose-pair {
+      grid-template-columns: 1fr 1fr;
+      gap: var(--space-10);
+      align-items: start;
+    }
+
+    .act-purpose-item + .act-purpose-item {
+      padding-left: var(--space-10);
+      border-left: 1px solid rgba(156, 124, 74, 0.35);
+    }
+  }
+
+  .act-purpose-heading {
+    margin: 0;
+    font-family: var(--font-display);
+    font-size: clamp(1.75rem, 3vw, 2.125rem);
+    font-weight: 500;
+    line-height: var(--leading-snug);
+    letter-spacing: -0.015em;
+    color: var(--color-midnight);
+  }
+
+  .act-purpose-body {
+    margin: var(--space-4) 0 0;
+    max-width: 32ch;
+    font-family: var(--font-ui);
+    font-size: var(--text-body);
+    line-height: var(--leading-body);
+    color: rgba(22, 34, 47, 0.78);
+  }
+
+  @media (min-width: 768px) {
+    .act-purpose-body {
+      font-size: var(--text-body-lg);
+      max-width: 28ch;
+    }
+  }
+
   .act-fritvalg {
     background-color: var(--color-ivory);
     padding: var(--space-20) 0;

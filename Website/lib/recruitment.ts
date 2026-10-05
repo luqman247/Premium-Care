@@ -13,7 +13,7 @@ export const WORKPLACE_PROMISES = [
   },
   {
     title: "Oplæring og mentorordning (planlagt)",
-    body: "PLANLAGT — endnu ikke i drift. Oplæringsforløbet er beskrevet i vores procedurer og sættes i værk ved første ansættelse",
+    body: "PLANLAGT - endnu ikke i drift. Oplæringsforløbet er beskrevet i vores procedurer og sættes i værk ved første ansættelse",
   },
   {
     title: "Du kan sige fra",
