@@ -12,7 +12,7 @@ import { TRUST_POLICIES } from "@/lib/trust-policies";
 export const metadata: Metadata = buildPageMetadata({
   title: "Tillidscenter",
   description:
-    "Gennemsigtighed, dokumentation og ansvarlighed - politikker, kvalitetsramme og ledelsesansvar for PremiumCare ApS.",
+    "Gennemsigtighed, dokumentation og ansvarlighed - politikker, kvalitetsramme og ledelsesansvar for PremiumCare ApS",
   path: "/tillid",
   imageAssetId: ASSET_IDS.trustEditorial,
 });

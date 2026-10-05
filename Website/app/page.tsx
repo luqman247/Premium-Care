@@ -7,6 +7,7 @@ import { ASSET_IDS } from "@/lib/dam/asset-ids";
 import { COMPANY } from "@/lib/company";
 import { FREE_CARE_MESSAGE } from "@/lib/free-care";
 import { PHOTO_SIZES } from "@/lib/photography";
+import { MISSION, VISION } from "@/lib/mission";
 import { SERVICE_CATEGORIES } from "@/lib/services";
 import { buildPageMetadata, SITE_SEO } from "@/lib/seo";
 import { VORES_LOFTE_COMPASS } from "@/lib/vores-lofte";
@@ -56,6 +57,31 @@ export default function HomePage() {
         </div>
         <EditorialTicker />
       </header>
+
+      <section
+        className="act-purpose section-padding"
+        aria-labelledby="purpose-heading"
+      >
+        <div className="page-margin">
+          <h2 id="purpose-heading" className="sr-only">
+            Mission og vision
+          </h2>
+          <div className="act-purpose-pair">
+            <article className="act-purpose-item" aria-labelledby="mission-heading">
+              <h3 id="mission-heading" className="act-purpose-heading">
+                Mission
+              </h3>
+              <p className="act-purpose-body">{MISSION}</p>
+            </article>
+            <article className="act-purpose-item" aria-labelledby="vision-heading">
+              <h3 id="vision-heading" className="act-purpose-heading">
+                Vision
+              </h3>
+              <p className="act-purpose-body">{VISION}</p>
+            </article>
+          </div>
+        </div>
+      </section>
 
       <section className="act-fritvalg" aria-labelledby="fritvalg-heading">
         <div className="page-margin">

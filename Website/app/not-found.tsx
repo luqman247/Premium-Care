@@ -11,7 +11,7 @@ export default function NotFound() {
       </h1>
       <p className="text-[17px] leading-body text-midnight/70 mt-4 max-w-[36ch]">
         Linket kan være forkert, eller siden er flyttet. Ring, hvis du har brug
-        for hjælp nu.
+        for hjælp nu
       </p>
       <div className="mt-10 flex flex-col sm:flex-row gap-4 items-center">
         <Link href="/" className="btn-primary">

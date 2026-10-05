@@ -13,7 +13,7 @@ import { buildPageMetadata } from "@/lib/seo";
 export const metadata: Metadata = buildPageMetadata({
   title: "Ledelse og ansvar",
   description:
-    "Ledelse, ansvar og kvalitetsarbejde i PremiumCare ApS. Grundlagt af Bibi Naziyh Dowezai.",
+    "Ledelse, ansvar og kvalitetsarbejde i PremiumCare ApS. Grundlagt af Bibi Naziyh Dowezai",
   path: "/ledelse-og-ansvar",
   imageAssetId: ASSET_IDS.leadershipPress,
   absoluteTitle: true,
@@ -225,7 +225,7 @@ export default function LeadershipResponsibilityPage() {
                   og Fredericia, og i ledelse og drift af hjemmepleje
                 </p>
                 <p>
-                  Rigtig pleje, folk man kan finde, og en klar vej, hvis noget går galt
+                  Rigtig pleje, folk man kan finde og en klar vej, hvis noget går galt
                 </p>
               </div>
               <p className="mt-10">
@@ -250,12 +250,12 @@ export default function LeadershipResponsibilityPage() {
               Premium Care kom ud af en livshistorie. Min farmor fik værdig pleje i
               Danmark. Senere arbejdede jeg i hjemmeplejen i Aarhus, Vejle og
               Fredericia og lærte, hvad der skal til, når mange borgere skal passes
-              på samme tid.
+              på samme tid
             </p>
             <p>
               Da vi en fredag overtog ansvaret for omkring 250 borgere, lærte jeg,
               hvor afgørende struktur og stærke medarbejdere er. Ingen borger må
-              blive glemt. Det princip har fulgt mig siden.
+              blive glemt. Det princip har fulgt mig siden
             </p>
           </div>
         </section>
@@ -276,7 +276,7 @@ export default function LeadershipResponsibilityPage() {
             Vision
           </h2>
           <p className="text-[19px] leading-body text-midnight/90 mt-8">
-            En hjemmepleje, kommuner kan stole på, borgere vælger, og medarbejdere
+            En hjemmepleje, kommuner kan stole på, borgere vælger og medarbejdere
             gerne arbejder for
           </p>
         </section>
@@ -334,7 +334,7 @@ export default function LeadershipResponsibilityPage() {
             </h2>
             <p className="text-[17px] leading-body text-ivory/80 mt-8">
               Vi har et dokumentbibliotek med én gældende version pr. emne. Her er
-              den offentlige forklaring på, hvordan vi er styret.
+              den offentlige forklaring på, hvordan vi er styret
             </p>
             <ul className="mt-10 space-y-8 list-none">
               {LEDELSE_OMRAADER.map((area) => (
@@ -370,7 +370,7 @@ export default function LeadershipResponsibilityPage() {
           </h2>
           <p className="text-[17px] leading-body text-midnight/80 mt-6">
             Audits, klager, hændelser og tilbagemeldinger fører til handling og
-            opfølgning.
+            opfølgning
           </p>
           <ul className="mt-10 space-y-8 list-none">
             {QUALITY_COMMITMENTS.map((item) => (
@@ -399,7 +399,7 @@ export default function LeadershipResponsibilityPage() {
           </h2>
           <p className="text-[17px] leading-body text-midnight/80 mt-6">
             Politikker, procedurer og erklæringer. Offentlige resuméer med link til
-            de fulde dokumenter.
+            de fulde dokumenter
           </p>
           <ul className="mt-10 space-y-0 list-none">
             {TRUST_LIBRARY.map((item) => (
@@ -456,7 +456,7 @@ export default function LeadershipResponsibilityPage() {
           </blockquote>
           <p className="text-[17px] leading-body text-ivory/70 mt-12 max-w-[42ch] mx-auto">
             Det spørgsmål stillede jeg mig selv, da min farmor sad i plejestolen. Det
-            bruger vi stadig, når vi er i tvivl.
+            bruger vi stadig, når vi er i tvivl
           </p>
           <p className="mt-10">
             <Link

@@ -37,7 +37,7 @@ export const MUNICIPAL_DOCUMENTS = [
   },
   {
     label: "Årsregnskab og øvrige bilag",
-    status: "Foreligger ikke — selskabet har endnu ikke aflagt regnskab",
+    status: "Foreligger ikke - selskabet har endnu ikke aflagt regnskab",
   },
 ] as const;
 

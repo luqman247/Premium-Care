@@ -19,7 +19,7 @@ import { buildPageMetadata } from "@/lib/seo";
 export const metadata: Metadata = buildPageMetadata({
   title: "Bliv en del af Premium Care",
   description:
-    "Arbejd med værdighed, struktur og faglighed i Aarhus og Østjylland. Premium Care er under etablering.",
+    "Arbejd med værdighed, struktur og faglighed i Aarhus og Østjylland. Premium Care er under etablering",
   path: "/karriere",
   imageAssetId: ASSET_IDS.careersHero,
 });
@@ -104,7 +104,7 @@ export default function CareersPage() {
             Oplæring og mentorordning
           </h2>
           <p className="text-[17px] leading-body text-midnight/80 mt-8 max-w-[55ch]">
-            PLANLAGT — endnu ikke i drift. Oplæringsforløbet er beskrevet i vores
+            PLANLAGT - endnu ikke i drift. Oplæringsforløbet er beskrevet i vores
             procedurer og sættes i værk ved første ansættelse. Ingen ny medarbejder
             skal starte alene i komplekse situationer
           </p>

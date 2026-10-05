@@ -255,7 +255,7 @@ export function ContactForm() {
           </a>
         </p>
         <p className="contact-privacy">
-          Fortrolig behandling.{" "}
+          Fortrolig behandling{" "}
           <Link href="/privatliv" className="signature-link">
             Privatliv
           </Link>

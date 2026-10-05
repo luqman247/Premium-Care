@@ -14,12 +14,12 @@ import { COMPANY } from "@/lib/company";
 export const SITE_SEO = {
   defaultTitle: "Premium Care | Professionel og personlig omsorg",
   defaultDescription:
-    "Premium Care leverer professionel, nærværende og værdig omsorg med udgangspunkt i det enkelte menneskes behov.",
+    "Premium Care leverer professionel, nærværende og værdig omsorg med udgangspunkt i det enkelte menneskes behov",
   openGraphTitle: "Pleje, der føles trygt",
   openGraphDescription:
-    "Professionel, personlig og værdig pleje fra Premium Care.",
+    "Professionel, personlig og værdig pleje fra Premium Care",
   openGraphImageAlt:
-    "Premium Care – professionel og værdig omsorg med mennesket i centrum",
+    "Premium Care - professionel og værdig omsorg med mennesket i centrum",
 } as const;
 
 export type PageMetadataInput = {
