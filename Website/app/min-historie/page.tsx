@@ -488,7 +488,7 @@ export default function FounderStoryPage() {
             <Link href="/kontakt" className="btn-primary">
               Kontakt Premium Care
             </Link>
-            <Link href="/vores-lofte" className="btn-secondary">
+            <Link href="/vores-loefte" className="btn-secondary">
               Læs vores løfte
             </Link>
           </div>
