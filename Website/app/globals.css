@@ -2164,7 +2164,9 @@
     width: min(100%, 28rem);
     aspect-ratio: 1 / 1;
     overflow: hidden;
-    background-color: var(--color-midnight);
+    isolation: isolate;
+    /* Paper ground — studio white multiplies into ivory */
+    background-color: var(--color-ivory);
   }
 
   @media (min-width: 900px) {
@@ -2175,6 +2177,29 @@
 
   .editorial-portrait-image {
     object-fit: cover;
+    mix-blend-mode: multiply;
+    /* Nudge cool studio white toward Bone / ivory paper */
+    filter: sepia(0.16) saturate(0.88) brightness(1.04) contrast(0.985);
+  }
+
+  /*
+   * Soft paper falloff: dissolve the square card edge into the section
+   * ground so the portrait reads as placed on the page, not in a white box.
+   */
+  .editorial-portrait-frame::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    z-index: 1;
+    background:
+      radial-gradient(
+        ellipse 74% 70% at 50% 38%,
+        transparent 38%,
+        color-mix(in srgb, var(--color-ivory) 48%, transparent) 68%,
+        color-mix(in srgb, var(--color-ivory) 92%, transparent) 88%,
+        var(--color-ivory) 100%
+      );
   }
 
   .editorial-crest-stage {
