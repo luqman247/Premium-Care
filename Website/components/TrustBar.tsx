@@ -15,7 +15,7 @@ const FOOTER_ESSENTIAL = [
 const FOOTER_TRUST = [
   { href: "/tillid", label: "Tillid" },
   { href: "/dokumentation", label: "Dokumentation" },
-  { href: "/vores-lofte", label: "Vores løfte" },
+  { href: "/vores-loefte", label: "Vores løfte" },
   { href: "/privatliv", label: "Privatliv" },
   { href: "/klager", label: "Klager" },
   { href: "/karriere", label: "Karriere" },

@@ -13,7 +13,7 @@ export const metadata: Metadata = buildPageMetadata({
   title: "Vores løfte · Premium Care",
   description:
     "PremiumCare ApS' offentlige løfte om værdighed, ærlig kommunikation, medarbejderudvikling, læring, kvalitet og menneskelig omsorg",
-  path: "/vores-lofte",
+  path: "/vores-loefte",
   absoluteTitle: true,
 });
 
