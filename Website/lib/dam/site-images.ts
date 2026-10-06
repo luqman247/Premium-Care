@@ -42,20 +42,36 @@ export function damTwitterImages(assetId: string) {
   return [damMetadataImage(assetId).url];
 }
 
+function iconPublicUrl(assetId: string): string {
+  const asset = resolveAsset(assetId);
+  // Prefer crawlable static brand paths so browsers/CDNs are not stuck on
+  // cached `/api/dam/image/...` favicon responses.
+  return asset.publicSrc ?? asset.src;
+}
+
 export function damLayoutIcons(assetIds: {
   favicon16: string;
   favicon32: string;
+  favicon48?: string;
   apple: string;
 }): Metadata["icons"] {
-  const favicon16 = resolveAsset(assetIds.favicon16);
-  const favicon32 = resolveAsset(assetIds.favicon32);
-  const apple = resolveAsset(assetIds.apple);
+  const favicon16 = iconPublicUrl(assetIds.favicon16);
+  const favicon32 = iconPublicUrl(assetIds.favicon32);
+  const favicon48 = assetIds.favicon48
+    ? iconPublicUrl(assetIds.favicon48)
+    : null;
+  const apple = iconPublicUrl(assetIds.apple);
 
   return {
     icon: [
-      { url: favicon32.src, sizes: "32x32" },
-      { url: favicon16.src, sizes: "16x16" },
+      { url: "/favicon.ico", sizes: "48x48" },
+      { url: "/assets/brand/favicon-ed11.svg", type: "image/svg+xml" },
+      { url: favicon32, sizes: "32x32", type: "image/png" },
+      { url: favicon16, sizes: "16x16", type: "image/png" },
+      ...(favicon48
+        ? [{ url: favicon48, sizes: "48x48", type: "image/png" as const }]
+        : []),
     ],
-    apple: apple.src,
+    apple,
   };
 }

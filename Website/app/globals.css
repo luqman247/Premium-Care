@@ -2137,17 +2137,44 @@
     }
   }
 
+  /*
+   * Founder portrait stage (/om-os): keep a true square frame so the
+   * square PC-03-016 source is not force-zoomed by grid row stretch.
+   */
   .editorial-split-media--portrait {
-    aspect-ratio: 4 / 5;
-    min-height: min(72vw, 22rem);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    aspect-ratio: auto;
+    min-height: min(64vw, 22rem);
+    padding: clamp(1.25rem, 4vw, 2.75rem);
+    background-color: var(--color-ivory);
   }
 
   @media (min-width: 900px) {
     .editorial-split-media--portrait {
-      aspect-ratio: 1 / 1;
-      min-height: 0;
-      max-height: min(72vh, 36rem);
+      min-height: 100%;
+      max-height: none;
+      padding: clamp(2rem, 4.5vw, 3.25rem);
     }
+  }
+
+  .editorial-portrait-frame {
+    position: relative;
+    width: min(100%, 28rem);
+    aspect-ratio: 1 / 1;
+    overflow: hidden;
+    background-color: var(--color-midnight);
+  }
+
+  @media (min-width: 900px) {
+    .editorial-portrait-frame {
+      width: min(100%, 32rem);
+    }
+  }
+
+  .editorial-portrait-image {
+    object-fit: cover;
   }
 
   .editorial-crest-stage {

@@ -63,6 +63,7 @@ export const ASSET_IDS = {
   brandAppIcon180: "PC-BR-016",
   brandAppIcon192: "PC-BR-017",
   brandAppIcon512: "PC-BR-018",
+  brandFavicon48: "PC-BR-019",
 } as const;
 
 export type AssetId =

@@ -33,6 +33,7 @@ export const metadata: Metadata = {
   icons: damLayoutIcons({
     favicon16: ASSET_IDS.brandFavicon16,
     favicon32: ASSET_IDS.brandFavicon32,
+    favicon48: ASSET_IDS.brandFavicon48,
     apple: ASSET_IDS.brandAppIcon180,
   }),
 };
