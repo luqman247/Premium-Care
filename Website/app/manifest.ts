@@ -6,6 +6,8 @@ import { resolveAsset } from "@/lib/dam/resolve";
 export default function manifest(): MetadataRoute.Manifest {
   const icon192 = resolveAsset(ASSET_IDS.brandAppIcon192);
   const icon512 = resolveAsset(ASSET_IDS.brandAppIcon512);
+  const src192 = icon192.publicSrc ?? icon192.src;
+  const src512 = icon512.publicSrc ?? icon512.src;
 
   return {
     name: COMPANY.brandName,
@@ -18,10 +20,10 @@ export default function manifest(): MetadataRoute.Manifest {
     background_color: "#16222F",
     theme_color: "#16222F",
     icons: [
-      { src: icon192.src, sizes: "192x192", type: "image/png" },
-      { src: icon512.src, sizes: "512x512", type: "image/png" },
+      { src: src192, sizes: "192x192", type: "image/png" },
+      { src: src512, sizes: "512x512", type: "image/png" },
       {
-        src: icon512.src,
+        src: src512,
         sizes: "512x512",
         type: "image/png",
         purpose: "maskable",

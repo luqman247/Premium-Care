@@ -48,6 +48,7 @@ export const BRAND_ASSET_IDS = {
   favicon: {
     size16: ASSET_IDS.brandFavicon16,
     size32: ASSET_IDS.brandFavicon32,
+    size48: ASSET_IDS.brandFavicon48,
     apple180: ASSET_IDS.brandAppIcon180,
     pwa192: ASSET_IDS.brandAppIcon192,
     pwa512: ASSET_IDS.brandAppIcon512,

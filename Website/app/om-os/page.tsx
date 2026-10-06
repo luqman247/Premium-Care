@@ -85,13 +85,16 @@ export default function AboutPage() {
 
       <section className="editorial-split">
         <div className="editorial-split-media editorial-split-media--portrait">
-          <DamImage
-            assetId={LEADERSHIP_IMAGES.ceoFormal.assetId}
-            category="about"
-            fill
-            sizes={PHOTO_SIZES.service}
-            objectPosition="center 42%"
-          />
+          <div className="editorial-portrait-frame">
+            <DamImage
+              assetId={LEADERSHIP_IMAGES.ceoFormal.assetId}
+              category="about"
+              fill
+              sizes={PHOTO_SIZES.service}
+              className="editorial-portrait-image"
+              objectPosition="center 34%"
+            />
+          </div>
         </div>
         <div className="editorial-split-copy">
           <p className="type-eyebrow">Ledelse</p>
